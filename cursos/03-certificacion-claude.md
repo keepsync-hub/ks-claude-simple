@@ -12,9 +12,9 @@ Existen exactamente **3 certificados reales de Claude** que vale la pena sumar a
 
 ## I — Los pasos
 
-### Paso 1: Entrá al sitio correcto
+### Paso 1: Entra al sitio correcto
 
-Andá a **anthropic.skilljar.com**. Registrate con tu email. No hace falta pagar por Claude para hacer los cursos.
+Anda a **anthropic.skilljar.com**. Regístrate con tu email. No hace falta pagar por Claude para hacer los cursos.
 
 ### Paso 2: Claude 101 (1 hora)
 
@@ -34,7 +34,7 @@ El más largo y completo de los tres.
 - Las 4D: Delegación, Descripción, Discernimiento, Diligencia
 - Prompting efectivo, pensamiento crítico sobre los resultados, ética
 
-> Si solo tenés tiempo para uno de los tres, hacé este.
+> Si solo tienes tiempo para uno de los tres, haz este.
 
 ### Paso 4: Introducción a Claude Cowork (2 horas)
 
@@ -46,15 +46,15 @@ Sobre la mejor función de Claude: Cowork.
 - Investigación a gran escala
 - Permisos y cómo elegir el modelo correcto
 
-## II — Sumalos a LinkedIn
+## II — Súmalos a LinkedIn
 
-1. Andá a tu perfil.
+1. Anda a tu perfil.
 2. Clic en "Agregar sección" → "Licencias y certificaciones".
-3. Usá este formato:
+3. Usa este formato:
    - **Nombre:** Claude 101 — Anthropic Academy
    - **Organización emisora:** Anthropic
    - **Fecha de emisión:** hoy
-4. Repetí para AI Fluency e Introducción a Claude Cowork.
+4. Repite para AI Fluency e Introducción a Claude Cowork.
 
 ## III — ¿Por qué importa?
 
@@ -70,7 +70,7 @@ Sobre la mejor función de Claude: Cowork.
 |---|---|---|
 | Claude 101 | 1h | anthropic.skilljar.com/claude-101 |
 | AI Fluency: Framework & Foundations | 3h | anthropic.skilljar.com/ai-fluency-framework-foundations |
-| Introducción a Claude Cowork | 2h | buscalo en anthropic.skilljar.com |
+| Introducción a Claude Cowork | 2h | búscalo en anthropic.skilljar.com |
 
 ---
 

@@ -42,7 +42,7 @@ Ver el mapa completo en [`cursos/00-mapa-de-cursos.md`](./cursos/00-mapa-de-curs
 
 ## Por qué existe este proyecto
 
-Menos del 2% de las personas ha usado Claude una sola vez, y la brecha entre quienes lo dominan y quienes no crece cada semana. Esta academia existe para cerrar esa brecha para el público hispanohablante: contenido honesto, sin humo, con pasos que podés ejecutar hoy mismo.
+Menos del 2% de las personas ha usado Claude una sola vez, y la brecha entre quienes lo dominan y quienes no crece cada semana. Esta academia existe para cerrar esa brecha para el público hispanohablante: contenido honesto, sin humo, con pasos que puedes ejecutar hoy mismo.
 
 Este es el punto de partida de una plataforma más grande: talleres en vivo, una comunidad de práctica y — más adelante — programas pagos para equipos y empresas que quieran certificar a su gente. Si el contenido gratuito te resuelve algo real, vas a querer quedarte para lo que sigue.
 
@@ -54,8 +54,8 @@ Este proyecto es una iniciativa independiente en español. No está afiliado ni 
 
 ## Contribuir
 
-¿Encontraste un error, un link roto, o querés sugerir un curso nuevo? Abrí un issue o un pull request.
+¿Encontraste un error, un link roto, o quieres sugerir un curso nuevo? Abre un issue o un pull request.
 
 ## Licencia
 
-Contenido educativo de uso libre para fines no comerciales, con atribución. Contactanos si querés usarlo comercialmente.
+Contenido educativo de uso libre para fines no comerciales, con atribución. Contáctanos si quieres usarlo comercialmente.

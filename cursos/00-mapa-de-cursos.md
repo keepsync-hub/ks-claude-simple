@@ -1,15 +1,15 @@
 # Mapa de cursos — Claude Academy ES
 
-> Guías gratuitas para dominar Claude, ordenadas de principiante a experto. Elegí tu nivel y arrancá.
+> Guías gratuitas para dominar Claude, ordenadas de principiante a experto. Elige tu nivel y arranca.
 
-¿Recién llegás? Empezá por [Claude para principiantes](./01-claude-para-principiantes.md) o anotate al [taller en vivo gratuito](../index.html).
+¿Recién llegas? Empieza por [Claude para principiantes](./01-claude-para-principiantes.md) o regístrate al [taller en vivo gratuito](../index.html).
 
 ---
 
 ## 🟢 Nivel 1: Principiante
 
 ### → [Claude para principiantes](./01-claude-para-principiantes.md)
-Si nunca abriste Claude, empezá acá.
+Si nunca abriste Claude, empieza aquí.
 **Nivel:** Principiante | **Duración:** 5 minutos
 
 ### → [Ser bueno con la IA es (increíblemente) simple](./02-ser-bueno-en-ia-es-simple.md)
@@ -53,23 +53,23 @@ Cómo crear tus primeras Skills (habilidades) de Claude.
 ## 🟠 Nivel 3: Avanzado
 
 ### → [Claude con tu propia voz](./10-claude-con-tu-voz.md)
-Entrená a Claude para que escriba como vos.
+Entrena a Claude para que escriba como tú.
 **Nivel:** Avanzado | **Duración:** 12 minutos
 
 ### → [No más límites de uso en Claude](./11-no-agotes-limites-claude.md)
 23 trucos para usar Claude mejor y no gastar de más.
 **Nivel:** Avanzado | **Duración:** 12 minutos
 
-### → [Dejá de promptear: Claude Cowork + Obsidian](./12-deja-de-promptear-obsidian.md)
-Andá más allá de la ingeniería de prompts.
+### → [Deja de promptear: Claude Cowork + Obsidian](./12-deja-de-promptear-obsidian.md)
+Ve más allá de la ingeniería de prompts.
 **Nivel:** Avanzado | **Duración:** 10 minutos
 
 ### → [Claude me reemplazó](./13-claude-me-reemplazo.md)
 Construí la Skill que te enseña paso a paso.
 **Nivel:** Avanzado | **Duración:** 4 minutos
 
-### → [Dejá de sonar como IA](./14-deja-de-sonar-como-ia.md)
-Dejá de usar estas expresiones ya mismo. Suenan a IA.
+### → [Deja de sonar como IA](./14-deja-de-sonar-como-ia.md)
+Deja de usar estas expresiones ya mismo. Suenan a IA.
 **Nivel:** Avanzado | **Duración:** 20 minutos
 
 ### → [Excel con Claude Cowork](./15-excel-con-claude-cowork.md)
