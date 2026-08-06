@@ -19,13 +19,13 @@ Para **editar** planillas ya existentes, un asistente de IA integrado directamen
 **Preparación:**
 
 - App de Claude → pestaña Cowork.
-- Conectá Google Drive (más fácil para exportar después).
-- Elegí el modelo más potente disponible + razonamiento adaptativo.
+- Conecta Google Drive (más fácil para exportar después).
+- Elige el modelo más potente disponible + razonamiento adaptativo.
 
 **Plantilla de prompt:**
 
 ```
-Creá una planilla de Excel a partir de:
+Crea una planilla de Excel a partir de:
 [DATOS: ruta del archivo, carpeta, o datos pegados]
 
 ### Propósito:
@@ -39,32 +39,32 @@ Creá una planilla de Excel a partir de:
 [Formatos de moneda/fecha, resaltado condicional, fila de encabezado fija,
 fila de totales]
 
-Antes de construir, listame tus 10 principales supuestos para que los revise,
-y después ejecutá.
+Antes de construir, lístame tus 10 principales supuestos para que los revise,
+y después ejecuta.
 ```
 
-La parte clave: pedir "los 10 principales supuestos para revisar antes de ejecutar" — así mantenés el control.
+La parte clave: pedir "los 10 principales supuestos para revisar antes de ejecutar" — así mantienes el control.
 
-**Después:** hacé clic en el botón "Google Drive" para abrirlo directamente en Google Sheets.
+**Después:** haz clic en el botón "Google Drive" para abrirlo directamente en Google Sheets.
 
 ## Editar planillas existentes
 
-Para editar lo que ya tenés, buscá un complemento de IA dentro de Google Sheets:
+Para editar lo que ya tienes, busca un complemento de IA dentro de Google Sheets:
 
 1. Extensiones → Complementos → Obtener complementos.
-2. Buscá e instalá el complemento oficial de IA que prefieras (gratis).
-3. Conectá tu cuenta.
-4. Elegí el modelo más potente disponible si necesitás más precisión.
+2. Busca e instala el complemento oficial de IA que prefieras (gratis).
+3. Conecta tu cuenta.
+4. Elige el modelo más potente disponible si necesitas más precisión.
 
 **Mejores casos de uso:**
 
 - Visualizar una pestaña con gráficos.
 - Resumir una pestaña.
-- Editar la planilla (el mejor uso): "En @Supuestos, cambiá el escenario 'Optimista' para que sea más agresivo."
+- Editar la planilla (el mejor uso): "En @Supuestos, cambia el escenario 'Optimista' para que sea más agresivo."
 
 ## Alternativa: herramientas dedicadas a planillas
 
-Si tu trabajo diario es armar planillas, considerá una herramienta de IA dedicada exclusivamente a spreadsheets, con configuración de contexto (tu rol, tus preferencias, el modelo a usar).
+Si tu trabajo diario es armar planillas, considera una herramienta de IA dedicada exclusivamente a spreadsheets, con configuración de contexto (tu rol, tus preferencias, el modelo a usar).
 
 ## Configuración recomendada
 
@@ -73,12 +73,12 @@ Para la mayoría de las personas:
 1. **Crear** con Claude Cowork → exportar a Google Sheets.
 2. **Editar** con un complemento de IA dentro de Google Sheets.
 
-Para usuarios avanzados de planillas: explorá herramientas dedicadas o modelos de programación (muy buenos, pero más costosos).
+Para usuarios avanzados de planillas: explora herramientas dedicadas o modelos de programación (muy buenos, pero más costosos).
 
 ## Ejemplo: proyección de ingresos lista para directorio
 
 ```
-Creá una planilla de Excel: proyección de ingresos a 12 meses para una
+Crea una planilla de Excel: proyección de ingresos a 12 meses para una
 consultora de IA, de julio 2026 a junio 2027.
 
 Propósito: proyección lista para directorio, para planificar contrataciones
@@ -100,7 +100,7 @@ Hojas necesarias:
 Formato: moneda USD, porcentajes, encabezados fijos, formato condicional,
 paleta prolija para proyectar en directorio.
 
-Antes de construir, listame tus 10 principales supuestos para revisarlos.
+Antes de construir, lístame tus 10 principales supuestos para revisarlos.
 ```
 
 Resultado esperado: varias pestañas conectadas, cientos de fórmulas funcionando de punta a punta.

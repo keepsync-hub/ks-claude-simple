@@ -10,7 +10,7 @@ Una semana para implementar Claude puertas adentro. Entre 15 y 60 minutos por d�
 
 ## Configuración: el plan Team de Claude
 
-Andá a claude.com/pricing/team.
+Anda a claude.com/pricing/team.
 
 - Mínimo 5 puestos, máximo 150.
 - Claude **no** entrena con tus datos (como todo plan empresarial de IA).
@@ -20,7 +20,7 @@ Andá a claude.com/pricing/team.
 
 El objetivo: crear un Proyecto separado para cada tarea que tu equipo repite.
 
-### Paso 1: dejá que Claude identifique qué Proyectos necesitás
+### Paso 1: deja que Claude identifique qué Proyectos necesitas
 
 ```
 Trabajo en [empresa + industria]. Mi equipo ayuda a [clientes] a [lograr objetivos].
@@ -28,7 +28,7 @@ Me estás ayudando a configurar Claude para mi equipo. Necesitamos identificar l
 3 a 5 entregables recurrentes que produce mi equipo, para crear un Proyecto de
 Claude para cada uno.
 
-Entrevistame. Preguntame UNA cosa a la vez sobre:
+Entrevístame. Pregúntame UNA cosa a la vez sobre:
 1. Qué hace mi equipo día a día
 2. Qué le entregamos a clientes, a liderazgo o entre nosotros
 3. Qué tareas se sienten repetitivas cada semana o mes
@@ -38,42 +38,42 @@ Cuando tengas suficiente contexto, dame:
 1. Una lista numerada de 3 a 5 entregables recurrentes
 2. Un nombre de Proyecto sugerido para cada uno
 3. Una lista de documentos para subir a cada Proyecto
-Empezá ahora. Usá AskUserQuestion.
+Empieza ahora. Usa AskUserQuestion.
 ```
 
-### Paso 2: creá los Proyectos
+### Paso 2: crea los Proyectos
 
-Claude → Proyectos → Team → Nuevo Proyecto. Hacé cada uno compartido.
+Claude → Proyectos → Team → Nuevo Proyecto. Haz cada uno compartido.
 
-### Paso 3: cargá cada Proyecto con el contexto correcto
+### Paso 3: carga cada Proyecto con el contexto correcto
 
-Subí solo lo que cada Proyecto necesita: un buen ejemplo de ese entregable (el "estándar de oro"), algún documento de contexto relevante, el brief o plantilla que sigue tu equipo hoy.
+Sube solo lo que cada Proyecto necesita: un buen ejemplo de ese entregable (el "estándar de oro"), algún documento de contexto relevante, el brief o plantilla que sigue tu equipo hoy.
 
-### Paso 4: generá instrucciones a medida para cada Proyecto
+### Paso 4: genera instrucciones a medida para cada Proyecto
 
 ```
 Estoy configurando este Proyecto de Claude para: [NOMBRE DEL ENTREGABLE]
-Generá un set de instrucciones con:
+Genera un set de instrucciones con:
 - QUÉ ES ESTE ENTREGABLE
 - PARA QUIÉN ES
 - TONO Y FORMATO
 - ESTÁNDAR DE CALIDAD
 - LÍMITES (qué nunca hacer)
-Formatealo como un bloque de instrucciones listo para pegar.
+Formatéalo como un bloque de instrucciones listo para pegar.
 ```
 
-### Paso 5: probá y validá
+### Paso 5: prueba y valida
 
 ```
-Con las instrucciones y los ejemplos de este Proyecto, generá un [NOMBRE DEL
+Con las instrucciones y los ejemplos de este Proyecto, genera un [NOMBRE DEL
 ENTREGABLE] de muestra para [un escenario reciente o ficticio].
-Después criticá tu propio resultado: qué cumple con nuestro estándar y qué no.
+Después critica tu propio resultado: qué cumple con nuestro estándar y qué no.
 ```
 
 ## Martes: crear plantillas de prompt (15-25 min)
 
 ```
-Con las instrucciones de este Proyecto, escribime el prompt más corto posible
+Con las instrucciones de este Proyecto, escríbeme el prompt más corto posible
 que mis compañeros puedan copiar y pegar para producir este entregable.
 Reglas:
 1. Una sola frase como máximo
@@ -82,15 +82,15 @@ Reglas:
 
 ## Miércoles: buscar el "wow" (20-30 min)
 
-1. Elegí una tarea de esta semana que tomó más de 30 minutos.
-2. Correla con tu sistema nuevo.
-3. Capturá el antes/después — esto se vuelve tu momento "wow" para la adopción.
+1. Elige una tarea de esta semana que tomó más de 30 minutos.
+2. Córrela con tu sistema nuevo.
+3. Captura el antes/después — esto se vuelve tu momento "wow" para la adopción.
 
-## Jueves: convertí a 1 persona (35 min en total)
+## Jueves: convierte a 1 persona (35 min en total)
 
-**Elegí bien a quién:** ni el más entusiasta de la tecnología, ni el más escéptico. La persona que está ahogada — atrasada con emails, quedándose hasta tarde.
+**Elige bien a quién:** ni el más entusiasta de la tecnología, ni el más escéptico. La persona que está ahogada — atrasada con emails, quedándose hasta tarde.
 
-**Mandale este mensaje:**
+**Mándale este mensaje:**
 
 ```
 Hola [nombre] — armé algo que te puede ahorrar tiempo de verdad en [tarea
@@ -100,11 +100,11 @@ email/brief] real de esta semana. No hace falta que prepares nada.
 
 **La sesión de 15 minutos:**
 
-1. Abrí el Proyecto del lunes.
-2. Copiá y pegá la plantilla del martes.
-3. Mostrá el efecto "wow" del miércoles.
+1. Abre el Proyecto del lunes.
+2. Copia y pega la plantilla del martes.
+3. Muestra el efecto "wow" del miércoles.
 
-**Hacela co-dueña:** agregala al Proyecto. Mostrale dónde viven las plantillas. Preguntale: "¿qué otras tareas deberíamos convertir en plantilla?"
+**Hazla co-dueña:** agrégala al Proyecto. Muéstrale dónde viven las plantillas. Pregúntale: "¿qué otras tareas deberíamos convertir en plantilla?"
 
 ## Viernes: lanzamiento al equipo (60 min)
 
@@ -115,14 +115,14 @@ email/brief] real de esta semana. No hace falta que prepares nada.
 - ✓ Comprobantes de antes/después listos (miércoles)
 - ✓ Una persona del equipo que lo pueda avalar (jueves)
 
-### Generá tu mensaje de lanzamiento
+### Genera tu mensaje de lanzamiento
 
 ```
-Escribí un anuncio de Slack para nuestro nuevo espacio de trabajo de Claude.
-1. Empezá con UN resultado concreto de mi prueba esta semana
-2. Explicá en una frase qué es el Proyecto compartido
-3. Listá 3 cosas que pueden hacer YA MISMO
-4. Terminá con: "Probá [plantilla] en tu próxima [tarea]. Toma 2 minutos."
+Escribe un anuncio de Slack para nuestro nuevo espacio de trabajo de Claude.
+1. Empieza con UN resultado concreto de mi prueba esta semana
+2. Explica en una frase qué es el Proyecto compartido
+3. Lista 3 cosas que pueden hacer YA MISMO
+4. Termina con: "Prueba [plantilla] en tu próxima [tarea]. Toma 2 minutos."
 Máximo 150 palabras. Tono informal, no corporativo.
 ```
 

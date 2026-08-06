@@ -12,20 +12,20 @@ Claude Design es un producto aparte — diseña. Vive en **claude.ai/design**. C
 
 Claude Design tiene su propia URL: **claude.ai/design**
 
-- **Plan Pro o Max:** entrá a claude.ai/design e iniciá sesión.
+- **Plan Pro o Max:** entra a claude.ai/design e inicia sesión.
 - **Team o Enterprise:** un admin debe habilitarlo: Configuración de la organización → Capacidades → Anthropic Labs → activar.
 
-Consume tokens muy rápido. Usalo con cuidado.
+Consume tokens muy rápido. Úsalo con cuidado.
 
 ## 2. Pruebas rápidas (menos de 2 min cada una)
 
 ### Prueba 1: crear un sitio web
 
-1. Andá a la pestaña "Wireframe" → seleccioná "Alta fidelidad".
-2. Pegá este prompt:
+1. Anda a la pestaña "Wireframe" → selecciona "Alta fidelidad".
+2. Pega este prompt:
 
 ```
-Creá una landing page de alta fidelidad para recaudar $[MONTO] de [INVERSORES]
+Crea una landing page de alta fidelidad para recaudar $[MONTO] de [INVERSORES]
 para "[NOMBRE DEL PRODUCTO]" - [descripción].
 Público objetivo: [tu público objetivo].
 Tono: [cómo debería sentirse el visitante] - mezcla de [sitio] + [sitio].
@@ -33,86 +33,86 @@ Tono: [cómo debería sentirse el visitante] - mezcla de [sitio] + [sitio].
 
 ### Prueba 2: armar una presentación
 
-Volvé al inicio → pestaña "Presentación".
+Vuelve al inicio → pestaña "Presentación".
 
 ```
-Creá una presentación para [propósito].
+Crea una presentación para [propósito].
 [Breve descripción del producto/servicio]
 ```
 
-Respondé las preguntas de Claude → obtenés la presentación completa.
+Responde las preguntas de Claude → obtienes la presentación completa.
 
 ### Prueba 3: crear un video animado
 
-Clic en "Desde plantilla". Escribí un prompt corto con una historia visual. Obtenés un video animado completo (45 segundos).
+Clic en "Desde plantilla". Escribe un prompt corto con una historia visual. Obtienes un video animado completo (45 segundos).
 
 ## 3. El truco del video (para conseguir mejores diapositivas)
 
-1. Usá Claude Research (clic en "+" → "Investigación") para generar un informe sobre un tema → descargalo en markdown.
-2. Subí ese markdown a Claude Design:
+1. Usa Claude Research (clic en "+" → "Investigación") para generar un informe sobre un tema → descárgalo en markdown.
+2. Sube ese markdown a Claude Design:
 
 ```
-Armá un video animado de 30 segundos que resuma este texto para alguien
+Arma un video animado de 30 segundos que resuma este texto para alguien
 que lo ve por primera vez.
 ```
 
-3. Después: "ahora convertí ese video en una presentación de diapositivas."
+3. Después: "ahora convierte ese video en una presentación de diapositivas."
 
-Las diapositivas salen mejor que si pedís la presentación directamente — porque el paso del video obliga a pensar visualmente primero.
+Las diapositivas salen mejor que si pides la presentación directamente — porque el paso del video obliga a pensar visualmente primero.
 
 ## 4. Flujo avanzado: de 0 a 1 (Cowork + Claude Design)
 
-### Paso 1: extraé tu sistema de marca con Cowork
+### Paso 1: extrae tu sistema de marca con Cowork
 
-Soltá todos tus assets de marca (logos, presentaciones, PDFs) en una carpeta. Abrí Cowork. Prompt:
+Suelta todos tus assets de marca (logos, presentaciones, PDFs) en una carpeta. Abre Cowork. Prompt:
 
 ```
-Analizá esta carpeta y armá un documento completo del sistema de diseño:
+Analiza esta carpeta y arma un documento completo del sistema de diseño:
 tipografías, colores, estilos gráficos, patrones de componentes, tono,
-convenciones de layout. Guardalo como DISEÑO.md en mi carpeta.
+convenciones de layout. Guárdalo como DISEÑO.md en mi carpeta.
 ```
 
-### Paso 2: subí DISEÑO.md a Claude Design
+### Paso 2: sube DISEÑO.md a Claude Design
 
-Cargalo como contexto. Cada prompt futuro lo aplica automáticamente.
+Cárgalo como contexto. Cada prompt futuro lo aplica automáticamente.
 
-### Paso 3: generá con un buen prompt
+### Paso 3: genera con un buen prompt
 
 Todo buen prompt tiene 4 entradas: **objetivo, layout, contenido, restricciones.**
 
 ```
-Armá una página de precios para [producto]. 3 planes, toggle anual/mensual,
-CTA fijo en mobile. Mobile-first y responsive. Usá nuestro componente de
+Arma una página de precios para [producto]. 3 planes, toggle anual/mensual,
+CTA fijo en mobile. Mobile-first y responsive. Usa nuestro componente de
 botón primario.
 ```
 
-### Paso 4: iterá
+### Paso 4: itera
 
 - Cambios estructurales → por chat.
 - Cambios de detalle (píxeles) → clic en editar sobre el lienzo.
 
-### Paso 5: validá
+### Paso 5: valida
 
 ```
-Revisá esto en términos de contraste y accesibilidad. Listá cualquier
+Revisa esto en términos de contraste y accesibilidad. Lista cualquier
 violación de WCAG 2.1 AA.
 ```
 ```
-Generá las versiones de escritorio, tablet y mobile.
+Genera las versiones de escritorio, tablet y mobile.
 ```
 
-### Paso 6: exportá
+### Paso 6: exporta
 
 Botón Exportar (arriba a la derecha): enviar a Canva, PPTX, PDF, HTML independiente, o paquete para Claude Code.
 
-## 5. Copiá cualquier diseño
+## 5. Copia cualquier diseño
 
 Existen sitios con archivos DISEÑO.md gratuitos de marcas conocidas (Mastercard, Airbnb, Ferrari, etc.).
 
-1. Buscá una marca (ej.: "Stripe").
-2. Descargá su DISEÑO.md.
-3. Subilo a Claude Design.
-4. Sumá el brief de tu producto.
+1. Busca una marca (ej.: "Stripe").
+2. Descarga su DISEÑO.md.
+3. Súbelo a Claude Design.
+4. Suma el brief de tu producto.
 
 Ahora tu producto se ve con el sistema de diseño de esa marca.
 
