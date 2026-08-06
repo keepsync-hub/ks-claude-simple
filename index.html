@@ -7,163 +7,213 @@
 <meta name="description" content="Taller en vivo y gratuito para aprender a usar Claude desde cero. Cupos limitados.">
 <style>
   :root {
-    --bg: #faf9f7;
-    --bg-alt: #ffffff;
-    --text: #1a1a1a;
-    --text-muted: #5b5b5b;
-    --border: #e6e2dc;
-    --accent: #c96442;
-    --accent-dark: #a8492e;
-    --accent-tint: #fbeee7;
-    --shadow: 0 8px 24px rgba(0,0,0,0.06);
+    --ink: #0a0a0a;
+    --paper: #fdf6e9;
+    --panel: #ffffff;
+    --text-muted: #454138;
+    --yellow: #ffd400;
+    --pink: #ff5fa2;
+    --blue: #57b8ff;
+    --green: #5ee69c;
+    --shadow-off: 6px;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #171512;
-      --bg-alt: #1f1c18;
-      --text: #f2ede6;
-      --text-muted: #b5aea3;
-      --border: #34302a;
-      --accent: #e8825f;
-      --accent-dark: #f0967a;
-      --accent-tint: #2c1f19;
-      --shadow: 0 8px 24px rgba(0,0,0,0.35);
+      --ink: #f3f0e8;
+      --paper: #121212;
+      --panel: #1c1a17;
+      --text-muted: #b9b3a6;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #171512; --bg-alt: #1f1c18; --text: #f2ede6; --text-muted: #b5aea3;
-    --border: #34302a; --accent: #e8825f; --accent-dark: #f0967a; --accent-tint: #2c1f19;
-    --shadow: 0 8px 24px rgba(0,0,0,0.35);
+    --ink: #f3f0e8; --paper: #121212; --panel: #1c1a17; --text-muted: #b9b3a6;
   }
   :root[data-theme="light"] {
-    --bg: #faf9f7; --bg-alt: #ffffff; --text: #1a1a1a; --text-muted: #5b5b5b;
-    --border: #e6e2dc; --accent: #c96442; --accent-dark: #a8492e; --accent-tint: #fbeee7;
-    --shadow: 0 8px 24px rgba(0,0,0,0.06);
+    --ink: #0a0a0a; --paper: #fdf6e9; --panel: #ffffff; --text-muted: #454138;
   }
+
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
-    line-height: 1.55;
+    background: var(--paper);
+    background-image:
+      radial-gradient(circle, color-mix(in srgb, var(--ink) 14%, transparent) 1.5px, transparent 1.5px);
+    background-size: 22px 22px;
+    color: var(--ink);
+    font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
+    line-height: 1.5;
   }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  h1, h2, h3 { font-family: inherit; font-weight: 900; letter-spacing: -0.02em; text-wrap: balance; }
+
+  .brutal-border { border: 3px solid var(--ink); }
+  .brutal-shadow { box-shadow: var(--shadow-off) var(--shadow-off) 0 0 var(--ink); }
+
+  /* ---------- HERO ---------- */
   header.hero {
-    padding: 72px 0 56px;
+    background: var(--yellow);
+    border-bottom: 4px solid var(--ink);
+    padding: 64px 0 52px;
     text-align: center;
+    color: #0a0a0a;
+    position: relative;
+    overflow: hidden;
   }
   .badge {
     display: inline-block;
-    background: var(--accent-tint);
-    color: var(--accent-dark);
-    border: 1px solid var(--accent);
-    border-radius: 999px;
-    padding: 6px 16px;
+    background: var(--pink);
+    color: #0a0a0a;
+    border: 3px solid var(--ink);
+    box-shadow: 4px 4px 0 0 var(--ink);
+    padding: 7px 18px;
+    font-family: "Courier New", monospace;
+    font-weight: 800;
     font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    transform: rotate(-2deg);
+    margin-bottom: 26px;
   }
   h1 {
-    font-size: clamp(28px, 5vw, 44px);
-    line-height: 1.15;
-    margin: 0 0 16px;
-    font-weight: 700;
-    letter-spacing: -0.01em;
+    font-size: clamp(30px, 5.4vw, 50px);
+    line-height: 1.08;
+    margin: 0 0 18px;
+    text-transform: uppercase;
+  }
+  h1 mark {
+    background: var(--ink);
+    color: var(--yellow);
+    padding: 0 8px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
   .subtitle {
     font-size: clamp(16px, 2.4vw, 19px);
-    color: var(--text-muted);
+    color: #1a1a1a;
     max-width: 620px;
-    margin: 0 auto 32px;
+    margin: 0 auto 34px;
+    font-weight: 600;
   }
   .cta-btn {
     display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    font-weight: 600;
+    background: var(--ink);
+    color: var(--paper);
+    font-weight: 800;
     font-size: 16px;
-    padding: 14px 32px;
-    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    padding: 16px 34px;
     text-decoration: none;
-    border: none;
+    border: 3px solid var(--ink);
+    box-shadow: 6px 6px 0 0 #0a0a0a;
     cursor: pointer;
-    transition: background 0.15s ease, transform 0.15s ease;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
   }
-  .cta-btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+  header.hero .cta-btn { box-shadow: 6px 6px 0 0 rgba(10,10,10,0.55); }
+  .cta-btn:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 0 #0a0a0a; }
+  .cta-btn:active { transform: translate(4px, 4px); box-shadow: 0 0 0 0 #0a0a0a; }
+
   .meta-row {
-    margin-top: 18px;
-    font-size: 14px;
-    color: var(--text-muted);
+    margin-top: 22px;
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a1a;
     display: flex;
-    gap: 18px;
+    gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
   }
-  .meta-row span { display: flex; align-items: center; gap: 6px; }
+  .meta-row span {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 5px 10px;
+    text-transform: uppercase;
+  }
 
-  section { padding: 48px 0; border-top: 1px solid var(--border); }
+  /* ---------- SECTIONS ---------- */
+  section { padding: 56px 0; border-bottom: 3px solid var(--ink); }
   h2 {
-    font-size: clamp(22px, 3.4vw, 28px);
-    margin: 0 0 24px;
-    font-weight: 700;
+    font-size: clamp(24px, 3.6vw, 32px);
+    margin: 0 0 28px;
+    text-transform: uppercase;
+    display: inline-block;
+    border-bottom: 5px solid var(--pink);
+    padding-bottom: 6px;
   }
 
-  .grid-3 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
-  }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; margin-top: 8px; }
   .card {
-    background: var(--bg-alt);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 22px;
-    box-shadow: var(--shadow);
+    background: var(--panel);
+    border: 3px solid var(--ink);
+    box-shadow: 6px 6px 0 0 var(--ink);
+    padding: 24px;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
   }
-  .card h3 { margin: 0 0 8px; font-size: 17px; }
-  .card p { margin: 0; color: var(--text-muted); font-size: 14.5px; }
+  .card:nth-child(1) { transform: rotate(-1.2deg); }
+  .card:nth-child(2) { transform: rotate(0.8deg); }
+  .card:nth-child(3) { transform: rotate(-0.6deg); }
+  .card:hover { transform: translate(-3px, -3px) rotate(0deg); box-shadow: 9px 9px 0 0 var(--ink); }
+  .card .swatch {
+    display: inline-block;
+    width: 34px; height: 34px;
+    border: 3px solid var(--ink);
+    margin-bottom: 14px;
+  }
+  .card:nth-child(1) .swatch { background: var(--yellow); }
+  .card:nth-child(2) .swatch { background: var(--pink); }
+  .card:nth-child(3) .swatch { background: var(--blue); }
+  .card h3 { margin: 0 0 8px; font-size: 18px; text-transform: uppercase; }
+  .card p { margin: 0; color: var(--text-muted); font-size: 14.5px; font-weight: 500; }
 
-  ol.agenda { list-style: none; padding: 0; margin: 0; counter-reset: step; }
+  ol.agenda { list-style: none; padding: 0; margin: 0; counter-reset: step; display: flex; flex-direction: column; gap: 14px; }
   ol.agenda li {
     counter-increment: step;
     display: flex;
-    gap: 16px;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--border);
+    gap: 18px;
+    align-items: flex-start;
+    background: var(--panel);
+    border: 3px solid var(--ink);
+    box-shadow: 5px 5px 0 0 var(--ink);
+    padding: 16px 18px;
   }
-  ol.agenda li:last-child { border-bottom: none; }
   ol.agenda li::before {
-    content: counter(step);
-    flex: 0 0 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--accent-tint);
-    color: var(--accent-dark);
-    font-weight: 700;
-    font-size: 14px;
+    content: counter(step, decimal-leading-zero);
+    flex: 0 0 44px;
+    height: 44px;
+    border: 3px solid var(--ink);
+    background: var(--yellow);
+    color: #0a0a0a;
+    font-family: "Courier New", monospace;
+    font-weight: 800;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .agenda-title { font-weight: 600; margin: 0 0 2px; }
-  .agenda-desc { color: var(--text-muted); font-size: 14.5px; margin: 0; }
+  ol.agenda li:nth-child(2)::before { background: var(--pink); }
+  ol.agenda li:nth-child(3)::before { background: var(--blue); }
+  ol.agenda li:nth-child(4)::before { background: var(--green); }
+  ol.agenda li:nth-child(5)::before { background: var(--yellow); }
+  .agenda-title { font-weight: 800; margin: 0 0 3px; text-transform: uppercase; font-size: 15.5px; }
+  .agenda-desc { color: var(--text-muted); font-size: 14.5px; margin: 0; font-weight: 500; }
 
+  /* ---------- SIGNUP ---------- */
   .signup {
-    background: var(--bg-alt);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 40px;
-    box-shadow: var(--shadow);
+    background: var(--ink);
+    color: var(--paper);
+    border: 4px solid var(--ink);
+    box-shadow: 10px 10px 0 0 var(--pink);
+    padding: 44px 36px;
     text-align: center;
   }
-  .signup h2 { margin-bottom: 8px; }
-  .signup p.lead { color: var(--text-muted); margin: 0 0 28px; }
+  .signup h2 { border-bottom-color: var(--yellow); color: var(--paper); }
+  .signup p.lead { color: var(--paper); opacity: 0.85; margin: 0 0 30px; font-weight: 600; }
   form.signup-form {
     display: flex;
-    gap: 10px;
-    max-width: 460px;
+    gap: 12px;
+    max-width: 480px;
     margin: 0 auto;
     flex-wrap: wrap;
     justify-content: center;
@@ -171,44 +221,55 @@
   form.signup-form input[type="email"],
   form.signup-form input[type="text"] {
     flex: 1 1 220px;
-    padding: 13px 16px;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    background: var(--bg);
-    color: var(--text);
+    padding: 14px 16px;
+    border: 3px solid var(--paper);
+    background: var(--ink);
+    color: var(--paper);
     font-size: 15px;
+    font-weight: 600;
   }
-  form.signup-form input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
-  .fine-print { margin-top: 14px; font-size: 12.5px; color: var(--text-muted); }
+  form.signup-form input::placeholder { color: var(--text-muted); }
+  form.signup-form input:focus { outline: none; box-shadow: 4px 4px 0 0 var(--yellow); }
+  .signup .cta-btn { background: var(--yellow); color: #0a0a0a; border-color: var(--paper); box-shadow: 6px 6px 0 0 var(--pink); }
+  .signup .cta-btn:hover { box-shadow: 8px 8px 0 0 var(--pink); }
+  .signup .cta-btn:active { box-shadow: 0 0 0 0 var(--pink); }
+  .fine-print { margin-top: 16px; font-size: 12.5px; color: var(--text-muted); }
   .confirm-msg {
     display: none;
-    margin-top: 18px;
-    font-weight: 600;
-    color: var(--accent-dark);
+    margin-top: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: var(--green);
+    color: #0a0a0a;
+    border: 3px solid var(--paper);
+    padding: 10px 16px;
   }
 
+  /* ---------- FAQ ---------- */
   .faq details {
-    background: var(--bg-alt);
-    border: 1px solid var(--border);
-    border-radius: 12px;
+    background: var(--panel);
+    border: 3px solid var(--ink);
+    box-shadow: 5px 5px 0 0 var(--ink);
     padding: 16px 20px;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
   }
-  .faq summary { font-weight: 600; cursor: pointer; }
-  .faq p { color: var(--text-muted); margin: 10px 0 0; font-size: 14.5px; }
+  .faq summary { font-weight: 800; cursor: pointer; text-transform: uppercase; font-size: 15px; }
+  .faq p { color: var(--text-muted); margin: 12px 0 0; font-size: 14.5px; font-weight: 500; }
 
   footer {
     padding: 40px 0 60px;
     text-align: center;
     color: var(--text-muted);
-    font-size: 13.5px;
+    font-size: 13px;
+    font-family: "Courier New", monospace;
   }
-  footer a { color: var(--accent-dark); }
+  footer a { color: var(--ink); font-weight: 700; }
 
   @media (max-width: 520px) {
     header.hero { padding: 48px 0 36px; }
-    section { padding: 36px 0; }
-    .signup { padding: 28px 20px; }
+    section { padding: 40px 0; }
+    .signup { padding: 30px 20px; box-shadow: 6px 6px 0 0 var(--pink); }
+    .card:nth-child(1), .card:nth-child(2), .card:nth-child(3) { transform: none; }
   }
 </style>
 </head>
@@ -217,11 +278,11 @@
 <header class="hero">
   <div class="wrap">
     <span class="badge">🎁 100% gratis · en español</span>
-    <h1>Claude 101: el taller en vivo para dejar de tenerle miedo a la IA</h1>
+    <h1>Claude 101: el taller en vivo para <mark>dejar de tenerle miedo</mark> a la IA</h1>
     <p class="subtitle">Una hora en vivo, en español, para que salgas usando Claude de verdad — no solo mirando tutoriales. Sin conocimientos previos.</p>
     <a href="#inscripcion" class="cta-btn">Reservar mi cupo gratis</a>
     <div class="meta-row">
-      <span>⏱️ 60 minutos en vivo</span>
+      <span>⏱️ 60 min en vivo</span>
       <span>💻 100% online</span>
       <span>🎟️ Cupos limitados</span>
     </div>
@@ -233,14 +294,17 @@
     <h2>Para quién es este taller</h2>
     <div class="grid-3">
       <div class="card">
+        <span class="swatch"></span>
         <h3>Nunca abriste Claude</h3>
         <p>Solo escuchaste hablar de la IA. Este taller es tu punto de partida, sin jerga técnica.</p>
       </div>
       <div class="card">
+        <span class="swatch"></span>
         <h3>Lo probaste una vez y no volviste</h3>
         <p>Vas a entender por qué no te funcionó y salir con un método que sí funciona.</p>
       </div>
       <div class="card">
+        <span class="swatch"></span>
         <h3>Querés usarlo de verdad en tu trabajo</h3>
         <p>Salís con flujos concretos: resumir, escribir, organizar y producir entregables reales.</p>
       </div>
@@ -334,7 +398,7 @@
 
 <footer>
   <div class="wrap">
-    <p>Claude Academy ES — un proyecto independiente en español para aprender Claude.<br>
+    <p>CLAUDE ACADEMY ES — proyecto independiente en español para aprender Claude.<br>
     No afiliado ni respaldado oficialmente por Anthropic. Ver el <a href="./README.md">catálogo completo de cursos</a>.</p>
   </div>
 </footer>
