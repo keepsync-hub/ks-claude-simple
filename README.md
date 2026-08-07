@@ -16,7 +16,8 @@ Todo el contenido es **gratuito**. La idea es simple: si te sirve, te quedas —
 
 ```
 ├── index.html          → Landing page: inscripción al taller gratuito "Claude 101"
-└── cursos/              → Los 19 cursos, en español, listos para leer
+├── cursos.html          → Catálogo web con acordeón, agrupado por nivel
+└── cursos/              → Los 19 cursos, en español, en markdown (fuente de cursos.html)
     ├── 00-mapa-de-cursos.md
     ├── 01-claude-para-principiantes.md
     ├── ...
@@ -32,13 +33,13 @@ Todo el contenido es **gratuito**. La idea es simple: si te sirve, te quedas —
 | 🟠 Avanzado | Tu propia voz, ahorro de tokens, Excel, escritura sin "olor a IA" | 6 guías |
 | 🔴 Experto | Conectores, Claude Code (vibecoding), uso seguro en el trabajo | 3 guías |
 
-Ver el mapa completo en [`cursos/00-mapa-de-cursos.md`](./cursos/00-mapa-de-cursos.md).
+Ver el catálogo completo en [`cursos.html`](./cursos.html) (acordeón navegable) o en [`cursos/00-mapa-de-cursos.md`](./cursos/00-mapa-de-cursos.md) (versión markdown).
 
 ## Empieza aquí
 
 1. **Lee la guía 01** — [Claude para principiantes](./cursos/01-claude-para-principiantes.md) (5 min).
 2. **Anótate al taller en vivo** — [Claude 101 gratis](./index.html): una hora en vivo para dejar de tener miedo y empezar a producir.
-3. **Recorre el mapa completo** a tu ritmo — cada guía indica nivel y tiempo estimado.
+3. **Recorre el catálogo completo** en [`cursos.html`](./cursos.html) a tu ritmo — cada guía indica nivel y tiempo estimado.
 
 ## Por qué existe este proyecto
 

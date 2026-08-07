@@ -1,0 +1,13 @@
+{
+  "name": "claude-academy-es",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Build script para generar cursos.html a partir de cursos/*.md",
+  "scripts": {
+    "build:cursos": "node scripts/build-cursos.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "marked": "^18.0.9"
+  }
+}

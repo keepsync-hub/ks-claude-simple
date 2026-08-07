@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo de cursos — Claude Academy ES</title>
+<meta name="description" content="Los 18 cursos gratuitos de Claude Academy ES, organizados por nivel. Abre cada uno para ver la guía completa.">
+<style>
+  :root {
+    --ink: #171310;
+    --paper: #fbf1e1;
+    --panel: #ffffff;
+    --text-body: #4a4234;
+    --text-soft: #635a48;
+    --signup-muted: #c2baad;
+    --yellow: #ffcf3f;
+    --coral: #ff6b47;
+    --pink: #ff5fa2;
+    --blue: #57b8ff;
+    --green: #4fd88a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #f3efe6;
+      --paper: #16140f;
+      --panel: #211d16;
+      --text-body: #d8d0bf;
+      --text-soft: #b8af9b;
+      --signup-muted: #4d4b45;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #f3efe6; --paper: #16140f; --panel: #211d16; --text-body: #d8d0bf; --text-soft: #b8af9b; --signup-muted: #4d4b45;
+  }
+  :root[data-theme="light"] {
+    --ink: #171310; --paper: #fbf1e1; --panel: #ffffff; --text-body: #4a4234; --text-soft: #635a48; --signup-muted: #c2baad;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    background-image:
+      radial-gradient(circle, color-mix(in srgb, var(--ink) 16%, transparent) 1.6px, transparent 1.6px);
+    background-size: 24px 24px;
+    color: var(--text-body);
+    font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+
+  h1, h2, h3 {
+    font-family: inherit;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  a { color: var(--ink); }
+
+  .mono {
+    font-family: "Courier New", monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 3px solid var(--ink);
+    border-radius: 999px;
+    box-shadow: 4px 4px 0 0 var(--ink);
+    padding: 8px 18px;
+    font-weight: 800;
+    font-size: 13px;
+  }
+
+  /* ---------- TOP NAV ---------- */
+  nav.topbar {
+    border-bottom: 3px solid var(--ink);
+    padding: 16px 0;
+  }
+  nav.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+  .brand .mark {
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--coral);
+    border: 3px solid #171310;
+    border-radius: 12px;
+    box-shadow: 3px 3px 0 0 #171310;
+    color: #171310;
+    font-weight: 800;
+    font-size: 15px;
+    font-family: "Courier New", monospace;
+    flex: none;
+  }
+  .brand .wordmark { font-weight: 800; font-size: 17px; letter-spacing: -0.01em; }
+  .crumb { font-size: 12.5px; color: var(--text-soft); display: none; }
+  @media (min-width: 640px) { .crumb { display: block; } }
+  .nav-cta {
+    background: var(--yellow);
+    color: #171310;
+    border-color: #171310;
+    box-shadow: 4px 4px 0 0 #171310;
+  }
+
+  /* ---------- PAGE HERO (compact) ---------- */
+  header.page-hero {
+    background: var(--yellow);
+    border-bottom: 3px solid #171310;
+    padding: 44px 0 40px;
+    color: #171310;
+  }
+  header.page-hero .badge {
+    background: #fff;
+    border-color: #171310;
+    box-shadow: 4px 4px 0 0 #171310;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  header.page-hero h1 {
+    font-size: clamp(28px, 4.6vw, 42px);
+    line-height: 1.12;
+    margin: 0 0 12px;
+    color: #171310;
+  }
+  header.page-hero p.subtitle {
+    font-size: clamp(15px, 2vw, 17px);
+    color: #33291d;
+    max-width: 640px;
+    margin: 0 0 22px;
+    font-weight: 500;
+  }
+  header.page-hero .cta-btn {
+    display: inline-block;
+    background: #171310;
+    color: #fff8ec;
+    font-weight: 800;
+    font-size: 14.5px;
+    padding: 12px 26px;
+    text-decoration: none;
+    border: 3px solid #171310;
+    border-radius: 999px;
+    box-shadow: 5px 5px 0 0 rgba(23,19,16,0.55);
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  header.page-hero .cta-btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 0 rgba(23,19,16,0.65); }
+
+  /* ---------- LEVEL GROUPS ---------- */
+  .level-group { padding: 40px 0; border-bottom: 3px solid var(--ink); }
+  .level-group:last-of-type { border-bottom: none; }
+  .level-heading {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(20px, 3vw, 25px);
+    margin: 0 0 22px;
+    padding: 8px 20px 8px 16px;
+    border: 3px solid var(--ink);
+    border-radius: 999px;
+    background: var(--panel);
+    box-shadow: 5px 5px 0 0 var(--ink);
+  }
+  .level-emoji { font-size: 20px; }
+  .level-heading.lvl-green { background: var(--green); }
+  .level-heading.lvl-yellow { background: var(--yellow); }
+  .level-heading.lvl-coral { background: var(--coral); color: #fff8ec; }
+  .level-heading.lvl-pink { background: var(--pink); }
+  .level-heading.lvl-green, .level-heading.lvl-yellow, .level-heading.lvl-pink { color: #171310; }
+
+  .accordion { display: flex; flex-direction: column; gap: 14px; }
+
+  .course-item {
+    background: var(--panel);
+    border: 3px solid var(--ink);
+    border-radius: 18px;
+    box-shadow: 6px 6px 0 0 var(--ink);
+    overflow: hidden;
+  }
+  .course-item > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 22px;
+  }
+  .course-item > summary::-webkit-details-marker { display: none; }
+  .course-item > summary::after {
+    content: '+';
+    flex: none;
+    width: 30px; height: 30px;
+    border: 2.5px solid var(--ink);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    font-weight: 800;
+    margin-left: 8px;
+  }
+  .course-item[open] > summary::after { content: '−'; }
+  .course-summary-main { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .course-title { font-weight: 800; font-size: 16.5px; color: var(--ink); }
+  .course-desc { font-size: 13.5px; color: var(--text-body); }
+  .course-meta {
+    flex: none;
+    font-size: 11px;
+    color: var(--text-soft);
+    white-space: nowrap;
+  }
+  .course-item[open] { box-shadow: 8px 8px 0 0 var(--ink); }
+  .course-item.lvl-green { border-left: 8px solid var(--green); }
+  .course-item.lvl-yellow { border-left: 8px solid var(--yellow); }
+  .course-item.lvl-coral { border-left: 8px solid var(--coral); }
+  .course-item.lvl-pink { border-left: 8px solid var(--pink); }
+
+  .course-body {
+    padding: 4px 24px 26px;
+    border-top: 3px solid var(--ink);
+    margin-top: 2px;
+  }
+  .course-body h2 {
+    font-size: 17.5px;
+    margin: 22px 0 10px;
+    padding-top: 14px;
+    border-top: 2px dashed color-mix(in srgb, var(--ink) 30%, transparent);
+  }
+  .course-body h2:first-child { border-top: none; padding-top: 18px; }
+  .course-body h3 { font-size: 15.5px; margin: 16px 0 8px; }
+  .course-body p { margin: 0 0 12px; font-size: 14.5px; color: var(--text-body); }
+  .course-body ul, .course-body ol { margin: 0 0 14px; padding-left: 22px; font-size: 14.5px; color: var(--text-body); }
+  .course-body li { margin-bottom: 5px; }
+  .course-body strong { color: var(--ink); }
+  .course-body a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--coral); text-underline-offset: 2px; }
+  .course-body blockquote {
+    margin: 0 0 14px;
+    padding: 10px 16px;
+    border-left: 4px solid var(--coral);
+    background: color-mix(in srgb, var(--yellow) 18%, transparent);
+    border-radius: 0 10px 10px 0;
+    font-size: 14px;
+  }
+  .course-body blockquote p { margin: 0; }
+  .course-body pre {
+    background: var(--ink);
+    color: var(--paper);
+    border: 3px solid var(--ink);
+    border-radius: 12px;
+    padding: 14px 16px;
+    overflow-x: auto;
+    margin: 0 0 14px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .course-body pre code { background: none; border: none; padding: 0; color: inherit; font-size: inherit; }
+  .course-body code {
+    font-family: "Courier New", monospace;
+    background: color-mix(in srgb, var(--text-soft) 18%, transparent);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 0.92em;
+  }
+  .course-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 16px;
+    font-size: 13.5px;
+    border: 2px solid var(--ink);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .course-body th, .course-body td {
+    border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+    padding: 8px 10px;
+    text-align: left;
+  }
+  .course-body th { background: var(--yellow); color: #171310; font-weight: 800; }
+  .course-body hr { border: none; border-top: 2px dashed color-mix(in srgb, var(--ink) 25%, transparent); margin: 18px 0; }
+  .course-body em { color: var(--text-soft); }
+
+  footer {
+    padding: 40px 0 60px;
+    text-align: center;
+    color: var(--text-soft);
+    font-size: 13px;
+  }
+  footer a { color: var(--ink); font-weight: 700; }
+
+  @media (max-width: 520px) {
+    .course-item > summary { padding: 14px 16px; }
+    .course-body { padding: 4px 16px 20px; }
+    .course-meta { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="wrap">
+    <a href="./index.html" class="brand">
+      <span class="mark">CA</span>
+      <span class="wordmark">Claude Academy ES</span>
+    </a>
+    <span class="crumb mono">Inicio / Cursos</span>
+    <a href="./index.html#inscripcion" class="pill mono nav-cta">Taller gratis</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <span class="pill badge mono">📚 18 guías · 100% gratis</span>
+    <h1>El catálogo completo de Claude Academy ES</h1>
+    <p class="subtitle">De principiante a experto, en español. Toca un curso para abrirlo y ver la guía completa: pasos, prompts listos para copiar y trucos.</p>
+    <a href="./index.html" class="cta-btn">← Volver al inicio</a>
+  </div>
+</header>
+
+
+<section class="level-group">
+  <div class="wrap">
+    <h2 class="level-heading lvl-green"><span class="level-emoji">🟢</span> Nivel Principiante</h2>
+    <div class="accordion">
+
+      <details class="course-item lvl-green" id="01-claude-para-principiantes">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">Claude para principiantes</span>
+            <span class="course-desc">Si nunca abriste Claude, empieza aquí.</span>
+          </span>
+          <span class="course-meta mono">5 minutos</span>
+        </summary>
+        <div class="course-body">
+<p>Más del 98% de las personas nunca probó Claude. Ni una sola vez. Esta guía cierra esa brecha.</p>
+<h2>1. ¿Qué es Claude?</h2>
+<p>Claude es una IA con la que conversas: escribes algo, te responde. Puede escribir, pensar, resumir, analizar documentos, trabajar con tus archivos y ayudarte a tomar decisiones.</p>
+<p>La hace <strong>Anthropic</strong>. Si usaste ChatGPT antes, Claude es lo mismo tipo de herramienta, con otro enfoque.</p>
+<h3>Cómo funciona en 30 segundos</h3>
+<ol>
+<li><strong>Autocompletado a gran escala.</strong> Claude predice la próxima palabra, miles de millones de veces por respuesta. Por eso suena seguro incluso cuando se equivoca.</li>
+<li><strong>Complacencia entrenada.</strong> Claude está entrenado para ser útil y estar de acuerdo contigo. El efecto secundario: si dices algo falso, puede asentir en vez de corregirte.</li>
+<li><strong>Tokens.</strong> Claude lee y escribe en fragmentos llamados tokens (aproximadamente una palabra). Cada conversación tiene un límite de tokens.</li>
+</ol>
+<blockquote>
+<p>★ Para recordar: Claude es una máquina de autocompletado a escala sobrehumana. Suena seguro porque está entrenado para estar de acuerdo contigo.</p>
+</blockquote>
+<h2>2. Claude vs. ChatGPT</h2>
+<p><strong>Dónde gana Claude:</strong></p>
+<ul>
+<li>Escritura con voz propia — el estilo por defecto suena menos &quot;a IA&quot;</li>
+<li>Documentos largos — puede leer un documento de 200 páginas de una sola vez</li>
+<li>Trabajo con archivos — la app de escritorio ve tu carpeta local</li>
+<li>Tareas de varios pasos — Cowork corre tareas de minutos a horas</li>
+</ul>
+<p><strong>Dónde sigue ganando ChatGPT:</strong></p>
+<ul>
+<li>Modo de voz, generación de imágenes, búsqueda, investigación profunda, soporte multilingüe</li>
+</ul>
+<blockquote>
+<p>✓ Tip: no hace falta elegir uno solo. Claude para escritura y trabajo largo. ChatGPT para voz, imágenes y búsquedas rápidas.</p>
+</blockquote>
+<h2>3. Cómo conseguir Claude (y cuánto cuesta)</h2>
+<p>Anda a <strong>claude.ai</strong> y regístrate con tu email.</p>
+<table>
+<thead>
+<tr>
+<th>Plan</th>
+<th>Precio</th>
+<th>Qué incluye</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Free</td>
+<td>$0</td>
+<td>Navegador, mensajes limitados por día, sin Cowork</td>
+</tr>
+<tr>
+<td>Pro</td>
+<td>~US$20/mes</td>
+<td>Mejor modelo (Opus), más uso, Cowork, Proyectos</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>~US$100-200/mes</td>
+<td>Uso intensivo, para power users diarios</td>
+</tr>
+</tbody></table>
+<p><strong>Regla simple:</strong> Free si todavía estás decidiendo. Pro si vas a usarlo más de 3 veces por semana. Max si Pro se te queda corto.</p>
+<h2>4. Los tres &quot;Claude&quot;</h2>
+<ol>
+<li><strong>Claude en el navegador</strong> (claude.ai) — preguntas, te responde. Ideal para borradores y resúmenes rápidos.</li>
+<li><strong>Claude de escritorio</strong> (app Mac/Windows) — mismo usuario, pero puede ver tus archivos locales. Desbloquea Chat, Cowork y Code.</li>
+<li><strong>Cowork</strong> (dentro de la app de escritorio) — hace trabajo real durante minutos u horas mientras tú haces otra cosa. Solo en planes pagos.</li>
+</ol>
+<blockquote>
+<p>★ Navegador = preguntar. Escritorio = preguntar + ver tus archivos. Cowork = preguntar + ver + trabajar mientras tomas un café.</p>
+</blockquote>
+<h2>5. Cómo hablarle a Claude</h2>
+<ol>
+<li><strong>Sé específico.</strong> &quot;Escríbeme un email&quot; es vago. &quot;Escribe un email de seguimiento a una clienta llamada Sara que faltó a la llamada del martes, tono amable pero firme, máximo 4 frases&quot; es accionable.</li>
+<li><strong>Dale ejemplos.</strong> Pega algo que escribiste y te gustó. Dile: &quot;escribe así.&quot;</li>
+<li><strong>Di lo que quieres, no lo que no quieres.</strong> &quot;Escríbelo como un mensaje a un colega&quot; funciona mejor que &quot;no lo hagas tan formal.&quot;</li>
+<li><strong>Empieza corto, suma detalle.</strong> Arranca con dos frases y anda afinando.</li>
+<li><strong>Si se confunde, arranca de nuevo.</strong> Un chat nuevo es gratis.</li>
+</ol>
+<blockquote>
+<p>⚠ Aviso: Claude siempre te va a dar una respuesta. Eso no significa que sea correcta.</p>
+</blockquote>
+<h2>6. En qué es bueno Claude</h2>
+<p>Escritura, resúmenes, pensar en voz alta contigo, trabajar con tus archivos, documentos largos, razonamiento paso a paso.</p>
+<h2>7. En qué es malo Claude</h2>
+<p>Información en tiempo real, matemática precisa, prompts vagos, ser fuente de verdad (verifica siempre fechas, cifras y nombres), generación de imágenes.</p>
+<h2>8. Tres palabras clave</h2>
+<ul>
+<li><strong>Token</strong> — la unidad en la que Claude piensa. Una página ronda los 500 tokens.</li>
+<li><strong>Cowork</strong> — Claude trabajando minutos u horas en tu computadora mientras haces otra cosa.</li>
+<li><strong>Claude Code</strong> — Claude corriendo en tu terminal, pensado para developers. Cowork cubre el 80% de eso para quienes no programan.</li>
+</ul>
+<h2>9. Diez cosas para probar tu primera semana</h2>
+<ol>
+<li>Pega 3 posts de LinkedIn y pídele 3 nuevos con el mismo tono.</li>
+<li>Sube un PDF de 50 páginas y pide un resumen de una página con referencias.</li>
+<li>Sube tus últimas 5 minutas de reunión y pide un registro de decisiones.</li>
+<li>Apunta Cowork a tu carpeta de Descargas y pregúntale qué hay ahí.</li>
+<li>Pega un hilo de emails desordenado y pide las 3 próximas acciones.</li>
+<li>Conecta tu Gmail a Claude.</li>
+<li>Dale un Google Doc que tenías pendiente de editar.</li>
+<li>Sube una planilla y pregúntale qué patrones nota.</li>
+<li>Pega la página de precios de un competidor y pide una comparación.</li>
+<li>Dale tu calendario de la semana y pregunta qué podrías rechazar.</li>
+</ol>
+<h2>Por dónde arrancar</h2>
+<ol>
+<li>Descarga la app de Claude.</li>
+<li>Juega primero con el modo Chat.</li>
+<li>Paga un mes del plan de US$20 para desbloquear Cowork.</li>
+<li>Pídele un entregable difícil (Excel, PDF, HTML).</li>
+<li>Sorpréndete. Empieza tu propio camino de descubrimiento.</li>
+</ol>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;Claude For Dummies&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+      <details class="course-item lvl-green" id="02-ser-bueno-en-ia-es-simple">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">Ser bueno con la IA es (increíblemente) simple</span>
+            <span class="course-desc">En serio, es increíblemente simple.</span>
+          </span>
+          <span class="course-meta mono">5 minutos</span>
+        </summary>
+        <div class="course-body">
+<blockquote>
+<p>la IA no es tan difícil. la IA es así de simple.</p>
+</blockquote>
+<h2>Nivel 1: Empieza con Claude</h2>
+<ol>
+<li>Anda a claude.ai</li>
+<li>Crea una cuenta nueva (verifica tu teléfono)</li>
+<li>Abajo a la derecha: elige el modelo. Quieres <strong>Opus</strong> (pago), no Sonnet (gratis), para tareas exigentes.</li>
+<li>Activa el nivel de razonamiento en <strong>Alto</strong>. Activa <strong>Thinking</strong>.</li>
+</ol>
+<h3>El truco: pídele que te pregunte primero</h3>
+<p>No necesitas saber &quot;promptear&quot; como ingeniero. Usa esto:</p>
+<pre><code>Ayúdame a hacer [X] para [Y]. Usa AskUserQuestion primero.
+</code></pre>
+<p>Claude te hace las preguntas a ti en vez de que tú le escribas un prompt mediocre. Suele tener entre 3 y 5 preguntas — cuanto más cuentas, mejor la respuesta.</p>
+<blockquote>
+<p>Esa sola línea, &quot;pregúntame primero&quot;, te convierte en usuario avanzado.</p>
+</blockquote>
+<h2>Nivel 2: Háblale a tu computadora</h2>
+<p>Hablas cuatro veces más rápido de lo que escribes. Usa una herramienta de dictado por voz (gratis): hablas y la computadora escribe. Funciona en toda tu computadora.</p>
+<h2>Nivel 3: Consigue la app de Claude</h2>
+<p>Descarga la app en claude.com/download → abre la pestaña <strong>Cowork</strong> (arriba, al lado de Chat).</p>
+<p><strong>Qué hace distinto Cowork:</strong></p>
+<ul>
+<li>En el navegador, Claude responde → tú copias y pegas el resultado.</li>
+<li>Cowork crea el archivo real y lo guarda en tu computadora.</li>
+<li>El PDF real. La planilla real. En tu carpeta.</li>
+</ul>
+<h3>Configuración inicial</h3>
+<ol>
+<li>Crea una carpeta en tu computadora. Llámala &quot;cowork&quot;.</li>
+<li>Adentro de Cowork → &quot;Trabajar en un proyecto&quot; → selecciona esa carpeta.</li>
+<li>Suelta un documento desordenado, una propuesta vieja, los números del mes pasado — lo que tengas.</li>
+<li>Usa: &quot;ármame una planilla para hacer [x]. Pero pregúntame qué necesitas primero.&quot;</li>
+<li>Tres minutos después: un Excel prolijo en tu computadora.</li>
+</ol>
+<h2>Nivel 4: Conecta tus aplicaciones</h2>
+<p>Menú izquierdo → &quot;personalizar&quot; → &quot;conectores&quot;. Conecta Claude a Gmail, Calendario, notas de reuniones (Granola, Otter).</p>
+<blockquote>
+<p>La IA solo necesita contexto. Necesita conocerte. Es simple.</p>
+</blockquote>
+<h2>Nivel 5: Entrena a Claude en nuevas habilidades</h2>
+<p>Menú izquierdo → &quot;personalizar&quot; → &quot;skills&quot; (habilidades). Las Skills son manuales que Claude ejecuta solo cuando la tarea encaja — como un empleado que ya conoce el procedimiento para hacer [X].</p>
+<ol>
+<li>Escribe <code>/ski…</code> y haz clic en <strong>skill-creator</strong>.</li>
+<li>Cuéntale qué necesitas: &quot;quiero enseñarle a Claude a armar planillas de Excel como me gustan a mí.&quot;</li>
+<li>Agrega &quot;pero pregúntame primero&quot; al final.</li>
+<li>Responde las preguntas.</li>
+<li>Guarda la Skill.</li>
+<li>Ahora escribe <code>/mi-estilo-excel</code> en tu próximo prompt.</li>
+</ol>
+<h2>Jefe final: programar</h2>
+<p>No sabes programar. No importa. Igual puedes armar un sitio o una app real esta noche, en español, con palabras comunes.</p>
+<p>En la app → abre <strong>Claude Code</strong> (pestaña <code>&lt;/&gt;</code> en el menú izquierdo). Activa el modo &quot;Bypass permissions&quot;.</p>
+<p>Usa el mismo truco:</p>
+<pre><code>Arma una página donde la gente pueda reservar una llamada de 30 minutos conmigo. Pregúntame primero.
+</code></pre>
+<p>Cuatro minutos después: un formulario de reservas funcionando, en vivo.</p>
+<h2>Resumen</h2>
+<ol>
+<li><strong>Nivel 1:</strong> entra a claude.ai, elige Opus, usa &quot;pregúntame primero&quot;.</li>
+<li><strong>Nivel 2:</strong> háblale a tu computadora en vez de escribir.</li>
+<li><strong>Nivel 3:</strong> descarga la app y usa Cowork.</li>
+<li><strong>Nivel 4:</strong> conecta tus aplicaciones (Gmail, Calendario).</li>
+<li><strong>Nivel 5:</strong> crea Skills a medida.</li>
+<li><strong>Jefe final:</strong> haz &quot;vibecoding&quot; con Claude Code.</li>
+</ol>
+<blockquote>
+<p>La mayoría dice &quot;estoy muy atrasado&quot; pero nunca lo probó de verdad. La barrera para saber es intentarlo. Abre esta guía. Abre Claude. Empieza por el nivel 1. Hoy, no mañana.</p>
+</blockquote>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;Being good at AI is (stupidly) simple&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+      <details class="course-item lvl-green" id="03-certificacion-claude">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">Certificate en Claude, gratis</span>
+            <span class="course-desc">Cómo conseguir certificaciones oficiales de Anthropic, sin pagar nada.</span>
+          </span>
+          <span class="course-meta mono">4 minutos</span>
+        </summary>
+        <div class="course-body">
+<p>Existen exactamente <strong>3 certificados reales de Claude</strong> que vale la pena sumar a tu LinkedIn hoy. Todos gratis, emitidos por Anthropic (la empresa detrás de Claude).</p>
+<blockquote>
+<p>⚠ Aviso: circulan &quot;certificaciones de Claude&quot; virales que se venden online. Son todas falsas. Anthropic no respalda ninguna de ellas.</p>
+</blockquote>
+<h2>I — Los pasos</h2>
+<h3>Paso 1: Entra al sitio correcto</h3>
+<p>Anda a <strong>anthropic.skilljar.com</strong>. Regístrate con tu email. No hace falta pagar por Claude para hacer los cursos.</p>
+<h3>Paso 2: Claude 101 (1 hora)</h3>
+<p>URL: <a href="https://anthropic.skilljar.com/claude-101">https://anthropic.skilljar.com/claude-101</a></p>
+<ul>
+<li>13 lecciones, 5 módulos</li>
+<li>Qué es Claude realmente, cuándo usar Chat vs. Cowork vs. Code</li>
+<li>Cómo funcionan los Proyectos, las Skills, cómo conectar Gmail, Drive, Slack</li>
+</ul>
+<h3>Paso 3: AI Fluency — Framework &amp; Foundations (3 horas)</h3>
+<p>URL: <a href="https://anthropic.skilljar.com/ai-fluency-framework-foundations">https://anthropic.skilljar.com/ai-fluency-framework-foundations</a></p>
+<p>El más largo y completo de los tres.</p>
+<ul>
+<li>13 lecciones sobre cómo relacionarte de verdad con la IA</li>
+<li>Las 4D: Delegación, Descripción, Discernimiento, Diligencia</li>
+<li>Prompting efectivo, pensamiento crítico sobre los resultados, ética</li>
+</ul>
+<blockquote>
+<p>Si solo tienes tiempo para uno de los tres, haz este.</p>
+</blockquote>
+<h3>Paso 4: Introducción a Claude Cowork (2 horas)</h3>
+<p>Sobre la mejor función de Claude: Cowork.</p>
+<ul>
+<li>Qué es Cowork y cómo acceder</li>
+<li>Proyectos, Plugins, Skills, tareas programadas</li>
+<li>Manejo de archivos y documentos</li>
+<li>Investigación a gran escala</li>
+<li>Permisos y cómo elegir el modelo correcto</li>
+</ul>
+<h2>II — Súmalos a LinkedIn</h2>
+<ol>
+<li>Anda a tu perfil.</li>
+<li>Clic en &quot;Agregar sección&quot; → &quot;Licencias y certificaciones&quot;.</li>
+<li>Usa este formato:<ul>
+<li><strong>Nombre:</strong> Claude 101 — Anthropic Academy</li>
+<li><strong>Organización emisora:</strong> Anthropic</li>
+<li><strong>Fecha de emisión:</strong> hoy</li>
+</ul>
+</li>
+<li>Repite para AI Fluency e Introducción a Claude Cowork.</li>
+</ol>
+<h2>III — ¿Por qué importa?</h2>
+<ul>
+<li>El Índice de IA 2025 de Stanford: el 78% de las organizaciones usó IA en 2024 (frente al 55% del año anterior).</li>
+<li>Cuando alguien revisa tu LinkedIn, un certificado de Claude dice: &quot;de verdad toqué la herramienta&quot; — algo que hace menos del 2% del mundo.</li>
+<li>PwC encontró que quienes tienen habilidades de IA reciben en promedio un <strong>56% más de salario</strong> (era 25% el año anterior).</li>
+</ul>
+<p>¿Te va a conseguir trabajo por sí solo? Probablemente no. Pero cuesta $0, toma unas horas, y te deja una línea clara en tu perfil: &quot;estoy aprendiendo las herramientas que ya se usan en mi trabajo.&quot;</p>
+<h2>Referencia rápida</h2>
+<table>
+<thead>
+<tr>
+<th>Certificado</th>
+<th>Horas</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Claude 101</td>
+<td>1h</td>
+<td>anthropic.skilljar.com/claude-101</td>
+</tr>
+<tr>
+<td>AI Fluency: Framework &amp; Foundations</td>
+<td>3h</td>
+<td>anthropic.skilljar.com/ai-fluency-framework-foundations</td>
+</tr>
+<tr>
+<td>Introducción a Claude Cowork</td>
+<td>2h</td>
+<td>búscalo en anthropic.skilljar.com</td>
+</tr>
+</tbody></table>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;Claude Certified&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<section class="level-group">
+  <div class="wrap">
+    <h2 class="level-heading lvl-yellow"><span class="level-emoji">🟡</span> Nivel Intermedio</h2>
+    <div class="accordion">
+
+      <details class="course-item lvl-yellow" id="04-claude-cowork">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">Claude Cowork</span>
+            <span class="course-desc">Si no programas, necesitas conocer Claude Cowork.</span>
+          </span>
+          <span class="course-meta mono">18 minutos</span>
+        </summary>
+        <div class="course-body">
+<p>Claude Cowork es lo mejor que le pasó a la IA desde ChatGPT. Si no programas, ya deberías estar usándolo.</p>
+<p><strong>Cómo acceder:</strong></p>
+<ol>
+<li>Anda a claude.com/download y descarga la app en tu computadora.</li>
+<li>Necesitas cuenta Pro (~US$20/mes).</li>
+<li>Abre la app → pestaña Cowork (entre Chat y Code).</li>
+<li>Selecciona una carpeta de tu computadora.</li>
+<li>Elige siempre el modelo Opus para tareas complejas.</li>
+</ol>
+<h2>I — Cómo armar tu carpeta de Cowork</h2>
+<p>Crea una carpeta nueva: <strong>Claude Cowork</strong> con 3 subcarpetas: <strong>(1) SOBRE MÍ</strong>, <strong>(2) RESULTADOS</strong>, <strong>(3) PLANTILLAS</strong>.</p>
+<h3>Paso 1: Tres archivos clave en SOBRE MÍ</h3>
+<p><strong>Archivo 1 — sobre-mi.md</strong></p>
+<p>Quién eres, cómo piensas, cómo quieres que Claude escriba por ti. Mantenlo bajo las 2.000 palabras (por eficiencia de tokens).</p>
+<p>Para crearlo desde cero:</p>
+<pre><code>Estás armando mi archivo sobre-mi.md para mi carpeta de Cowork.
+Entrevístame con AskUserQuestion (20 preguntas) y después compila
+las respuestas en un archivo condensado de menos de 2.000 tokens.
+</code></pre>
+<p><strong>Archivo 2 — estilo-anti-ia.md</strong></p>
+<p>Reglas que prohíben los patrones típicos de escritura de IA. Prohíbe más de 80 palabras &quot;de IA&quot; (profundizar, aprovechar, tapiz), elimina los patrones de contraste forzado, limita los párrafos a 3 frases.</p>
+<p><strong>Archivo 3 — mi-empresa.md</strong></p>
+<p>Tus objetivos, tu estrategia, en qué estás enfocado, a qué le dices que no. Cortito (menos de 1.000 tokens). Actualízalo cada trimestre.</p>
+<h3>Paso 2: Carpeta RESULTADOS</h3>
+<p>Donde Cowork guarda su trabajo. Una subcarpeta por proyecto. Cowork se organiza solo.</p>
+<h3>Paso 3: Carpeta PLANTILLAS</h3>
+<p>Tu mejor trabajo, para que Claude lo reutilice. Al final de una sesión dile: &quot;guarda esto como plantilla en PLANTILLAS/&quot;.</p>
+<h2>II — Instrucciones globales</h2>
+<p>Anda a: <strong>Configuración → Cowork → Editar instrucciones globales</strong>. Pega algo así:</p>
+<pre><code>Normalmente empiezo mi sesión de Cowork señalándote mi carpeta de Cowork.
+
+Antes de cualquier tarea, tienes que leer todos los archivos de SOBRE MÍ/:
+- sobre-mi: quién soy, qué amo y qué odio
+- estilo-anti-ia: odio cómo escribe Claude por defecto
+- mi-empresa: dónde trabajo, mi rol.
+
+Nunca leas RESULTADOS/ ni PLANTILLAS/ salvo que te señale un archivo puntual.
+Guarda todos los entregables en RESULTADOS/ en una subcarpeta con el nombre del proyecto.
+Si el pedido no es claro, usa AskUserQuestion. No completes los vacíos por tu cuenta.
+</code></pre>
+<h2>III — Tu cuello de botella en Cowork: eres tú</h2>
+<p>Cowork puede leer 100.000 palabras en 15 segundos. Puede armar una planilla en 90 segundos. Pero tú escribes a 60 palabras por minuto.</p>
+<p><strong>Solución: dictado por voz (gratis, con herramientas como Wispr Flow)</strong></p>
+<ul>
+<li>Mantienes apretada una tecla → hablas → sueltas → tus palabras aparecen donde esté el cursor.</li>
+<li>Precisión casi perfecta.</li>
+</ul>
+<h2>IV — Cómo ahorrar créditos (tokens)</h2>
+<ol>
+<li><strong>Reinicia la conversación en vez de seguir con más mensajes</strong> — cada respuesta suma al historial. Usa &quot;Reiniciar la conversación desde aquí&quot; sobre un mensaje anterior.</li>
+<li><strong>Empieza de cero cada 20 mensajes</strong> — las conversaciones largas gastan la mayoría de los tokens releyendo el historial.</li>
+<li><strong>Agrupa tareas en un solo mensaje</strong> — 3 pedidos por separado = 3 recargas de contexto. Un mensaje con 3 tareas = 1 sola recarga.</li>
+<li><strong>Usa Sonnet (no Opus) para tareas simples</strong> — ahorra entre 30% y 70% en trabajo liviano.</li>
+<li><strong>Mantén los archivos de SOBRE MÍ cortos</strong> — menos de 2.000 palabras cada uno.</li>
+<li><strong>Reparte el trabajo durante el día</strong> — Claude usa una ventana móvil de 5 horas.</li>
+</ol>
+<h2>V — Tus primeros 20 minutos</h2>
+<ul>
+<li><strong>Minutos 0-5:</strong> arma la estructura de carpetas. Crea SOBRE MÍ con los 3 archivos, más RESULTADOS y PLANTILLAS vacías.</li>
+<li><strong>Minutos 5-6:</strong> pega las instrucciones globales (Configuración &gt; Cowork &gt; Instrucciones globales).</li>
+<li><strong>Minutos 6-8:</strong> instala una herramienta de dictado por voz.</li>
+<li><strong>Minutos 8-15:</strong> corre tu primera sesión por voz. Abre Cowork. Di una tarea: &quot;quiero que leas mi carpeta y me ayudes a escribir [algo que necesites esta semana]. Pregúntame antes de empezar.&quot;</li>
+<li><strong>Minutos 15-20:</strong> pídele a Cowork que cree una plantilla en la carpeta PLANTILLAS.</li>
+</ul>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;Claude Cowork&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+      <details class="course-item lvl-yellow" id="05-claude-para-equipos">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">Claude para equipos</span>
+            <span class="course-desc">Cómo implementar Claude en todo tu equipo en 7 días (y dejar ChatGPT).</span>
+          </span>
+          <span class="course-meta mono">11 minutos</span>
+        </summary>
+        <div class="course-body">
+<p>Una semana para implementar Claude puertas adentro. Entre 15 y 60 minutos por día.</p>
+<h2>Configuración: el plan Team de Claude</h2>
+<p>Anda a claude.com/pricing/team.</p>
+<ul>
+<li>Mínimo 5 puestos, máximo 150.</li>
+<li>Claude <strong>no</strong> entrena con tus datos (como todo plan empresarial de IA).</li>
+<li>Se recomiendan puestos premium para quienes lo usan a diario.</li>
+</ul>
+<h2>Lunes: armar los Proyectos (45-60 min)</h2>
+<p>El objetivo: crear un Proyecto separado para cada tarea que tu equipo repite.</p>
+<h3>Paso 1: deja que Claude identifique qué Proyectos necesitas</h3>
+<pre><code>Trabajo en [empresa + industria]. Mi equipo ayuda a [clientes] a [lograr objetivos].
+Me estás ayudando a configurar Claude para mi equipo. Necesitamos identificar los
+3 a 5 entregables recurrentes que produce mi equipo, para crear un Proyecto de
+Claude para cada uno.
+
+Entrevístame. Pregúntame UNA cosa a la vez sobre:
+1. Qué hace mi equipo día a día
+2. Qué le entregamos a clientes, a liderazgo o entre nosotros
+3. Qué tareas se sienten repetitivas cada semana o mes
+4. Qué trabajo alguien siempre termina rehaciendo
+
+Cuando tengas suficiente contexto, dame:
+1. Una lista numerada de 3 a 5 entregables recurrentes
+2. Un nombre de Proyecto sugerido para cada uno
+3. Una lista de documentos para subir a cada Proyecto
+Empieza ahora. Usa AskUserQuestion.
+</code></pre>
+<h3>Paso 2: crea los Proyectos</h3>
+<p>Claude → Proyectos → Team → Nuevo Proyecto. Haz cada uno compartido.</p>
+<h3>Paso 3: carga cada Proyecto con el contexto correcto</h3>
+<p>Sube solo lo que cada Proyecto necesita: un buen ejemplo de ese entregable (el &quot;estándar de oro&quot;), algún documento de contexto relevante, el brief o plantilla que sigue tu equipo hoy.</p>
+<h3>Paso 4: genera instrucciones a medida para cada Proyecto</h3>
+<pre><code>Estoy configurando este Proyecto de Claude para: [NOMBRE DEL ENTREGABLE]
+Genera un set de instrucciones con:
+- QUÉ ES ESTE ENTREGABLE
+- PARA QUIÉN ES
+- TONO Y FORMATO
+- ESTÁNDAR DE CALIDAD
+- LÍMITES (qué nunca hacer)
+Formatéalo como un bloque de instrucciones listo para pegar.
+</code></pre>
+<h3>Paso 5: prueba y valida</h3>
+<pre><code>Con las instrucciones y los ejemplos de este Proyecto, genera un [NOMBRE DEL
+ENTREGABLE] de muestra para [un escenario reciente o ficticio].
+Después critica tu propio resultado: qué cumple con nuestro estándar y qué no.
+</code></pre>
+<h2>Martes: crear plantillas de prompt (15-25 min)</h2>
+<pre><code>Con las instrucciones de este Proyecto, escríbeme el prompt más corto posible
+que mis compañeros puedan copiar y pegar para producir este entregable.
+Reglas:
+1. Una sola frase como máximo
+2. UN solo campo [ENTRADA] (notas crudas, un borrador o viñetas)
+</code></pre>
+<h2>Miércoles: buscar el &quot;wow&quot; (20-30 min)</h2>
+<ol>
+<li>Elige una tarea de esta semana que tomó más de 30 minutos.</li>
+<li>Córrela con tu sistema nuevo.</li>
+<li>Captura el antes/después — esto se vuelve tu momento &quot;wow&quot; para la adopción.</li>
+</ol>
+<h2>Jueves: convierte a 1 persona (35 min en total)</h2>
+<p><strong>Elige bien a quién:</strong> ni el más entusiasta de la tecnología, ni el más escéptico. La persona que está ahogada — atrasada con emails, quedándose hasta tarde.</p>
+<p><strong>Mándale este mensaje:</strong></p>
+<pre><code>Hola [nombre] — armé algo que te puede ahorrar tiempo de verdad en [tarea
+específica]. ¿Te molesta si te muestro 15 minutos? Voy a usar tu [informe/
+email/brief] real de esta semana. No hace falta que prepares nada.
+</code></pre>
+<p><strong>La sesión de 15 minutos:</strong></p>
+<ol>
+<li>Abre el Proyecto del lunes.</li>
+<li>Copia y pega la plantilla del martes.</li>
+<li>Muestra el efecto &quot;wow&quot; del miércoles.</li>
+</ol>
+<p><strong>Hazla co-dueña:</strong> agrégala al Proyecto. Muéstrale dónde viven las plantillas. Pregúntale: &quot;¿qué otras tareas deberíamos convertir en plantilla?&quot;</p>
+<h2>Viernes: lanzamiento al equipo (60 min)</h2>
+<h3>Chequeo previo</h3>
+<ul>
+<li>✓ Instrucciones del Proyecto validadas (lunes)</li>
+<li>✓ Plantilla de prompt (martes)</li>
+<li>✓ Comprobantes de antes/después listos (miércoles)</li>
+<li>✓ Una persona del equipo que lo pueda avalar (jueves)</li>
+</ul>
+<h3>Genera tu mensaje de lanzamiento</h3>
+<pre><code>Escribe un anuncio de Slack para nuestro nuevo espacio de trabajo de Claude.
+1. Empieza con UN resultado concreto de mi prueba esta semana
+2. Explica en una frase qué es el Proyecto compartido
+3. Lista 3 cosas que pueden hacer YA MISMO
+4. Termina con: &quot;Prueba [plantilla] en tu próxima [tarea]. Toma 2 minutos.&quot;
+Máximo 150 palabras. Tono informal, no corporativo.
+</code></pre>
+<h2>Qué pasa después</h2>
+<p>En 5 días hiciste lo que a muchas empresas les toma 5 meses y un consultor. Tu equipo es un poco más inteligente. Y la inteligencia se acumula.</p>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;Claude for teams&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+      <details class="course-item lvl-yellow" id="06-claude-design">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">Claude Design</span>
+            <span class="course-desc">Cómo acceder y usar Claude Design.</span>
+          </span>
+          <span class="course-meta mono">9 minutos</span>
+        </summary>
+        <div class="course-body">
+<p>Claude Design es un producto aparte — diseña. Vive en <strong>claude.ai/design</strong>. Corre sobre el mejor modelo de visión disponible. Incluye un botón &quot;Enviar a Canva&quot;.</p>
+<h2>1. Cómo acceder</h2>
+<p>Claude Design tiene su propia URL: <strong>claude.ai/design</strong></p>
+<ul>
+<li><strong>Plan Pro o Max:</strong> entra a claude.ai/design e inicia sesión.</li>
+<li><strong>Team o Enterprise:</strong> un admin debe habilitarlo: Configuración de la organización → Capacidades → Anthropic Labs → activar.</li>
+</ul>
+<p>Consume tokens muy rápido. Úsalo con cuidado.</p>
+<h2>2. Pruebas rápidas (menos de 2 min cada una)</h2>
+<h3>Prueba 1: crear un sitio web</h3>
+<ol>
+<li>Anda a la pestaña &quot;Wireframe&quot; → selecciona &quot;Alta fidelidad&quot;.</li>
+<li>Pega este prompt:</li>
+</ol>
+<pre><code>Crea una landing page de alta fidelidad para recaudar $[MONTO] de [INVERSORES]
+para &quot;[NOMBRE DEL PRODUCTO]&quot; - [descripción].
+Público objetivo: [tu público objetivo].
+Tono: [cómo debería sentirse el visitante] - mezcla de [sitio] + [sitio].
+</code></pre>
+<h3>Prueba 2: armar una presentación</h3>
+<p>Vuelve al inicio → pestaña &quot;Presentación&quot;.</p>
+<pre><code>Crea una presentación para [propósito].
+[Breve descripción del producto/servicio]
+</code></pre>
+<p>Responde las preguntas de Claude → obtienes la presentación completa.</p>
+<h3>Prueba 3: crear un video animado</h3>
+<p>Clic en &quot;Desde plantilla&quot;. Escribe un prompt corto con una historia visual. Obtienes un video animado completo (45 segundos).</p>
+<h2>3. El truco del video (para conseguir mejores diapositivas)</h2>
+<ol>
+<li>Usa Claude Research (clic en &quot;+&quot; → &quot;Investigación&quot;) para generar un informe sobre un tema → descárgalo en markdown.</li>
+<li>Sube ese markdown a Claude Design:</li>
+</ol>
+<pre><code>Arma un video animado de 30 segundos que resuma este texto para alguien
+que lo ve por primera vez.
+</code></pre>
+<ol start="3">
+<li>Después: &quot;ahora convierte ese video en una presentación de diapositivas.&quot;</li>
+</ol>
+<p>Las diapositivas salen mejor que si pides la presentación directamente — porque el paso del video obliga a pensar visualmente primero.</p>
+<h2>4. Flujo avanzado: de 0 a 1 (Cowork + Claude Design)</h2>
+<h3>Paso 1: extrae tu sistema de marca con Cowork</h3>
+<p>Suelta todos tus assets de marca (logos, presentaciones, PDFs) en una carpeta. Abre Cowork. Prompt:</p>
+<pre><code>Analiza esta carpeta y arma un documento completo del sistema de diseño:
+tipografías, colores, estilos gráficos, patrones de componentes, tono,
+convenciones de layout. Guárdalo como DISEÑO.md en mi carpeta.
+</code></pre>
+<h3>Paso 2: sube DISEÑO.md a Claude Design</h3>
+<p>Cárgalo como contexto. Cada prompt futuro lo aplica automáticamente.</p>
+<h3>Paso 3: genera con un buen prompt</h3>
+<p>Todo buen prompt tiene 4 entradas: <strong>objetivo, layout, contenido, restricciones.</strong></p>
+<pre><code>Arma una página de precios para [producto]. 3 planes, toggle anual/mensual,
+CTA fijo en mobile. Mobile-first y responsive. Usa nuestro componente de
+botón primario.
+</code></pre>
+<h3>Paso 4: itera</h3>
+<ul>
+<li>Cambios estructurales → por chat.</li>
+<li>Cambios de detalle (píxeles) → clic en editar sobre el lienzo.</li>
+</ul>
+<h3>Paso 5: valida</h3>
+<pre><code>Revisa esto en términos de contraste y accesibilidad. Lista cualquier
+violación de WCAG 2.1 AA.
+</code></pre>
+<pre><code>Genera las versiones de escritorio, tablet y mobile.
+</code></pre>
+<h3>Paso 6: exporta</h3>
+<p>Botón Exportar (arriba a la derecha): enviar a Canva, PPTX, PDF, HTML independiente, o paquete para Claude Code.</p>
+<h2>5. Copia cualquier diseño</h2>
+<p>Existen sitios con archivos DISEÑO.md gratuitos de marcas conocidas (Mastercard, Airbnb, Ferrari, etc.).</p>
+<ol>
+<li>Busca una marca (ej.: &quot;Stripe&quot;).</li>
+<li>Descarga su DISEÑO.md.</li>
+<li>Súbelo a Claude Design.</li>
+<li>Suma el brief de tu producto.</li>
+</ol>
+<p>Ahora tu producto se ve con el sistema de diseño de esa marca.</p>
+<h2>6. El gusto es lo único que no se automatiza</h2>
+<p>Claude Design puede armar 10 dashboards en 10 minutos. Lo que no puede hacer es decirte cuál conviene lanzar. Eso requiere <strong>criterio</strong> — la capacidad de decir que no a 9 versiones y sí a 1.</p>
+<p><strong>Limitaciones actuales:</strong> consume muchos tokens, todavía tiene errores, control limitado.</p>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;Claude Design&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+      <details class="course-item lvl-yellow" id="07-claude-cowork-proyectos">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">Claude Cowork + Proyectos</span>
+            <span class="course-desc">Cómo configurar Claude con Proyectos de la mejor forma.</span>
+          </span>
+          <span class="course-meta mono">10 minutos</span>
+        </summary>
+        <div class="course-body">
+<p>Los Proyectos ahora viven dentro de Cowork. La memoria persiste entre sesiones, las instrucciones a medida quedan incorporadas, hay carpetas dedicadas y tareas programadas — todo dentro de Cowork.</p>
+<h2>1. Qué es Cowork con Proyectos, en concreto</h2>
+<p><strong>Antes (dos cosas separadas):</strong></p>
+<ul>
+<li>Proyectos de Claude (navegador) = carpeta de chats, subes archivos, escribes instrucciones. No podía crear archivos ni correr código.</li>
+<li>Claude Cowork (escritorio) = el agente que hace el trabajo real. Pero cada sesión empezaba de cero.</li>
+</ul>
+<p><strong>Ahora:</strong> Cowork tiene sus propios Proyectos con:</p>
+<ul>
+<li>Carpeta propia (Claude lee y escribe ahí)</li>
+<li>Instrucciones a medida (tono, reglas, formato, límites)</li>
+<li>Memoria acotada (Claude recuerda lo que hizo dentro de ese Proyecto)</li>
+<li>Tareas programadas (trabajo recurrente)</li>
+<li>Historial de tareas (cada corrida queda guardada localmente)</li>
+</ul>
+<blockquote>
+<p><strong>Memoria acotada:</strong> le dices &quot;sigue con el informe de la semana pasada&quot; y Claude sabe cuál era. Solo dentro de ese Proyecto. No se filtra a tu otro trabajo.</p>
+</blockquote>
+<h2>2. Cómo crear tu primer Proyecto de Cowork</h2>
+<p>Abre la app de escritorio → menú izquierdo → Proyectos → clic en &quot;+&quot;.</p>
+<p><strong>Opción 1: empezar de cero</strong></p>
+<ul>
+<li>Crea una carpeta local nueva.</li>
+<li>Cowork &gt; Proyectos &gt; + &gt; Empezar de cero.</li>
+<li>Suma instrucciones y archivos.</li>
+<li>Ponle nombre.</li>
+</ul>
+<p><strong>Opción 2: importar un Proyecto existente</strong> (mejor si ya seguiste la guía de equipos)</p>
+<ul>
+<li>Cowork &gt; Proyectos &gt; + &gt; Importar un Proyecto.</li>
+<li>Busca tus Proyectos del navegador.</li>
+<li>Los archivos e instrucciones se transfieren.</li>
+</ul>
+<p><strong>Opción 3: usar una carpeta existente</strong> (mejor si ya seguiste la guía de Cowork)</p>
+<ul>
+<li>Elige una carpeta que ya tengas.</li>
+<li>Nombra el Proyecto.</li>
+<li>Suma instrucciones y archivos extra.</li>
+</ul>
+<h3>Prompt de arranque para cada Proyecto nuevo</h3>
+<pre><code>Acabo de crear este Proyecto. Lee todos los archivos de la carpeta. Después
+resúmeme qué sabes de este espacio de trabajo: qué hay, para qué lo uso
+probablemente, y qué instrucciones vas a seguir. Si algo no está claro,
+usa AskUserQuestion.
+</code></pre>
+<h2>3. Flujos de trabajo reales</h2>
+<h3>Flujo 1: Newsletter semanal</h3>
+<ul>
+<li><strong>La carpeta contiene:</strong> sobre-mi.md, guía anti-IA, 5 newsletters anteriores, material de referencia.</li>
+<li><strong>Instrucciones:</strong> &quot;Lee SOBRE MÍ/ y estilo-anti-ia.md antes de cada tarea. Iguala exactamente esta voz. Nunca uses las palabras prohibidas. Usa siempre AskUserQuestion antes de escribir.&quot;</li>
+<li><strong>Prompt semanal:</strong> &quot;Quiero escribir mi próxima newsletter sobre [tema]. Empieza con AskUserQuestion para afinar el ángulo antes de escribir nada.&quot;</li>
+</ul>
+<h3>Flujo 2: Entregables para clientes</h3>
+<ul>
+<li><strong>La carpeta contiene:</strong> plantilla de informe, 2 ejemplos sólidos, brief del cliente.</li>
+<li><strong>Instrucciones:</strong> &quot;Incluye siempre un resumen ejecutivo. Nunca superes las 15 páginas. Estructura: resumen ejecutivo → hallazgos → recomendaciones → próximos pasos → anexo. Formato .docx.&quot;</li>
+</ul>
+<h3>Flujo 3: Propuestas comerciales</h3>
+<ul>
+<li><strong>La carpeta contiene:</strong> lista de precios, 3 propuestas ganadoras, casos de éxito, manual de objeciones, notas de llamadas de descubrimiento.</li>
+<li><strong>Instrucciones:</strong> &quot;Empieza siempre por el dolor del prospecto. Nunca nombres competidores. Termina siempre con un cronograma propuesto. Formato .docx.&quot;</li>
+</ul>
+<h3>Flujo 4: Informe operativo semanal</h3>
+<ul>
+<li><strong>La carpeta contiene:</strong> las últimas 4 minutas semanales, plantilla de formato, insumos crudos de cada líder de equipo.</li>
+<li><strong>Instrucciones:</strong> &quot;Cada lunes, combina todos los insumos en un informe ejecutivo. Máximo 1 página. Secciones: logros, obstáculos, prioridades de la próxima semana.&quot;</li>
+<li><strong>Tarea programada:</strong> todos los lunes a las 8am — corre sola.</li>
+</ul>
+<h2>4. Los Proyectos viejos todavía importan (compartir en equipo)</h2>
+<p>Los Proyectos de Cowork son <strong>locales</strong> — todavía no se pueden compartir con compañeros.</p>
+<p><strong>Configuración actual:</strong></p>
+<ul>
+<li><strong>Proyectos de Claude (navegador)</strong> = manuales compartidos del equipo, fuente de verdad accesible para todos.</li>
+<li><strong>Proyectos de Cowork</strong> = espacios personales de ejecución donde de verdad produces el trabajo.</li>
+</ul>
+<h2>5. Configuración en 15 minutos</h2>
+<ul>
+<li><strong>Minutos 0-1:</strong> actualiza la app de escritorio de Claude.</li>
+<li><strong>Minutos 1-8:</strong> crea tu primer Proyecto de Cowork. Elige una tarea semanal recurrente. Escribe instrucciones de 5 a 8 líneas.</li>
+<li><strong>Minutos 8-12:</strong> corre la primera tarea dentro del Proyecto: &quot;Lee todo lo de esta carpeta. Después [tu tarea]. Empieza con AskUserQuestion para alinearnos antes de ejecutar.&quot;</li>
+<li><strong>Minutos 12-15:</strong> configura una tarea programada (si es semanal): Proyecto → Tareas programadas → Nueva → escribe el prompt → elige frecuencia.</li>
+</ul>
+<h2>6. Dónde se queda corto (con honestidad)</h2>
+<p>Sin compartir en equipo todavía, almacenamiento solo local (sin sincronizar entre dispositivos), consume el límite de uso más rápido, sigue siendo una versión preliminar (revisa siempre los resultados), la app tiene que quedar abierta para las tareas programadas, la memoria está acotada por Proyecto.</p>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;Claude Cowork + Projects&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+      <details class="course-item lvl-yellow" id="08-claude-para-presentaciones">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">Claude para presentaciones</span>
+            <span class="course-desc">Cómo usar IA para generar presentaciones (de verdad buenas).</span>
+          </span>
+          <span class="course-meta mono">7 minutos</span>
+        </summary>
+        <div class="course-body">
+<p>Tres métodos para hacer presentaciones con IA. El tercero es el mejor.</p>
+<h2>Método 1: Claude solo (3/10)</h2>
+<p><strong>Ideal para:</strong> velocidad extrema y diseño de cero esfuerzo.</p>
+<p><strong>Cómo:</strong></p>
+<ol>
+<li>Abre Claude Cowork.</li>
+<li>Selecciona tu carpeta.</li>
+<li>Prompt:</li>
+</ol>
+<pre><code>Necesito un PowerPoint (.pptx) de 10 diapositivas sobre [TEMA] para [CRITERIO
+DE ÉXITO]. Empieza usando AskUserQuestion. Pregunta lo necesario para tener
+el panorama completo. Recién ahí, crea el .pptx.
+</code></pre>
+<p>También existe un complemento de Claude dentro de PowerPoint (Insertar &gt; Obtener complementos &gt; buscar &quot;Claude by Anthropic&quot;).</p>
+<p><strong>El problema:</strong> Claude escribe bien, pero el diseño visual queda básico. Alcanza para una sincronización de equipo, se queda corto para una reunión con clientes.</p>
+<h2>Método 2: Gamma (8/10)</h2>
+<p><strong>Ideal para:</strong> presentaciones rápidas y prolijas, cuando importan la velocidad y el diseño juntos.</p>
+<p><strong>Cómo:</strong></p>
+<ol>
+<li>Anda a gamma.app (cuenta gratis).</li>
+<li>Clic en &quot;Crear nuevo&quot; → &quot;Generar&quot;.</li>
+<li>Escribe el tema y el criterio de éxito.</li>
+<li>Gamma muestra un esquema → ajústalo → elige tema visual → genera.</li>
+<li>60 segundos. Listo.</li>
+</ol>
+<p><strong>Lo que Gamma hace bien:</strong> layouts, espaciado y tipografía prolijos automáticamente, imágenes generadas por IA con más de 20 modelos, link web compartible con analíticas, exportación a PowerPoint, PDF o Google Slides.</p>
+<p><strong>El problema:</strong> el contenido es tan bueno como tu prompt de una línea. Sé específico.</p>
+<h2>Método 3: Claude + Gamma (el mejor para lo que importa)</h2>
+<p>Presentaciones para clientes. Reuniones de directorio. Presentaciones de estrategia.</p>
+<p>Claude piensa. Gamma diseña. Tú decides qué queda.</p>
+<h3>Paso 1 — Investigación</h3>
+<pre><code>Estoy armando una presentación. No generes diapositivas todavía.
+Investiga [tema] para [criterio de éxito].
+1. Lee todos los archivos de esta carpeta.
+2. Busca en la web con al menos 5 búsquedas variadas (tendencias, datos,
+   opiniones de expertos, casos, contraargumentos).
+3. Revisa los hallazgos contra el criterio de éxito. Identifica vacíos.
+   Vuelve a buscar para cubrirlos.
+4. Guarda un brief de investigación estructurado en brief-investigacion.md
+   — organizado por tema, con URLs y datos clave.
+Prioriza fuentes de 2025-2026. Empieza usando AskUserQuestion.
+</code></pre>
+<h3>Paso 2 — Guion</h3>
+<pre><code>Lee brief-investigacion.md y conviértelo en un esquema de presentación listo
+para Gamma.
+Objetivo de la presentación: [qué debería lograr]
+Audiencia: [quién la va a ver]
+1. Escribe un esquema diapositiva por diapositiva. Cada una con: título,
+   2-3 puntos clave, algún dato de la investigación.
+2. Máximo [X] diapositivas.
+3. NO escribas párrafos completos — eso lo genera Gamma.
+4. Guarda el esquema en esquema-gamma.md.
+</code></pre>
+<h3>Paso 3 — Generación</h3>
+<p>Claude genera la presentación en Gamma automáticamente.</p>
+<h3>Paso 4 — Edición (10-15 min)</h3>
+<p>Revisa diapositiva por diapositiva:</p>
+<ul>
+<li>¿Lo diría en voz alta así? Reescríbelo si no.</li>
+<li>¿Esta diapositiva se gana su lugar? Sácala si no.</li>
+<li>¿El dato es correcto? Verifícalo.</li>
+</ul>
+<h2>Para equipos: lineamientos de marca</h2>
+<h3>Paso 1: crea tu tema de Gamma</h3>
+<ol>
+<li>Busca tu plantilla de marca existente (PowerPoint o Google Slides).</li>
+<li>gamma.app → Biblioteca → Temas → Nuevo tema → Importar tema.</li>
+<li>Sube tu archivo .pptx.</li>
+<li>Gamma extrae colores, tipografías y logo automáticamente.</li>
+<li>Configuración → Valores por defecto del workspace → márcalo como predeterminado.</li>
+</ol>
+<h3>Paso 2: arma tu archivo de reglas de marca</h3>
+<p>Suelta todos tus assets de marca en una carpeta. Abre Claude Cowork. Prompt:</p>
+<pre><code>Lee todos los archivos de esta carpeta. Son los assets de marca de nuestra
+empresa. Crea un único archivo markdown llamado reglas-marca.md que capture
+todo lo necesario para armar una presentación on-brand.
+Extrae: identidad visual, estructura de diapositivas, tono y lenguaje,
+elementos recurrentes.
+Escríbelo como instrucciones para alguien nuevo que nunca vio nuestra marca.
+</code></pre>
+<h3>Paso 3: suma la configuración de Gamma al archivo</h3>
+<p>Arriba del archivo:</p>
+<pre><code>## Configuración de Gamma
+- Tema: [nombre del tema]
+- Estilo de imagen por defecto: [fotografía limpia / ilustración minimalista / sin imágenes]
+- Densidad de texto por defecto: [breve / media / detallada]
+- Cantidad de diapositivas por defecto: [10-12]
+</code></pre>
+<h3>Paso 4: úsalo</h3>
+<pre><code>Lee primero reglas-marca.md. Crea una presentación de Gamma sobre [TEMA]
+para [AUDIENCIA]. Usa nuestro tema de marca.
+</code></pre>
+<h3>Paso 5: actualízalo</h3>
+<p>Cuando la marca evoluciona: &quot;Lee el archivo de marca actual y los nuevos assets. Actualiza lo que cambió. Deja el resto igual.&quot;</p>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;Claude for slides&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+      <details class="course-item lvl-yellow" id="09-claude-skills">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">Claude Skills</span>
+            <span class="course-desc">Cómo configurar Claude de la forma correcta (para dejar de promptear todo el tiempo).</span>
+          </span>
+          <span class="course-meta mono">6 minutos</span>
+        </summary>
+        <div class="course-body">
+<h2>Niveles de uso de IA</h2>
+<ul>
+<li>Nivel 1: ChatGPT gratis</li>
+<li>Nivel 2: ChatGPT pago + Thinking</li>
+<li>Nivel 3: Claude chat pago + Opus + Thinking</li>
+<li>Nivel 4: Claude premium + Cowork + Opus</li>
+<li>Nivel 5: Claude Team con Proyectos</li>
+<li><strong>Skills:</strong> el siguiente nivel</li>
+</ul>
+<h2>1. ¿Qué cambia con las Skills?</h2>
+<p>Las Skills son flujos guardados que activas con un comando tipo <code>/brief</code>, <code>/linkedin</code> o <code>/contrato-x</code>.</p>
+<p><strong>Formas de darle contexto a la IA:</strong></p>
+<ol>
+<li>Escribir un prompt larguísimo con contexto.</li>
+<li>Escribir un archivo de texto para subir.</li>
+<li>Subir ambos a un Proyecto.</li>
+<li><strong>Skills</strong> — todo eso, pero como un comando que se activa solo.</li>
+</ol>
+<p><strong>La diferencia clave:</strong> los archivos de contexto necesitan que digas &quot;lee mi archivo primero&quot; cada vez. Los Proyectos necesitan que abras el Proyecto correcto. <strong>Las Skills se activan solas.</strong> Claude reconoce la tarea y activa la Skill correcta por su cuenta.</p>
+<h2>2. Cómo crear tu primera Skill</h2>
+<h3>Opción 1: el creador de Skills de Claude</h3>
+<p><strong>Paso 1:</strong> abre Cowork. Asegúrate de estar en Opus + Thinking extendido. Escribe:</p>
+<pre><code>Usa el skill-creator para ayudarme a armar una skill para escribir posts de LinkedIn.
+</code></pre>
+<p><strong>Paso 2:</strong> responde la entrevista. Sé específico. &quot;Escribo informes&quot; no sirve. &quot;Escribo informes semanales que siempre empiezan con la métrica principal, usan máximo 3 secciones y terminan con los próximos pasos en viñetas&quot; sí es una Skill que funciona.</p>
+<p><strong>Paso 3:</strong> Cowork genera todo:</p>
+<ul>
+<li>Una carpeta con el nombre correcto (minúsculas, con guiones)</li>
+<li>Un archivo SKILL.md con el disparador (/comando), la descripción y las instrucciones</li>
+</ul>
+<p><strong>Paso 4:</strong> Claude corre una evaluación — revisa los resultados antes de guardar.</p>
+<p><strong>Paso 5:</strong> guarda e instala:</p>
+<ul>
+<li>Configuración → Capacidades → Skills → Subir</li>
+<li>Aparece la Skill, haz clic en &quot;Probar en el chat&quot;</li>
+</ul>
+<h3>Opción 2: herramientas gratuitas de generación de Skills</h3>
+<p>Existen herramientas web gratuitas donde describes la Skill (cuanto más detalle, mejor), la descargas y la subes a Claude.</p>
+<h2>3. Accede a las Skills de equipo de Claude</h2>
+<p>Dentro de Claude Cowork: Personalizar → Plugins personales → Explorar plugins (+). Descarga colecciones de Skills ya armadas (plugins).</p>
+<h2>4. Siete trucos favoritos de Skills</h2>
+<ol>
+<li><strong>El truco de debugging.</strong> ¿La Skill no se activa? Pregúntale a Claude: &quot;¿cuándo usarías la skill [nombre]?&quot; Claude repite la descripción. Ahí ves al instante qué es ambiguo.</li>
+<li><strong>Los disparadores negativos importan más.</strong> La línea &quot;No usar para…&quot; es más importante que &quot;Usar cuando…&quot;. Agrega: &quot;No usar para artículos de blog, newsletters, emails&quot; o va a secuestrar conversaciones donde no debería.</li>
+<li><strong>Las Skills se combinan con tu archivo de voz.</strong> sobre-mi.md maneja el tono. La Skill maneja el proceso. Se activan juntas, al mismo tiempo.</li>
+<li><strong>Arma Skills a partir de conversaciones pasadas.</strong> Clic en una sesión de Cowork &gt; flecha junto al nombre &gt; &quot;Convertir en skill&quot;. Claude reconstruye el flujo a partir de tus prompts anteriores.</li>
+<li><strong>Las Skills ahorran tokens.</strong> Claude solo lee el encabezado de 3 líneas de cada Skill al principio. Las instrucciones completas se cargan solo cuando la tarea coincide. 30 Skills instaladas apenas ocupan tu ventana de contexto.</li>
+<li><strong>El parche contra la &quot;vagancia&quot;.</strong> Si Claude recorta esquinas dentro de una Skill, suma al prompt: &quot;Tómate tu tiempo. Calidad antes que velocidad. No te saltees pasos.&quot; Funciona mejor en el prompt del usuario que dentro del archivo de la Skill.</li>
+<li><strong>Las Skills son portables.</strong> El archivo SKILL.md es un estándar abierto pensado para funcionar en distintas plataformas.</li>
+</ol>
+<h2>5. Dónde se quedan cortas las Skills</h2>
+<ul>
+<li><strong>La descripción lo es todo</strong> — una mala descripción significa que la Skill nunca se activa.</li>
+<li><strong>Pueden secuestrar conversaciones</strong> — una descripción demasiado amplia se activa cuando no quieres.</li>
+<li><strong>Igual necesitan edición</strong> — dan un punto de partida consistente del 80%, no la perfección.</li>
+<li><strong>El consumo sigue siendo alto</strong> — las Skills no eliminan el gasto de tokens.</li>
+</ul>
+<h2>Tus primeros 30 minutos</h2>
+<ul>
+<li><strong>Minutos 0-5:</strong> abre Cowork. Escribe: &quot;Usa el skill-creator para ayudarme a armar una skill para [tu tarea más repetida].&quot;</li>
+<li><strong>Minutos 5-15:</strong> responde la entrevista. Sé específico.</li>
+<li><strong>Minutos 15-20:</strong> instala y prueba. Súbela desde Configuración → Capacidades → Skills. Prueba 5 formas distintas de pedirla para verificar que se active bien. Prueba pedidos sin relación para confirmar que no se active de más.</li>
+<li><strong>Minutos 20-25:</strong> itera según lo que encontraste al probar.</li>
+<li><strong>Minutos 25-30:</strong> explora los plugins de Claude para más Skills ya armadas.</li>
+</ul>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;Claude Skills&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<section class="level-group">
+  <div class="wrap">
+    <h2 class="level-heading lvl-coral"><span class="level-emoji">🟠</span> Nivel Avanzado</h2>
+    <div class="accordion">
+
+      <details class="course-item lvl-coral" id="10-claude-con-tu-voz">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">Claude con tu propia voz</span>
+            <span class="course-desc">Porque en el fondo, eres un archivo de texto.</span>
+          </span>
+          <span class="course-meta mono">12 minutos</span>
+        </summary>
+        <div class="course-body">
+<p>Eres un archivo de texto. Dame 2 horas. Un archivo. Y cualquier IA se convierte en ti.</p>
+<h2>1. Cómo extraerte a ti mismo en 2 horas</h2>
+<p><strong>Preparación:</strong></p>
+<ul>
+<li>Usa Claude + Cowork + Opus + Thinking extendido.</li>
+<li>Dicta las respuestas por voz — es más rápido y más honesto que escribir.</li>
+</ul>
+<h3>Prompt 1 — La entrevista</h3>
+<p>Abre un chat nuevo de Claude. Pega este prompt completo:</p>
+<pre><code>Eres un Entrevistador de Estilo — un entrevistador implacable cuyo trabajo es
+extraer el ADN de cómo pienso, escribo y veo el mundo. Tu objetivo es crear
+un documento completo que capture mi voz con tanta precisión que otra
+instancia de Claude pueda escribir y pensar exactamente como yo.
+
+Haz 100 preguntas en total, repartidas en estas categorías:
+- CREENCIAS Y POSTURAS CONTRARIAS (15 preguntas)
+- MECÁNICA DE ESCRITURA (20 preguntas)
+- &quot;CRÍMENES&quot; ESTÉTICOS (15 preguntas)
+- VOZ Y PERSONALIDAD (15 preguntas)
+- PREFERENCIAS ESTRUCTURALES (15 preguntas)
+- LÍMITES DUROS (10 preguntas)
+- SEÑALES DE ALERTA (10 preguntas)
+
+Reglas:
+1. Una pregunta a la vez
+2. Presiona ante respuestas vagas
+3. Pide ejemplos concretos
+4. Señala las contradicciones
+5. Profundiza en los hilos interesantes
+
+Después de las 100 preguntas, compila todo en un documento markdown completo
+con: identidad central, cada sección con las preguntas y respuestas textuales,
+y una tarjeta de referencia rápida (siempre / nunca / frases características /
+calibración de voz).
+</code></pre>
+<p>Responde las 100 preguntas. Toma alrededor de 2 horas (unos 90 minutos si dictas por voz).</p>
+<h3>Prompt 2 — Comprímelo</h3>
+<p>En la misma conversación, justo después:</p>
+<pre><code>Eres un Compilador de Voz. Convierte el archivo de voz de arriba en un archivo
+sobre-mi.md compacto y de alta fidelidad para que una IA lo use como contexto
+permanente.
+
+Regla central: cada línea tiene que pasar esta prueba: &quot;¿Si esta línea
+desapareciera, la IA escribiría, editaría, juzgaría o decidiría distinto?&quot;
+
+Extensión objetivo: 2.000-4.000 tokens. Techo duro: 5.000 tokens.
+
+Mantén: reglas específicas de voz y de escritura, negativas firmes, ejemplos
+compactos de MALO/BUENO, frases textuales, palabras que uso/odio, formas de
+frase, gustos y rechazos de estilo, reglas de decisión.
+
+Elimina: valores genéricos, autodescripción halagadora, biografía que no cambia
+el resultado.
+</code></pre>
+<h2>2. Prueba tu archivo</h2>
+<p>Abre una sesión &quot;en blanco&quot; sin apuntar a ninguna carpeta. Pruébalo con esto:</p>
+<pre><code>Escribe un post de LinkedIn sobre [tema] con mi voz.
+</code></pre>
+<p>Revisa: ¿suena a ti? Si sí, el archivo funciona.</p>
+<h2>3. Dónde guardarlo</h2>
+<p>Guárdalo en tu carpeta de Cowork SOBRE MÍ/ como <strong>sobre-mi.md</strong>.</p>
+<p>En tus Instrucciones Globales: &quot;Antes de cualquier tarea, lee todos los archivos de SOBRE MÍ/&quot;. Ahora Claude lo lee antes de cada sesión. Nunca más tienes que reexplicar tu estilo.</p>
+<h2>4. Por qué te vas a resistir</h2>
+<ol>
+<li><strong>&quot;Se siente reduccionista&quot;</strong> — pero cuando alguien que te conoce bien lee el archivo comprimido, va a decir &quot;sí, ese eres tú&quot;.</li>
+<li><strong>&quot;Da miedo&quot;</strong> — leerte en un solo archivo significa que no queda dónde esconderse. Cada creencia se vuelve un compromiso.</li>
+<li><strong>&quot;El autoconocimiento lleva décadas&quot;</strong> — el archivo hace el mismo trabajo que la terapia, pero más rápido, porque Claude te obliga a ser específico.</li>
+<li><strong>&quot;Soy difícil de capturar&quot;</strong> — el misterio, visto de cerca, suele ser solo vaguedad.</li>
+</ol>
+<h2>5. En quién te conviertes</h2>
+<ul>
+<li><strong>Portable</strong> — funciona en cualquier IA.</li>
+<li><strong>Consistente</strong> — dejas de redecidir cómo escribes cada lunes.</li>
+<li><strong>Compartible</strong> — se lo das a tu equipo para que redacte con tu voz.</li>
+</ul>
+<h2>6. Edítalo seguido (con Obsidian)</h2>
+<p>Los archivos .md son incómodos de editar en crudo. Usa <strong>Obsidian</strong> (gratis en obsidian.md):</p>
+<ol>
+<li>Descarga Obsidian.</li>
+<li>Abre la carpeta como bóveda → elige tu carpeta de Cowork.</li>
+<li>Edita los archivos como un documento normal — se sincroniza solo con tu carpeta de Cowork.</li>
+</ol>
+<p>Cuando editas en Obsidian → se edita en tu computadora → Claude Cowork queda sincronizado automáticamente.</p>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;Claude to sound like you&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+      <details class="course-item lvl-coral" id="11-no-agotes-limites-claude">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">No agotes los límites de uso de Claude</span>
+            <span class="course-desc">23 trucos para usar Claude mejor y no gastar de más.</span>
+          </span>
+          <span class="course-meta mono">12 minutos</span>
+        </summary>
+        <div class="course-body">
+<h2>Cómo cuenta Claude los tokens</h2>
+<p>Claude relee toda tu conversación desde el principio en cada mensaje. El mensaje 30 cuesta 31 veces más tokens que el mensaje 1. Por eso los créditos desaparecen tan rápido.</p>
+<h2>Hábitos que probablemente no conocías</h2>
+<ol>
+<li><strong>Convierte los archivos antes de subirlos.</strong> Una página de PDF cuesta entre 1.500 y 3.000 tokens. Las capturas de pantalla, peor todavía. Extrae el texto → pégalo como texto plano o markdown. Recorta bien las capturas.</li>
+<li><strong>Planifica en el chat. Crea archivos en Cowork.</strong> Crear archivos consume más límite que el chat normal. Piensa en Chat (barato) → construye en Cowork (caro).</li>
+<li><strong>&quot;Pregúntame&quot; en vez de un prompt largo.</strong> Un prompt de 500 palabras cuesta 500 tokens cada vez que se relee. Mi recurso favorito: &quot;quiero [tarea] con [criterio de éxito]. Lee mi carpeta. Pregúntame con AskUserQuestion antes de empezar.&quot;</li>
+<li><strong>Usa dictado por voz para respuestas más ricas.</strong> Al escribir, los prompts salen perezosos → Claude adivina mal → más mensajes = más recargas de contexto. Al hablar, das más contexto de una sola vez, naturalmente.</li>
+<li><strong>Deja de pedir que rehaga todo.</strong> Di &quot;rehaz solo la sección 3. Deja el resto igual para ahorrar tokens.&quot; Suma &quot;sin comentarios, sin explicaciones, solo el resultado.&quot;</li>
+<li><strong>Agrupa tareas en un solo mensaje.</strong> Tres prompts separados = tres recargas completas de contexto. Un prompt con tres tareas = una sola recarga.</li>
+<li><strong>Usa la misma estructura de prompt siempre.</strong> Prompts parecidos se cachean parcialmente. Mantén una biblioteca de prompts estable y cambia solo la parte variable.</li>
+<li><strong>Edita tu mensaje en vez de mandar uno nuevo.</strong> En el chat, haz clic en Editar sobre tu mensaje original, corrígelo, regenera. El intercambio viejo se reemplaza, no se apila. (No disponible en Cowork.)</li>
+<li><strong>Elige el producto correcto para la tarea.</strong> Pregunta rápida → chat con el modelo más liviano. Informe desde archivos → Cowork con el modelo más potente. Un gráfico → Code con un modelo intermedio.</li>
+</ol>
+<h2>Lo básico que sigue importando</h2>
+<ol start="10">
+<li><strong>Mantén los archivos de SOBRE MÍ bajo 2.000 palabras cada uno.</strong> Cowork los lee antes de cada tarea.</li>
+<li><strong>Reinicia la conversación en vez de seguir sumando mensajes.</strong> En Cowork, &quot;Reiniciar la conversación desde aquí&quot; sobre un mensaje anterior. Ve lo más atrás posible.</li>
+<li><strong>Resume y arranca de nuevo cada 15-20 mensajes.</strong> Pídele a Claude que resuma todo → copia el resumen → abre una sesión nueva → pégalo como primer mensaje.</li>
+<li><strong>Usa modelos livianos para tareas simples. Guarda el modelo potente para trabajo profundo.</strong> Si la tarea le toma a Claude menos de 30 segundos, probablemente no necesita el modelo más caro.</li>
+<li><strong>No tires toda tu carpeta dentro de Cowork.</strong> Cada archivo que Cowork lee es gasto de tokens. Suma solo lo necesario para esa tarea. Para tareas sin archivos: selecciona cero carpetas.</li>
+<li><strong>Empieza un chat nuevo cuando cambia el tema.</strong> Tema nuevo = chat nuevo. Siempre.</li>
+<li><strong>Apaga las funciones que no estás usando.</strong> Búsqueda web, conectores y modo exploración suman tokens. Por defecto: todo apagado, prende lo que necesites en cada tarea.</li>
+<li><strong>Usa Proyectos para trabajo recurrente.</strong> Subes el archivo una vez = queda cacheado. Cada conversación nueva dentro de ese Proyecto lo referencia sin gastar tokens de nuevo.</li>
+<li><strong>Apaga la Memoria. Suma Preferencias de usuario.</strong> Configuración → General → Preferencias personales. Configura también un Estilo (en el selector de modelo) — elige &quot;Conciso&quot; o crea uno personalizado.</li>
+<li><strong>Usa tareas programadas para trabajo recurrente.</strong> Busca el plugin de programación para informes semanales recurrentes.</li>
+<li><strong>Dale a Claude Code un alcance claro.</strong> Code tiende a expandirse solo. Sé específico: &quot;crea un gráfico de barras desde este CSV con los ingresos mensuales de 2025. Guárdalo como grafico.png.&quot;</li>
+<li><strong>Usa un archivo CLAUDE.md para contexto permanente.</strong> Code lo lee antes de cada tarea. Pon ahí las instrucciones recurrentes. Mantenlo corto — un CLAUDE.md inflado hace que Claude ignore tus instrucciones reales.</li>
+<li><strong>Reparte el trabajo durante el día.</strong> Claude usa una ventana móvil de 5 horas. Divide en 2-3 sesiones: mañana, tarde, noche.</li>
+<li><strong>Deja de usar Claude para lo que no es bueno.</strong> Generación de imágenes → otra herramienta. Búsqueda en tiempo real → otra herramienta. No gastes tokens en tareas que Claude nunca iba a resolver bien.</li>
+</ol>
+<h2>Por dónde empezar</h2>
+<p>Elige tres según tu uso:</p>
+<ul>
+<li><strong>Si usas Cowork a diario:</strong> empieza por los hábitos 1, 2 y 5.</li>
+<li><strong>Si usas sobre todo el chat:</strong> empieza por 8, 15 y 17.</li>
+<li><strong>Si estás en el plan básico y siempre topas el límite:</strong> empieza por 6, 13 y 22.</li>
+</ul>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;Stop hitting Claude usage limits&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+      <details class="course-item lvl-coral" id="12-deja-de-promptear-obsidian">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">Deja de promptear: Claude Cowork + Obsidian</span>
+            <span class="course-desc">Cómo configurar Claude Cowork con Obsidian (y dejar atrás la ingeniería de prompts).</span>
+          </span>
+          <span class="course-meta mono">10 minutos</span>
+        </summary>
+        <div class="course-body">
+<p>La peor forma de usar Claude: un prompt vago → resultados mediocres → le echas la culpa a Claude.</p>
+<p>La solución: tus archivos SON el prompt. Para siempre.</p>
+<h2>Repaso rápido de la configuración de Cowork</h2>
+<p>Si todavía no tienes Cowork armado:</p>
+<ol>
+<li>Claude Cowork solo está en la app de escritorio.</li>
+<li>Necesitas una cuenta paga.</li>
+<li>Crea una carpeta &quot;Claude Cowork&quot; con 3 subcarpetas: <code>sobre-mi</code>, <code>resultados-claude</code>, <code>plantillas</code>.</li>
+<li>Configura las Instrucciones Globales (Configuración &gt; Cowork &gt; Instrucciones Globales).</li>
+</ol>
+<h2>Obsidian: la pieza que falta</h2>
+<p><strong>El problema:</strong> Cowork trabaja con archivos de texto (.md). Pero tú no eres programador. Manejar archivos .md es demasiado complejo — los abres, cuesta leerlos y editarlos, terminas sin editarlos nunca.</p>
+<p><strong>La solución: Obsidian</strong> — una app gratuita que abre tu carpeta de Cowork y la convierte en una base de conocimiento simple.</p>
+<h3>Cómo instalarlo</h3>
+<ol>
+<li>Descárgalo gratis en <strong>obsidian.md</strong> (Mac, Windows, Linux).</li>
+<li>Clic en &quot;Abrir carpeta como bóveda&quot;.</li>
+<li>Selecciona tu carpeta de Cowork.</li>
+</ol>
+<p>Ahora puedes: ver cada archivo con formato correcto (títulos, negrita, viñetas), editar ahí mismo — se edita tu carpeta real de Cowork, buscar en todo el contenido.</p>
+<h2>Cómo trabajan juntos Obsidian y Cowork</h2>
+<h3>1. Deja de promptear</h3>
+<p>Flujo de ejemplo:</p>
+<ol>
+<li>Abre Obsidian → ve al archivo sobre-mi.</li>
+<li>Suma una regla: &quot;Recuerda [nueva preferencia]&quot; o &quot;Reemplaza [hábito viejo] por [hábito nuevo]&quot;.</li>
+<li>Obsidian se sincroniza solo con tu carpeta de Cowork.</li>
+<li>Abre una sesión nueva de Cowork → ya sabe la actualización.</li>
+</ol>
+<p><strong>Le escribiste el prompt a Claude una vez. Se acuerda para siempre.</strong> Literalmente tu segundo cerebro.</p>
+<h3>2. Editar tus archivos de contexto</h3>
+<p>Cuando tu sobre-mi.md necesita una actualización (nuevo puesto, nuevos objetivos, algo nuevo que odias de cómo escribe Claude):</p>
+<ol>
+<li>Abre Obsidian.</li>
+<li>Edita el documento.</li>
+<li>Ya está sincronizado con Cowork.</li>
+<li>Inicia una sesión nueva de Cowork → ya lo sabe.</li>
+</ol>
+<h3>3. Encontrar cosas</h3>
+<p>Obsidian busca en todo lo que escribieron tú y Claude en tu carpeta. El buscador interno de Claude es malo — Obsidian resuelve eso.</p>
+<h3>4. Leer tus resultados</h3>
+<p>Todos los resultados anteriores se leen bien formateados en Obsidian — como un documento normal.</p>
+<h3>5. El flujo diario</h3>
+<ul>
+<li><strong>Abre Obsidian</strong> para navegar, buscar, leer y editar tus archivos.</li>
+<li><strong>Abre Cowork</strong> para crear trabajo nuevo, generar resultados, armar entregables.</li>
+<li>Los dos apuntan a la misma carpeta. Siempre sincronizados.</li>
+</ul>
+<h2>La carpeta de SKILLS (avanzado)</h2>
+<p>Tus archivos de &quot;sobre mí&quot; le cuentan a Claude tu estilo y tus reglas. Pero repites algunas tareas cada semana (post de LinkedIn, newsletter, brief de cliente). Las Skills son tus flujos guardados — un archivo por tarea, invocado con un <code>/comando</code>.</p>
+<h3>Cómo crear una skill</h3>
+<ol>
+<li>Abre Cowork. Inicia una tarea nueva.</li>
+<li>Prompt:</li>
+</ol>
+<pre><code>Crea una skill llamada &quot;negociacion&quot;.
+Entrevístame sobre el tipo de acuerdos que negocio a diario. Arma la mejor
+skill de negociación para ayudarme a crear distintos escenarios.
+Después guárdala como una skill que pueda invocar con /negociacion.
+</code></pre>
+<ol start="3">
+<li>Responde las preguntas.</li>
+<li>Haz clic en &quot;Permitir siempre&quot; cuando lo pida.</li>
+<li>Claude crea el archivo de la skill → va a la carpeta de resultados.</li>
+<li>Muévela a tu carpeta SKILLS en Obsidian.</li>
+<li>Menú izquierdo &gt; Personalizar &gt; Skills &gt; + &gt; Subir una skill.</li>
+</ol>
+<p>Ahora cuando escribes <code>/negociacion</code> en cualquier chat de Claude, sabe qué hacer.</p>
+<h3>Cómo volver a subir una skill editada</h3>
+<p>Edita la skill en Obsidian → Menú izquierdo &gt; Personalizar &gt; Skills &gt; + &gt; Subir.</p>
+<h2>Por qué Obsidian (y no otras herramientas)</h2>
+<table>
+<thead>
+<tr>
+<th>Herramienta</th>
+<th>Problema</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Notion</td>
+<td>Basado en la nube, no se sincroniza solo con la carpeta de Cowork</td>
+</tr>
+<tr>
+<td>Google Drive</td>
+<td>Los Google Docs no son archivos .md, hay que convertir todo el tiempo</td>
+</tr>
+<tr>
+<td>Apple Notes</td>
+<td>Formato cerrado, no puede apuntar a una carpeta</td>
+</tr>
+<tr>
+<td>VS Code / Cursor</td>
+<td>Excelente, pero pensado para developers</td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td>Requiere git, commits, pushes</td>
+</tr>
+<tr>
+<td>Typora</td>
+<td>Un archivo a la vez, sin navegación por carpetas</td>
+</tr>
+<tr>
+<td><strong>Obsidian</strong></td>
+<td>✓ Lee la carpeta existente, gratis, pensado para no programadores</td>
+</tr>
+</tbody></table>
+<p>Obsidian nunca toca tus archivos de una forma que rompa Cowork. Tus .md siguen siendo .md.</p>
+<h2>El sistema completo</h2>
+<pre><code>Claude Cowork/
+├── SOBRE MI/
+│   ├── sobre-mi.md (quién eres, tu estilo)
+│   ├── estilo-anti-ia.md (lo que odias)
+│   └── mi-empresa.md (objetivos, estrategia)
+├── RESULTADOS/ (el trabajo de Claude, organizado por proyecto)
+├── PLANTILLAS/ (tu mejor trabajo, para reusar)
+└── SKILLS/ (tus flujos guardados con comando)
+</code></pre>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;Stop Prompting Claude&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+      <details class="course-item lvl-coral" id="13-claude-me-reemplazo">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">Claude me reemplazó</span>
+            <span class="course-desc">Ya no necesitas leerme a mí.</span>
+          </span>
+          <span class="course-meta mono">4 minutos</span>
+        </summary>
+        <div class="course-body">
+<p>Acabamos de reemplazarnos por ti. Solo tienes que descargar la skill <code>/como-hacer</code>.</p>
+<p>Claude te lleva de A a Z en cualquier tarea que necesites resolver con Claude. Aunque no tengas idea de por dónde arrancar.</p>
+<h2>Paso 1: consigue la Skill</h2>
+<p>Una &quot;skill&quot; de Claude es un prompt pre-armado que le enseña a Claude cómo hacer algo sin que tengas que repetirte cada vez.</p>
+<ol>
+<li>Busca el archivo de la skill (compartido en la comunidad de Claude Academy ES).</li>
+<li>Descárgalo — no hace falta cuenta.</li>
+<li>Guárdalo en tu computadora.</li>
+</ol>
+<h2>Paso 2: sube la Skill</h2>
+<ol>
+<li>Abre Claude (mejor en la app de escritorio).</li>
+<li>Menú izquierdo → clic en &quot;Personalizar&quot;.</li>
+<li>Clic en &quot;Skills&quot; → el &quot;+&quot; → &quot;Crear skill&quot; → &quot;Subir una skill&quot;.</li>
+<li>Selecciona la skill que descargaste.</li>
+</ol>
+<h2>Paso 3: prueba la Skill</h2>
+<p>Una Skill se activa con <code>/</code> + el nombre de la skill.</p>
+<ol>
+<li>Abre un chat nuevo con Claude.</li>
+<li>Escribe <code>/como-hacer</code> (debería aparecer en un menú desplegable).</li>
+<li>Después suma lo que quieras hacer con Claude y no sepas cómo.</li>
+</ol>
+<p>Claude va a:</p>
+<ul>
+<li>Hacerte preguntas para aclarar el objetivo</li>
+<li>Armar un plan completo paso a paso</li>
+<li>Guiarte en cada paso</li>
+</ul>
+<p>Si te trabas en algún paso, di que no puedes y agrega &quot;explícalo como si tuviera 5 años&quot;.</p>
+<h2>Paso 4: usa la Skill todavía mejor (opcional)</h2>
+<p>Para mejores resultados:</p>
+<ol>
+<li>Usa Claude <strong>Cowork</strong> (no solo el chat).</li>
+<li>Modelo: el más potente disponible.</li>
+<li>Nivel de esfuerzo: alto.</li>
+</ol>
+<p>Esta combinación da la mejor guía paso a paso.</p>
+<h2>Lo que la Skill no puede reemplazar</h2>
+<p>La skill <code>/como-hacer</code> te da los pasos. Lo que no te puede dar:</p>
+<ul>
+<li>El botón que no responde</li>
+<li>El momento en que se rompe y no sabes por qué</li>
+<li>Las horas quemadas haciéndolo más fácil de seguir</li>
+<li>Las pruebas que no funcionaron (los borradores que quedaron en el camino)</li>
+</ul>
+<p>La Skill es el &quot;cómo&quot;. Esta academia es la realidad, con sus tropiezos, de llegar hasta ahí.</p>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;Claude replaced me&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+      <details class="course-item lvl-coral" id="14-deja-de-sonar-como-ia">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">Deja de sonar como IA</span>
+            <span class="course-desc">Deja de usar esta expresión ya mismo. Suena a IA.</span>
+          </span>
+          <span class="course-meta mono">20 minutos</span>
+        </summary>
+        <div class="course-body">
+<p>Si usas este patrón, se nota al instante que es IA:</p>
+<p><strong>&quot;No es [algo], es [otra cosa].&quot;</strong></p>
+<p>Esto es <strong>paralelismo negativo</strong>. Prohíbelo. Quémalo. Todos los modelos de lenguaje lo escriben.</p>
+<p><strong>El arreglo:</strong> crea un archivo <code>estilo-anti-ia.md</code> en tu carpeta de Claude Cowork.</p>
+<h2>1. Cómo armar y subir el archivo</h2>
+<ol>
+<li>Arma tu propio archivo con las reglas de abajo (o adáptalas a tu gusto).</li>
+<li>Súbelo a tu carpeta de Cowork.</li>
+</ol>
+<p>Actualiza tus Instrucciones Globales:</p>
+<pre><code>Antes de cualquier tarea, tienes que leer todos los archivos de SOBRE MÍ/:
+- sobre-mi: quién soy
+- estilo-anti-ia: odio cómo escribe Claude, audita siempre contra este archivo
+- mi-empresa: dónde trabajo, mi rol.
+</code></pre>
+<p>Después usa:</p>
+<pre><code>[Cualquier tarea]. Después audita el texto con el archivo estilo-anti-ia.md.
+</code></pre>
+<h2>2. Las reglas anti-IA (resumen)</h2>
+<h3>Voz por defecto</h3>
+<ul>
+<li>Escribe directo, específico y natural.</li>
+<li>Empieza con la respuesta útil.</li>
+<li>Párrafos cortos: 1-2 frases por defecto.</li>
+<li>Varía el ritmo: frases cortas y otras más largas.</li>
+<li>Usa contracciones naturales del español hablado.</li>
+<li>Sé específico: números, nombres, detalles concretos.</li>
+<li>Voz activa.</li>
+</ul>
+<h3>Prohibiciones duras</h3>
+<p><strong>Vocabulario prohibido (más de 80 palabras), entre ellas:</strong>
+profundizar, aprovechar, tapiz, paradigma, de vanguardia, revolucionar, intrincado, mostrando, crucial, fundamental, superar, meticulosamente, vibrante, sin igual, subrayar, apalancar, sinergia, innovador, cambio de juego, testimonio, pionero, alinear, fomentar, mejorar, holístico, cosechar, transformador, redefinir, fluido/sin fricciones, optimizar, escalable, robusto, empoderar, agilizar, elevar, adaptativo, proactivo, crítico para la misión, visionario, disruptivo, sin precedentes, intuitivo, dinámico, inmersivo, predictivo...</p>
+<p><strong>Estructuras de frase prohibidas (verbos inflados):</strong>
+&quot;funciona como&quot;, &quot;se erige como&quot;, &quot;marca un&quot;, &quot;representa un&quot;, &quot;cuenta con&quot;, &quot;ofrece un&quot;, &quot;cumple un rol en&quot;, &quot;ayuda a&quot;, &quot;busca&quot;, &quot;apunta a&quot; → usa en su lugar: es, tiene, usa, da, muestra.</p>
+<p><strong>Aperturas muertas:</strong>
+&quot;En la actualidad...&quot;, &quot;Es importante notar que...&quot;, &quot;Vamos a sumergirnos&quot;, &quot;Vamos a desglosar&quot;, &quot;Al final del día&quot;, &quot;De cara al futuro&quot;.</p>
+<p><strong>Transiciones muertas:</strong>
+Además, Asimismo, Por otro lado, Dicho esto, Con eso en mente.</p>
+<p><strong>Cebo de interacción:</strong>
+&quot;Deja que esto asiente&quot;, &quot;Léelo de nuevo&quot;, &quot;Punto final&quot;, &quot;Esto lo cambia todo&quot;.</p>
+<h3>La prohibición del paralelismo negativo (la regla principal)</h3>
+<p><strong>Nunca uses:</strong></p>
+<ul>
+<li>&quot;Esto no es X. Es Y.&quot;</li>
+<li>&quot;No X. Y.&quot;</li>
+<li>&quot;Olvídate de X. Enfócate en Y.&quot;</li>
+<li>&quot;Menos X, más Y.&quot;</li>
+<li>&quot;No solo X, sino también Y.&quot;</li>
+<li>&quot;Deja de pensar en X. Empieza a pensar en Y.&quot;</li>
+<li>&quot;X está muerto. Y es el futuro.&quot;</li>
+<li>&quot;La pregunta no es X. La pregunta es Y.&quot;</li>
+<li>&quot;No necesitas X. Necesitas Y.&quot;</li>
+<li>&quot;Nunca fue sobre X. Siempre fue sobre Y.&quot;</li>
+</ul>
+<p><strong>Versiones disfrazadas (también prohibidas):</strong></p>
+<ul>
+<li>&quot;Aunque X parezca...&quot;</li>
+<li>&quot;Si bien X aparenta...&quot;</li>
+<li>&quot;Claro, X...&quot;</li>
+<li>&quot;A primera vista, X...&quot;</li>
+<li>&quot;La mayoría piensa que X...&quot;</li>
+<li>&quot;La gente se enfoca en X...&quot;</li>
+</ul>
+<p><strong>El arreglo:</strong> borra la mitad rechazada. Reescribe la afirmación positiva directamente.</p>
+<p>Malo: &quot;No se trata del prompt. Se trata del contexto.&quot;
+Mejor: &quot;El contexto controla el resultado.&quot;</p>
+<h3>Control de analogías y metáforas</h3>
+<p>Nada de analogías salvo que pasen las 5 pruebas:</p>
+<ol>
+<li>El tema es desconocido, abstracto o técnico.</li>
+<li>La analogía hace la idea más fácil de entender.</li>
+<li>La analogía es más corta que la explicación literal.</li>
+<li>La analogía es lo bastante exacta como para no confundir.</li>
+<li>La frase sigue sonando natural leída en voz alta.</li>
+</ol>
+<p><strong>Familias de metáforas prohibidas:</strong> viaje, campo de batalla, máquina, arquitectura, ecosistema, motor/combustible, mapa/brújula, señal y ruido, caja de herramientas, iceberg, puente, norte, volante (flywheel), ajedrez, deportes, rompecabezas.</p>
+<h2>3. Los 15 patrones de IA para detectar</h2>
+<ol>
+<li>&quot;Esto no es X. Es Y.&quot;</li>
+<li>&quot;No X. Y.&quot;</li>
+<li>&quot;Olvídate de X. Esto es Y.&quot;</li>
+<li>&quot;Menos X, más Y.&quot;</li>
+<li>&quot;No solo X, sino también Y.&quot;</li>
+<li>&quot;No se trata solo de X, se trata de Y.&quot;</li>
+<li>&quot;¿X? No. Y.&quot;</li>
+<li>&quot;Deja de pensar en X. Empieza a pensar en Y.&quot;</li>
+<li>&quot;X está muerto. Y es el futuro.&quot;</li>
+<li>&quot;La pregunta no es X. La pregunta es Y.&quot;</li>
+<li>&quot;No necesitas X. Necesitas Y.&quot;</li>
+<li>&quot;X está sobrevalorado. Y es lo que importa.&quot;</li>
+<li>&quot;Aunque X parezca correcto, en realidad Y...&quot;</li>
+<li>&quot;Claro, X funciona. Pero Y es donde realmente...&quot;</li>
+<li>&quot;X se lleva toda la atención, pero Y es lo que en verdad...&quot;</li>
+</ol>
+<h2>4. Mantén el archivo vivo</h2>
+<p>Los patrones de escritura de IA cambian. Palabras que sonaban bien en 2024 suenan robóticas en 2026.</p>
+<p>Cada 3 meses:</p>
+<ol>
+<li>Relee tus últimos 10 borradores hechos con IA.</li>
+<li>Marca palabras y patrones que suenen a máquina.</li>
+<li>Súmalos a la lista prohibida.</li>
+<li>Borra lo que ya no te moleste.</li>
+</ol>
+<p>Usa <strong>Obsidian</strong> para editar tu archivo .md fácilmente — se sincroniza solo con tu carpeta de Cowork.</p>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;It&#39;s not X, it&#39;s Y&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+      <details class="course-item lvl-coral" id="15-excel-con-claude-cowork">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">Excel con Claude Cowork</span>
+            <span class="course-desc">Cómo hacer planillas de cálculo (con IA).</span>
+          </span>
+          <span class="course-meta mono">7 minutos</span>
+        </summary>
+        <div class="course-body">
+<h2>Ranking de IAs para planillas</h2>
+<p>Entre las opciones probadas para crear planillas desde cero, un patrón se repite: los asistentes integrados dentro de Excel o Sheets suelen quedarse cortos, las IAs generalistas dicen &quot;listo&quot; pero cuesta encontrar el archivo, y las herramientas de programación son excelentes pero caras.</p>
+<p><strong>Claude Cowork es la mejor opción para crear planillas desde cero.</strong></p>
+<p>Para <strong>editar</strong> planillas ya existentes, un asistente de IA integrado directamente en Google Sheets suele ser la mejor opción.</p>
+<h2>Cómo genera Excel Cowork</h2>
+<p><strong>Preparación:</strong></p>
+<ul>
+<li>App de Claude → pestaña Cowork.</li>
+<li>Conecta Google Drive (más fácil para exportar después).</li>
+<li>Elige el modelo más potente disponible + razonamiento adaptativo.</li>
+</ul>
+<p><strong>Plantilla de prompt:</strong></p>
+<pre><code>Crea una planilla de Excel a partir de:
+[DATOS: ruta del archivo, carpeta, o datos pegados]
+
+### Propósito:
+[Quién la usa y qué decisión o tarea sostiene — 1 frase.]
+
+### Hojas necesarias:
+- &quot;[Nombre de hoja]&quot;: [columnas, qué representa cada fila, cálculos/fórmulas]
+- &quot;[Nombre de hoja]&quot;: [ej.: resumen con totales, tabla dinámica, gráficos]
+
+### Formato:
+[Formatos de moneda/fecha, resaltado condicional, fila de encabezado fija,
+fila de totales]
+
+Antes de construir, lístame tus 10 principales supuestos para que los revise,
+y después ejecuta.
+</code></pre>
+<p>La parte clave: pedir &quot;los 10 principales supuestos para revisar antes de ejecutar&quot; — así mantienes el control.</p>
+<p><strong>Después:</strong> haz clic en el botón &quot;Google Drive&quot; para abrirlo directamente en Google Sheets.</p>
+<h2>Editar planillas existentes</h2>
+<p>Para editar lo que ya tienes, busca un complemento de IA dentro de Google Sheets:</p>
+<ol>
+<li>Extensiones → Complementos → Obtener complementos.</li>
+<li>Busca e instala el complemento oficial de IA que prefieras (gratis).</li>
+<li>Conecta tu cuenta.</li>
+<li>Elige el modelo más potente disponible si necesitas más precisión.</li>
+</ol>
+<p><strong>Mejores casos de uso:</strong></p>
+<ul>
+<li>Visualizar una pestaña con gráficos.</li>
+<li>Resumir una pestaña.</li>
+<li>Editar la planilla (el mejor uso): &quot;En @Supuestos, cambia el escenario &#39;Optimista&#39; para que sea más agresivo.&quot;</li>
+</ul>
+<h2>Alternativa: herramientas dedicadas a planillas</h2>
+<p>Si tu trabajo diario es armar planillas, considera una herramienta de IA dedicada exclusivamente a spreadsheets, con configuración de contexto (tu rol, tus preferencias, el modelo a usar).</p>
+<h2>Configuración recomendada</h2>
+<p>Para la mayoría de las personas:</p>
+<ol>
+<li><strong>Crear</strong> con Claude Cowork → exportar a Google Sheets.</li>
+<li><strong>Editar</strong> con un complemento de IA dentro de Google Sheets.</li>
+</ol>
+<p>Para usuarios avanzados de planillas: explora herramientas dedicadas o modelos de programación (muy buenos, pero más costosos).</p>
+<h2>Ejemplo: proyección de ingresos lista para directorio</h2>
+<pre><code>Crea una planilla de Excel: proyección de ingresos a 12 meses para una
+consultora de IA, de julio 2026 a junio 2027.
+
+Propósito: proyección lista para directorio, para planificar contrataciones
+y runway.
+
+Contexto del negocio: 4 líneas de servicio: talleres, implementaciones
+completas de IA, sprints de IA, retainers de Chief of AI fraccional. Embudo
+de audiencia: newsletter 600k y creciendo; redes sociales 1M+.
+
+Hojas necesarias:
+- &quot;Supuestos&quot;: todas las entradas etiquetadas y editables (nunca hardcodeadas
+  más adelante)
+- &quot;Embudo&quot;: audiencia mensual → leads → llamadas → propuestas → cierres
+- &quot;Ingresos&quot;: proyección a 12 meses por línea de servicio
+- &quot;P&amp;L&quot;: ingresos, costo de ventas, margen bruto, gastos operativos básicos
+- &quot;Dashboard&quot;: KPIs y gráficos en una sola pantalla
+- &quot;Escenarios&quot;: alternar entre Base / Optimista / Pesimista
+
+Formato: moneda USD, porcentajes, encabezados fijos, formato condicional,
+paleta prolija para proyectar en directorio.
+
+Antes de construir, lístame tus 10 principales supuestos para revisarlos.
+</code></pre>
+<p>Resultado esperado: varias pestañas conectadas, cientos de fórmulas funcionando de punta a punta.</p>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;Excel with Claude cowork&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<section class="level-group">
+  <div class="wrap">
+    <h2 class="level-heading lvl-pink"><span class="level-emoji">🔴</span> Nivel Experto</h2>
+    <div class="accordion">
+
+      <details class="course-item lvl-pink" id="16-conectores-claude">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">Conectores de Claude</span>
+            <span class="course-desc">Cómo conectar Claude a tus aplicaciones.</span>
+          </span>
+          <span class="course-meta mono">8 minutos</span>
+        </summary>
+        <div class="course-body">
+<p>Un Conector es un puente de un clic entre Claude y una app que ya usas.</p>
+<h2>Cómo conectar tu app a Claude</h2>
+<ol>
+<li>Abre Claude → clic en &quot;+&quot; dentro del cuadro de chat.</li>
+<li>Busca &quot;Conectores&quot; → clic en &quot;Agregar conector&quot;.</li>
+<li>Busca tu app (Gmail, Gamma, Google Drive, herramientas de notas de reuniones...).</li>
+<li>En cada chat nuevo: clic en &quot;+&quot; → Conectores → activa tu app.</li>
+</ol>
+<h2>9 conectores recomendados</h2>
+<h3>1. Notas de reuniones (Granola, Otter, etc.)</h3>
+<p>Capturan automáticamente las transcripciones de Zoom, Teams, Meet.</p>
+<p><strong>Prompt:</strong></p>
+<pre><code>Trae mi última reunión. Resúmela en 5 viñetas.
+Después lista cada acción asignada a mí, con sus plazos.
+Después marca entre 2 y 5 obstáculos que podría tener para completarlas.
+</code></pre>
+<p><strong>Tip:</strong> combina notas de reuniones + Slack + Gmail para preparar una negociación.</p>
+<h3>2. CRM (HubSpot, Salesforce)</h3>
+<p><strong>Prompt:</strong></p>
+<pre><code>Lee mi pipeline de CRM.
+Lista cada oportunidad en etapa &quot;Propuesta enviada&quot; que no se movió en 7+ días.
+Para cada una: escribe un email de seguimiento que pueda mandar hoy.
+Tono: directo, cálido pero sin vueltas. Nada de &quot;solo quería consultar cómo va&quot;.
+</code></pre>
+<p><strong>Tip:</strong> pregúntale a Claude &quot;según mis últimos 5 tratos cerrados, ¿cuál es el patrón en común?&quot;</p>
+<h3>3. Notion (base de conocimiento del equipo)</h3>
+<p><strong>Prompt:</strong></p>
+<pre><code>Ve a Notion, al Calendario de Contenido. Extrae el contenido de [FECHA]
+(brief de diseño, copy). Crea 2 nuevos con las mismas ideas y técnicas.
+</code></pre>
+<h3>4. Microsoft 365 (Teams, Outlook, Calendario, OneDrive)</h3>
+<p>Un solo interruptor = 4 apps.</p>
+<p><strong>Prompt:</strong></p>
+<pre><code>Lee mi Outlook + Calendario del próximo lunes.
+Lista cada reunión donde todavía no tengo notas de preparación.
+Para cada una: trae el hilo de Teams o el documento de OneDrive relevante.
+Genera un brief de 1 página por reunión.
+</code></pre>
+<h3>5. Slack</h3>
+<p><strong>Prompt:</strong></p>
+<pre><code>Lee #canal-1, #canal-2 de las últimas 48 horas.
+Muéstrame las 3 cosas a las que tengo que reaccionar.
+Sáltate chistes, GIFs, y actualizaciones de standup.
+</code></pre>
+<h3>6. Google Drive</h3>
+<p><strong>Mejor flujo:</strong></p>
+<ol>
+<li>Ve a Claude Cowork.</li>
+<li>Pide una planilla sobre [X].</li>
+<li>Sigue refinando con mensajes de seguimiento.</li>
+<li>Clic en el botón &quot;Google Drive&quot;.</li>
+<li>Se abre en Google Sheets con todos los datos automáticamente.</li>
+</ol>
+<h3>7. Gamma (presentaciones)</h3>
+<p><strong>Prompt:</strong></p>
+<pre><code>Ve a Gamma. Crea una presentación de [NÚMERO] diapositivas sobre [TEMA]
+para [AUDIENCIA].
+Objetivo: [qué quieres que hagan o entiendan].
+Cubre: [lista 5-8 puntos clave].
+Tono: confiado / basado en datos / conciso.
+Que sea visual, prolijo, una idea por diapositiva.
+</code></pre>
+<h3>8. Gmail</h3>
+<p><strong>Prompt:</strong></p>
+<pre><code>Lee mi Gmail de esta semana.
+Agrupa cada email en 3 categorías:
+1. Necesita mi respuesta hoy.
+2. Puede esperar hasta el viernes.
+3. Newsletter / informativo / se puede ignorar.
+Resultado: 3 listas. Sin comentarios adicionales.
+</code></pre>
+<p><strong>Tip:</strong> suma &quot;Guarda las 5 respuestas como borradores en mi Gmail&quot; para crear los borradores directo en tu casilla.</p>
+<h2>Si solo activas 3 conectores hoy</h2>
+<p><strong>Elige:</strong> notas de reuniones + Gmail/Outlook + Slack/Teams.</p>
+<p>Este trío se combina: reuniones → emails → canales del equipo. Tienes el panorama completo.</p>
+<h2>Cuándo NO usar un conector</h2>
+<ol>
+<li><strong>No los dejes todos prendidos por defecto.</strong> Los Conectores gastan tokens antes de que escribas nada. Actívalos por chat, desactívalos por chat.</li>
+<li><strong>No uses Conectores para trabajo creativo.</strong> Al redactar un post o un guion, quieres un espacio limpio. El ruido de Slack/Gmail contamina el resultado. Mi chat de escritura por defecto: todos los Conectores apagados.</li>
+<li><strong>No des permiso de escritura hasta confiar en el flujo de lectura.</strong> Primero solo lectura. Observa una semana. Después dale permiso de escritura.</li>
+</ol>
+<h2>Directorio completo</h2>
+<p>Explora el directorio oficial de Conectores dentro de Claude: Administrar conectores → + → Explorar conectores.</p>
+<h2>Arma tu propio Conector (para developers)</h2>
+<p>Un Conector es simplemente un servidor MCP con una URL pública.</p>
+<p>Configuración rápida con Claude Code:</p>
+<pre><code>Créame un servidor MCP en Python usando FastMCP.
+Una herramienta: obtener_[cosa](args).
+Usa transporte Streamable HTTP.
+Destino de despliegue: Cloudflare Workers.
+
+Entrégame:
+1. El código completo del servidor.
+2. El comando de despliegue.
+3. El patrón de URL que voy a pegar en la Configuración de Claude.
+</code></pre>
+<p>Después: Configuración → Conectores → Personalizar → Agregar conector personalizado → Pega la URL terminada en /mcp.</p>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;Claude Connectors&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+      <details class="course-item lvl-pink" id="17-claude-code-vibecoding">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">Claude Code — Vibecoding</span>
+            <span class="course-desc">Para personas que nunca, jamás, van a programar.</span>
+          </span>
+          <span class="course-meta mono">14 minutos</span>
+        </summary>
+        <div class="course-body">
+<p><strong>Vibecoding:</strong> construir un sitio web simplemente hablándole a una IA en lenguaje natural — &quot;hazme algo que haga esto&quot; — y que ella escriba todo el código. Programas guiándote por el resultado que quieres, no por el código.</p>
+<p><strong>Sirve para dos cosas:</strong></p>
+<ol>
+<li>Construir una versión clickeable de tu idea para dársela a un desarrollador, así deja de adivinar.</li>
+<li>Construir una herramienta chica que resuelve el trabajo mejor que un chatbot genérico — solo para ti o tu equipo.</li>
+</ol>
+<h2>Cómo configurar Claude Code (7 pasos)</h2>
+<ol>
+<li><strong>Consigue la app:</strong> descárgala, instálala, activa el plan pago, abre la pestaña Code.</li>
+<li><strong>Arma una carpeta limpia:</strong> una carpeta vacía en tu computadora. Sin contraseñas ni archivos privados. Claude solo va a tocar esa carpeta.</li>
+<li><strong>Activa el modo sin confirmaciones constantes:</strong> Configuración → Claude Code → activar el modo de permisos ampliados. Sin esto, Claude te pide permiso antes de cada cambio (30 clics por sesión). <em>Nota: si estás en una empresa, consulta primero con IT.</em></li>
+<li><strong>Conecta tus herramientas de despliegue y base de datos (gratis):</strong> &quot;+&quot; → Conectores → Agregar conectores → busca tu herramienta de hosting y tu herramienta de base de datos. Una publica tu sitio en internet. La otra guarda tus datos y logins.</li>
+<li><strong>Selecciona la carpeta:</strong> clic en el ícono de carpeta → elige la tuya.</li>
+<li><strong>Elige tu modelo:</strong> el más potente disponible, con esfuerzo alto.</li>
+<li><strong>Listo. A construir.</strong></li>
+</ol>
+<h2>El mega-prompt (cópialo tal cual)</h2>
+<pre><code>Eres mi CTO. Yo soy el CEO, no escribo código y no quiero leerlo. Los permisos
+ampliados están activados, así que no te detengas a pedirme que apruebe pasos
+técnicos. Simplemente constrúyelo.
+
+Háblame en español simple, solo sobre lo que puedo ver, clickear o decidir.
+Nada de código, nada de jerga.
+
+Quiero [tu objetivo final, ej.: &quot;una página simple de reservas para mi
+negocio de coaching donde la gente elija un horario&quot;].
+
+Antes de construir nada, entrevístame. Pregúntame todo lo que necesites para
+hacerlo bien, una pregunta a la vez, usando AskUserQuestion para que pueda
+responder con clics. Mantén las preguntas sobre qué hace y cómo se ve.
+Decide tú las partes técnicas. Cuando tengas suficiente, cuéntame el plan en
+un par de frases simples, y después constrúyelo.
+
+Usa [herramienta de hosting] para publicarlo en vivo y darme un link que
+cualquiera pueda abrir.
+Usa [herramienta de base de datos] para los datos, con login de Google y
+seguridad a nivel de fila activada.
+
+Iguala el estilo de la captura de pantalla que te compartí.
+
+Construye una pieza a la vez. Después de cada pieza, ábrela tú mismo, revisa
+que funcione (también en el celular), y arregla lo que esté mal antes de
+mostrármelo. Después dime qué mirar.
+</code></pre>
+<h2>Cómo mejorar tu vibecoding</h2>
+<p><strong>Empieza desde una captura de pantalla.</strong> ¿Encontraste un sitio que te gusta? Sácale una captura, arrástrala a Claude: &quot;constrúyeme esto, pero para lo mío.&quot;</p>
+<p>Buenas fuentes de inspiración de diseño: galerías de diseño web, showcases de landing pages, colecciones de componentes UI.</p>
+<p><strong>Describe el resultado final.</strong> Di qué quieres que exista. Deja que Claude elija los pasos.</p>
+<p><strong>Ve de a una pieza.</strong> Construye la página de inicio → déjala bien → recién ahí la próxima página.</p>
+<p><strong>Corre el ciclo.</strong> Mira lo que Claude construyó. Anota lo que está mal como lista numerada. Pégala de nuevo. Claude arregla cada punto. Repite 5-6 veces por página.</p>
+<h2>Que tu sitio no parezca &quot;hecho por IA&quot;</h2>
+<h3>Usa un archivo de sistema de diseño</h3>
+<p>Busca archivos de sistema de diseño gratuitos de marcas conocidas (Stripe, Notion, Airbnb, Linear, etc.).</p>
+<ol>
+<li>Busca una marca que te guste.</li>
+<li>Descarga su archivo de diseño.</li>
+<li>Suéltalo dentro de la carpeta de Claude Code.</li>
+<li>Referéncialo: &quot;usa esto para todo el estilo visual.&quot;</li>
+</ol>
+<h3>Pide una librería de componentes real</h3>
+<p>Dile a Claude: &quot;usa una librería de componentes profesional como shadcn/ui&quot; — botones, menús y formularios con aspecto prolijo.</p>
+<h3>Sé específico</h3>
+<p>Nombra la tipografía. Pide más espacio en blanco. Da colores exactos. Deja de escribir &quot;que se vea lindo.&quot;</p>
+<h2>Cuándo NO usar Claude Code</h2>
+<ul>
+<li>Un widget chico que vas a mirar una sola vez → usa un artefacto interactivo dentro del chat normal de Claude.</li>
+<li>Escribir un documento o una planilla → usa Cowork.</li>
+<li>Una sola imagen → usa otra herramienta de generación de imágenes.</li>
+</ul>
+<p><strong>Regla:</strong> no tardes más en construirlo que en consumirlo.</p>
+<h2>Cuánto cuesta en la práctica</h2>
+<ul>
+<li>El plan pago básico alcanza para arrancar.</li>
+<li>Claude Code consume el límite de uso más rápido que el chat normal.</li>
+<li>Para mantener el costo bajo: empieza un chat nuevo por tarea, usa el modelo liviano en el plan básico, reserva el modelo potente para el plan más caro, apunta a archivos en vez de pegar bloques enteros de texto.</li>
+<li>Revisa tu consumo con el comando <code>/usage</code> dentro de Claude Code.</li>
+</ul>
+<h2>Prompts listos (completa entre corchetes)</h2>
+<pre><code>Construye una landing page para [...]
+</code></pre>
+<pre><code>Construye un mockup para mostrarle a mi desarrollador. [describe la función].
+No hace falta que funcione. Solo muéstrale las pantallas y el flujo a mi
+desarrollador. Cuando esté listo, escribe una especificación en español
+simple para poder entregarla.
+</code></pre>
+<pre><code>Construye una herramienta que tome [mi export de pedidos] y [lo convierta en
+un informe mensual prolijo con totales por producto]. Suelto el archivo,
+me devuelve el informe.
+</code></pre>
+<pre><code>Construye una app simple donde [mis estudiantes] inicien sesión con Google
+y vean [su propio progreso y la próxima lección].
+</code></pre>
+<pre><code>Construye un dashboard que lea [la planilla de esta carpeta] y muestre
+[mis ingresos, clientes nuevos y reembolsos] en gráficos simples.
+</code></pre>
+<h2>Entrega a un desarrollador real</h2>
+<p>Cuando el proyecto se vuelve serio (necesita seguridad real, guarda datos privados):</p>
+<pre><code>Eres mi CTO, y estamos entregando este proyecto a un desarrollador real.
+Escríbele un archivo de entrega llamado HANDOFF.md y guárdalo en esta carpeta:
+- Qué hace esta app y para quién es
+- Qué está construido y funcionando, y qué sigue siendo rústico
+- Qué herramientas usaste y dónde viven las piezas importantes
+- Qué necesita saber un desarrollador: cómo funcionan los logins, dónde
+  viven los datos, qué claves existen
+- Nota honesta: esto es un prototipo que construí describiéndolo, no es
+  código de producción
+Que se lea en cinco minutos.
+</code></pre>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;Claude Code — Vibecoding&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+      <details class="course-item lvl-pink" id="18-no-uses-tu-claude-personal-en-el-trabajo">
+        <summary>
+          <span class="course-summary-main">
+            <span class="course-title">No uses tu Claude personal en el trabajo</span>
+            <span class="course-desc">A menos que quieras que te despidan o te demanden.</span>
+          </span>
+          <span class="course-meta mono">9 minutos</span>
+        </summary>
+        <div class="course-body">
+<p>Según estudios recientes, las personas en más del 90% de las empresas usan chatbots personales para trabajar, casi siempre sin avisarle a su área de sistemas. Más de la mitad admite haber escrito información sensible al menos una vez.</p>
+<p>Aquí va cómo seguir usando tu Claude personal sin exponerte.</p>
+<h2>1. Apaga el entrenamiento con tus datos</h2>
+<p>Por defecto, las empresas de IA pueden entrenar sus modelos con tus conversaciones.</p>
+<p><strong>Apágalo en Claude:</strong></p>
+<ol>
+<li>Ve a tu perfil → Configuración.</li>
+<li>Ve a &quot;Privacidad&quot;.</li>
+<li>Apaga &quot;Ayudar a mejorar nuestros modelos de IA&quot;.</li>
+</ol>
+<p><strong>Apágalo en otras IAs que uses:</strong> busca la sección de &quot;Controles de datos&quot; o &quot;Privacidad&quot; en la configuración y desactiva el entrenamiento con tus conversaciones.</p>
+<blockquote>
+<p><strong>Nota:</strong> desactivarlo solo aplica hacia adelante. Los modelos no pueden &quot;desaprender&quot; datos ya incorporados. Apágalo ahora, no después.</p>
+</blockquote>
+<h2>2. ¿Te pueden despedir o demandar de verdad?</h2>
+<p>Sí. Pasaron los dos casos.</p>
+<p><strong>Caso conocido (2023):</strong> ingenieros de una gran empresa filtraron código fuente interno a un chatbot público, tres veces en 20 días. La empresa prohibió la herramienta en toda la compañía y abrió investigaciones disciplinarias.</p>
+<p><strong>Riesgos legales:</strong></p>
+<ul>
+<li><strong>Ruptura de acuerdos de confidencialidad:</strong> un chatbot de otra empresa cuenta como un tercero externo.</li>
+<li><strong>Problemas de secretos comerciales:</strong> las leyes de protección de secretos comerciales cubren estas filtraciones.</li>
+<li><strong>Problema de protección de datos:</strong> en muchas jurisdicciones, pegar datos de clientes en una IA personal puede ser una transferencia de datos no autorizada.</li>
+</ul>
+<p><strong>La pregunta antes de pegar algo:</strong> &quot;¿estaría cómodo si este texto exacto apareciera en el canal general de la empresa, con mi nombre?&quot;</p>
+<ul>
+<li>Sí → pégalo tranquilo.</li>
+<li>No → anonimízalo primero, o usa la herramienta oficial de tu empresa.</li>
+</ul>
+<h2>3. Nunca pegues esto en una cuenta personal</h2>
+<ul>
+<li>Código fuente o cualquier cosa del repositorio de tu empresa.</li>
+<li>Datos de clientes o pacientes: nombres, emails, teléfonos, direcciones, información de salud.</li>
+<li>Planes, roadmaps, diseños o prototipos no publicados.</li>
+<li>Información financiera no pública: ingresos, márgenes, presupuestos, condiciones de acuerdos.</li>
+<li>Cualquier cosa marcada como confidencial, de uso interno, o bajo NDA.</li>
+<li>Contraseñas, claves de acceso, configuraciones de seguridad.</li>
+<li>Contratos completos o documentos legales con nombres y condiciones reales.</li>
+<li>Grabaciones o transcripciones de reuniones internas.</li>
+</ul>
+<blockquote>
+<p><strong>Aviso:</strong> si haces &quot;vibecoding&quot; de un proyecto personal usando la IA de tu empresa, tu empresa puede terminar siendo dueña de ese proyecto. Y si lo haces en la computadora de la empresa con tu IA personal, igual estás expuesto.</p>
+</blockquote>
+<h2>4. Anonimiza tus datos antes de pegarlos</h2>
+<p><strong>Anonimizar:</strong> sacar los detalles que identifican a personas o empresas antes de pegar el texto.</p>
+<p><strong>4 pasos:</strong></p>
+<ol>
+<li><strong>Cambia nombres por roles:</strong> persona real → &quot;el cliente&quot;. Empresa → &quot;Empresa A&quot;.</li>
+<li><strong>Usa valores ficticios:</strong> números reales → números ficticios parecidos. Emails reales → <a href="mailto:nombre@ejemplo.com">nombre@ejemplo.com</a>.</li>
+<li><strong>Pega solo lo necesario:</strong> no subas el PDF o la planilla completa (tienen metadatos ocultos).</li>
+<li><strong>No incluyas identificadores que no aportan nada</strong> a la tarea.</li>
+</ol>
+<p><strong>Mal:</strong></p>
+<pre><code>Redacta un email de renovación para Sara Gómez en Empresa XYZ. Su contrato
+de $2.3M vence el 31 de agosto y están molestos por las demoras de soporte.
+</code></pre>
+<p><strong>Mejor:</strong></p>
+<pre><code>Redacta un email de renovación para un contacto cliente. Su contrato de $5M
+vence a fin del próximo mes, y están molestos por las demoras de soporte.
+</code></pre>
+<h2>5. Usa el chat temporal para tareas de trabajo</h2>
+<p>Incluso con el entrenamiento apagado, los chats normales se guardan en tu historial.</p>
+<p>Para tareas de trabajo, usa el modo de <strong>chat temporal / incógnito</strong> que ofrecen la mayoría de las IAs (en Claude: arriba a la derecha → &quot;Incógnito&quot;). Un chat temporal no se guarda en el historial y no se usa para entrenar. Lo cierras, y desaparece.</p>
+<h2>6. Conectores: lo más peligroso</h2>
+<p><strong>La combinación riesgosa (documentada por investigadores):</strong> el momento en que una IA puede acceder a tus datos privados + leer contenido que no controlas + mandar información hacia afuera → puede ser manipulada para filtrar tus propios datos.</p>
+<p><strong>Cómo usar conectores de forma segura:</strong></p>
+<ol>
+<li><strong>Nunca conectes cuentas de trabajo a tu IA personal.</strong> Gmail, Drive o Slack del trabajo no van en tu cuenta personal.</li>
+<li><strong>Conecta lo mínimo, con el acceso más acotado posible.</strong> Prefiere solo lectura o una sola carpeta antes que &quot;todo mi Drive&quot;.</li>
+<li><strong>Conecta solo conectores oficiales.</strong> Los que aparecen en el directorio oficial de tu IA.</li>
+<li><strong>Revisa y desconecta mensualmente.</strong> Chequea la configuración de tu IA y la página de &quot;acceso de terceros&quot; de Google/Microsoft.</li>
+</ol>
+<h2>7. La mejor solución</h2>
+<p>Consigue que tu empresa pague la mejor IA disponible (Claude) y entrene a todo el equipo — con las herramientas oficiales, no con cuentas personales. Esa es exactamente la propuesta de <a href="./05-claude-para-equipos.md">Claude para equipos</a>.</p>
+<hr>
+<p><em>Contenido adaptado de la guía &quot;Stop using your own Claude at work&quot; de Ruben Hassid (<a href="https://claude101.com">claude101.com</a>).</em></p>
+
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="wrap">
+    <p>Claude Academy ES — proyecto independiente en español para aprender Claude.<br>
+    No afiliado ni respaldado oficialmente por Anthropic. <a href="./index.html#inscripcion">Anotate al taller gratuito "Claude 101"</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
