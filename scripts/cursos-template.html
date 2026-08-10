@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Catálogo de cursos — Claude Academy ES</title>
 <meta name="description" content="Los 18 cursos gratuitos de Claude Academy ES, organizados por nivel. Abre cada uno para ver la guía completa.">
+<meta name="theme-color" content="#ffcf3f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23ff6b47'/%3E%3Cpath d='M50 14 L59 41 L86 50 L59 59 L50 86 L41 59 L14 50 L41 41 Z' fill='%23171310'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,440..620;1,9..144,440..620&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #171310;
@@ -18,6 +23,9 @@
     --pink: #ff5fa2;
     --blue: #57b8ff;
     --green: #4fd88a;
+    --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+    --spark-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z' fill='%23171310'/%3E%3C/svg%3E");
+    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.045'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -37,16 +45,22 @@
   }
 
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   html, body { margin: 0; padding: 0; }
   body {
-    background: var(--paper);
+    background-color: var(--paper);
     background-image:
+      var(--grain),
       radial-gradient(circle, color-mix(in srgb, var(--ink) 16%, transparent) 1.6px, transparent 1.6px);
-    background-size: 24px 24px;
+    background-size: 160px 160px, 24px 24px;
     color: var(--text-body);
     font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
     line-height: 1.6;
   }
+
+  ::selection { background: var(--ink); color: var(--yellow); }
+  :focus-visible { outline: 2.5px dashed var(--coral); outline-offset: 3px; }
+
   .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
 
   h1, h2, h3 {
@@ -55,6 +69,12 @@
     letter-spacing: -0.02em;
     color: var(--ink);
     text-wrap: balance;
+  }
+  h1, h2 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 620;
+    letter-spacing: -0.01em;
   }
 
   a { color: var(--ink); }
@@ -76,27 +96,44 @@
     font-size: 13px;
   }
 
+  /* ---------- SECTION DIVIDER ORNAMENT ---------- */
+  header.page-hero, .level-group { position: relative; }
+  header.page-hero::after, .level-group::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: var(--paper);
+    background-image: var(--spark-ink);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px 14px;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    z-index: 2;
+  }
+  .level-group:last-of-type::after { display: none; }
+
   /* ---------- TOP NAV ---------- */
   nav.topbar {
     border-bottom: 3px solid var(--ink);
     padding: 16px 0;
   }
   nav.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
-  .brand .mark {
-    width: 44px; height: 44px;
-    display: flex; align-items: center; justify-content: center;
-    background: var(--coral);
-    border: 3px solid #171310;
-    border-radius: 12px;
-    box-shadow: 3px 3px 0 0 #171310;
-    color: #171310;
-    font-weight: 800;
-    font-size: 15px;
-    font-family: "Courier New", monospace;
-    flex: none;
+  .brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--ink); }
+  .brand .mark { display: inline-flex; color: var(--ink); flex: none; }
+  .brand .mark svg { display: block; }
+  .brand .wordmark {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 19px;
+    letter-spacing: -0.01em;
   }
-  .brand .wordmark { font-weight: 800; font-size: 17px; letter-spacing: -0.01em; }
   .crumb { font-size: 12.5px; color: var(--text-soft); display: none; }
   @media (min-width: 640px) { .crumb { display: block; } }
   .nav-cta {
@@ -110,7 +147,9 @@
 
   /* ---------- PAGE HERO (compact) ---------- */
   header.page-hero {
-    background: var(--yellow);
+    background-color: var(--yellow);
+    background-image: var(--grain);
+    background-size: 160px 160px;
     border-bottom: 3px solid #171310;
     padding: 44px 0 40px;
     color: #171310;
@@ -124,7 +163,7 @@
   }
   header.page-hero h1 {
     font-size: clamp(28px, 4.6vw, 42px);
-    line-height: 1.12;
+    line-height: 1.1;
     margin: 0 0 12px;
     color: #171310;
   }
@@ -166,7 +205,7 @@
     background: var(--panel);
     box-shadow: 5px 5px 0 0 var(--ink);
   }
-  .level-emoji { font-size: 20px; }
+  .level-emoji { display: inline-flex; align-items: flex-end; }
   .level-heading.lvl-green { background: var(--green); }
   .level-heading.lvl-yellow { background: var(--yellow); }
   .level-heading.lvl-coral { background: var(--coral); color: #fff8ec; }
@@ -226,6 +265,8 @@
     margin-top: 2px;
   }
   .course-body h2 {
+    font-family: inherit;
+    font-weight: 800;
     font-size: 17.5px;
     margin: 22px 0 10px;
     padding-top: 14px;
@@ -281,6 +322,7 @@
     text-align: left;
   }
   .course-body th { background: var(--yellow); color: #171310; font-weight: 800; }
+  .course-body tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--ink) 4%, transparent); }
   .course-body hr { border: none; border-top: 2px dashed color-mix(in srgb, var(--ink) 25%, transparent); margin: 18px 0; }
   .course-body em { color: var(--text-soft); }
 
@@ -291,6 +333,11 @@
     font-size: 13px;
   }
   footer a { color: var(--ink); font-weight: 700; }
+  .signature { margin-top: 10px; font-size: 12px; color: var(--signup-muted); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
 
   @media (max-width: 520px) {
     .course-item > summary { padding: 14px 16px; }
@@ -304,7 +351,9 @@
 <nav class="topbar">
   <div class="wrap">
     <a href="./index.html" class="brand">
-      <span class="mark">CA</span>
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z" fill="currentColor"/></svg>
+      </span>
       <span class="wordmark">Claude Academy ES</span>
     </a>
     <span class="crumb">Inicio / Cursos</span>
@@ -327,6 +376,7 @@
   <div class="wrap">
     <p>Claude Academy ES — proyecto independiente en español para aprender Claude.<br>
     No afiliado ni respaldado oficialmente por Anthropic. <a href="./index.html#inscripcion">Anotate al taller gratuito "Claude 101"</a>.</p>
+    <p class="signature">Hecho a mano en español, sin plantilla — un taller a la vez.</p>
   </div>
 </footer>
 

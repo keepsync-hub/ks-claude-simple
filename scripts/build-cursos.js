@@ -12,8 +12,19 @@ const TEMPLATE_FILE = path.join(__dirname, 'cursos-template.html');
 marked.setOptions({ gfm: true, breaks: false });
 
 const LEVEL_ORDER = ['Principiante', 'Intermedio', 'Avanzado', 'Experto'];
-const LEVEL_EMOJI = { Principiante: '🟢', Intermedio: '🟡', Avanzado: '🟠', Experto: '🔴' };
+const LEVEL_RANK = { Principiante: 1, Intermedio: 2, Avanzado: 3, Experto: 4 };
 const LEVEL_COLOR_CLASS = { Principiante: 'lvl-green', Intermedio: 'lvl-yellow', Avanzado: 'lvl-coral', Experto: 'lvl-pink' };
+
+// Medidor de 4 barras crecientes en vez de un emoji de color: comunica
+// "cuán lejos en la escalera de dificultad", no solo un código de color.
+function levelMeter(rank) {
+  const bars = [0, 1, 2, 3].map((i) => {
+    const h = 6 + i * 4;
+    const filled = i < rank;
+    return `<rect x="${i * 6}" y="${18 - h}" width="4" height="${h}" rx="1.5" fill="${filled ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="${filled ? 0 : 1.4}" opacity="${filled ? 1 : 0.45}"/>`;
+  }).join('');
+  return `<svg class="level-meter" viewBox="0 0 24 18" width="22" height="16" aria-hidden="true">${bars}</svg>`;
+}
 
 function parseCourse(filename) {
   const raw = fs.readFileSync(path.join(CURSOS_DIR, filename), 'utf8');
@@ -75,7 +86,7 @@ for (const level of LEVEL_ORDER) {
   accordionHtml += `
 <section class="level-group">
   <div class="wrap">
-    <h2 class="level-heading ${colorClass}"><span class="level-emoji">${LEVEL_EMOJI[level]}</span> Nivel ${level}</h2>
+    <h2 class="level-heading ${colorClass}"><span class="level-emoji">${levelMeter(LEVEL_RANK[level])}</span> Nivel ${level}</h2>
     <div class="accordion">
 `;
   for (const c of items) {
