@@ -67,11 +67,10 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    border: 3px solid var(--ink);
+    border: 2px solid var(--ink);
     border-radius: 999px;
-    box-shadow: 4px 4px 0 0 var(--ink);
-    padding: 8px 18px;
-    font-weight: 800;
+    padding: 7px 16px;
+    font-weight: 700;
     font-size: 13px;
   }
 
@@ -102,7 +101,9 @@
     background: var(--yellow);
     color: #171310;
     border-color: #171310;
-    box-shadow: 4px 4px 0 0 #171310;
+    border-width: 2.5px;
+    box-shadow: 3px 3px 0 0 #171310;
+    font-weight: 800;
   }
 
   /* ---------- HERO ---------- */
@@ -116,7 +117,7 @@
   .badge {
     background: #fff;
     border-color: #171310;
-    box-shadow: 4px 4px 0 0 #171310;
+    border-width: 1.5px;
     border-radius: 999px;
     margin-bottom: 24px;
   }
@@ -183,63 +184,59 @@
     margin: 0 0 28px;
   }
 
-  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; }
   .card {
     background: var(--panel);
-    border: 3px solid var(--ink);
+    border: 1.5px solid color-mix(in srgb, var(--ink) 22%, transparent);
     border-radius: 20px;
-    box-shadow: 7px 7px 0 0 var(--ink);
-    padding: 26px;
-    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    padding: 28px 26px;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
   }
-  .card:hover { transform: translate(-3px, -3px); box-shadow: 10px 10px 0 0 var(--ink); }
+  .card:hover {
+    transform: translate(-2px, -2px);
+    border-color: var(--coral);
+    box-shadow: 5px 5px 0 0 var(--coral);
+  }
   .card .swatch {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 42px; height: 42px;
-    border: 3px solid var(--ink);
+    border: 1.5px solid color-mix(in srgb, var(--ink) 30%, transparent);
     border-radius: 12px;
     margin-bottom: 16px;
     font-size: 19px;
+    background: color-mix(in srgb, var(--yellow) 30%, var(--panel));
   }
-  .card:nth-child(1) .swatch { background: var(--yellow); }
-  .card:nth-child(2) .swatch { background: var(--pink); }
-  .card:nth-child(3) .swatch { background: var(--blue); }
   .card h3 { margin: 0 0 8px; font-size: 18px; }
   .card p { margin: 0; color: var(--text-body); font-size: 14.5px; }
 
-  ol.agenda { list-style: none; padding: 0; margin: 0; counter-reset: step; display: flex; flex-direction: column; gap: 14px; }
+  ol.agenda { list-style: none; padding: 0; margin: 0; counter-reset: step; display: flex; flex-direction: column; gap: 16px; }
   ol.agenda li {
     counter-increment: step;
     display: flex;
     gap: 18px;
     align-items: flex-start;
     background: var(--panel);
-    border: 3px solid var(--ink);
+    border: 1.5px solid color-mix(in srgb, var(--ink) 22%, transparent);
     border-radius: 16px;
-    box-shadow: 5px 5px 0 0 var(--ink);
-    padding: 16px 20px;
+    padding: 18px 22px;
   }
   ol.agenda li::before {
     content: counter(step, decimal-leading-zero);
-    flex: 0 0 40px;
-    height: 40px;
-    border: 3px solid var(--ink);
+    flex: 0 0 38px;
+    height: 38px;
+    border: 2px solid var(--ink);
     border-radius: 10px;
     background: var(--yellow);
     color: #171310;
     font-family: "Courier New", monospace;
     font-weight: 800;
-    font-size: 15px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  ol.agenda li:nth-child(2)::before { background: var(--pink); }
-  ol.agenda li:nth-child(3)::before { background: var(--blue); }
-  ol.agenda li:nth-child(4)::before { background: var(--green); }
-  ol.agenda li:nth-child(5)::before { background: var(--yellow); }
   .agenda-title { font-weight: 700; margin: 0 0 3px; font-size: 15.5px; color: var(--ink); }
   .agenda-desc { color: var(--text-body); font-size: 14.5px; margin: 0; }
 
@@ -249,8 +246,8 @@
     color: var(--paper);
     border: 3px solid var(--ink);
     border-radius: 24px;
-    box-shadow: 9px 9px 0 0 var(--pink);
-    padding: 44px 36px;
+    box-shadow: 6px 6px 0 0 var(--coral);
+    padding: 46px 36px;
     text-align: center;
   }
   .signup h2 { color: var(--paper); }
@@ -275,9 +272,9 @@
   }
   form.signup-form input::placeholder { color: var(--signup-muted); }
   form.signup-form input:focus { outline: none; box-shadow: 4px 4px 0 0 var(--yellow); }
-  .signup .cta-btn { background: var(--yellow); color: #171310; border-color: var(--paper); box-shadow: 6px 6px 0 0 var(--pink); }
-  .signup .cta-btn:hover { box-shadow: 8px 8px 0 0 var(--pink); }
-  .signup .cta-btn:active { box-shadow: 0 0 0 0 var(--pink); }
+  .signup .cta-btn { background: var(--yellow); color: #171310; border-color: var(--paper); box-shadow: 6px 6px 0 0 var(--coral); }
+  .signup .cta-btn:hover { box-shadow: 8px 8px 0 0 var(--coral); }
+  .signup .cta-btn:active { box-shadow: 0 0 0 0 var(--coral); }
   .fine-print { margin-top: 16px; font-size: 12.5px; color: var(--signup-muted); }
   .confirm-msg {
     display: none;
@@ -293,12 +290,13 @@
   /* ---------- FAQ ---------- */
   .faq details {
     background: var(--panel);
-    border: 3px solid var(--ink);
+    border: 1.5px solid color-mix(in srgb, var(--ink) 22%, transparent);
     border-radius: 16px;
-    box-shadow: 5px 5px 0 0 var(--ink);
     padding: 16px 22px;
     margin-bottom: 12px;
+    transition: border-color 0.12s ease;
   }
+  .faq details[open] { border-color: var(--coral); }
   .faq summary { font-weight: 700; cursor: pointer; font-size: 15px; color: var(--ink); }
   .faq p { color: var(--text-body); margin: 12px 0 0; font-size: 14.5px; }
 
@@ -313,7 +311,7 @@
   @media (max-width: 520px) {
     header.hero { padding: 44px 0 36px; }
     section { padding: 40px 0; }
-    .signup { padding: 30px 20px; box-shadow: 6px 6px 0 0 var(--pink); }
+    .signup { padding: 30px 20px; box-shadow: 4px 4px 0 0 var(--coral); }
   }
 </style>
 </head>
@@ -325,8 +323,8 @@
       <span class="mark">CA</span>
       <span class="wordmark">Claude Academy ES</span>
     </a>
-    <span class="crumb mono">Inicio / Taller Claude 101</span>
-    <a href="./cursos.html" class="pill mono nav-cta">Ver cursos</a>
+    <span class="crumb">Inicio / Taller Claude 101</span>
+    <a href="./cursos.html" class="pill nav-cta">Ver cursos</a>
   </div>
 </nav>
 
@@ -336,7 +334,7 @@
     <h1>Claude 101: el taller en vivo para <mark>dejar de tenerle miedo</mark> a la IA</h1>
     <p class="subtitle">Una hora en vivo, en español, para que salgas usando Claude de verdad — no solo mirando tutoriales. Sin conocimientos previos.</p>
     <a href="#inscripcion" class="cta-btn">Reservar mi cupo gratis</a>
-    <div class="meta-row mono">
+    <div class="meta-row">
       <span>⏱️ 60 min en vivo</span>
       <span>💻 100% online</span>
       <span>🎟️ Cupos limitados</span>

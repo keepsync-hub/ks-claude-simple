@@ -69,11 +69,10 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    border: 3px solid var(--ink);
+    border: 2px solid var(--ink);
     border-radius: 999px;
-    box-shadow: 4px 4px 0 0 var(--ink);
-    padding: 8px 18px;
-    font-weight: 800;
+    padding: 7px 16px;
+    font-weight: 700;
     font-size: 13px;
   }
 
@@ -104,7 +103,9 @@
     background: var(--yellow);
     color: #171310;
     border-color: #171310;
-    box-shadow: 4px 4px 0 0 #171310;
+    border-width: 2.5px;
+    box-shadow: 3px 3px 0 0 #171310;
+    font-weight: 800;
   }
 
   /* ---------- PAGE HERO (compact) ---------- */
@@ -117,7 +118,7 @@
   header.page-hero .badge {
     background: #fff;
     border-color: #171310;
-    box-shadow: 4px 4px 0 0 #171310;
+    border-width: 1.5px;
     border-radius: 999px;
     margin-bottom: 18px;
   }
@@ -172,15 +173,16 @@
   .level-heading.lvl-pink { background: var(--pink); }
   .level-heading.lvl-green, .level-heading.lvl-yellow, .level-heading.lvl-pink { color: #171310; }
 
-  .accordion { display: flex; flex-direction: column; gap: 14px; }
+  .accordion { display: flex; flex-direction: column; gap: 16px; }
 
   .course-item {
     background: var(--panel);
-    border: 3px solid var(--ink);
+    border: 1.5px solid color-mix(in srgb, var(--ink) 20%, transparent);
     border-radius: 18px;
-    box-shadow: 6px 6px 0 0 var(--ink);
     overflow: hidden;
+    transition: box-shadow 0.12s ease, border-color 0.12s ease;
   }
+  .course-item:hover { border-color: color-mix(in srgb, var(--ink) 40%, transparent); }
   .course-item > summary {
     list-style: none;
     cursor: pointer;
@@ -212,7 +214,7 @@
     color: var(--text-soft);
     white-space: nowrap;
   }
-  .course-item[open] { box-shadow: 8px 8px 0 0 var(--ink); }
+  .course-item[open] { box-shadow: 4px 4px 0 0 var(--ink); border-color: var(--ink); }
   .course-item.lvl-green { border-left: 8px solid var(--green); }
   .course-item.lvl-yellow { border-left: 8px solid var(--yellow); }
   .course-item.lvl-coral { border-left: 8px solid var(--coral); }
@@ -305,8 +307,8 @@
       <span class="mark">CA</span>
       <span class="wordmark">Claude Academy ES</span>
     </a>
-    <span class="crumb mono">Inicio / Cursos</span>
-    <a href="./index.html#inscripcion" class="pill mono nav-cta">Taller gratis</a>
+    <span class="crumb">Inicio / Cursos</span>
+    <a href="./index.html#inscripcion" class="pill nav-cta">Taller gratis</a>
   </div>
 </nav>
 
