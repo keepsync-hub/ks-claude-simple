@@ -315,7 +315,7 @@
     margin-top: 20px;
     background: var(--green);
     color: #171310;
-    border: 3px solid var(--paper);
+    border: 3px solid #171310;
     border-radius: 18px;
     padding: 18px 22px;
     text-align: left;
@@ -329,7 +329,7 @@
     align-items: center;
     gap: 6px;
     background: #171310;
-    color: var(--paper);
+    color: #fff8ec;
     font-weight: 800;
     font-size: 13.5px;
     padding: 10px 18px;
@@ -374,6 +374,15 @@
   }
   .faq details[open] summary::after { content: '−'; }
   .faq p { color: var(--text-body); margin: 12px 0 0; font-size: 14.5px; }
+  /* Sin esto el link hereda el azul por defecto del navegador, ilegible
+     sobre el panel oscuro en modo oscuro (~1.8:1). */
+  .faq a {
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--coral);
+    text-underline-offset: 2px;
+  }
 
   footer {
     padding: 40px 0 60px;

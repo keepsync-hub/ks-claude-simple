@@ -191,9 +191,10 @@
   .level-emoji { display: inline-flex; align-items: flex-end; }
   .level-heading.lvl-green { background: var(--green); }
   .level-heading.lvl-yellow { background: var(--yellow); }
-  .level-heading.lvl-coral { background: var(--coral); color: #fff8ec; }
+  .level-heading.lvl-coral { background: var(--coral); }
   .level-heading.lvl-pink { background: var(--pink); }
-  .level-heading.lvl-green, .level-heading.lvl-yellow, .level-heading.lvl-pink { color: #171310; }
+  /* Texto oscuro en todos: blanco sobre coral daba ~2.7:1 (falla AA). */
+  .level-heading.lvl-green, .level-heading.lvl-yellow, .level-heading.lvl-coral, .level-heading.lvl-pink { color: #171310; }
 
   .accordion { display: flex; flex-direction: column; gap: 16px; }
 

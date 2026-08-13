@@ -98,6 +98,23 @@
   .prose { max-width: 640px; font-size: 15.5px; color: var(--text-body); }
   .prose.center { margin-left: auto; margin-right: auto; text-align: center; }
   .todo-fill { border-bottom: 2px dashed var(--coral); color: var(--text-soft); font-style: italic; }
+  /* En el hero (amarillo FIJO) el marcador va en un tono oscuro fijo: con
+     var(--text-soft) se aclararía en modo oscuro y no se leería. */
+  header.hero .todo-fill { color: #5a4a25; border-bottom-color: #171310; }
+  /* El banner final tiene fondo var(--ink), que se invierte con el tema.
+     signup-muted está pensado justo para texto atenuado sobre ese fondo:
+     acompaña la inversión y se lee en ambos temas (text-soft no lo hacía). */
+  .final-cta .todo-fill { color: var(--signup-muted); }
+
+  /* Links dentro de texto corrido y FAQ: sin esto heredan el azul por
+     defecto del navegador, ilegible sobre el panel oscuro en modo oscuro. */
+  .prose a, .faq a {
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--coral);
+    text-underline-offset: 2px;
+  }
 
   /* ---------- SECTION DIVIDER ORNAMENT ---------- */
   header.hero, section { position: relative; }
@@ -364,11 +381,13 @@
     display: inline-flex; align-items: center; gap: 8px;
     border: 2px solid var(--ink); border-radius: 999px;
     padding: 6px 14px;
-    background: var(--coral); color: #fff8ec;
+    background: var(--coral); color: #171310;
     font-weight: 800; font-size: 13px;
     margin-bottom: 14px;
   }
-  .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #fff8ec; animation: livepulse 1.4s ease-in-out infinite; }
+  /* Texto blanco sobre coral daba ~2.7:1 (falla AA). Texto oscuro sobre
+     coral pasa ~5.9:1; el punto también en oscuro para leer como una unidad. */
+  .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #171310; animation: livepulse 1.4s ease-in-out infinite; }
   @keyframes livepulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.7); } }
   .live-tags { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
   .live-tags li { border: 2px solid var(--ink); border-radius: 999px; padding: 5px 12px; font-size: 12.5px; font-weight: 700; background: var(--panel); }
@@ -379,7 +398,9 @@
   /* ---------- LA PRUEBA ---------- */
   .proof-real { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin: 0 0 24px; }
   .proof-stat { text-align: center; }
-  .proof-stat strong { display: block; font-size: 34px; font-weight: 800; color: var(--coral); line-height: 1; }
+  /* Números grandes en var(--ink), no coral: coral sobre el crema daba
+     ~2.5:1. En tinta pegan más fuerte y pasan holgado en ambos temas. */
+  .proof-stat strong { display: block; font-size: 34px; font-weight: 800; color: var(--ink); line-height: 1; }
   .proof-stat span { font-size: 12.5px; color: var(--text-soft); }
   .testi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; margin-top: 28px; }
 
@@ -403,14 +424,16 @@
   }
   .price-card .ribbon {
     position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-    background: var(--yellow); border: 2px solid var(--ink); border-radius: 999px;
+    background: var(--yellow); color: #171310; border: 2px solid var(--ink); border-radius: 999px;
     padding: 4px 14px; font-weight: 800; font-size: 12px; white-space: nowrap;
   }
   .price-plan { font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-soft); margin-bottom: 6px; }
   .price-for { display: block; font-size: 13px; color: var(--text-soft); margin-bottom: 14px; }
   .price-amount { font-size: 30px; font-weight: 800; color: var(--ink); margin: 4px 0 18px; }
   .price-amount small { font-size: 13px; font-weight: 600; color: var(--text-soft); }
-  .price-note { text-align: center; font-size: 12.5px; color: var(--signup-muted); margin: 18px 0 0; }
+  /* signup-muted es para texto sobre el panel oscuro de inscripción; acá
+     va sobre el fondo de página y daba ~1.7:1. text-soft pasa en ambos temas. */
+  .price-note { text-align: center; font-size: 12.5px; color: var(--text-soft); margin: 18px 0 0; }
   .waitlist { margin-top: 28px; text-align: center; }
 
   /* ---------- AGENDA (pasos / cómo entrar) ---------- */
@@ -524,8 +547,12 @@
     padding: 13px 24px;
     border-radius: 999px;
     text-decoration: none;
-    border: 2.5px dashed var(--ink);
-    color: var(--ink);
+    /* El hero tiene fondo amarillo FIJO (no cambia con el tema). Por eso el
+       texto y el borde van en negro fijo, no en var(--ink): si usaran la
+       variable, en modo oscuro se aclararían y perderían contraste sobre
+       el amarillo. Mismo criterio que header.hero .cta-btn. */
+    border: 2.5px dashed #171310;
+    color: #171310;
   }
   .hero-secondary { margin-left: 10px; }
   @media (max-width: 560px) {
