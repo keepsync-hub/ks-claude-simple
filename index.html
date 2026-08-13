@@ -321,7 +321,8 @@
     text-align: left;
   }
   .confirm-msg.is-visible { display: block; }
-  .confirm-headline { margin: 0 0 6px; font-weight: 800; font-size: 15.5px; }
+  .confirm-headline { margin: 0 0 10px; font-weight: 800; font-size: 15.5px; }
+  .confirm-actions { margin: 0 0 12px; }
   .confirm-next { margin: 0 0 12px; font-size: 13.5px; opacity: 0.85; }
   .confirm-msg .btn-ghost {
     display: inline-flex;
@@ -382,15 +383,136 @@
   }
   footer a { color: var(--ink); font-weight: 700; }
 
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* ---------- CUÁNDO (fecha visible) ---------- */
+  .when-strip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #fff8ec;
+    border: 2.5px solid #171310;
+    border-radius: 14px;
+    box-shadow: 4px 4px 0 0 #171310;
+    padding: 10px 18px;
+    margin: 0 0 22px;
+    font-weight: 800;
+    font-size: 14.5px;
+    color: #171310;
+  }
+  .when-strip .when-label {
+    font-family: "Courier New", monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 11px;
+    background: #171310;
+    color: #fff8ec;
+    border-radius: 999px;
+    padding: 3px 9px;
+  }
+
+  /* ---------- FORM EN EL HERO (1 campo) ---------- */
+  .hero-form {
+    display: flex;
+    gap: 10px;
+    max-width: 460px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-form input[type="email"] {
+    flex: 1 1 240px;
+    padding: 14px 20px;
+    border: 3px solid #171310;
+    border-radius: 999px;
+    background: #fff8ec;
+    color: #171310;
+    font-size: 15.5px;
+    font-weight: 600;
+  }
+  .hero-form input[type="email"]::placeholder { color: #7a6f5c; }
+  .hero-form input:focus-visible { outline: none; box-shadow: 4px 4px 0 0 var(--coral); }
+  .hero-form .cta-btn { flex: none; padding: 14px 26px; }
+  /* :has() — el botón se enfatiza recién cuando el email es válido. */
+  .hero-form:has(input:valid) .cta-btn { box-shadow: 6px 6px 0 0 var(--coral); }
+  .hero-note { margin: 12px 0 0; font-size: 12.5px; color: #4a3f2d; font-weight: 600; }
+
+  /* ---------- AGREGAR AL CALENDARIO ---------- */
+  .ics-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: transparent;
+    color: #171310;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 9px 16px;
+    border: 2px dashed #171310;
+    border-radius: 999px;
+    text-decoration: none;
+    margin-right: 8px;
+  }
+
+  /* ---------- PUENTE A LA COMUNIDAD ---------- */
+  .bridge {
+    background: var(--panel);
+    border: 2.5px solid var(--ink);
+    border-radius: 22px;
+    box-shadow: 7px 7px 0 0 var(--coral);
+    padding: 32px 30px;
+  }
+  .bridge h2 { margin: 0 0 12px; }
+  .bridge p { color: var(--text-body); font-size: 15.5px; margin: 0 0 12px; }
+  .bridge .bridge-cta { margin-top: 18px; display: inline-flex; }
+
+  /* ---------- REFINAMIENTOS TIPOGRÁFICOS ---------- */
+  p, li { text-wrap: pretty; }
+
+  /* Container queries: las cards se adaptan a SU contenedor, no al viewport. */
+  .grid-3 > .card { container-type: inline-size; }
+  @container (min-width: 340px) {
+    .card h3 { font-size: 19.5px; }
+  }
+
+  /* Transiciones entre páginas (index ↔ programa ↔ cursos). Degrada a nada. */
+  @view-transition { navigation: auto; }
+
+  /* Reveal por scroll SIN JavaScript, donde el navegador lo soporte. */
+  @supports (animation-timeline: view()) {
+    .lift {
+      animation: lift-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 42%;
+    }
+    @keyframes lift-in {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: none; }
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .cta-btn, .card, .faq details { transition: none; }
+    .lift { animation: none; opacity: 1; transform: none; }
+    @view-transition { navigation: none; }
   }
 
   @media (max-width: 520px) {
     header.hero { padding: 44px 0 36px; }
     section { padding: 40px 0; }
     .signup { padding: 30px 20px; box-shadow: 4px 4px 0 0 var(--coral); }
+    .bridge { padding: 26px 20px; box-shadow: 5px 5px 0 0 var(--coral); }
+    .hero-form .cta-btn { width: 100%; }
   }
 </style>
 </head>
@@ -414,7 +536,26 @@
     <span class="pill badge mono">🎁 100% gratis · en español</span>
     <h1>Claude 101: el taller en vivo para <mark>dejar de tenerle miedo</mark> a la IA</h1>
     <p class="subtitle">Una hora en vivo, en español, para que salgas usando Claude de verdad — no solo mirando tutoriales. Sin conocimientos previos.</p>
-    <a href="#inscripcion" class="cta-btn" data-ev="workshop_cta_click">Reservar mi cupo gratis</a>
+
+    <!--
+      TODO (equipo): la fecha del taller se configura en el objeto WORKSHOP
+      del script al final de esta página. Mientras no haya fecha real, la
+      tira muestra "próxima fecha: por confirmar" y el botón de calendario
+      queda oculto (no se inventa una fecha).
+    -->
+    <p class="when-strip">
+      <span class="when-label">Cuándo</span>
+      <span id="when-text">Próxima fecha: por confirmar</span>
+    </p>
+
+    <!-- Registro directo en el hero: un solo campo, sin salto de scroll. -->
+    <form class="hero-form" id="hero-form" action="#" method="POST" novalidate>
+      <label for="hero-email" class="sr-only">Tu email</label>
+      <input type="email" id="hero-email" name="email" placeholder="tu@email.com" required autocomplete="email">
+      <button type="submit" class="cta-btn" data-ev="workshop_cta_click">Reservar mi cupo</button>
+    </form>
+    <p class="hero-note">Gratis · Solo tu email · Sin spam</p>
+
     <div class="meta-row">
       <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> 60 min en vivo</span>
       <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20"/></svg> 100% online</span>
@@ -497,17 +638,31 @@
         según lo que pida tu proveedor. Mientras tanto, el formulario
         confirma en pantalla mediante JS sin enviar los datos a ningún lado.
       -->
-      <form class="signup-form" id="signup-form" action="#" method="POST">
-        <input type="text" name="nombre" placeholder="Tu nombre" required autocomplete="name">
-        <input type="email" name="email" placeholder="tu@email.com" required autocomplete="email">
-        <button type="submit" class="cta-btn">Quiero mi cupo</button>
+      <form class="signup-form" id="signup-form" action="#" method="POST" novalidate>
+        <label for="signup-email" class="sr-only">Tu email</label>
+        <input type="email" id="signup-email" name="email" placeholder="tu@email.com" required autocomplete="email">
+        <button type="submit" class="cta-btn" data-ev="workshop_cta_click">Quiero mi cupo</button>
       </form>
       <div class="confirm-msg" id="confirm-msg">
         <p class="confirm-headline">✓ Tu lugar está guardado. Revisa tu email para confirmar.</p>
-        <p class="confirm-next">Mientras esperas el taller, mira el paso 2:</p>
-        <a href="./programa.html?ref=taller" class="btn-ghost" data-ev="program_teaser_click">Ver el programa completo →</a>
+        <p class="confirm-actions">
+          <a href="#" class="ics-btn" id="ics-btn" download="claude-101.ics" hidden data-ev="calendar_add">📅 Agregar al calendario</a>
+        </p>
+        <p class="confirm-next">El taller te muestra el "cómo". Lo que hace que lo apliques de verdad es practicar acompañado:</p>
+        <a href="./programa.html?ref=taller" class="btn-ghost" data-ev="program_teaser_click">Conocer la comunidad →</a>
       </div>
       <p class="fine-print">Sin spam. Un email antes del taller y listo. Puedes darte de baja cuando quieras.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="bridge lift">
+      <h2>El taller te enseña. La <mark>comunidad</mark> hace que lo apliques.</h2>
+      <p>Ya publicamos 18 guías gratuitas. Si con leer alcanzara, nadie necesitaría nada más. Pero lo que frena a casi todo el mundo no es falta de información: es quedarse solo frente a la pantalla cuando la tarea es real y nadie te dice si vas bien.</p>
+      <p>Por eso el paso 2 no es otro curso: es una comunidad en <strong>Skool</strong> donde publicas lo que hiciste, alguien te lo corrige, y vuelves a intentarlo con una llamada en vivo cada semana.</p>
+      <a href="./programa.html?ref=taller" class="cta-btn bridge-cta" data-ev="program_teaser_click">Ver cómo funciona la comunidad →</a>
     </div>
   </div>
 </section>
@@ -555,12 +710,77 @@
     track(el.getAttribute('data-ev'), { href: el.getAttribute('href') || null });
   });
 
-  document.getElementById('signup-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    document.getElementById('confirm-msg').classList.add('is-visible');
-    track('workshop_signup_submit', {});
-    this.reset();
-  });
+  // ================== CONFIG DEL TALLER ==================
+  // TODO (equipo): poner la fecha real del próximo taller. Mientras
+  // `start` sea null, la página dice "por confirmar" y oculta el botón
+  // de calendario — a propósito, para no inventar una fecha.
+  var WORKSHOP = {
+    start: null,          // ej: '2026-09-10T19:00:00-03:00'
+    durationMinutes: 60,
+    title: 'Claude 101 — Taller gratuito en español',
+    details: 'Taller en vivo para aprender a usar Claude desde cero. Link de acceso por email.'
+  };
+  // =======================================================
+
+  (function () {
+    var whenText = document.getElementById('when-text');
+    var icsBtn = document.getElementById('ics-btn');
+    if (!WORKSHOP.start) return;           // sin fecha real: degrada con gracia
+
+    var start = new Date(WORKSHOP.start);
+    if (isNaN(start.getTime())) return;    // fecha mal escrita: no rompas la página
+    var end = new Date(start.getTime() + WORKSHOP.durationMinutes * 60000);
+
+    if (whenText) {
+      // Se muestra en la zona horaria de quien visita (la audiencia es de
+      // varios países), con el nombre de la zona para que no sea ambiguo.
+      whenText.textContent = start.toLocaleDateString('es', {
+        weekday: 'long', day: 'numeric', month: 'long'
+      }) + ' · ' + start.toLocaleTimeString('es', {
+        hour: '2-digit', minute: '2-digit', timeZoneName: 'short'
+      }) + ' (tu hora) · ' + WORKSHOP.durationMinutes + ' min';
+    }
+
+    if (icsBtn) {
+      // .ics generado en el navegador (data: URI). Cero requests externos.
+      var z = function (d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); };
+      var esc = function (s) { return String(s).replace(/([,;\\])/g, '\\$1'); };
+      var ics = [
+        'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Claude Academy ES//Taller//ES',
+        'BEGIN:VEVENT',
+        'UID:taller-' + z(start) + '@claude-academy-es',
+        'DTSTAMP:' + z(new Date()),
+        'DTSTART:' + z(start),
+        'DTEND:' + z(end),
+        'SUMMARY:' + esc(WORKSHOP.title),
+        'DESCRIPTION:' + esc(WORKSHOP.details),
+        'END:VEVENT', 'END:VCALENDAR'
+      ].join('\r\n');
+      icsBtn.href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
+      icsBtn.hidden = false;
+    }
+  })();
+
+  // Un solo manejador para los dos formularios (hero y sección de registro).
+  function handleSignup(form, origin) {
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = form.querySelector('input[type="email"]');
+      // novalidate está puesto para controlar el mensaje; validamos a mano.
+      if (email && !email.checkValidity()) { email.focus(); return; }
+      var confirmEl = document.getElementById('confirm-msg');
+      confirmEl.classList.add('is-visible');
+      track('workshop_signup_submit', { origin: origin });
+      form.reset();
+      // El form del hero no está junto a la confirmación: llevamos ahí.
+      if (origin === 'hero') {
+        confirmEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  }
+  handleSignup(document.getElementById('hero-form'), 'hero');
+  handleSignup(document.getElementById('signup-form'), 'seccion');
 </script>
 
 </body>
