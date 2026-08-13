@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programa Claude Academy ES — de la teoría a un sistema semanal</title>
+<meta name="description" content="El programa en vivo de Claude Academy ES para llevar lo del taller Claude 101 a un uso semanal real, con llamadas en vivo y comunidad.">
+<meta name="theme-color" content="#ffcf3f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23ff6b47'/%3E%3Cpath d='M50 14 L59 41 L86 50 L59 59 L50 86 L41 59 L14 50 L41 41 Z' fill='%23171310'/%3E%3C/svg%3E">
+<style>
+  /* ------------------------------------------------------------------
+     NOTA: tokens y componentes base están duplicados desde index.html
+     a propósito — cada página de este sitio es self-contained (cero
+     requests externos, un solo <style> por archivo). Si algún día se
+     centraliza el CSS, que sea un PR aparte enfocado solo en eso.
+     ------------------------------------------------------------------ */
+  :root {
+    --ink: #171310;
+    --paper: #fbf1e1;
+    --panel: #ffffff;
+    --text-body: #4a4234;
+    --text-soft: #635a48;
+    --signup-muted: #c2baad;
+    --yellow: #ffcf3f;
+    --coral: #ff6b47;
+    --pink: #ff5fa2;
+    --blue: #57b8ff;
+    --green: #4fd88a;
+    --spark-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z' fill='%23171310'/%3E%3C/svg%3E");
+    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.045'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #f3efe6;
+      --paper: #16140f;
+      --panel: #211d16;
+      --text-body: #d8d0bf;
+      --text-soft: #b8af9b;
+      --signup-muted: #4d4b45;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #f3efe6; --paper: #16140f; --panel: #211d16; --text-body: #d8d0bf; --text-soft: #b8af9b; --signup-muted: #4d4b45;
+  }
+  :root[data-theme="light"] {
+    --ink: #171310; --paper: #fbf1e1; --panel: #ffffff; --text-body: #4a4234; --text-soft: #635a48; --signup-muted: #c2baad;
+  }
+
+  * { box-sizing: border-box; }
+  /* Varios componentes de esta página (.meta-row span, .pricing, etc.)
+     fijan su propio `display`, lo que por especificidad le puede ganar
+     al `display:none` del atributo [hidden] del navegador. Esta regla
+     asegura que [hidden] siempre gane, sin importar el componente. */
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background-color: var(--paper);
+    background-image:
+      var(--grain),
+      radial-gradient(circle, color-mix(in srgb, var(--ink) 16%, transparent) 1.6px, transparent 1.6px);
+    background-size: 160px 160px, 24px 24px;
+    color: var(--text-body);
+    font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+
+  ::selection { background: var(--ink); color: var(--yellow); }
+  :focus-visible { outline: 2.5px dashed var(--coral); outline-offset: 3px; }
+
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+
+  h1, h2, h3 {
+    font-family: inherit;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  .mono {
+    font-family: "Courier New", monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    padding: 7px 16px;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  .prose { max-width: 640px; font-size: 15.5px; color: var(--text-body); }
+  .prose.center { margin-left: auto; margin-right: auto; text-align: center; }
+  .todo-fill { border-bottom: 2px dashed var(--coral); color: var(--text-soft); font-style: italic; }
+
+  /* ---------- SECTION DIVIDER ORNAMENT ---------- */
+  header.hero, section { position: relative; }
+  header.hero::after, section::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: var(--paper);
+    background-image: var(--spark-ink);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px 14px;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  /* ---------- TOP NAV (sticky en esta página) ---------- */
+  nav.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--paper);
+    border-bottom: 3px solid var(--ink);
+    padding: 16px 0;
+    transition: box-shadow 0.12s ease;
+  }
+  nav.topbar.is-scrolled { box-shadow: 0 4px 0 0 var(--ink); }
+  nav.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--ink); }
+  .brand .mark { display: inline-flex; color: var(--ink); flex: none; }
+  .brand .mark svg { display: block; }
+  .brand .wordmark { font-weight: 800; font-size: 17px; letter-spacing: -0.01em; }
+  .crumb { font-size: 12.5px; color: var(--text-soft); display: none; }
+  @media (min-width: 640px) { .crumb { display: block; } }
+  .nav-cta {
+    background: var(--yellow);
+    color: #171310;
+    border-color: #171310;
+    border-width: 2.5px;
+    box-shadow: 3px 3px 0 0 #171310;
+    font-weight: 800;
+  }
+
+  /* ---------- MARQUEE ---------- */
+  .marquee { overflow: hidden; background: var(--ink); border-bottom: 3px solid var(--ink); }
+  .marquee-track {
+    display: inline-flex;
+    gap: 36px;
+    white-space: nowrap;
+    padding: 12px 0;
+    animation: marquee 26s linear infinite;
+  }
+  .marquee-track span {
+    font-family: "Courier New", monospace;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--paper);
+  }
+  .marquee-track .sep { color: var(--coral); }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ---------- HERO ---------- */
+  header.hero {
+    background-color: var(--yellow);
+    background-image: var(--grain);
+    background-size: 160px 160px;
+    border-bottom: 3px solid #171310;
+    padding: 56px 0 48px;
+    text-align: center;
+    color: #171310;
+  }
+  .badge {
+    background: #fff;
+    border-color: #171310;
+    border-width: 1.5px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    line-height: 1.1;
+    margin: 0 0 18px;
+    color: #171310;
+  }
+  h1 mark {
+    background: #171310;
+    color: #ffcf3f;
+    padding: 2px 10px;
+    border-radius: 8px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  .subtitle {
+    font-size: clamp(16px, 2.2vw, 19px);
+    color: #33291d;
+    max-width: 620px;
+    margin: 0 auto 32px;
+    font-weight: 500;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    font-weight: 800;
+    font-size: 16px;
+    padding: 15px 32px;
+    text-decoration: none;
+    border: 3px solid var(--ink);
+    border-radius: 999px;
+    box-shadow: 6px 6px 0 0 rgba(23,19,16,0.55);
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .cta-btn:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 0 rgba(23,19,16,0.65); }
+  .cta-btn:active { transform: translate(3px, 3px); box-shadow: 0 0 0 0 rgba(23,19,16,0.65); }
+  header.hero .cta-btn { background: #171310; color: #fff8ec; border-color: #171310; }
+
+  .cta-btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--ink);
+    font-weight: 800;
+    font-size: 14.5px;
+    padding: 12px 26px;
+    text-decoration: none;
+    border: 2.5px solid var(--ink);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.12s ease, background 0.12s ease, color 0.12s ease;
+  }
+  .cta-btn-outline:hover { background: var(--ink); color: var(--paper); }
+
+  .meta-row {
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #171310;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .meta-row span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #fff8ec;
+    border: 2px solid #171310;
+    border-radius: 999px;
+    padding: 6px 14px;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 56px 0; border-bottom: 3px solid var(--ink); }
+  h2 {
+    font-size: clamp(23px, 3.2vw, 30px);
+    margin: 0 0 16px;
+  }
+  section > .wrap > h2 { margin-bottom: 28px; }
+  section > .wrap > h2 + .prose { margin-top: -16px; margin-bottom: 28px; }
+  /* Highlight fuera del hero: el amarillo es un color de marca fijo (no
+     cambia con el tema), así que el texto encima siempre va en ink oscuro
+     literal — igual que el mark del hero, para no perder contraste en
+     modo oscuro. */
+  h2 mark, .rationale mark {
+    background: var(--yellow);
+    color: #171310;
+    padding: 2px 8px;
+    border-radius: 6px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  /* ---------- CARDS / GRID ---------- */
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; }
+  .card {
+    background: var(--panel);
+    border: 1.5px solid color-mix(in srgb, var(--ink) 22%, transparent);
+    border-radius: 20px;
+    padding: 28px 26px;
+  }
+  .card .icon-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px; height: 46px;
+    border: 1.8px dashed color-mix(in srgb, var(--ink) 55%, transparent);
+    border-radius: 50%;
+    margin-bottom: 16px;
+    font-size: 20px;
+    background: var(--panel);
+    transform: rotate(-6deg);
+  }
+  .card h3 { margin: 0 0 8px; font-size: 18px; }
+  .card p { margin: 0; color: var(--text-body); font-size: 14.5px; }
+
+  /* ---------- CHECKLIST (§03 resultado, §08 qué incluye) ---------- */
+  .checklist { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+  .checklist li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 15px;
+    color: var(--text-body);
+  }
+  .checklist li::before {
+    content: '';
+    flex: 0 0 24px; width: 24px; height: 24px; margin-top: 1px;
+    border-radius: 50%;
+    background-color: var(--green);
+    border: 2px solid var(--ink);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 13l4 4L19 7' fill='none' stroke='%23171310' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px 14px;
+  }
+
+  /* ---------- EL SISTEMA (3 pasos + cordón) ---------- */
+  .steps { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 8px; }
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 22px; left: 12%; right: 12%;
+    border-top: 3px dashed color-mix(in srgb, var(--ink) 30%, transparent);
+    z-index: 0;
+  }
+  .step {
+    position: relative; z-index: 1;
+    background: var(--panel);
+    border: 1.5px solid color-mix(in srgb, var(--ink) 22%, transparent);
+    border-radius: 20px;
+    padding: 22px 20px;
+  }
+  .step-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 38px; height: 38px;
+    border: 2px solid var(--ink); border-radius: 10px;
+    background: var(--yellow); color: #171310;
+    font-family: "Courier New", monospace; font-weight: 800; font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .step h3 { margin: 0 0 6px; font-size: 16.5px; }
+  .step p { margin: 0; font-size: 14px; color: var(--text-body); }
+  @media (max-width: 760px) {
+    .steps { grid-template-columns: 1fr; gap: 16px; }
+    .steps::before { top: 0; bottom: 0; left: 22px; right: auto; border-top: none; border-left: 3px dashed color-mix(in srgb, var(--ink) 30%, transparent); }
+  }
+
+  /* ---------- EL DIFERENCIADOR (en vivo) ---------- */
+  .live-panel {
+    background: var(--panel);
+    border: 1.5px solid color-mix(in srgb, var(--ink) 22%, transparent);
+    border-radius: 20px;
+    padding: 30px 28px;
+  }
+  .live-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 2px solid var(--ink); border-radius: 999px;
+    padding: 6px 14px;
+    background: var(--coral); color: #fff8ec;
+    font-weight: 800; font-size: 13px;
+    margin-bottom: 14px;
+  }
+  .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #fff8ec; animation: livepulse 1.4s ease-in-out infinite; }
+  @keyframes livepulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.7); } }
+  .live-tags { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .live-tags li { border: 2px solid var(--ink); border-radius: 999px; padding: 5px 12px; font-size: 12.5px; font-weight: 700; background: var(--panel); }
+
+  /* ---------- POR QUÉ FUNCIONA ---------- */
+  .rationale { text-align: center; font-size: clamp(19px, 3vw, 25px); font-weight: 800; color: var(--ink); max-width: 680px; margin: 0 auto; line-height: 1.4; }
+
+  /* ---------- LA PRUEBA ---------- */
+  .proof-real { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin: 0 0 24px; }
+  .proof-stat { text-align: center; }
+  .proof-stat strong { display: block; font-size: 34px; font-weight: 800; color: var(--coral); line-height: 1; }
+  .proof-stat span { font-size: 12.5px; color: var(--text-soft); }
+  .testi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; margin-top: 28px; }
+
+  /* ---------- PRECIOS ---------- */
+  .cohort-line { text-align: center; font-weight: 700; font-size: 14.5px; color: var(--ink); margin: 0 0 8px; }
+  .cohort-countdown { text-align: center; font-size: 13px; color: var(--text-soft); margin: 0 0 24px; }
+  .pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; margin-top: 24px; }
+  @media (max-width: 760px) { .pricing { grid-template-columns: 1fr; } }
+  .price-card {
+    position: relative;
+    background: var(--panel);
+    border: 1.5px solid color-mix(in srgb, var(--ink) 22%, transparent);
+    border-radius: 20px;
+    padding: 26px 22px;
+    text-align: center;
+  }
+  .price-card--featured {
+    border: 3px solid var(--ink);
+    box-shadow: 6px 6px 0 0 var(--coral);
+    padding-top: 34px;
+  }
+  .price-card .ribbon {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--yellow); border: 2px solid var(--ink); border-radius: 999px;
+    padding: 4px 14px; font-weight: 800; font-size: 12px; white-space: nowrap;
+  }
+  .price-plan { font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-soft); margin-bottom: 6px; }
+  .price-for { display: block; font-size: 13px; color: var(--text-soft); margin-bottom: 14px; }
+  .price-amount { font-size: 30px; font-weight: 800; color: var(--ink); margin: 4px 0 18px; }
+  .price-amount small { font-size: 13px; font-weight: 600; color: var(--text-soft); }
+  .price-note { text-align: center; font-size: 12.5px; color: var(--signup-muted); margin: 18px 0 0; }
+  .waitlist { margin-top: 28px; text-align: center; }
+
+  /* ---------- AGENDA (pasos / cómo entrar) ---------- */
+  ol.agenda { list-style: none; padding: 0; margin: 0; counter-reset: step; display: flex; flex-direction: column; gap: 16px; }
+  ol.agenda li {
+    counter-increment: step;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    background: var(--panel);
+    border: 1.5px solid color-mix(in srgb, var(--ink) 22%, transparent);
+    border-radius: 16px;
+    padding: 18px 22px;
+  }
+  ol.agenda li::before {
+    content: counter(step, decimal-leading-zero);
+    flex: 0 0 38px;
+    height: 38px;
+    border: 2px solid var(--ink);
+    border-radius: 10px;
+    background: var(--yellow);
+    color: #171310;
+    font-family: "Courier New", monospace;
+    font-weight: 800;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .agenda-title { font-weight: 700; margin: 0 0 3px; font-size: 15.5px; color: var(--ink); }
+  .agenda-desc { color: var(--text-body); font-size: 14.5px; margin: 0; }
+
+  /* ---------- FAQ ---------- */
+  .faq details {
+    background: var(--panel);
+    border: 1.5px solid color-mix(in srgb, var(--ink) 22%, transparent);
+    border-radius: 16px;
+    padding: 16px 22px;
+    margin-bottom: 12px;
+    transition: border-color 0.12s ease;
+  }
+  .faq details[open] { border-color: var(--coral); }
+  .faq summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: '+';
+    flex: none;
+    width: 26px; height: 26px;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 800;
+  }
+  .faq details[open] summary::after { content: '−'; }
+  .faq p { color: var(--text-body); margin: 12px 0 0; font-size: 14.5px; }
+
+  /* ---------- CTA FINAL (mismo tratamiento que .signup del taller) ---------- */
+  .final-cta {
+    background-color: var(--ink);
+    background-image: var(--grain);
+    background-size: 160px 160px;
+    color: var(--paper);
+    border: 3px solid var(--ink);
+    border-radius: 24px;
+    box-shadow: 6px 6px 0 0 var(--coral);
+    padding: 46px 36px;
+    text-align: center;
+  }
+  .final-cta h2 { color: var(--paper); }
+  .final-cta p { color: var(--paper); opacity: 0.8; margin: 0 0 26px; }
+  .final-cta .cta-btn { background: var(--yellow); color: #171310; border-color: var(--paper); box-shadow: 6px 6px 0 0 var(--coral); }
+  .final-cta .cta-btn:hover { box-shadow: 8px 8px 0 0 var(--coral); }
+  .final-cta .cta-btn:active { box-shadow: 0 0 0 0 var(--coral); }
+
+  footer {
+    padding: 40px 0 60px;
+    text-align: center;
+    color: var(--text-soft);
+    font-size: 13px;
+  }
+  footer a { color: var(--ink); font-weight: 700; }
+
+  /* ---------- SCROLL REVEAL ---------- */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .reveal.is-visible { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1 !important; transform: none !important; transition: none; }
+    .cta-btn, .cta-btn-outline, .faq details, nav.topbar { transition: none; }
+    .marquee-track { animation: none; }
+    .live-dot { animation: none; }
+  }
+
+  @media (max-width: 520px) {
+    header.hero { padding: 44px 0 36px; }
+    section { padding: 40px 0; }
+    .final-cta { padding: 30px 20px; box-shadow: 4px 4px 0 0 var(--coral); }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar" id="nav">
+  <div class="wrap">
+    <a href="./index.html" class="brand">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z" fill="currentColor"/></svg>
+      </span>
+      <span class="wordmark">Claude Academy ES</span>
+    </a>
+    <span class="crumb">Inicio / Programa</span>
+    <a href="#precios" class="pill nav-cta" data-ev="nav_cta_click">Ver planes</a>
+  </div>
+</nav>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Sistema semanal con Claude</span><span class="sep">✦</span>
+    <span>Llamada en vivo cada semana</span><span class="sep">✦</span>
+    <span>Comunidad de práctica</span><span class="sep">✦</span>
+    <span>Biblioteca de prompts y skills</span><span class="sep">✦</span>
+    <span>A tu ritmo entre semana</span><span class="sep">✦</span>
+    <span>Sistema semanal con Claude</span><span class="sep">✦</span>
+    <span>Llamada en vivo cada semana</span><span class="sep">✦</span>
+    <span>Comunidad de práctica</span><span class="sep">✦</span>
+    <span>Biblioteca de prompts y skills</span><span class="sep">✦</span>
+    <span>A tu ritmo entre semana</span><span class="sep">✦</span>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="pill badge mono" id="hero-badge">🎓 Programa Claude Academy ES</span>
+    <h1>De la teoría a un <mark>sistema semanal</mark> con Claude</h1>
+    <p class="subtitle">El programa en vivo para llevar lo que aprendiste en el taller a un uso real, cada semana, con acompañamiento y comunidad.</p>
+    <a href="#precios" class="cta-btn" data-ev="program_cta_click">Ver los planes</a>
+    <div class="meta-row" data-cohort-open-only>
+      <span>📅 Próxima cohorte: <strong data-cohort-start>por confirmar</strong></span>
+      <span data-cohort-seats-wrap hidden>💺 <strong data-cohort-seats></strong></span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2 class="reveal">Del taller al <mark>sistema</mark></h2>
+    <p class="prose reveal">En el taller viste que Claude puede hacer más de lo que imaginabas. El programa es donde eso se vuelve costumbre: un ritmo semanal para que usar Claude deje de ser un experimento y sea parte de cómo trabajas.</p>
+    <p class="prose reveal">Menos del 2% de las personas ha usado Claude una sola vez. Tú ya diste ese paso al hacer el taller — el programa es para no quedarte ahí.</p>
+    <!-- TODO (equipo): nombre y una línea real de quién da las llamadas en vivo. -->
+    <p class="prose reveal">Las llamadas las da <span class="todo-fill">[nombre del instructor]</span>, la misma persona detrás de Claude Academy ES.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="reveal">Para quién es el programa</h2>
+    <div class="grid-3">
+      <div class="card reveal">
+        <span class="icon-tag">🔁</span>
+        <h3>Aprendiste, pero no se volvió hábito</h3>
+        <p>Hiciste el taller y probaste Claude, pero pasan los días y vuelves a hacer las cosas como siempre.</p>
+      </div>
+      <div class="card reveal">
+        <span class="icon-tag">💬</span>
+        <h3>No tienes con quién revisar lo que haces</h3>
+        <p>Escribes prompts solo, sin nadie que te diga qué mejorar antes de repetir el mismo error muchas veces.</p>
+      </div>
+      <div class="card reveal">
+        <span class="icon-tag">🧩</span>
+        <h3>Quieres un sistema, no trucos sueltos</h3>
+        <p>Sabes 3 o 4 trucos de Claude, pero no un método completo que uses todas las semanas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="reveal">Dónde estarías después del programa</h2>
+    <ul class="checklist reveal">
+      <li>Usas Claude todas las semanas como parte de tu trabajo, no como experimento aislado.</li>
+      <li>Tienes un lugar semanal para preguntar y ver cómo lo resuelven otros.</li>
+      <li>Sabes qué prompts y flujos reutilizar según la tarea, sin empezar de cero cada vez.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="reveal">El sistema en 3 pasos</h2>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="step-num">01</span>
+        <h3>Diagnóstico y plan</h3>
+        <p>Vemos en qué estás usando Claude hoy y armamos tu plan de las próximas semanas.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-num">02</span>
+        <h3>Llamada semanal en vivo</h3>
+        <p>Cada semana resolvemos casos reales, tuyos y del grupo, con Claude en pantalla.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-num">03</span>
+        <h3>Práctica entre semana</h3>
+        <p>Con la biblioteca de prompts y skills, aplicas lo de la llamada a tu propio trabajo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="reveal">Cada semana, en vivo</h2>
+    <div class="live-panel reveal">
+      <span class="live-pill"><i class="live-dot" aria-hidden="true"></i>En vivo</span>
+      <p class="prose">La llamada semanal es el corazón del programa: traes tus casos reales y sales con algo que aplicar esa misma semana.</p>
+      <ul class="live-tags">
+        <li>Casos reales</li>
+        <li>Preguntas y respuestas</li>
+        <li>Grabación si faltas</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="rationale reveal">Porque aprender <mark>algo nuevo cada semana</mark> es mucho más fácil que aprenderlo todo de una vez.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="reveal">La prueba</h2>
+    <div class="proof-real reveal">
+      <div class="proof-stat"><strong>18</strong><span>guías gratuitas ya publicadas</span></div>
+      <div class="proof-stat"><strong>4</strong><span>niveles, de principiante a experto</span></div>
+      <div class="proof-stat"><strong>100%</strong><span>en español</span></div>
+    </div>
+    <p class="prose center reveal"><a href="./cursos.html">Mira el catálogo completo →</a></p>
+
+    <!--
+      TODO (equipo): cuando tengas testimonios reales de personas del
+      programa, agrega las tarjetas acá adentro (misma estructura que
+      .card) y quita el atributo "hidden" de este contenedor para que
+      se muestre. NO actives esta sección con datos inventados.
+    -->
+    <div class="testi-row" hidden>
+      <!-- <figure class="card">
+        <p class="testi-metric">[métrica real]</p>
+        <figcaption>[Nombre real]<br><span>[rol]</span></figcaption>
+      </figure> -->
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="reveal">Qué incluye el programa</h2>
+    <ul class="checklist reveal">
+      <li>Llamada semanal en vivo con el grupo.</li>
+      <li>Grabación de cada llamada, por si faltas.</li>
+      <li>Biblioteca de prompts y skills lista para copiar y adaptar.</li>
+      <li>Comunidad para preguntar entre llamadas.</li>
+      <li>Acceso incluido a las 18 guías del catálogo gratuito.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="precios">
+  <div class="wrap">
+    <h2 class="reveal">La próxima cohorte</h2>
+    <p class="cohort-line reveal" data-cohort-open-only>Empieza el <strong data-cohort-start class="todo-fill">por confirmar</strong><span data-cohort-seats-wrap hidden> · <strong data-cohort-seats></strong></span></p>
+    <p class="cohort-countdown mono" id="cohort-countdown" hidden></p>
+
+    <div class="pricing reveal">
+      <div class="price-card" data-plan="mensual">
+        <span class="price-plan">Mensual</span>
+        <span class="price-for">Para probar el ritmo, mes a mes.</span>
+        <div class="price-amount"><span class="todo-fill">$XX</span> <small>USD / mes</small></div>
+        <a href="#" class="cta-btn-outline" data-checkout="mensual" data-ev="checkout_click">Elegir mensual</a>
+      </div>
+      <div class="price-card price-card--featured" data-plan="recomendado">
+        <span class="ribbon">Recomendado</span>
+        <span class="price-plan">Cohorte completa</span>
+        <span class="price-for">El tiempo real para instalar el sistema.</span>
+        <div class="price-amount"><span class="todo-fill">$XX</span> <small>USD</small></div>
+        <a href="#" class="cta-btn" data-checkout="recomendado" data-ev="checkout_click">Elegir cohorte completa</a>
+      </div>
+      <div class="price-card" data-plan="anual">
+        <span class="price-plan">Anual</span>
+        <span class="price-for">Para seguir todo el año, al mejor precio.</span>
+        <div class="price-amount"><span class="todo-fill">$XX</span> <small>USD / año</small></div>
+        <a href="#" class="cta-btn-outline" data-checkout="anual" data-ev="checkout_click">Elegir anual</a>
+      </div>
+    </div>
+
+    <!--
+      TODO (equipo): precios reales, fecha de inicio/cierre de cohorte,
+      cupos si aplica, y los enlaces de checkout de Stripe (reemplazar
+      cada href="#" en el bloque de arriba). El motor de cohorte de más
+      abajo (objeto COHORT) es donde se cargan esos datos — mientras
+      estén en null/"#", la página se queda en un estado honesto de
+      "por confirmar", sin inventar fechas ni descuentos.
+    -->
+    <p class="price-note">Pago seguro. Tu acceso queda activo mientras seas parte de la cohorte.</p>
+
+    <div class="waitlist" id="waitlist-block" hidden>
+      <p class="prose center">La inscripción de esta cohorte está cerrada. Déjanos tu email y te avisamos apenas abra la siguiente.</p>
+      <a href="#" id="waitlist-cta" class="cta-btn" data-ev="waitlist_click">Sumarme a la lista de espera</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="reveal">Cómo entrar</h2>
+    <ol class="agenda reveal">
+      <li>
+        <div>
+          <p class="agenda-title">Elige tu plan</p>
+          <p class="agenda-desc">Mensual, cohorte completa o anual.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="agenda-title">Completa el pago</p>
+          <p class="agenda-desc">Pago seguro en esta misma página.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <p class="agenda-title">Entra a la primera llamada</p>
+          <p class="agenda-desc">Te llega el calendario y el link de la comunidad.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap faq">
+    <h2 class="reveal">Dudas</h2>
+    <details>
+      <summary>¿Necesito el taller antes del programa?</summary>
+      <p>No es obligatorio, pero ayuda mucho: si ya hiciste Claude 101, llegas con las bases y aprovechas mejor las llamadas.</p>
+    </details>
+    <details>
+      <summary>Ya me diste valor gratis, ¿por qué pagar?</summary>
+      <p>El taller y las guías te dan las bases. El programa es el acompañamiento semanal: revisar tus casos reales, corregir a tiempo y no soltarte hasta que sea costumbre.</p>
+    </details>
+    <details>
+      <summary>¿Y si no puedo asistir en vivo a alguna llamada?</summary>
+      <p>Cada llamada queda grabada. Puedes verla cuando puedas y traer tus preguntas a la siguiente.</p>
+    </details>
+    <details>
+      <summary>¿Cuándo empieza la próxima cohorte?</summary>
+      <p>Empieza el <strong data-cohort-start class="todo-fill">por confirmar</strong>. <!-- TODO (equipo): la fecha se completa desde el objeto COHORT al final de la página. --></p>
+    </details>
+    <details>
+      <summary>¿Hay garantía?</summary>
+      <!-- TODO (equipo): completar con la política real de devolución/garantía. -->
+      <p><span class="todo-fill">[TODO: términos reales de garantía o devolución]</span></p>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="final-cta reveal">
+      <h2>Del taller al sistema, un paso a la vez</h2>
+      <p>La próxima cohorte empieza el <span class="todo-fill" data-cohort-start>por confirmar</span>.</p>
+      <a href="#precios" class="cta-btn" data-ev="final_cta_click">Ver los planes</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Claude Academy ES — proyecto independiente en español para aprender Claude.<br>
+    No afiliado ni respaldado oficialmente por Anthropic. Volver al <a href="./index.html">taller gratis</a> o ver el <a href="./cursos.html">catálogo completo de cursos</a>.</p>
+  </div>
+</footer>
+
+<script>
+  // =====================================================================
+  // 1) MEDICIÓN — shim mínimo, cero red. Empuja a window.dataLayer y nada
+  //    más. TODO (equipo): conectar esto a GA4/Plausible/Segment leyendo
+  //    dataLayer, o reemplazar track() por la librería que uses.
+  // =====================================================================
+  function track(event, props) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({ event: event }, props || {}));
+  }
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-ev]');
+    if (!el) return;
+    track(el.getAttribute('data-ev'), {
+      plan: el.getAttribute('data-plan') || el.getAttribute('data-checkout') || null,
+      href: el.getAttribute('href') || null
+    });
+  });
+
+  // =====================================================================
+  // 2) LLEGADA DESDE EL TALLER — si viene con ?ref=taller, saluda distinto
+  //    y lo marca en la medición. No cambia nada más de la página.
+  // =====================================================================
+  (function () {
+    var fromWorkshop = new URLSearchParams(location.search).get('ref') === 'taller';
+    if (fromWorkshop) {
+      var badge = document.getElementById('hero-badge');
+      if (badge) badge.textContent = '👋 Viniste del taller — bienvenido';
+    }
+    track('program_view', { source: fromWorkshop ? 'taller' : 'direct' });
+  })();
+
+  // =====================================================================
+  // 3) MOTOR DE COHORTE — urgencia honesta, no un countdown de precio
+  //    inventado. Mientras startDate/enrollCloseDate/seats estén en null,
+  //    la página se queda en un estado neutro ("por confirmar", sin
+  //    escasez) en vez de simular una fecha o cupo que no existe.
+  // =====================================================================
+  (function () {
+    // TODO (equipo): completar con datos reales de la próxima cohorte y
+    // los enlaces de checkout de Stripe.
+    var COHORT = {
+      startDate: null,          // ej: '2026-09-15'
+      enrollCloseDate: null,    // ej: '2026-09-08T23:59:00-06:00'
+      countdownWindowHours: 72, // el countdown solo aparece dentro de esta ventana
+      seats: { total: null, left: null }, // dejar en null si no hay cupo limitado real
+      checkoutLinks: { mensual: '#', recomendado: '#', anual: '#' },
+      waitlistLink: '#'
+    };
+
+    var closeMs = COHORT.enrollCloseDate ? new Date(COHORT.enrollCloseDate).getTime() : null;
+    var countdownEl = document.getElementById('cohort-countdown');
+    var waitlistBlock = document.getElementById('waitlist-block');
+    var waitlistCta = document.getElementById('waitlist-cta');
+
+    function fmtDate(iso) {
+      if (!iso) return 'por confirmar';
+      try {
+        return new Date(iso).toLocaleDateString('es', { day: 'numeric', month: 'long' });
+      } catch (e) { return iso; }
+    }
+
+    function paintStart() {
+      var label = fmtDate(COHORT.startDate);
+      document.querySelectorAll('[data-cohort-start]').forEach(function (el) {
+        el.textContent = label;
+        el.classList.toggle('todo-fill', !COHORT.startDate);
+      });
+    }
+
+    function paintSeats() {
+      document.querySelectorAll('[data-cohort-seats-wrap]').forEach(function (wrap) {
+        if (COHORT.seats.left == null) { wrap.hidden = true; return; }
+        wrap.hidden = false;
+        var el = wrap.querySelector('[data-cohort-seats]');
+        if (el) el.textContent = COHORT.seats.left + ' cupos disponibles';
+      });
+    }
+
+    function isClosed() {
+      if (COHORT.seats.left != null && COHORT.seats.left <= 0) return true;
+      if (closeMs != null && Date.now() >= closeMs) return true;
+      return false;
+    }
+
+    function applyState() {
+      var closed = isClosed();
+      document.querySelectorAll('[data-checkout]').forEach(function (a) {
+        if (closed) return; // el checkout se reemplaza por la lista de espera abajo
+        a.setAttribute('href', COHORT.checkoutLinks[a.getAttribute('data-checkout')] || '#');
+      });
+      if (waitlistBlock) waitlistBlock.hidden = !closed;
+      if (waitlistCta) waitlistCta.setAttribute('href', COHORT.waitlistLink);
+      document.querySelectorAll('.pricing').forEach(function (p) { p.hidden = closed; });
+      // Todo lo marcado "solo si la inscripción está abierta" (línea de
+      // cohorte del hero y de precios) se oculta junto con el checkout.
+      document.querySelectorAll('[data-cohort-open-only]').forEach(function (el) { el.hidden = closed; });
+    }
+
+    function tickCountdown() {
+      if (!countdownEl || closeMs == null) return;
+      var rem = closeMs - Date.now();
+      var windowMs = COHORT.countdownWindowHours * 3600000;
+      if (rem <= 0) { countdownEl.hidden = true; applyState(); return; }
+      if (rem > windowMs) { countdownEl.hidden = true; return; }
+      countdownEl.hidden = false;
+      var s = Math.floor(rem / 1000);
+      var d = Math.floor(s / 86400); s -= d * 86400;
+      var h = Math.floor(s / 3600); s -= h * 3600;
+      var m = Math.floor(s / 60); s -= m * 60;
+      countdownEl.textContent = 'Cierra en ' + (d ? d + 'd ' : '') + String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+    }
+
+    paintStart();
+    paintSeats();
+    applyState();
+    tickCountdown();
+    if (closeMs != null) setInterval(tickCountdown, 1000);
+  })();
+
+  // =====================================================================
+  // 4) VISTA DE PRECIOS — un solo evento la primera vez que #precios
+  //    entra en pantalla.
+  // =====================================================================
+  (function () {
+    var pricing = document.getElementById('precios');
+    if (!pricing || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { track('pricing_view', {}); io.disconnect(); }
+      });
+    }, { threshold: 0.3 });
+    io.observe(pricing);
+  })();
+
+  // =====================================================================
+  // 5) SCROLL REVEAL — a diferencia de index.html (que lo omite a
+  //    propósito por ser marginal en una página corta), acá se justifica
+  //    por el largo de esta landing. Guard de reduced-motion + red de
+  //    seguridad para que nada quede invisible para siempre (bug que
+  //    este proyecto ya sufrió una vez).
+  // =====================================================================
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+    function showAll() { els.forEach(function (el) { el.classList.add('is-visible'); }); }
+    if (reduce || !('IntersectionObserver' in window)) { showAll(); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+    setTimeout(showAll, 3000);
+  })();
+
+  // =====================================================================
+  // 6) NAV STICKY — hairline al scrollear.
+  // =====================================================================
+  (function () {
+    var nav = document.getElementById('nav');
+    if (!nav) return;
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        nav.classList.toggle('is-scrolled', window.scrollY > 8);
+        ticking = false;
+      });
+    }, { passive: true });
+  })();
+</script>
+
+</body>
+</html>
