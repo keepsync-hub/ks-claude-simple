@@ -510,12 +510,47 @@
   .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
   .reveal.is-visible { opacity: 1; transform: none; }
 
+  /* El nav es sticky: sin esto, al saltar a #comunidad o #precios el
+     título queda tapado debajo de la barra. */
+  section[id] { scroll-margin-top: 92px; }
+
+  /* ---------- CTA SECUNDARIO DEL HERO ---------- */
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 800;
+    font-size: 14.5px;
+    padding: 13px 24px;
+    border-radius: 999px;
+    text-decoration: none;
+    border: 2.5px dashed var(--ink);
+    color: var(--ink);
+  }
+  .hero-secondary { margin-left: 10px; }
+  @media (max-width: 560px) {
+    .hero-secondary { margin-left: 0; margin-top: 12px; }
+  }
+
+  /* ---------- REFINAMIENTOS TIPOGRÁFICOS ---------- */
+  p, li { text-wrap: pretty; }
+
+  /* Container queries: las cards responden a SU contenedor, no al viewport. */
+  .grid-3 > .card { container-type: inline-size; }
+  @container (min-width: 340px) {
+    .card h3 { font-size: 19.5px; }
+  }
+
+  /* Transiciones entre páginas (index ↔ programa ↔ cursos). Degrada a nada. */
+  @view-transition { navigation: auto; }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .reveal { opacity: 1 !important; transform: none !important; transition: none; }
     .cta-btn, .cta-btn-outline, .faq details, nav.topbar { transition: none; }
     .marquee-track { animation: none; }
     .live-dot { animation: none; }
+    @view-transition { navigation: none; }
   }
 
   @media (max-width: 520px) {
@@ -558,9 +593,10 @@
 <header class="hero">
   <div class="wrap">
     <span class="pill badge mono" id="hero-badge">🎓 Programa Claude Academy ES</span>
-    <h1>De la teoría a un <mark>sistema semanal</mark> con Claude</h1>
-    <p class="subtitle">El programa en vivo para llevar lo que aprendiste en el taller a un uso real, cada semana, con acompañamiento y comunidad.</p>
+    <h1>Practicar con gente, <mark>no leer solo</mark></h1>
+    <p class="subtitle">Una comunidad en Skool con llamada en vivo cada semana, para que lo que aprendiste en el taller se vuelva algo que de verdad usas. Traes tus casos reales y alguien los revisa.</p>
     <a href="#precios" class="cta-btn" data-ev="program_cta_click">Ver los planes</a>
+    <a href="#comunidad" class="btn-ghost hero-secondary" data-ev="community_anchor_click">Cómo funciona la comunidad →</a>
     <div class="meta-row" data-cohort-open-only>
       <span>📅 Próxima cohorte: <strong data-cohort-start>por confirmar</strong></span>
       <span data-cohort-seats-wrap hidden>💺 <strong data-cohort-seats></strong></span>
@@ -635,24 +671,50 @@
   </div>
 </section>
 
-<section>
+<section id="comunidad">
   <div class="wrap">
-    <h2 class="reveal">Cada semana, en vivo</h2>
+    <h2 class="reveal">La comunidad es <mark>el programa</mark></h2>
+    <p class="prose reveal">Ya hay 18 guías gratuitas publicadas. Si con leer alcanzara, esto no existiría. Lo que frena a casi todo el mundo no es falta de información: es quedarse solo frente a la pantalla cuando la tarea es real y nadie te dice si vas bien.</p>
+    <p class="prose reveal">La comunidad vive en <strong>Skool</strong>: un solo lugar donde están las conversaciones, las clases, el calendario y tu progreso. Sin saltar entre un Discord, un Drive y tres links de Zoom perdidos en tu email.</p>
+
     <div class="live-panel reveal">
-      <span class="live-pill"><i class="live-dot" aria-hidden="true"></i>En vivo</span>
-      <p class="prose">La llamada semanal es el corazón del programa: traes tus casos reales y sales con algo que aplicar esa misma semana.</p>
-      <ul class="live-tags">
-        <li>Casos reales</li>
-        <li>Preguntas y respuestas</li>
-        <li>Grabación si faltas</li>
-      </ul>
+      <span class="live-pill"><i class="live-dot" aria-hidden="true"></i>Llamada en vivo cada semana</span>
+      <p class="prose">Traes tu caso real, lo revisamos en pantalla y sales con algo para aplicar esa misma semana. Si faltas, queda grabada en el calendario de Skool.</p>
     </div>
+
+    <div class="grid-3">
+      <div class="card reveal">
+        <span class="icon-tag">💬</span>
+        <h3>Publicas lo que hiciste</h3>
+        <p>Subes tu prompt o tu resultado al feed y recibes correcciones concretas — de mí y de gente que ya pasó por lo mismo. Practicar deja de ser algo que haces solo.</p>
+      </div>
+      <div class="card reveal">
+        <span class="icon-tag">🎓</span>
+        <h3>Las clases viven ahí mismo</h3>
+        <p>Los módulos están dentro de Skool, junto a las conversaciones. Ves la lección y preguntas en el mismo lugar, sin cambiar de plataforma ni buscar el link.</p>
+      </div>
+      <div class="card reveal">
+        <span class="icon-tag">🏆</span>
+        <h3>Avanzas participando</h3>
+        <p>Skool tiene niveles: participar y ayudar a otros te sube de nivel y desbloquea contenido. Suena a juego, pero hace que vuelvas — que es exactamente lo que falla cuando estudias solo.</p>
+      </div>
+    </div>
+
+    <ul class="checklist reveal">
+      <li><strong>Calendario integrado:</strong> las llamadas se agendan en Skool y se sincronizan con tu calendario, así no te pierdes ninguna.</li>
+      <li><strong>App móvil:</strong> preguntas y respondes desde el teléfono, sin depender de estar en la compu.</li>
+      <li><strong>Buscador del feed:</strong> tu duda probablemente ya la respondió alguien; la encuentras y sigues.</li>
+      <li><strong>Un solo login:</strong> comunidad, clases, calendario y grabaciones en el mismo sitio.</li>
+    </ul>
+
+    <!-- TODO (equipo): cuando la comunidad tenga miembros reales, agrega acá
+         el número (ej. "Ya somos 120"). NO poner un número inventado. -->
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <p class="rationale reveal">Porque aprender <mark>algo nuevo cada semana</mark> es mucho más fácil que aprenderlo todo de una vez.</p>
+    <p class="rationale reveal">Nadie abandona un curso porque el contenido era malo. Lo abandona porque <mark>nadie notó que se fue</mark>.</p>
   </div>
 </section>
 
@@ -685,10 +747,11 @@
   <div class="wrap">
     <h2 class="reveal">Qué incluye el programa</h2>
     <ul class="checklist reveal">
-      <li>Llamada semanal en vivo con el grupo.</li>
-      <li>Grabación de cada llamada, por si faltas.</li>
+      <li><strong>Comunidad privada en Skool</strong> — el centro de todo: feed, clases, calendario y niveles en un solo lugar.</li>
+      <li><strong>Llamada en vivo cada semana</strong> con el grupo, para revisar tus casos reales.</li>
+      <li>Grabación de cada llamada, guardada en Skool por si faltas.</li>
+      <li>Revisión de lo que publiques entre llamadas, sin esperar a la siguiente.</li>
       <li>Biblioteca de prompts y skills lista para copiar y adaptar.</li>
-      <li>Comunidad para preguntar entre llamadas.</li>
       <li>Acceso incluido a las 18 guías del catálogo gratuito.</li>
     </ul>
   </div>
@@ -752,13 +815,13 @@
       <li>
         <div>
           <p class="agenda-title">Completa el pago</p>
-          <p class="agenda-desc">Pago seguro en esta misma página.</p>
+          <p class="agenda-desc">Pago seguro en esta misma página. No hay llamada de ventas ni formulario de postulación.</p>
         </div>
       </li>
       <li>
         <div>
-          <p class="agenda-title">Entra a la primera llamada</p>
-          <p class="agenda-desc">Te llega el calendario y el link de la comunidad.</p>
+          <p class="agenda-title">Entras a Skool el mismo día</p>
+          <p class="agenda-desc">Te llega la invitación por email: creas tu cuenta gratuita y ya tienes las clases, el calendario con la próxima llamada y el feed para presentarte. Acceso inmediato, sin esperar a que arranque la cohorte.</p>
         </div>
       </li>
     </ol>
@@ -778,7 +841,19 @@
     </details>
     <details>
       <summary>¿Y si no puedo asistir en vivo a alguna llamada?</summary>
-      <p>Cada llamada queda grabada. Puedes verla cuando puedas y traer tus preguntas a la siguiente.</p>
+      <p>Cada llamada queda grabada y se guarda en Skool, junto al resto del material. Puedes verla cuando puedas, dejar tu pregunta en el feed y recibir respuesta sin esperar a la siguiente.</p>
+    </details>
+    <details>
+      <summary>¿Qué es Skool y tengo que pagarlo aparte?</summary>
+      <p>Skool es la plataforma donde vive la comunidad: el feed de conversaciones, las clases, el calendario de las llamadas y tu progreso, todo en el mismo lugar (con app para el teléfono). No pagas nada aparte: el acceso va incluido en tu plan.</p>
+    </details>
+    <details>
+      <summary>¿Cómo entro después de pagar?</summary>
+      <p>Al completar el pago recibes por email la invitación a la comunidad en Skool. Creas tu cuenta gratuita, entras y ya tienes las clases, el calendario con la próxima llamada y el feed para presentarte.</p>
+    </details>
+    <details>
+      <summary>Soy tímido, ¿tengo que publicar o hablar en las llamadas?</summary>
+      <p>No. Puedes mirar, leer y avanzar a tu ritmo. Dicho eso, quienes publican lo que hicieron son los que más rápido avanzan — por eso insistimos, pero nadie te obliga.</p>
     </details>
     <details>
       <summary>¿Cuándo empieza la próxima cohorte?</summary>
