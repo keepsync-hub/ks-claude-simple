@@ -310,6 +310,10 @@
   .signup .cta-btn:hover { box-shadow: 8px 8px 0 0 var(--coral); }
   .signup .cta-btn:active { box-shadow: 0 0 0 0 var(--coral); }
   .fine-print { margin-top: 16px; font-size: 12.5px; color: var(--signup-muted); }
+  .form-status { margin: 10px 0 0; font-size: 13px; font-weight: 700; min-height: 1em; }
+  .form-status:empty { margin: 0; }
+  .form-status--error { text-decoration: underline; text-decoration-color: var(--coral); text-decoration-thickness: 2px; }
+  .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
   .confirm-msg {
     display: none;
     margin-top: 20px;
@@ -560,10 +564,14 @@
     <!-- Registro directo en el hero: un solo campo, sin salto de scroll. -->
     <form class="hero-form" id="hero-form" action="#" method="POST" novalidate>
       <label for="hero-email" class="sr-only">Tu email</label>
-      <input type="email" id="hero-email" name="email" placeholder="tu@email.com" required autocomplete="email">
+      <input type="email" id="hero-email" name="email" placeholder="tu@email.com" required autocomplete="email" inputmode="email">
+      <div class="hp-field" aria-hidden="true">
+        <input type="text" id="hero-hp" name="hp_check" tabindex="-1" autocomplete="off">
+      </div>
       <button type="submit" class="cta-btn" data-ev="workshop_cta_click">Reservar mi cupo</button>
     </form>
     <p class="hero-note">Gratis · Solo tu email · Sin spam</p>
+    <p class="form-status" id="hero-status" role="status" aria-live="polite"></p>
 
     <div class="meta-row">
       <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> 60 min en vivo</span>
@@ -640,18 +648,15 @@
       <h2>Regístrate gratis</h2>
       <p class="lead">Deja tu email y te enviamos el link de acceso + el material de la clase.</p>
 
-      <!--
-        TODO (equipo): conectar este formulario a tu proveedor de email
-        (ConvertKit, Substack, Mailchimp, Brevo, etc.) reemplazando el
-        `action` por el endpoint real y ajustando los `name` de los campos
-        según lo que pida tu proveedor. Mientras tanto, el formulario
-        confirma en pantalla mediante JS sin enviar los datos a ningún lado.
-      -->
       <form class="signup-form" id="signup-form" action="#" method="POST" novalidate>
         <label for="signup-email" class="sr-only">Tu email</label>
-        <input type="email" id="signup-email" name="email" placeholder="tu@email.com" required autocomplete="email">
+        <input type="email" id="signup-email" name="email" placeholder="tu@email.com" required autocomplete="email" inputmode="email">
+        <div class="hp-field" aria-hidden="true">
+          <input type="text" id="signup-hp" name="hp_check" tabindex="-1" autocomplete="off">
+        </div>
         <button type="submit" class="cta-btn" data-ev="workshop_cta_click">Quiero mi cupo</button>
       </form>
+      <p class="form-status" id="signup-status" role="status" aria-live="polite"></p>
       <div class="confirm-msg" id="confirm-msg">
         <p class="confirm-headline">✓ Tu lugar está guardado. Revisa tu email para confirmar.</p>
         <p class="confirm-actions">
@@ -770,22 +775,67 @@
     }
   })();
 
+  // Registro al taller — envía el formulario a n8n (duplicado del workflow
+  // de cristianignacio.me/taller/, adaptado a este sitio: solo email).
+  var WORKSHOP_WEBHOOK = 'https://keepsync-hub.app.n8n.cloud/webhook/claude101-registro';
+
   // Un solo manejador para los dos formularios (hero y sección de registro).
   function handleSignup(form, origin) {
     if (!form) return;
+    var statusEl = document.getElementById(origin === 'hero' ? 'hero-status' : 'signup-status');
+    var confirmEl = document.getElementById('confirm-msg');
+    var boton = form.querySelector('button[type="submit"]');
+    var textoBoton = boton.textContent;
+    var enviando = false;
+
+    function aviso(mensaje, esError) {
+      if (!statusEl) return;
+      statusEl.textContent = mensaje;
+      statusEl.classList.toggle('form-status--error', !!esError);
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (enviando) return;
+
       var email = form.querySelector('input[type="email"]');
       // novalidate está puesto para controlar el mensaje; validamos a mano.
       if (email && !email.checkValidity()) { email.focus(); return; }
-      var confirmEl = document.getElementById('confirm-msg');
-      confirmEl.classList.add('is-visible');
-      track('workshop_signup_submit', { origin: origin });
-      form.reset();
-      // El form del hero no está junto a la confirmación: llevamos ahí.
-      if (origin === 'hero') {
-        confirmEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
+      var emailValue = email ? email.value.trim() : '';
+      if (!/.+@.+\..+/.test(emailValue)) { email.focus(); return; }
+
+      enviando = true;
+      boton.disabled = true;
+      boton.textContent = 'Enviando…';
+      aviso('');
+
+      fetch(WORKSHOP_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: emailValue,
+          origen: origin,
+          website: form.hp_check.value
+        })
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error('respuesta ' + res.status);
+          confirmEl.classList.add('is-visible');
+          track('workshop_signup_submit', { origin: origin });
+          form.reset();
+          // El form del hero no está junto a la confirmación: llevamos ahí.
+          if (origin === 'hero') {
+            confirmEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        })
+        .catch(function () {
+          aviso('No pudimos guardar tu registro. Intenta de nuevo en un momento.', true);
+        })
+        .finally(function () {
+          enviando = false;
+          boton.disabled = false;
+          boton.textContent = textoBoton;
+        });
     });
   }
   handleSignup(document.getElementById('hero-form'), 'hero');
