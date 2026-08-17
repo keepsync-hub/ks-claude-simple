@@ -23,13 +23,15 @@ No necesitas saber "promptear" como ingeniero. Usa esto:
 Ayúdame a hacer [X] para [Y]. Usa AskUserQuestion primero.
 ```
 
-Claude te hace las preguntas a ti en vez de que tú le escribas un prompt mediocre. Suele tener entre 3 y 5 preguntas — cuanto más cuentas, mejor la respuesta.
+Claude te hace las preguntas a ti en vez de que tú le escribas un prompt mediocre. Suele tener entre 3 y 5 preguntas — cuanto más cuentas, mejor la respuesta. Puedes elegir una de las opciones que te da o escribir la tuya en "algo más".
 
-> Esa sola línea, "pregúntame primero", te convierte en usuario avanzado.
+> ✓ Tip: si no sabes qué camino tomar, pídele "dame 3 estrategias distintas" antes de decidir cuál seguir.
+
+> Esa sola línea, "pregúntame primero", te pone por delante del 99.9% de las personas que usan IA.
 
 ## Nivel 2: Háblale a tu computadora
 
-Hablas cuatro veces más rápido de lo que escribes. Usa una herramienta de dictado por voz (gratis): hablas y la computadora escribe. Funciona en toda tu computadora.
+Hablas cuatro veces más rápido de lo que escribes. Usa una herramienta de dictado por voz (gratis) como Whisper Flow: hablas y la computadora escribe. Funciona en toda tu computadora.
 
 ## Nivel 3: Consigue la app de Claude
 
@@ -50,7 +52,9 @@ Descarga la app en claude.com/download → abre la pestaña **Cowork** (arriba, 
 
 ## Nivel 4: Conecta tus aplicaciones
 
-Menú izquierdo → "personalizar" → "conectores". Conecta Claude a Gmail, Calendario, notas de reuniones (Granola, Otter).
+Menú izquierdo → "personalizar" → "conectores". Conecta Claude a Gmail, Calendario, notas de reuniones (Granola, Otter). Acepta todos los permisos que te pida.
+
+Con eso conectado, Claude puede leer tu correo, las notas de tu última reunión y tu calendario al mismo tiempo, y responder usando ese contexto real.
 
 > La IA solo necesita contexto. Necesita conocerte. Es simple.
 
@@ -65,6 +69,8 @@ Menú izquierdo → "personalizar" → "skills" (habilidades). Las Skills son ma
 5. Guarda la Skill.
 6. Ahora escribe `/mi-estilo-excel` en tu próximo prompt.
 
+> ✓ Tip: puedes compartir tus Skills con tu equipo para que todos trabajen con el mismo estilo, sin repetir las instrucciones cada vez.
+
 ## Jefe final: programar
 
 No sabes programar. No importa. Igual puedes armar un sitio o una app real esta noche, en español, con palabras comunes.
@@ -77,7 +83,11 @@ Usa el mismo truco:
 Arma una página donde la gente pueda reservar una llamada de 30 minutos conmigo. Pregúntame primero.
 ```
 
+Claude te va a preguntar cosas como: ¿modo oscuro o claro? ¿integras las reservas con Gmail o con Calendly? Respondes, y sigue.
+
 Cuatro minutos después: un formulario de reservas funcionando, en vivo.
+
+> ✓ Tip: después puedes pedirle "conviértela en una app que pueda poner en mi teléfono. Pregúntame primero" para tener también la versión móvil.
 
 ## Resumen
 
@@ -87,6 +97,8 @@ Cuatro minutos después: un formulario de reservas funcionando, en vivo.
 4. **Nivel 4:** conecta tus aplicaciones (Gmail, Calendario).
 5. **Nivel 5:** crea Skills a medida.
 6. **Jefe final:** haz "vibecoding" con Claude Code.
+
+> ★ Para recordar: Ruben Hassid, el autor de esta guía, cuenta que dejó la universidad y no sabe programar — y aun así hoy arma soluciones que usan empresas grandes. El listón no es ser experto. El listón es intentarlo.
 
 > La mayoría dice "estoy muy atrasado" pero nunca lo probó de verdad. La barrera para saber es intentarlo. Abre esta guía. Abre Claude. Empieza por el nivel 1. Hoy, no mañana.
 
