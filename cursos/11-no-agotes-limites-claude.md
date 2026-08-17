@@ -31,9 +31,11 @@ Claude relee toda tu conversación desde el principio en cada mensaje. El mensaj
 11. **Reinicia la conversación en vez de seguir sumando mensajes.** En Cowork, "Reiniciar la conversación desde aquí" sobre un mensaje anterior. Ve lo más atrás posible.
 
 > ✓ Tip: antes de reiniciar, pídele a Claude "escribe un session-notes.md con lo esencial de esta sesión". Así te llevas el contexto importante sin arrastrar todo el historial pesado.
+
 12. **Resume y arranca de nuevo cada 15-20 mensajes.** Pídele a Claude que resuma todo → copia el resumen → abre una sesión nueva → pégalo como primer mensaje.
 
 > ★ Para recordar: un desarrollador midió esto en una sesión larga y encontró que el 98,5% de sus tokens se iban en releer el historial completo — solo el 1,5% correspondía a la respuesta real que necesitaba.
+
 13. **Usa modelos livianos para tareas simples. Guarda el modelo potente para trabajo profundo.** Si la tarea le toma a Claude menos de 30 segundos, probablemente no necesita el modelo más caro. Revisar ortografía o hacer una lluvia de ideas no necesita el modelo más potente — resérvalo para lo que sí lo justifique.
 14. **No tires toda tu carpeta dentro de Cowork.** Cada archivo que Cowork lee es gasto de tokens. Suma solo lo necesario para esa tarea. Para tareas sin archivos: selecciona cero carpetas.
 15. **Empieza un chat nuevo cuando cambia el tema.** Tema nuevo = chat nuevo. Siempre.

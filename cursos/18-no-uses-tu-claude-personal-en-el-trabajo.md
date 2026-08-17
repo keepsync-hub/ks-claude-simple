@@ -66,7 +66,7 @@ Sí. Pasaron los dos casos.
 
 **4 pasos:**
 
-1. **Cambia nombres por roles:** persona real → "el cliente". Empresa → "Empresa A".
+1. **Cambia nombres por roles:** persona real → "el cliente". Empresa → "Empresa A". Nombre en código de un producto → "Proyecto X".
 2. **Usa valores ficticios:** números reales → números ficticios parecidos. Emails reales → nombre@ejemplo.com.
 3. **Pega solo lo necesario:** no subas el PDF o la planilla completa (tienen metadatos ocultos).
 4. **No incluyas identificadores que no aportan nada** a la tarea.
@@ -85,11 +85,13 @@ Redacta un email de renovación para un contacto cliente. Su contrato de $5M
 vence a fin del próximo mes, y están molestos por las demoras de soporte.
 ```
 
+> ⚠ Aviso: anonimizar baja mucho el riesgo, pero no lo elimina del todo. Para datos realmente regulados (historiales médicos, documentos legales, o cualquier cosa que permita reidentificar a una persona real), la única solución limpia es usar la herramienta de IA que paga tu empresa.
+
 ## 5. Usa el chat temporal para tareas de trabajo
 
 Incluso con el entrenamiento apagado, los chats normales se guardan en tu historial.
 
-Para tareas de trabajo, usa el modo de **chat temporal / incógnito** que ofrecen la mayoría de las IAs (en Claude: arriba a la derecha → "Incógnito"). Un chat temporal no se guarda en el historial y no se usa para entrenar. Lo cierras, y desaparece.
+Para tareas de trabajo, usa el modo de **chat temporal / incógnito** que ofrecen la mayoría de las IAs (en Claude: arriba a la derecha → "Incógnito"; en ChatGPT y Gemini se llama "chat temporal"; en Grok, "chat privado"). Un chat temporal no se guarda en el historial y no se usa para entrenar. Lo cierras, y desaparece. Hazlo tu modo por defecto para cualquier conversación que no quieras que quede guardada.
 
 ## 6. Conectores: lo más peligroso
 

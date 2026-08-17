@@ -13,14 +13,22 @@
 1. Construir una versión clickeable de tu idea para dársela a un desarrollador, así deja de adivinar.
 2. Construir una herramienta chica que resuelve el trabajo mejor que un chatbot genérico — solo para ti o tu equipo.
 
+**Ejemplos reales:**
+
+- Un mockup para el equipo de desarrollo: en vez de explicar con palabras lo que quería, se construye un sitio clickeable de verdad y se le manda a los devs y diseñadores antes de que ellos programen la versión robusta. Así entienden la visión al toque.
+- Una herramienta a medida: conectar una API pública de LinkedIn a un dashboard que calcula un puntaje de rendimiento de tus publicaciones (mezcla de likes, comentarios y reposts) y te deja buscar por tema. Se usa todos los días — construida solo para ti.
+
 ## Cómo configurar Claude Code (7 pasos)
 
-1. **Consigue la app:** descárgala, instálala, activa el plan pago, abre la pestaña Code.
+1. **Consigue la app:** descárgala, instálala, activa el plan pago (USD 20/mes), abre la pestaña Code. El plan de USD 100/mes te da más créditos.
 2. **Arma una carpeta limpia:** una carpeta vacía en tu computadora. Sin contraseñas ni archivos privados. Claude solo va a tocar esa carpeta.
 3. **Activa el modo sin confirmaciones constantes:** Configuración → Claude Code → activar el modo de permisos ampliados. Sin esto, Claude te pide permiso antes de cada cambio (30 clics por sesión). *Nota: si estás en una empresa, consulta primero con IT.*
-4. **Conecta tus herramientas de despliegue y base de datos (gratis):** "+" → Conectores → Agregar conectores → busca tu herramienta de hosting y tu herramienta de base de datos. Una publica tu sitio en internet. La otra guarda tus datos y logins.
+
+> ⚠ Aviso: el modo sin confirmaciones a veces falla — se le olvida que está activado, o te pregunta igual. Lo están arreglando de a poco.
+
+4. **Conecta tus herramientas de despliegue y base de datos (gratis):** "+" → Conectores → Agregar conectores → busca tu herramienta de hosting y tu herramienta de base de datos (por ejemplo, Netlify para publicar y Supabase para datos y logins — ambas gratis para uso básico). Una publica tu sitio en internet. La otra guarda tus datos y logins.
 5. **Selecciona la carpeta:** clic en el ícono de carpeta → elige la tuya.
-6. **Elige tu modelo:** el más potente disponible, con esfuerzo alto.
+6. **Elige tu modelo:** el más potente disponible, con esfuerzo alto (por ejemplo, Opus con esfuerzo alto). Mientras más inteligente el modelo, más tokens consume — más sobre el costo al final de esta guía.
 7. **Listo. A construir.**
 
 ## El mega-prompt (cópialo tal cual)
@@ -58,13 +66,15 @@ mostrármelo. Después dime qué mirar.
 
 **Empieza desde una captura de pantalla.** ¿Encontraste un sitio que te gusta? Sácale una captura, arrástrala a Claude: "constrúyeme esto, pero para lo mío."
 
-Buenas fuentes de inspiración de diseño: galerías de diseño web, showcases de landing pages, colecciones de componentes UI.
+Buenas fuentes de inspiración de diseño: Dribbble, Awwwards, Godly, Land-book, Lapa Ninja, CSS Design Awards, Mobbin, Page Flows, Refero, SaaS Landing Page, Saaspo, One Page Love y BentoGrids.
 
 **Describe el resultado final.** Di qué quieres que exista. Deja que Claude elija los pasos.
 
 **Ve de a una pieza.** Construye la página de inicio → déjala bien → recién ahí la próxima página.
 
 **Corre el ciclo.** Mira lo que Claude construyó. Anota lo que está mal como lista numerada. Pégala de nuevo. Claude arregla cada punto. Repite 5-6 veces por página.
+
+> ✓ Tip: ¿atascado en un bug? Sácale una captura, pégala y dile "arregla esto." Es más rápido que describirlo con palabras.
 
 ## Que tu sitio no parezca "hecho por IA"
 
