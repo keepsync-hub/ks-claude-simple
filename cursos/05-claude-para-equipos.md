@@ -8,13 +8,16 @@
 
 Una semana para implementar Claude puertas adentro. Entre 15 y 60 minutos por día.
 
+Muchos equipos ya comprobaron que Claude funciona a nivel individual, pero eso no se traduce solo en adopción real: mandar un newsletter, cambiar de ChatGPT a Claude sin más, o hacer un "lunch and learn" no alcanza — la gente dice que lo usa, pero en la práctica no cambia nada. Este plan día por día ataca justo eso.
+
 ## Configuración: el plan Team de Claude
 
 Anda a claude.com/pricing/team.
 
 - Mínimo 5 puestos, máximo 150.
-- Claude **no** entrena con tus datos (como todo plan empresarial de IA).
-- Se recomiendan puestos premium para quienes lo usan a diario.
+- Claude **no** entrena con tus datos (como todo plan empresarial de IA; el nivel de garantías de seguridad varía según el plan que elijas).
+- Se recomiendan puestos premium para quienes lo usan a diario; el plan estándar alcanza si lo vas a usar menos de dos veces por semana.
+- ¿Tu empresa es más grande? Pide el plan Enterprise en claude.ai/create/enterprise/qualification.
 
 ## Lunes: armar los Proyectos (45-60 min)
 
@@ -43,7 +46,7 @@ Empieza ahora. Usa AskUserQuestion.
 
 ### Paso 2: crea los Proyectos
 
-Claude → Proyectos → Team → Nuevo Proyecto. Haz cada uno compartido.
+Claude → Proyectos → Team → Nuevo Proyecto. Nómbralos igual que como los sugirió Claude, hazlos visibles para todo el workspace y compártelos con tu equipo.
 
 ### Paso 3: carga cada Proyecto con el contexto correcto
 
@@ -70,7 +73,11 @@ ENTREGABLE] de muestra para [un escenario reciente o ficticio].
 Después critica tu propio resultado: qué cumple con nuestro estándar y qué no.
 ```
 
+Si la muestra pasa la prueba, el Proyecto queda listo. Si no, ajusta las instrucciones — toma unos 2 minutos por Proyecto.
+
 ## Martes: crear plantillas de prompt (15-25 min)
+
+La idea es que tus compañeros nunca se queden mirando un chat vacío sin saber qué escribir: les dejas un prompt ya armado, listo para copiar y pegar.
 
 ```
 Con las instrucciones de este Proyecto, escríbeme el prompt más corto posible
@@ -80,11 +87,15 @@ Reglas:
 2. UN solo campo [ENTRADA] (notas crudas, un borrador o viñetas)
 ```
 
+El resultado debería ser una sola línea, algo como: "Pega tus notas sobre [tema] y te devuelvo el/la [entregable] en nuestro estilo." Guarda cada plantilla en la carpeta de Knowledge del Proyecto correspondiente, para que quede siempre a mano.
+
 ## Miércoles: buscar el "wow" (20-30 min)
 
-1. Elige una tarea de esta semana que tomó más de 30 minutos.
-2. Córrela con tu sistema nuevo.
-3. Captura el antes/después — esto se vuelve tu momento "wow" para la adopción.
+1. Elige una tarea que hiciste a mano esta semana: que haya tomado más de 30 minutos, que otros compañeros también la hagan seguido, y de la que todavía tengas el "antes" (la versión manual).
+2. Córrela con tu sistema nuevo. Si quieres, grábala con una herramienta como Screen Studio.
+3. Guarda la versión manual y la versión con Claude una al lado de la otra, en un documento comparativo — ese es tu momento "wow" para la adopción.
+
+> ✓ Tip: la prueba social no nace de decir "confía en mí, Claude es bueno" — nace de mostrar evidencia visual concreta del antes y el después.
 
 ## Jueves: convierte a 1 persona (35 min en total)
 
@@ -104,6 +115,8 @@ email/brief] real de esta semana. No hace falta que prepares nada.
 2. Copia y pega la plantilla del martes.
 3. Muestra el efecto "wow" del miércoles.
 
+> ★ Para recordar: lo que tu compañera está viendo es que Claude produce algo bueno con SU propio trabajo, en la voz de la empresa, al primer intento. Claude no "aprendió" nada — el trabajo lo hizo toda la capa de contexto que armaste de lunes a miércoles.
+
 **Hazla co-dueña:** agrégala al Proyecto. Muéstrale dónde viven las plantillas. Pregúntale: "¿qué otras tareas deberíamos convertir en plantilla?"
 
 ## Viernes: lanzamiento al equipo (60 min)
@@ -119,16 +132,36 @@ email/brief] real de esta semana. No hace falta que prepares nada.
 
 ```
 Escribe un anuncio de Slack para nuestro nuevo espacio de trabajo de Claude.
-1. Empieza con UN resultado concreto de mi prueba esta semana
+1. Empieza con UN resultado concreto de mi prueba esta semana: [PEGAR
+   comparativo antes/después del miércoles]
 2. Explica en una frase qué es el Proyecto compartido
-3. Lista 3 cosas que pueden hacer YA MISMO
+3. Lista 3 cosas que pueden hacer YA MISMO con las plantillas que ya existen
 4. Termina con: "Prueba [plantilla] en tu próxima [tarea]. Toma 2 minutos."
-Máximo 150 palabras. Tono informal, no corporativo.
+5. Cierra invitando a una llamada corta de onboarding
+Máximo 150 palabras. Tono informal, no corporativo, sin signos de exclamación.
+Que suene a un compañero de equipo, no a un jefe.
+```
+
+### Envía y siembra
+
+Publica el anuncio en el canal del equipo. Después manda un mensaje directo a 2-3 personas puntuales: "Prueba [plantilla] en [tarea] hoy. Toma 2 minutos." Pide también a la persona del jueves que mande sus propios mensajes — que el impulso no salga solo de ti.
+
+### Recoge feedback al final del día
+
+```
+Mi equipo empezó a usar el espacio de trabajo de Claude hoy. Este es el
+feedback que recibí: [PEGAR mensajes de Slack, preguntas o reacciones].
+Con esto dime:
+1. Qué debería ajustar en las instrucciones
+2. Qué plantillas nuevas deberíamos agregar
+3. Cuál es el malentendido más grande que tiene la gente
+Después escribe un mensaje corto de Slack para el lunes que resuelva esa
+duda principal y comparta una victoria rápida del equipo.
 ```
 
 ## Qué pasa después
 
-En 5 días hiciste lo que a muchas empresas les toma 5 meses y un consultor. Tu equipo es un poco más inteligente. Y la inteligencia se acumula.
+En 5 días hiciste lo que a muchas empresas les toma 5 meses y un consultor — sin tickets de IT, sin presentaciones a la gerencia, sin PowerPoints ni capacitaciones formales. Tu equipo es un poco más inteligente. Y la inteligencia se acumula.
 
 ---
 

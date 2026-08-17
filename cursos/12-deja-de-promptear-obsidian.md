@@ -8,7 +8,11 @@
 
 La peor forma de usar Claude: un prompt vago → resultados mediocres → le echas la culpa a Claude.
 
-La solución: tus archivos SON el prompt. Para siempre.
+¿Por qué pasa? Porque nadie quiere escribir 500 palabras de instrucciones solo para conseguir un primer borrador. Entonces escribes poco, y Claude te devuelve algo genérico que "suena como cualquier otro".
+
+Los Proyectos de Claude (subir archivos una vez para reusarlos en varios chats) ayudan, pero no alcanzan: igual tienes que crear un proyecto por tema, volver a subir materiales parecidos y repetir las mismas reglas una y otra vez. Eso no es un verdadero segundo cerebro.
+
+La solución real: tus archivos SON el prompt. Para siempre.
 
 ## Repaso rápido de la configuración de Cowork
 
@@ -93,11 +97,15 @@ Después guárdala como una skill que pueda invocar con /negociacion.
 
 Ahora cuando escribes `/negociacion` en cualquier chat de Claude, sabe qué hacer.
 
+Otros ejemplos de skills que puedes armar: `/newsletter`, `/brief-cliente`, `/email-ventas`, `/reporte-semanal`, `/notas-reunion`.
+
 ### Cómo volver a subir una skill editada
 
 Edita la skill en Obsidian → Menú izquierdo > Personalizar > Skills > + > Subir.
 
 ## Por qué Obsidian (y no otras herramientas)
+
+Ruben probó seis herramientas contra tres criterios: que sean gratis, que vivan dentro de tu computador (no en la nube) y que sean fáciles de usar, con un diseño limpio.
 
 | Herramienta | Problema |
 |---|---|
@@ -106,10 +114,13 @@ Edita la skill en Obsidian → Menú izquierdo > Personalizar > Skills > + > Sub
 | Apple Notes | Formato cerrado, no puede apuntar a una carpeta |
 | VS Code / Cursor | Excelente, pero pensado para developers |
 | GitHub | Requiere git, commits, pushes |
-| Typora | Un archivo a la vez, sin navegación por carpetas |
-| **Obsidian** | ✓ Lee la carpeta existente, gratis, pensado para no programadores |
+| Typora | Editor lindo, pero USD 15 de pago único, un archivo a la vez, sin navegación por carpetas |
+| MarkEdit | Gratis, pero solo Mac — mismas limitaciones que Typora |
+| **Obsidian** | ✓ Lee la carpeta existente, gratis en un dispositivo (USD 4/mes si quieres sincronizar con el celular), pensado para no programadores |
 
 Obsidian nunca toca tus archivos de una forma que rompa Cowork. Tus .md siguen siendo .md.
+
+> ⚠ Aviso: herramientas como Notion pueden corromper el formato de tus .md sin que te des cuenta — y ahí Claude deja de leer instrucciones que antes le funcionaban perfecto. Obsidian nunca hace eso.
 
 ## El sistema completo
 
@@ -123,6 +134,8 @@ Claude Cowork/
 ├── PLANTILLAS/ (tu mejor trabajo, para reusar)
 └── SKILLS/ (tus flujos guardados con comando)
 ```
+
+> ✓ Tip: no te pongas a poner al día años de notas pasadas. Bloquea dos sesiones de 20 minutos por semana y enfócate en lo que vas a crear de ahora en adelante, no en migrar todo tu archivo histórico.
 
 ---
 
