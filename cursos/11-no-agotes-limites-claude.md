@@ -12,15 +12,17 @@ Claude relee toda tu conversación desde el principio en cada mensaje. El mensaj
 
 ## Hábitos que probablemente no conocías
 
-1. **Convierte los archivos antes de subirlos.** Una página de PDF cuesta entre 1.500 y 3.000 tokens. Las capturas de pantalla, peor todavía. Extrae el texto → pégalo como texto plano o markdown. Recorta bien las capturas.
+1. **Convierte los archivos antes de subirlos.** Una página de PDF cuesta entre 1.500 y 3.000 tokens. Las capturas de pantalla, peor todavía: una imagen de 1000x1000 píxeles ronda los 1.300 tokens, pero si la recortas bien puede bajar a menos de 100. Extrae el texto → pégalo como texto plano o markdown. Recorta bien las capturas. Truco rápido: pega el texto en un documento de Google Docs nuevo (doc.new) y descárgalo como .md antes de subirlo a Claude — pesa mucho menos que el archivo original.
+
+> ⚠ Aviso: subir el mismo PDF de 15 páginas en 4 chats distintos puede quemar más de 180.000 tokens. Convertido a texto plano una sola vez, ese mismo documento baja a unos 2.000 tokens.
 2. **Planifica en el chat. Crea archivos en Cowork.** Crear archivos consume más límite que el chat normal. Piensa en Chat (barato) → construye en Cowork (caro).
 3. **"Pregúntame" en vez de un prompt largo.** Un prompt de 500 palabras cuesta 500 tokens cada vez que se relee. Mi recurso favorito: "quiero [tarea] con [criterio de éxito]. Lee mi carpeta. Pregúntame con AskUserQuestion antes de empezar."
-4. **Usa dictado por voz para respuestas más ricas.** Al escribir, los prompts salen perezosos → Claude adivina mal → más mensajes = más recargas de contexto. Al hablar, das más contexto de una sola vez, naturalmente.
+4. **Usa dictado por voz para respuestas más ricas.** Al escribir, los prompts salen perezosos → Claude adivina mal → más mensajes = más recargas de contexto. Al hablar, das más contexto de una sola vez, naturalmente. Hay apps de dictado por voz (como Wispr Flow) pensadas justo para esto.
 5. **Deja de pedir que rehaga todo.** Di "rehaz solo la sección 3. Deja el resto igual para ahorrar tokens." Suma "sin comentarios, sin explicaciones, solo el resultado."
 6. **Agrupa tareas en un solo mensaje.** Tres prompts separados = tres recargas completas de contexto. Un prompt con tres tareas = una sola recarga.
 7. **Usa la misma estructura de prompt siempre.** Prompts parecidos se cachean parcialmente. Mantén una biblioteca de prompts estable y cambia solo la parte variable.
 8. **Edita tu mensaje en vez de mandar uno nuevo.** En el chat, haz clic en Editar sobre tu mensaje original, corrígelo, regenera. El intercambio viejo se reemplaza, no se apila. (No disponible en Cowork.)
-9. **Elige el producto correcto para la tarea.** Pregunta rápida → chat con el modelo más liviano. Informe desde archivos → Cowork con el modelo más potente. Un gráfico → Code con un modelo intermedio.
+9. **Elige el producto correcto para la tarea.** Pregunta rápida → chat con el modelo más liviano. Informe desde archivos → Cowork con el modelo más potente. Un gráfico → Code con un modelo intermedio. Ojo con la función Research: investiga muy a fondo, pero por eso mismo gasta muchos tokens — actívala solo cuando de verdad necesites ese nivel de profundidad.
 
 ## Lo básico que sigue importando
 

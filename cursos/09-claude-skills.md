@@ -70,10 +70,7 @@ Dentro de Claude Cowork: Personalizar → Plugins personales → Explorar plugin
 2. **Los disparadores negativos importan más.** La línea "No usar para…" es más importante que "Usar cuando…". Agrega: "No usar para artículos de blog, newsletters, emails" o va a secuestrar conversaciones donde no debería.
 3. **Las Skills se combinan con tu archivo de voz.** sobre-mi.md maneja el tono. La Skill maneja el proceso. Se activan juntas, al mismo tiempo — no hace falta repetir el tono dentro de las instrucciones de la Skill.
 4. **Arma Skills a partir de conversaciones pasadas.** Clic en una sesión de Cowork > flecha junto al nombre > "Convertir en skill". Claude reconstruye el flujo a partir de tus prompts anteriores.
-5. **Las Skills ahorran tokens.** Claude solo lee el encabezado de 3 líneas de cada Skill al principio. Las instrucciones completas se cargan solo cuando la tarea coincide. 30 Skills instaladas apenas ocupan tu ventana de contexto.
-
-> ✓ Tip: según datos de Anthropic, una tarea que normalmente pedía 15 idas y vueltas y 12.000 tokens sin Skills bajó a solo 2 preguntas y 6.000 tokens con la Skill correcta activada.
-
+5. **Las Skills ahorran tokens.** Claude solo lee el encabezado de 3 líneas de cada Skill al principio. Las instrucciones completas se cargan solo cuando la tarea coincide. 30 Skills instaladas apenas ocupan tu ventana de contexto. Según datos de Anthropic, una tarea que normalmente pedía 15 idas y vueltas y 12.000 tokens sin Skills bajó a solo 2 preguntas y 6.000 tokens con la Skill correcta activada.
 6. **El parche contra la "vagancia".** Si Claude recorta esquinas dentro de una Skill, suma al prompt: "Tómate tu tiempo. Calidad antes que velocidad. No te saltees pasos." Funciona mejor en el prompt del usuario que dentro del archivo de la Skill.
 7. **Las Skills son portables.** El archivo SKILL.md es un estándar abierto pensado para funcionar en distintas plataformas. Una Skill que armaste hoy para Claude podría funcionar mañana en Gemini o ChatGPT si esas plataformas adoptan el mismo estándar — igual que ya pasa con los archivos de voz.
 

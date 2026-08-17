@@ -14,7 +14,7 @@ Claude Cowork es lo mejor que le pasó a la IA desde ChatGPT. Si no programas, y
 2. Necesitas cuenta Pro (~US$20/mes).
 3. Abre la app → pestaña Cowork (entre Chat y Code).
 4. Selecciona una carpeta de tu computadora.
-5. Elige siempre el modelo Opus para tareas complejas.
+5. Elige siempre el modelo Opus (la versión más reciente, ej. Opus 4.6) para tareas complejas.
 
 ## I — Cómo armar tu carpeta de Cowork
 
@@ -26,12 +26,46 @@ Crea una carpeta nueva: **Claude Cowork** con 3 subcarpetas: **(1) SOBRE MÍ**, 
 
 Quién eres, cómo piensas, cómo quieres que Claude escriba por ti. Mantenlo bajo las 2.000 palabras (por eficiencia de tokens).
 
-Para crearlo desde cero:
+> ★ Para recordar: el archivo original de Ruben Hassid tenía más de 22.000 palabras. Lo redujo a menos de 2.000 quitando las transcripciones crudas y quedándose solo con los patrones. Esa diferencia es la que decide si Claude lee tu archivo completo o empieza a resumirlo por arriba.
+
+**Si ya tienes un archivo viejo y largo:** súbelo en una sesión nueva y dile: "Este es mi archivo sobre-mi y necesito ahorrar tokens. Hazme preguntas hasta que quede recortado y perfecto."
+
+**Para crearlo desde cero**, abre una sesión nueva con Opus + pensamiento extendido y usa un prompt como este:
 
 ```
-Estás armando mi archivo sobre-mi.md para mi carpeta de Cowork.
-Entrevístame con AskUserQuestion (20 preguntas) y después compila
-las respuestas en un archivo condensado de menos de 2.000 tokens.
+Estás armando mi archivo sobre-mi.md para mi carpeta de Cowork. Este
+archivo lo vas a leer al inicio de cada sesión para ayudarme mejor.
+Tiene que ser conciso y de alta señal.
+
+Tu trabajo: entrevístame con AskUserQuestion (15-20 preguntas, una a
+la vez, dejándome usar "Otro" para dictar respuestas largas) y
+después compila todo en un sobre-mi.md de menos de 2.000 tokens.
+
+Si te doy una respuesta vaga, insiste: pide un ejemplo concreto. No
+aceptes "me gusta que sea claro" sin saber qué significa "claro"
+para mí. Si algo inesperado aparece, profundiza antes de seguir.
+
+Cubre estos temas (adapta según mi rubro):
+- Quién soy: mi rol, mi empresa, con quién trabajo, cómo se ve una
+  buena semana de trabajo para mí.
+- Cómo trabajo: mis herramientas del día a día, cómo empiezo una
+  tarea de cero, cómo reviso y qué significa "terminado".
+- Qué es un buen trabajo: muéstrame tu mejor entregable reciente y
+  qué lo hizo bueno; qué separa lo excelente de lo promedio.
+- Qué odio: un ejemplo de mal trabajo en mi rubro y qué lo hace
+  malo; qué patrones o atajos me dan vergüenza ajena.
+- Mis reglas: qué nunca hago, cuáles son mis 2-3 no-negociables.
+- Mis opiniones: qué creo sobre mi rubro que mis colegas
+  cuestionarían; qué está sobrevalorado o subvalorado.
+
+Al terminar, compílalo en un solo archivo markdown con estas
+secciones: Quién soy / Cómo trabajo / Qué es un buen trabajo / Qué
+odio / Mis reglas / Instrucciones para Claude (una lista numerada de
+qué SÍ y qué NO hacer conmigo). No guardes la transcripción cruda de
+preguntas y respuestas: extrae los patrones y escríbelos en prosa
+condensada. Meta: menos de 2.000 tokens en total.
+
+Guarda el archivo como sobre-mi.md en mi carpeta SOBRE MÍ/.
 ```
 
 **Archivo 2 — estilo-anti-ia.md**
@@ -42,13 +76,15 @@ Reglas que prohíben los patrones típicos de escritura de IA. Prohíbe más de 
 
 Tus objetivos, tu estrategia, en qué estás enfocado, a qué le dices que no. Cortito (menos de 1.000 tokens). Actualízalo cada trimestre.
 
+> ✓ Tip: pídele a Claude que también te entreviste para este archivo (6-8 preguntas): tus 2-3 metas del año con números concretos, qué plataformas o mercados importan ahora, qué dejaste de hacer hace poco y a qué le estás diciendo que no. No lo actualices por calendario, solo cuando cambien tus prioridades de verdad.
+
 ### Paso 2: Carpeta RESULTADOS
 
-Donde Cowork guarda su trabajo. Una subcarpeta por proyecto. Cowork se organiza solo.
+Donde Cowork guarda su trabajo. Una subcarpeta por proyecto. Cowork se organiza solo y nunca lee esta carpeta por su cuenta (así no gastas tokens de más). Cuando necesites un entregable anterior, dile: "Lee el informe en RESULTADOS/nombre-del-proyecto."
 
 ### Paso 3: Carpeta PLANTILLAS
 
-Tu mejor trabajo, para que Claude lo reutilice. Al final de una sesión dile: "guarda esto como plantilla en PLANTILLAS/".
+Tu mejor trabajo, para que Claude lo reutilice. Al final de una sesión dile: "guarda esto como plantilla en PLANTILLAS/". Claude quita el contenido y guarda solo el esqueleto (secciones, orden, formato, extensión). La próxima vez que necesites algo parecido, dile: "usa la plantilla de PLANTILLAS/[nombre del archivo]" y Cowork sigue esa estructura.
 
 ## II — Instrucciones globales
 

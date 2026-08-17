@@ -15,6 +15,14 @@ Un Conector es un puente de un clic entre Claude y una app que ya usas.
 3. Busca tu app (Gmail, Gamma, Google Drive, herramientas de notas de reuniones...).
 4. En cada chat nuevo: clic en "+" → Conectores → activa tu app.
 
+**Ejemplos de uso real:**
+
+- Con Gmail activado: pregúntale "¿Qué está pendiente en mi bandeja de esta semana?" y Claude responde con tus datos reales, sin que copies y pegues nada.
+- Con una app de notas de reuniones activada: pídele "Necesito un resumen de todas las transcripciones de la semana pasada" y las lee todas sin que abras ningún dashboard.
+- Con Slack activado: dile "Extrae este hilo completo y dame los pendientes" y Claude trae todo el contexto sin que visites ninguna pestaña.
+
+Todo el trabajo pasa dentro de Claude, con contexto, y conectado en vivo a tus apps.
+
 ## 9 conectores recomendados
 
 ### 1. Notas de reuniones (Granola, Otter, etc.)
@@ -53,6 +61,10 @@ Ve a Notion, al Calendario de Contenido. Extrae el contenido de [FECHA]
 (brief de diseño, copy). Crea 2 nuevos con las mismas ideas y técnicas.
 ```
 
+> ✓ Tip: el objetivo no es usar la IA para externalizar tu pensamiento, sino tener acceso a ideas ilimitadas para elegir entre ellas.
+
+Si tu empresa es más grande, seguramente usa Microsoft o Atlassian (Jira, Confluence) en vez de Notion — Claude también se conecta a esas herramientas.
+
 ### 4. Microsoft 365 (Teams, Outlook, Calendario, OneDrive)
 
 Un solo interruptor = 4 apps.
@@ -65,6 +77,8 @@ Lista cada reunión donde todavía no tengo notas de preparación.
 Para cada una: trae el hilo de Teams o el documento de OneDrive relevante.
 Genera un brief de 1 página por reunión.
 ```
+
+**Tip:** este conector funciona mejor cuando toda la empresa lo adopta, porque la gente empieza a comunicarse de forma más clara sabiendo que la IA puede leerlo.
 
 ### 5. Slack
 
@@ -126,9 +140,14 @@ Este trío se combina: reuniones → emails → canales del equipo. Tienes el pa
 2. **No uses Conectores para trabajo creativo.** Al redactar un post o un guion, quieres un espacio limpio. El ruido de Slack/Gmail contamina el resultado. Mi chat de escritura por defecto: todos los Conectores apagados.
 3. **No des permiso de escritura hasta confiar en el flujo de lectura.** Primero solo lectura. Observa una semana. Después dale permiso de escritura.
 
+> ⚠ Aviso: la mayoría de los accidentes con datos pasan el primer día, cuando alguien activa un conector con permiso de escritura completo sin haberlo probado antes.
+
 ## Directorio completo
 
-Explora el directorio oficial de Conectores dentro de Claude: Administrar conectores → + → Explorar conectores.
+Hay más de 200 conectores disponibles y la lista sigue creciendo. Puedes explorarlos de dos formas:
+
+- Dentro de Claude: Administrar conectores → + → Explorar conectores.
+- Directorio online: [claude.com/connectors](https://claude.com/connectors#connectors)
 
 ## Arma tu propio Conector (para developers)
 

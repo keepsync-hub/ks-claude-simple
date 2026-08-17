@@ -8,7 +8,23 @@
 
 ## Ranking de IAs para planillas
 
-Entre las opciones probadas para crear planillas desde cero, un patrón se repite: los asistentes integrados dentro de Excel o Sheets suelen quedarse cortos, las IAs generalistas dicen "listo" pero cuesta encontrar el archivo, y las herramientas de programación son excelentes pero caras.
+Ruben probó 11 opciones distintas para crear planillas desde cero. Este es el veredicto de cada una:
+
+| Herramienta | Veredicto |
+|---|---|
+| Copilot | "Absolutamente terrible, ni siquiera lograba armar una planilla." |
+| Copilot dentro de Excel | No funcionó tras varios intentos. |
+| Claude | Bien, pero no tan efectivo como Claude Cowork. |
+| Claude dentro de Microsoft Excel | Buena opción, pero no la favorita. |
+| Gemini (app y navegador) | Por debajo de Claude Cowork o ChatGPT. |
+| Gemini dentro de Google Sheets | Sin acceso disponible (por ahora). |
+| Grok | Dice "listo", pero el archivo no se puede abrir ni encontrar. |
+| ChatGPT | Funciona, pero se prefiere dentro de Google Sheets. |
+| ChatGPT dentro de Google Sheets | Mejor para editar que para crear desde cero. |
+| Codex (OpenAI) | "Es el mejor, pero se me acabaron los tokens en 2 prompts." |
+| **Claude Cowork** | **La mejor opción para crear planillas desde cero.** |
+
+En resumen: los asistentes integrados dentro de Excel o Sheets suelen quedarse cortos, las IAs generalistas dicen "listo" pero cuesta encontrar el archivo, y las herramientas de programación son excelentes pero caras.
 
 **Claude Cowork es la mejor opción para crear planillas desde cero.**
 
@@ -18,9 +34,10 @@ Para **editar** planillas ya existentes, un asistente de IA integrado directamen
 
 **Preparación:**
 
+- Descarga la app de Claude (claude.com/download) — necesitas una suscripción Pro (US$20/mes).
 - App de Claude → pestaña Cowork.
 - Conecta Google Drive (más fácil para exportar después).
-- Elige el modelo más potente disponible + razonamiento adaptativo.
+- Elige el modelo más potente disponible (hoy, Opus) + razonamiento adaptativo.
 
 **Plantilla de prompt:**
 
@@ -43,7 +60,7 @@ Antes de construir, lístame tus 10 principales supuestos para que los revise,
 y después ejecuta.
 ```
 
-La parte clave: pedir "los 10 principales supuestos para revisar antes de ejecutar" — así mantienes el control.
+> ★ Para recordar: la parte clave del prompt es pedir "los 10 principales supuestos para revisar antes de ejecutar". El que controla a la IA eres tú, no al revés.
 
 **Después:** haz clic en el botón "Google Drive" para abrirlo directamente en Google Sheets.
 
@@ -52,19 +69,23 @@ La parte clave: pedir "los 10 principales supuestos para revisar antes de ejecut
 Para editar lo que ya tienes, busca un complemento de IA dentro de Google Sheets:
 
 1. Extensiones → Complementos → Obtener complementos.
-2. Busca e instala el complemento oficial de IA que prefieras (gratis).
-3. Conecta tu cuenta.
-4. Elige el modelo más potente disponible si necesitas más precisión.
+2. Busca el complemento oficial de ChatGPT (de OpenAI) — o el que prefieras — e instálalo (gratis).
+3. Otorga los permisos la primera vez que lo uses y conecta tu cuenta.
+4. Elige el modelo más potente disponible ("Heavy", si está disponible) si necesitas más precisión.
 
 **Mejores casos de uso:**
 
 - Visualizar una pestaña con gráficos.
-- Resumir una pestaña.
-- Editar la planilla (el mejor uso): "En @Supuestos, cambia el escenario 'Optimista' para que sea más agresivo."
+- Resumir una pestaña (incluso sin abrirla).
+- Editar la planilla (el mejor uso): "En @Supuestos, cambia el escenario 'Optimista' para que sea más agresivo." La planilla completa se actualiza en un par de minutos.
+
+> ✓ Tip: este es el flujo favorito de Ruben — crear con Claude Cowork y después abrir Google Sheets + el complemento de ChatGPT para editar.
 
 ## Alternativa: herramientas dedicadas a planillas
 
 Si tu trabajo diario es armar planillas, considera una herramienta de IA dedicada exclusivamente a spreadsheets, con configuración de contexto (tu rol, tus preferencias, el modelo a usar).
+
+Un ejemplo es **Shortcut.ai**: prompts en un panel lateral, opciones para configurar antes de ejecutar, y la posibilidad de elegir qué modelo de IA usar (incluido Claude). Funciona bien, aunque todavía no tiene el mismo nivel de contexto que Claude Cowork desarrolla en el proceso. Como resume Ruben: "Shortcut quiere reemplazar tanto a Microsoft como a Google. Una movida audaz."
 
 ## Configuración recomendada
 
@@ -103,7 +124,7 @@ paleta prolija para proyectar en directorio.
 Antes de construir, lístame tus 10 principales supuestos para revisarlos.
 ```
 
-Resultado esperado: varias pestañas conectadas, cientos de fórmulas funcionando de punta a punta.
+Resultado esperado: 6 pestañas conectadas, más de 700 fórmulas — todo funcionando de punta a punta.
 
 ---
 
