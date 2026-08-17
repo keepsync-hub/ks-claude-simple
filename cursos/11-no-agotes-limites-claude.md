@@ -28,11 +28,15 @@ Claude relee toda tu conversación desde el principio en cada mensaje. El mensaj
 
 10. **Mantén los archivos de SOBRE MÍ bajo 2.000 palabras cada uno.** Cowork los lee antes de cada tarea.
 11. **Reinicia la conversación en vez de seguir sumando mensajes.** En Cowork, "Reiniciar la conversación desde aquí" sobre un mensaje anterior. Ve lo más atrás posible.
+
+> ✓ Tip: antes de reiniciar, pídele a Claude "escribe un session-notes.md con lo esencial de esta sesión". Así te llevas el contexto importante sin arrastrar todo el historial pesado.
 12. **Resume y arranca de nuevo cada 15-20 mensajes.** Pídele a Claude que resuma todo → copia el resumen → abre una sesión nueva → pégalo como primer mensaje.
-13. **Usa modelos livianos para tareas simples. Guarda el modelo potente para trabajo profundo.** Si la tarea le toma a Claude menos de 30 segundos, probablemente no necesita el modelo más caro.
+
+> ★ Para recordar: un desarrollador midió esto en una sesión larga y encontró que el 98,5% de sus tokens se iban en releer el historial completo — solo el 1,5% correspondía a la respuesta real que necesitaba.
+13. **Usa modelos livianos para tareas simples. Guarda el modelo potente para trabajo profundo.** Si la tarea le toma a Claude menos de 30 segundos, probablemente no necesita el modelo más caro. Revisar ortografía o hacer una lluvia de ideas no necesita el modelo más potente — resérvalo para lo que sí lo justifique.
 14. **No tires toda tu carpeta dentro de Cowork.** Cada archivo que Cowork lee es gasto de tokens. Suma solo lo necesario para esa tarea. Para tareas sin archivos: selecciona cero carpetas.
 15. **Empieza un chat nuevo cuando cambia el tema.** Tema nuevo = chat nuevo. Siempre.
-16. **Apaga las funciones que no estás usando.** Búsqueda web, conectores y modo exploración suman tokens. Por defecto: todo apagado, prende lo que necesites en cada tarea.
+16. **Apaga las funciones que no estás usando.** Búsqueda web, conectores (Slack, Google Drive, Notion, etc.) y modo exploración suman tokens. Por defecto: todo apagado, prende lo que necesites en cada tarea.
 17. **Usa Proyectos para trabajo recurrente.** Subes el archivo una vez = queda cacheado. Cada conversación nueva dentro de ese Proyecto lo referencia sin gastar tokens de nuevo.
 18. **Apaga la Memoria. Suma Preferencias de usuario.** Configuración → General → Preferencias personales. Configura también un Estilo (en el selector de modelo) — elige "Conciso" o crea uno personalizado.
 19. **Usa tareas programadas para trabajo recurrente.** Busca el plugin de programación para informes semanales recurrentes.

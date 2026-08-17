@@ -153,7 +153,15 @@ Hay más de 200 conectores disponibles y la lista sigue creciendo. Puedes explor
 
 Un Conector es simplemente un servidor MCP con una URL pública.
 
-Configuración rápida con Claude Code:
+**Tiempo estimado:** 3-4 horas si nunca tocaste código; 15 minutos si ya tienes experiencia.
+
+**Qué necesitas:**
+
+- Plan Claude Pro, Team o Enterprise (los conectores personalizados no están disponibles en el plan Free).
+- La API de la app que quieres conectar.
+- Una cuenta de Cloudflare Workers (la capa gratuita cubre 100.000 solicitudes por día, de sobra para empezar).
+
+**Paso 1 — Configuración rápida con Claude Code:**
 
 ```
 Créame un servidor MCP en Python usando FastMCP.
@@ -167,7 +175,19 @@ Entrégame:
 3. El patrón de URL que voy a pegar en la Configuración de Claude.
 ```
 
-Después: Configuración → Conectores → Personalizar → Agregar conector personalizado → Pega la URL terminada en /mcp.
+Reemplaza `[cosa]` por la acción que necesitas, por ejemplo: `obtener_ultimo_email_de_remitente`, `obtener_tratos_abiertos_sobre_monto`, `obtener_ingresos_del_mes`.
+
+**Paso 2 — Despliega.** Ejecuta el comando de despliegue y vas a obtener una URL pública terminada en `/mcp` (por ejemplo `tu-servidor.workers.dev/mcp`). La ruta `/mcp` es obligatoria.
+
+**Paso 3 — Agrégalo a Claude.** Configuración → Conectores → Personalizar → Agregar conector personalizado → pega la URL terminada en `/mcp` → ponle nombre → guarda. Abre un chat nuevo, activa el conector y prueba la herramienta.
+
+**Problemas comunes en el primer intento:**
+
+- Olvidar el `/mcp` al final de la URL.
+- Timeout por arranque en frío en hosts de capa gratuita (para esto, Cloudflare Workers rinde mejor que Vercel).
+- Headers CORS bloqueando la llamada.
+
+> ✓ Tip: usa esto para envolver tu propia herramienta interna — tu base de datos privada, la wiki del equipo, esa planilla que llevas actualizando hace 3 años. El Conector es simplemente una capa de permisos entre Claude y cualquier sistema que controles.
 
 ---
 

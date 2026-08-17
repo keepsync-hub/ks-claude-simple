@@ -35,25 +35,33 @@ La hace **Anthropic**. Si usaste ChatGPT antes, Claude es lo mismo tipo de herra
 
 > ✓ Tip: no hace falta elegir uno solo. Claude para escritura y trabajo largo. ChatGPT para voz, imágenes y búsquedas rápidas.
 
+Los dos son mediocres por defecto: lo que les das importa más que cuál elegiste. Y los dos mejoran muchísimo si pagas la versión premium — las gratis se quedan cortas rápido.
+
 ## 3. Cómo conseguir Claude (y cuánto cuesta)
 
 Anda a **claude.ai** y regístrate con tu email.
 
 | Plan | Precio | Qué incluye |
 |---|---|---|
-| Free | $0 | Navegador, mensajes limitados por día, sin Cowork |
-| Pro | ~US$20/mes | Mejor modelo (Opus), más uso, Cowork, Proyectos |
+| Free | $0 | Navegador, mensajes limitados por día, sin Cowork — bueno para probar ~2 semanas |
+| Pro | ~US$20/mes | Mejor modelo (Opus), más uso, Cowork, Claude Code, Proyectos — el mismo precio que ChatGPT Plus, y donde termina aterrizando la mayoría |
 | Max | ~US$100-200/mes | Uso intensivo, para power users diarios |
 
+También existen planes Team y Enterprise para organizaciones de 500+ personas.
+
 **Regla simple:** Free si todavía estás decidiendo. Pro si vas a usarlo más de 3 veces por semana. Max si Pro se te queda corto.
+
+> ✓ Tip: paga mes a mes, no el plan anual. Pruébalo 30 días. Si para la semana 3 no volviste a abrirlo, cancela — perdiste US$20, no US$240.
 
 ## 4. Los tres "Claude"
 
 1. **Claude en el navegador** (claude.ai) — preguntas, te responde. Ideal para borradores y resúmenes rápidos.
 2. **Claude de escritorio** (app Mac/Windows) — mismo usuario, pero puede ver tus archivos locales. Desbloquea Chat, Cowork y Code.
-3. **Cowork** (dentro de la app de escritorio) — hace trabajo real durante minutos u horas mientras tú haces otra cosa. Solo en planes pagos.
+3. **Cowork** (dentro de la app de escritorio) — hace trabajo real durante minutos u horas mientras tú haces otra cosa. Solo en planes pagos. Tú le das la tarea, Cowork planea los pasos, lee archivos, escribe resultados y te pregunta si tiene dudas — y eliges en qué carpeta te deja todo (presentaciones, PDFs, Word, Excel, sitios web).
 
 > ★ Navegador = preguntar. Escritorio = preguntar + ver tus archivos. Cowork = preguntar + ver + trabajar mientras tomas un café.
+
+También existen la app móvil, Claude en Chrome (un agente que navega por ti) y Claude en Excel — útiles más adelante, pero no es por ahí donde hay que arrancar.
 
 ## 5. Cómo hablarle a Claude
 
