@@ -13,7 +13,7 @@ Eres un archivo de texto. Dame 2 horas. Un archivo. Y cualquier IA se convierte 
 **Preparación:**
 
 - Usa Claude + Cowork + Opus + Thinking extendido.
-- Dicta las respuestas por voz — es más rápido y más honesto que escribir.
+- Dicta las respuestas por voz con una herramienta de voz-a-texto como **Wispr Flow** (gratis) — es más rápido y más honesto que escribir.
 
 ### Prompt 1 — La entrevista
 
@@ -71,6 +71,15 @@ Elimina: valores genéricos, autodescripción halagadora, biografía que no camb
 el resultado.
 ```
 
+El archivo comprimido suele organizarse en secciones claras: instrucciones de uso
+y prioridad, contexto de identidad, huella de voz, leyes de escritura, leyes de
+comunicación, rechazos duros, gustos y rechazos de estilo, banco de frases
+(usar / evitar), señas propias, reglas de decisión, contradicciones productivas
+(cosas que parecen opuestas pero conviven en tu forma de pensar), ejemplos de
+referencia BUENO/MALO, qué NO debe inferir la IA por su cuenta, y una
+instrucción final. Esa estructura es la que hace que el archivo funcione como
+contexto permanente en vez de una simple biografía.
+
 ## 2. Prueba tu archivo
 
 Abre una sesión "en blanco" sin apuntar a ninguna carpeta. Pruébalo con esto:
@@ -87,6 +96,8 @@ Guárdalo en tu carpeta de Cowork SOBRE MÍ/ como **sobre-mi.md**.
 
 En tus Instrucciones Globales: "Antes de cualquier tarea, lee todos los archivos de SOBRE MÍ/". Ahora Claude lo lee antes de cada sesión. Nunca más tienes que reexplicar tu estilo.
 
+> ⚠ Aviso: un archivo que captura tu voz con tanta precisión también es un riesgo si cae en las manos equivocadas — podría usarse para suplantarte, hacer phishing dirigido o manipular a gente cercana a ti. Guárdalo con el mismo cuidado que le darías a un documento personal sensible, y piensa dos veces antes de compartirlo o subirlo a un servicio que no controlas.
+
 ## 4. Por qué te vas a resistir
 
 1. **"Se siente reduccionista"** — pero cuando alguien que te conoce bien lee el archivo comprimido, va a decir "sí, ese eres tú".
@@ -96,9 +107,10 @@ En tus Instrucciones Globales: "Antes de cualquier tarea, lee todos los archivos
 
 ## 5. En quién te conviertes
 
-- **Portable** — funciona en cualquier IA.
+- **Portable** — funciona en cualquier IA: Claude, ChatGPT, Gemini, Grok, la que venga después.
 - **Consistente** — dejas de redecidir cómo escribes cada lunes.
 - **Compartible** — se lo das a tu equipo para que redacte con tu voz.
+- **Eficiente** — la IA se convierte en una extensión de tu forma de pensar, no en una herramienta que hay que reentrenar cada vez.
 
 ## 6. Edítalo seguido (con Obsidian)
 

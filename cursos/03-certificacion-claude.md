@@ -10,6 +10,8 @@ Existen exactamente **3 certificados reales de Claude** que vale la pena sumar a
 
 > ⚠ Aviso: circulan "certificaciones de Claude" virales que se venden online. Son todas falsas. Anthropic no respalda ninguna de ellas.
 
+> ✓ Tip: guarda este artículo y bloquea una hora esta semana para hacerlos. Si conoces a alguien que está buscando trabajo, compártelo — le puede venir igual de bien.
+
 ## I — Los pasos
 
 ### Paso 1: Entra al sitio correcto
@@ -33,6 +35,8 @@ El más largo y completo de los tres.
 - 13 lecciones sobre cómo relacionarte de verdad con la IA
 - Las 4D: Delegación, Descripción, Discernimiento, Diligencia
 - Prompting efectivo, pensamiento crítico sobre los resultados, ética
+
+> ✓ Tip: el curso incluye una hoja de vocabulario descargable en PDF — sirve para repasar los conceptos clave después de terminar.
 
 > Si solo tienes tiempo para uno de los tres, haz este.
 

@@ -51,6 +51,8 @@ Para mejores resultados:
 
 Esta combinación da la mejor guía paso a paso.
 
+> ✓ Tip: si no sabes cómo configurar Cowork, pregúntale directamente a la skill. También puede explicarte eso paso a paso.
+
 ## Lo que la Skill no puede reemplazar
 
 La skill `/como-hacer` te da los pasos. Lo que no te puede dar:
@@ -58,7 +60,11 @@ La skill `/como-hacer` te da los pasos. Lo que no te puede dar:
 - El botón que no responde
 - El momento en que se rompe y no sabes por qué
 - Las horas quemadas haciéndolo más fácil de seguir
-- Las pruebas que no funcionaron (los borradores que quedaron en el camino)
+- Las pruebas que se probaron durante días enteros y no funcionaron (los borradores que quedaron en el camino)
+- Doce guías a medio hacer, guardadas como borrador, que nunca llegaron a publicarse
+- Las ideas que nacen de la nada: una pregunta en un café, o algo que se te ocurre mientras piensas en otra cosa
+
+> ★ Para recordar: el "cómo" ya se puede automatizar. Lo que no se automatiza es el criterio, la experiencia real y las horas invisibles detrás de cada guía bien hecha.
 
 La Skill es el "cómo". Esta academia es la realidad, con sus tropiezos, de llegar hasta ahí.
 

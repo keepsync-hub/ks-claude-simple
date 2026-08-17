@@ -6,7 +6,7 @@
 
 ---
 
-Según estudios recientes, las personas en más del 90% de las empresas usan chatbots personales para trabajar, casi siempre sin avisarle a su área de sistemas. Más de la mitad admite haber escrito información sensible al menos una vez.
+Según estudios recientes, las personas en más del 90% de las empresas usan chatbots personales para trabajar, casi siempre sin avisarle a su área de sistemas. Más de la mitad admite haber escrito información sensible al menos una vez. Y ojo: incluso en empresas que ya pagan una herramienta de IA, el 22% de la gente igual prefiere usar su cuenta personal.
 
 Aquí va cómo seguir usando tu Claude personal sin exponerte.
 
@@ -14,13 +14,19 @@ Aquí va cómo seguir usando tu Claude personal sin exponerte.
 
 Por defecto, las empresas de IA pueden entrenar sus modelos con tus conversaciones.
 
+Anthropic cambió sus términos para cuentas personales en agosto de 2025: ahora tus chats y sesiones de código se usan para mejorar Claude a menos que lo desactives tú mismo. Si lo dejas prendido, esas conversaciones se pueden guardar hasta 5 años. ChatGPT hace lo mismo por defecto.
+
 **Apágalo en Claude:**
 
 1. Ve a tu perfil → Configuración.
 2. Ve a "Privacidad".
 3. Apaga "Ayudar a mejorar nuestros modelos de IA".
 
-**Apágalo en otras IAs que uses:** busca la sección de "Controles de datos" o "Privacidad" en la configuración y desactiva el entrenamiento con tus conversaciones.
+**Apágalo en ChatGPT:** perfil → Configuración → "Controles de datos" → apaga "Mejorar el modelo para todos".
+
+**Apágalo en Grok:** perfil → Configuración → "Controles de datos" → apaga todo lo que encuentres ahí.
+
+**Apágalo en Gemini:** entra a la página de actividad de Gemini de tu cuenta de Google y desactívalo desde ahí.
 
 > **Nota:** desactivarlo solo aplica hacia adelante. Los modelos no pueden "desaprender" datos ya incorporados. Apágalo ahora, no después.
 
@@ -28,13 +34,13 @@ Por defecto, las empresas de IA pueden entrenar sus modelos con tus conversacion
 
 Sí. Pasaron los dos casos.
 
-**Caso conocido (2023):** ingenieros de una gran empresa filtraron código fuente interno a un chatbot público, tres veces en 20 días. La empresa prohibió la herramienta en toda la compañía y abrió investigaciones disciplinarias.
+**Caso conocido (Samsung, abril de 2023):** a los ingenieros se les permitía usar ChatGPT en el trabajo. En apenas 20 días lo usaron tres veces para filtrar información interna: pegaron código fuente de semiconductores para revisar errores, subieron más código para corregir fallas, y compartieron la grabación de una reunión interna. Samsung prohibió la herramienta en toda la compañía y abrió investigaciones disciplinarias.
 
 **Riesgos legales:**
 
-- **Ruptura de acuerdos de confidencialidad:** un chatbot de otra empresa cuenta como un tercero externo.
-- **Problemas de secretos comerciales:** las leyes de protección de secretos comerciales cubren estas filtraciones.
-- **Problema de protección de datos:** en muchas jurisdicciones, pegar datos de clientes en una IA personal puede ser una transferencia de datos no autorizada.
+- **Ruptura de acuerdos de confidencialidad:** un chatbot de otra empresa cuenta como un tercero externo, y los contratos casi siempre prohíben compartir secretos de la empresa con terceros.
+- **Problemas de secretos comerciales:** las leyes de protección de secretos comerciales cubren estas filtraciones. Un secreto solo sigue siendo secreto legalmente mientras se mantiene en secreto — entregárselo a un tercero con condiciones laxas puede hacer que la empresa pierda esa protección.
+- **Problema de protección de datos:** en muchas jurisdicciones, pegar datos de clientes en una IA personal puede ser una transferencia de datos no autorizada. En Europa ya hubo un caso judicial real: un vendedor grabó reuniones confidenciales con una IA y mantuvo el acceso después de dejar la empresa — terminó demandado.
 
 **La pregunta antes de pegar algo:** "¿estaría cómodo si este texto exacto apareciera en el canal general de la empresa, con mi nombre?"
 
@@ -44,7 +50,7 @@ Sí. Pasaron los dos casos.
 ## 3. Nunca pegues esto en una cuenta personal
 
 - Código fuente o cualquier cosa del repositorio de tu empresa.
-- Datos de clientes o pacientes: nombres, emails, teléfonos, direcciones, información de salud.
+- Datos de clientes o pacientes: nombres, emails, teléfonos, direcciones, historial de pedidos, información de salud.
 - Planes, roadmaps, diseños o prototipos no publicados.
 - Información financiera no pública: ingresos, márgenes, presupuestos, condiciones de acuerdos.
 - Cualquier cosa marcada como confidencial, de uso interno, o bajo NDA.
@@ -60,7 +66,7 @@ Sí. Pasaron los dos casos.
 
 **4 pasos:**
 
-1. **Cambia nombres por roles:** persona real → "el cliente". Empresa → "Empresa A".
+1. **Cambia nombres por roles:** persona real → "el cliente". Empresa → "Empresa A". Nombre en código de un producto → "Proyecto X".
 2. **Usa valores ficticios:** números reales → números ficticios parecidos. Emails reales → nombre@ejemplo.com.
 3. **Pega solo lo necesario:** no subas el PDF o la planilla completa (tienen metadatos ocultos).
 4. **No incluyas identificadores que no aportan nada** a la tarea.
@@ -79,15 +85,21 @@ Redacta un email de renovación para un contacto cliente. Su contrato de $5M
 vence a fin del próximo mes, y están molestos por las demoras de soporte.
 ```
 
+> ⚠ Aviso: anonimizar baja mucho el riesgo, pero no lo elimina del todo. Para datos realmente regulados (historiales médicos, documentos legales, o cualquier cosa que permita reidentificar a una persona real), la única solución limpia es usar la herramienta de IA que paga tu empresa.
+
 ## 5. Usa el chat temporal para tareas de trabajo
 
 Incluso con el entrenamiento apagado, los chats normales se guardan en tu historial.
 
-Para tareas de trabajo, usa el modo de **chat temporal / incógnito** que ofrecen la mayoría de las IAs (en Claude: arriba a la derecha → "Incógnito"). Un chat temporal no se guarda en el historial y no se usa para entrenar. Lo cierras, y desaparece.
+Para tareas de trabajo, usa el modo de **chat temporal / incógnito** que ofrecen la mayoría de las IAs (en Claude: arriba a la derecha → "Incógnito"; en ChatGPT y Gemini se llama "chat temporal"; en Grok, "chat privado"). Un chat temporal no se guarda en el historial y no se usa para entrenar. Lo cierras, y desaparece. Hazlo tu modo por defecto para cualquier conversación que no quieras que quede guardada.
 
 ## 6. Conectores: lo más peligroso
 
-**La combinación riesgosa (documentada por investigadores):** el momento en que una IA puede acceder a tus datos privados + leer contenido que no controlas + mandar información hacia afuera → puede ser manipulada para filtrar tus propios datos.
+Un conector (o "integración") conecta tu IA a otro servicio: Gmail, Drive, Calendario, Slack, Teams, Outlook. Una vez conectado, la IA puede leer esos datos y actuar sobre ellos.
+
+**Por qué el acceso es tan grande:** conecta Gmail y la IA puede leer todo tu correo. Conecta Drive y puede buscar en cada archivo que puedas abrir, incluyendo documentos que otras personas compartieron contigo hace años. Si conectas el Gmail o el Drive del trabajo a tu IA personal, acabas de meter la bandeja de entrada completa de tu empresa en una herramienta con la que tu empresa no tiene ningún contrato.
+
+**La combinación riesgosa (la "trifecta letal", demostrada por investigadores en más de una ocasión durante 2025):** el momento en que una IA puede acceder a tus datos privados + leer contenido que no controlas + mandar información hacia afuera → puede ser manipulada para filtrar tus propios datos.
 
 **Cómo usar conectores de forma segura:**
 
@@ -95,6 +107,8 @@ Para tareas de trabajo, usa el modo de **chat temporal / incógnito** que ofrece
 2. **Conecta lo mínimo, con el acceso más acotado posible.** Prefiere solo lectura o una sola carpeta antes que "todo mi Drive".
 3. **Conecta solo conectores oficiales.** Los que aparecen en el directorio oficial de tu IA.
 4. **Revisa y desconecta mensualmente.** Chequea la configuración de tu IA y la página de "acceso de terceros" de Google/Microsoft.
+
+> ⚠ Aviso: un conector le entrega a tu IA las llaves de toda una app. Cualquiera que logre poner un archivo o un correo frente a esa IA puede intentar robar esas llaves. Conecta casi nada en tu cuenta personal — deja los conectores con acceso amplio para la herramienta de la empresa, donde alguien realmente se encarga de mantenerla segura.
 
 ## 7. La mejor solución
 
