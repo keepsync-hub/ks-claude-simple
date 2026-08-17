@@ -15,6 +15,7 @@ Claude relee toda tu conversación desde el principio en cada mensaje. El mensaj
 1. **Convierte los archivos antes de subirlos.** Una página de PDF cuesta entre 1.500 y 3.000 tokens. Las capturas de pantalla, peor todavía: una imagen de 1000x1000 píxeles ronda los 1.300 tokens, pero si la recortas bien puede bajar a menos de 100. Extrae el texto → pégalo como texto plano o markdown. Recorta bien las capturas. Truco rápido: pega el texto en un documento de Google Docs nuevo (doc.new) y descárgalo como .md antes de subirlo a Claude — pesa mucho menos que el archivo original.
 
 > ⚠ Aviso: subir el mismo PDF de 15 páginas en 4 chats distintos puede quemar más de 180.000 tokens. Convertido a texto plano una sola vez, ese mismo documento baja a unos 2.000 tokens.
+
 2. **Planifica en el chat. Crea archivos en Cowork.** Crear archivos consume más límite que el chat normal. Piensa en Chat (barato) → construye en Cowork (caro).
 3. **"Pregúntame" en vez de un prompt largo.** Un prompt de 500 palabras cuesta 500 tokens cada vez que se relee. Mi recurso favorito: "quiero [tarea] con [criterio de éxito]. Lee mi carpeta. Pregúntame con AskUserQuestion antes de empezar."
 4. **Usa dictado por voz para respuestas más ricas.** Al escribir, los prompts salen perezosos → Claude adivina mal → más mensajes = más recargas de contexto. Al hablar, das más contexto de una sola vez, naturalmente. Hay apps de dictado por voz (como Wispr Flow) pensadas justo para esto.
@@ -39,11 +40,11 @@ Claude relee toda tu conversación desde el principio en cada mensaje. El mensaj
 16. **Apaga las funciones que no estás usando.** Búsqueda web, conectores (Slack, Google Drive, Notion, etc.) y modo exploración suman tokens. Por defecto: todo apagado, prende lo que necesites en cada tarea.
 17. **Usa Proyectos para trabajo recurrente.** Subes el archivo una vez = queda cacheado. Cada conversación nueva dentro de ese Proyecto lo referencia sin gastar tokens de nuevo.
 18. **Apaga la Memoria. Suma Preferencias de usuario.** Configuración → General → Preferencias personales. Configura también un Estilo (en el selector de modelo) — elige "Conciso" o crea uno personalizado.
-19. **Usa tareas programadas para trabajo recurrente.** Busca el plugin de programación para informes semanales recurrentes.
+19. **Usa tareas programadas para trabajo recurrente.** Busca el plugin de programación (/schedule) para informes semanales recurrentes.
 20. **Dale a Claude Code un alcance claro.** Code tiende a expandirse solo. Sé específico: "crea un gráfico de barras desde este CSV con los ingresos mensuales de 2025. Guárdalo como grafico.png."
 21. **Usa un archivo CLAUDE.md para contexto permanente.** Code lo lee antes de cada tarea. Pon ahí las instrucciones recurrentes. Mantenlo corto — un CLAUDE.md inflado hace que Claude ignore tus instrucciones reales.
 22. **Reparte el trabajo durante el día.** Claude usa una ventana móvil de 5 horas. Divide en 2-3 sesiones: mañana, tarde, noche.
-23. **Deja de usar Claude para lo que no es bueno.** Generación de imágenes → otra herramienta. Búsqueda en tiempo real → otra herramienta. No gastes tokens en tareas que Claude nunca iba a resolver bien.
+23. **Deja de usar Claude para lo que no es bueno.** Generación de imágenes → herramientas como Gemini. Búsqueda en tiempo real → herramientas como Grok. No gastes tokens en tareas que Claude nunca iba a resolver bien.
 
 ## Por dónde empezar
 

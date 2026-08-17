@@ -103,30 +103,44 @@ Guarda todos los entregables en RESULTADOS/ en una subcarpeta con el nombre del 
 Si el pedido no es claro, usa AskUserQuestion. No completes los vacíos por tu cuenta.
 ```
 
+Cowork lee tus archivos de SOBRE MÍ antes de cada tarea, sin excepción. Si esos 3 archivos suman menos de 6.000 tokens en total, Claude los lee completos, siempre.
+
+> ⚠ Aviso: si tus archivos son muy grandes, Cowork empieza a resumirlos por arriba en vez de leerlos con cuidado. La ventana de contexto es para tu tarea, no para tu perfil. Mantén los archivos livianos.
+
 ## III — Tu cuello de botella en Cowork: eres tú
 
-Cowork puede leer 100.000 palabras en 15 segundos. Puede armar una planilla en 90 segundos. Pero tú escribes a 60 palabras por minuto.
+Una sesión típica se ve así: escribes tu prompt (30 segundos), Cowork lee tus archivos y arma un plan (unos 25 segundos), te hace preguntas de aclaración (5 segundos)... y ahí te demoras tú: 60+ segundos por cada respuesta, hasta 2 minutos si es algo específico. Con 8 preguntas, son 8 a 15 minutos donde tú eres la parte lenta.
+
+Cowork puede leer 100.000 palabras en 15 segundos. Puede armar una planilla en 90 segundos. Pero tú escribes a 60 palabras por minuto — hablando, en cambio, promedias unas 150 palabras por minuto. Y no es solo velocidad: cuando hablas en vez de escribir, tu cerebro suelta más contexto de forma natural (somos "habladores" por naturaleza), y más contexto significa mejores resultados.
 
 **Solución: dictado por voz (gratis, con herramientas como Wispr Flow)**
 
-- Mantienes apretada una tecla → hablas → sueltas → tus palabras aparecen donde esté el cursor.
+- Mantienes apretada una tecla → hablas → sueltas → tus palabras aparecen donde esté el cursor, en cualquier app, incluido el chat de Cowork.
 - Precisión casi perfecta.
+
+Tres formas de usarlo:
+
+1. **Para el prompt inicial:** en vez de escribir "necesito un post de LinkedIn", dicta algo como: "me acabo de enterar de... y quiero contar más sobre... pero primero necesito asegurarme de que... así que quizás deberíamos partir cubriendo... y terminar con... como conclusión". Más contexto de entrada = mejor resultado.
+2. **Para responder AskUserQuestion:** haz clic en la mayoría de las opciones, y dicta el contexto extra: "hazlo más directo, ella es CEO y odia la paja, y menciona los datos de ROI de la última llamada".
+3. **Para dar feedback y pivotear:** en vez de escribir "el tono está mal, hazlo menos formal", dicta: "el tono es muy tieso, quiero que suene como si le estuviera escribiendo a un amigo que dirige una empresa de 200 personas. Mantén los datos pero hazlo más casual. Rehaz solo la sección 2".
+
+**Para instalarlo:** anda a wispr.ai, descarga e instala la app, elige la tecla que vas a usar para activarlo (el autor usa Shift) y listo — funciona en cualquier app sin configuración extra. El plan gratis tiene un tope de 2.000 palabras por semana.
 
 ## IV — Cómo ahorrar créditos (tokens)
 
-1. **Reinicia la conversación en vez de seguir con más mensajes** — cada respuesta suma al historial. Usa "Reiniciar la conversación desde aquí" sobre un mensaje anterior.
-2. **Empieza de cero cada 20 mensajes** — las conversaciones largas gastan la mayoría de los tokens releyendo el historial.
-3. **Agrupa tareas en un solo mensaje** — 3 pedidos por separado = 3 recargas de contexto. Un mensaje con 3 tareas = 1 sola recarga.
-4. **Usa Sonnet (no Opus) para tareas simples** — ahorra entre 30% y 70% en trabajo liviano.
-5. **Mantén los archivos de SOBRE MÍ cortos** — menos de 2.000 palabras cada uno.
-6. **Reparte el trabajo durante el día** — Claude usa una ventana móvil de 5 horas.
+1. **Reinicia la conversación en vez de seguir con más mensajes** — Claude no cuenta mensajes, cuenta tokens. Cada mensaje nuevo relee toda la conversación anterior: el mensaje 30 cuesta 31 veces más tokens que el mensaje 1. Una conversación de 20 mensajes ya quemó unos 105.000 tokens; a los 30 mensajes son ~232.000. Usa "Reiniciar la conversación desde aquí" sobre un mensaje anterior (en Cowork no puedes editar un mensaje pasado, así que si algo se desvió temprano, reinicia desde más arriba o abre una sesión nueva).
+2. **Empieza de cero cada 20 mensajes** — un desarrollador midió su uso y encontró que el 98,5% de sus tokens se iban en releer el historial; solo el 1,5% era el resultado real. Antes de cortar, pídele a Claude que resuma todo, copia el resumen y pégalo como primer mensaje de la sesión nueva.
+3. **Agrupa tareas en un solo mensaje** — 3 pedidos por separado = 3 recargas de contexto. Un mensaje con 3 tareas = 1 sola recarga. En vez de pedir por separado "resume este artículo", luego "lista los puntos principales", luego "sugiere un titular", escribe: "resume este artículo, lista los puntos principales y sugiere un titular".
+4. **Usa Sonnet (no Opus) para tareas simples** — Sonnet sirve de sobra para revisar gramática, hacer lluvia de ideas, dar formato o respuestas cortas, por una fracción del costo de Opus. Haiku es todavía más barato. Deja Opus + pensamiento extendido para el trabajo que de verdad lo necesita: usar Sonnet/Haiku en lo simple libera entre 30% y 70% de tu presupuesto para el trabajo profundo.
+5. **Mantén los archivos de SOBRE MÍ cortos** — menos de 2.000 palabras cada uno, y menos de 6.000 tokens entre los tres juntos.
+6. **Reparte el trabajo durante el día** — Claude usa una ventana móvil de 5 horas. Si quemas todo tu límite en una sesión de mañana, la mayor parte de tu capacidad diaria queda sin usar. Divide el trabajo en 2-3 sesiones (mañana, tarde, noche); cuando vuelvas, el uso anterior ya se habrá "caído" de la ventana. Si puedes, evita las horas punta (5-11 AM hora del Pacífico en días de semana), cuando la misma consulta cuesta más contra tu límite.
 
 ## V — Tus primeros 20 minutos
 
 - **Minutos 0-5:** arma la estructura de carpetas. Crea SOBRE MÍ con los 3 archivos, más RESULTADOS y PLANTILLAS vacías.
 - **Minutos 5-6:** pega las instrucciones globales (Configuración > Cowork > Instrucciones globales).
 - **Minutos 6-8:** instala una herramienta de dictado por voz.
-- **Minutos 8-15:** corre tu primera sesión por voz. Abre Cowork. Di una tarea: "quiero que leas mi carpeta y me ayudes a escribir [algo que necesites esta semana]. Pregúntame antes de empezar."
+- **Minutos 8-15:** corre tu primera sesión por voz. Abre Cowork. Di una tarea: "quiero que leas mi carpeta y me ayudes a escribir [algo que necesites esta semana]. Pregúntame antes de empezar." Vas a sentir la diferencia en los primeros 3 minutos.
 - **Minutos 15-20:** pídele a Cowork que cree una plantilla en la carpeta PLANTILLAS.
 
 ---
