@@ -82,6 +82,8 @@ Buenas fuentes de inspiración de diseño: Dribbble, Awwwards, Godly, Land-book,
 
 Busca archivos de sistema de diseño gratuitos de marcas conocidas (Stripe, Notion, Airbnb, Linear, etc.).
 
+Existe un formato abierto llamado DESIGN.md: un archivo de texto plano que define todo un sistema de diseño — colores exactos, tipografías, espaciados y reglas. En **getdesign.md** puedes descargar gratis los archivos de marcas famosas (Stripe, Notion, Airbnb, Linear, hasta el propio Claude): solo busca el nombre de la marca y descarga. También existe **designmd.app**, con más de 400 archivos disponibles.
+
 1. Busca una marca que te guste.
 2. Descarga su archivo de diseño.
 3. Suéltalo dentro de la carpeta de Claude Code.
@@ -91,6 +93,8 @@ Busca archivos de sistema de diseño gratuitos de marcas conocidas (Stripe, Noti
 
 Dile a Claude: "usa una librería de componentes profesional como shadcn/ui" — botones, menús y formularios con aspecto prolijo.
 
+No es imprescindible, y consume bastantes tokens — pero vale la pena, sobre todo en dashboards, apps tipo SaaS, landing pages, flujos de onboarding, páginas de configuración y cualquier cosa con muchos formularios.
+
 ### Sé específico
 
 Nombra la tipografía. Pide más espacio en blanco. Da colores exactos. Deja de escribir "que se vea lindo."
@@ -99,15 +103,22 @@ Nombra la tipografía. Pide más espacio en blanco. Da colores exactos. Deja de 
 
 - Un widget chico que vas a mirar una sola vez → usa un artefacto interactivo dentro del chat normal de Claude.
 - Escribir un documento o una planilla → usa Cowork.
-- Una sola imagen → usa otra herramienta de generación de imágenes.
+- Una sola imagen → usa otra herramienta de generación de imágenes (activa el modo de pensamiento alto y sube referencias, igual que con Claude Code — el resultado sale mucho mejor).
 
 **Regla:** no tardes más en construirlo que en consumirlo.
 
+Mucha gente ama vibecodear horas algo que después... nunca va a usar. Eso es productividad performática. No seas esa persona — te cuesta tiempo, y mucho.
+
 ## Cuánto cuesta en la práctica
 
-- El plan pago básico alcanza para arrancar.
-- Claude Code consume el límite de uso más rápido que el chat normal.
-- Para mantener el costo bajo: empieza un chat nuevo por tarea, usa el modelo liviano en el plan básico, reserva el modelo potente para el plan más caro, apunta a archivos en vez de pegar bloques enteros de texto.
+- El plan pago básico (USD 20/mes) alcanza para arrancar. El plan de USD 100/mes te da más créditos.
+- Claude Code consume el límite de uso más rápido que el chat normal: cada mensaje reenvía toda la conversación más cada archivo que Claude ya leyó, así que una sesión larga se acumula rápido.
+- Para mantener el costo bajo:
+  - Empieza un chat nuevo por tarea.
+  - Usa el modelo liviano (ej. Sonnet) si estás en el plan básico.
+  - Reserva el modelo potente (ej. Opus con esfuerzo alto) para el plan más caro.
+  - Apunta a archivos en vez de pegar bloques enteros de texto.
+  - Pide un plan antes de cualquier cambio grande, para no pagar por un paso en falso.
 - Revisa tu consumo con el comando `/usage` dentro de Claude Code.
 
 ## Prompts listos (completa entre corchetes)
@@ -134,6 +145,45 @@ y vean [su propio progreso y la próxima lección].
 Construye un dashboard que lea [la planilla de esta carpeta] y muestre
 [mis ingresos, clientes nuevos y reembolsos] en gráficos simples.
 ```
+```
+Construye una herramienta que reemplace [la app que pagas de más]. Solo
+necesita hacer las [3] cosas que realmente usas: [enuméralas]. Es solo
+para tu equipo, y que se sienta más rápida que la herramienta que estás
+dejando.
+```
+*Ejemplo real: una líder de RRHH que nunca había programado construyó su propio software de organigrama en 3 días y así dejó de pagarle a un proveedor.*
+
+```
+Construye una herramienta que lea un montón de [archivos] por mí. Que
+revise [cada PDF de esta carpeta] y saque [el nombre del cliente, la
+fecha de renovación y el total] en una sola planilla prolija. Suelto los
+archivos, ella hace el resto.
+```
+*Ejemplo real: personas sin perfil técnico que extraen datos de más de 150 contratos en minutos.*
+
+```
+Construye una herramienta que genere [variaciones de marketing]. Le pego
+[mi mejor aviso] y me da [10] versiones nuevas para [distintas
+audiencias], manteniendo [la voz de mi marca]. Ponlas en una lista simple
+que pueda copiar.
+```
+*Ejemplo real: el equipo de growth marketing de Anthropic, que convirtió horas de copiar y pegar avisos en un solo lote.*
+
+```
+Construye una herramienta que ordene [tus postulaciones entrantes]. Que
+tome [todas mis postulaciones de becas / empleo / speakers] y las puntúe
+contra [mis 3 criterios], después las ordene de mejor a peor con una
+razón de una línea para cada una.
+```
+*Ejemplo real: una herramienta al estilo SaaStr que puntúa automáticamente miles de postulaciones a un evento.*
+
+```
+Construye ese producto pago chico en el que llevas tiempo pensando. Una
+herramienta paga chica que resuelva [lo que me molesta cada semana]:
+[descríbelo]. Alguien inicia sesión con Google, [hace esa única cosa
+útil], y paga [$9]. Que quede en una sola pantalla.
+```
+*Ejemplo real: historias de clientes de Lovable, otra herramienta de vibecoding.*
 
 ## Entrega a un desarrollador real
 

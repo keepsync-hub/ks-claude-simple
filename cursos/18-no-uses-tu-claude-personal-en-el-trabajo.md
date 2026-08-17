@@ -95,7 +95,11 @@ Para tareas de trabajo, usa el modo de **chat temporal / incógnito** que ofrece
 
 ## 6. Conectores: lo más peligroso
 
-**La combinación riesgosa (documentada por investigadores):** el momento en que una IA puede acceder a tus datos privados + leer contenido que no controlas + mandar información hacia afuera → puede ser manipulada para filtrar tus propios datos.
+Un conector (o "integración") conecta tu IA a otro servicio: Gmail, Drive, Calendario, Slack, Teams, Outlook. Una vez conectado, la IA puede leer esos datos y actuar sobre ellos.
+
+**Por qué el acceso es tan grande:** conecta Gmail y la IA puede leer todo tu correo. Conecta Drive y puede buscar en cada archivo que puedas abrir, incluyendo documentos que otras personas compartieron contigo hace años. Si conectas el Gmail o el Drive del trabajo a tu IA personal, acabas de meter la bandeja de entrada completa de tu empresa en una herramienta con la que tu empresa no tiene ningún contrato.
+
+**La combinación riesgosa (la "trifecta letal", demostrada por investigadores en más de una ocasión durante 2025):** el momento en que una IA puede acceder a tus datos privados + leer contenido que no controlas + mandar información hacia afuera → puede ser manipulada para filtrar tus propios datos.
 
 **Cómo usar conectores de forma segura:**
 
@@ -103,6 +107,8 @@ Para tareas de trabajo, usa el modo de **chat temporal / incógnito** que ofrece
 2. **Conecta lo mínimo, con el acceso más acotado posible.** Prefiere solo lectura o una sola carpeta antes que "todo mi Drive".
 3. **Conecta solo conectores oficiales.** Los que aparecen en el directorio oficial de tu IA.
 4. **Revisa y desconecta mensualmente.** Chequea la configuración de tu IA y la página de "acceso de terceros" de Google/Microsoft.
+
+> ⚠ Aviso: un conector le entrega a tu IA las llaves de toda una app. Cualquiera que logre poner un archivo o un correo frente a esa IA puede intentar robar esas llaves. Conecta casi nada en tu cuenta personal — deja los conectores con acceso amplio para la herramienta de la empresa, donde alguien realmente se encarga de mantenerla segura.
 
 ## 7. La mejor solución
 
