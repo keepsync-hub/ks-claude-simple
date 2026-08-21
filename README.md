@@ -28,7 +28,7 @@ Todo el contenido es **gratuito**. La idea es simple: si te sirve, te quedas —
 
 | Nivel | De qué se trata | Cursos |
 |---|---|---|
-| 🟢 Principiante | Entender qué es Claude y perder el miedo | 3 guías |
+| 🟢 Principiante | Qué es Claude, sus capacidades y límites, y el marco de las 4D | 3 guías |
 | 🟡 Intermedio | Cowork, equipos, diseño, presentaciones, Skills | 6 guías |
 | 🟠 Avanzado | Tu propia voz, ahorro de tokens, Excel, escritura sin "olor a IA" | 6 guías |
 | 🔴 Experto | Conectores, Claude Code (vibecoding), uso seguro en el trabajo | 3 guías |

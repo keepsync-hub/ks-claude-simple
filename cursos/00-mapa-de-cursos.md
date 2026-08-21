@@ -9,12 +9,12 @@
 ## 🟢 Nivel 1: Principiante
 
 ### → [Claude para principiantes](./01-claude-para-principiantes.md)
-Si nunca abriste Claude, empieza aquí.
-**Nivel:** Principiante | **Duración:** 5 minutos
+Si nunca abriste Claude, empieza aquí. Incluye capacidades y límites: cuándo confiar y cuándo verificar.
+**Nivel:** Principiante | **Duración:** 8 minutos
 
 ### → [Ser bueno con la IA es (increíblemente) simple](./02-ser-bueno-en-ia-es-simple.md)
-Una guía de supervivencia para usar IA sin complicarte.
-**Nivel:** Principiante | **Duración:** 5 minutos
+Una guía de supervivencia para usar IA sin complicarte, con el marco de las 4D de Anthropic.
+**Nivel:** Principiante | **Duración:** 8 minutos
 
 ### → [Certificate en Claude, gratis](./03-certificacion-claude.md)
 Cómo obtener certificaciones oficiales y gratuitas de Anthropic.
