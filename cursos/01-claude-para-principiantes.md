@@ -2,7 +2,7 @@
 
 > Si nunca abriste Claude, empieza aquí.
 
-**Nivel:** Principiante | **Duración:** 5 minutos
+**Nivel:** Principiante | **Duración:** 8 minutos
 
 ---
 
@@ -90,7 +90,23 @@ También existen la app móvil, Claude en Chrome (un agente que navega por ti) y
 - **Ser fuente de verdad** — suena seguro incluso cuando se equivoca. Verifica siempre fechas, cifras, citas y nombres.
 - **Generación de imágenes** — puede leer y analizar imágenes, pero no crearlas. Para eso, ChatGPT o Gemini. (Truco de pro: pídele que programe en HTML lo que necesitas y así "dibuja" igual.)
 
-## 8. Tres palabras clave
+## 8. Capacidades y límites: cómo saber cuándo confiar
+
+Las dos listas de arriba se resumen en una sola pregunta que conviene hacerte siempre: *¿puedo usar esta respuesta tal cual, o tengo que verificarla?* Estos son los límites que explican casi todos los errores:
+
+- **Alucina con seguridad.** Como es un autocompletado (sección 1), a veces inventa datos, citas o enlaces que *suenan* perfectos. No es mentira intencional: su trabajo es que la frase suene bien, no que sea verdad.
+- **Tiene fecha de corte.** No sabe lo que pasó después de su entrenamiento, salvo que actives la búsqueda web (el botón se pone azul). Para "qué pasó hoy", verifica.
+- **Arrastra sesgos.** Aprendió de textos escritos por personas, así que puede repetir estereotipos o dar por sentado un solo punto de vista. Pídele explícitamente otras perspectivas.
+- **Se le llena la memoria.** Cada chat tiene un límite de tokens. En conversaciones muy largas puede "olvidar" el principio; si empieza a divagar, abre un chat nuevo y resume el contexto.
+- **No es una calculadora.** Para números que importan, pídele que corra código en vez de calcular "de cabeza".
+
+> ⚠ Verifica siempre cuatro cosas antes de usar una respuesta en algo real: **fechas, cifras, citas y nombres.**
+
+Saber cuándo confiar es la mitad de trabajar bien con IA: los expertos lo llaman **Discernimiento**, una de las cuatro competencias del marco de las 4D. Lo ves en detalle en **[Ser bueno con la IA es simple](./02-ser-bueno-en-ia-es-simple.md)**.
+
+> ★ Para recordar: Claude es brillante como copiloto y peligroso como fuente de verdad. Úsalo para producir, pero tú validas antes de firmar.
+
+## 9. Tres palabras clave
 
 - **Token** — la unidad en la que Claude piensa. Cada palabra que escribes, cada archivo que subes y cada respuesta se corta en tokens. Una página ronda los 500 tokens, y hoy puedes subirle el equivalente a 10 libros completos y sigue funcionando bien.
 - **Cowork** — Claude trabajando minutos u horas en tu computadora mientras haces otra cosa. Ejemplo: tienes 40 facturas desordenadas (distintos formatos, PDFs, capturas de pantalla). Con ChatGPT tendrías que copiar y pegar una por una — toda una tarde. Con Cowork, apuntas a la carpeta, describes la tarea en una frase y te vas: vuelves en 15 minutos con los archivos ordenados, una planilla resumen y los 40 emails de seguimiento redactados. Se pone más afilado si le das una carpeta de contexto con tres subcarpetas: **about-me** (quién eres, cómo trabajas, cómo escribes), **outputs** (para encontrar fácil lo que hizo) y **templates** (tus trabajos favoritos para que los repita).
@@ -105,7 +121,7 @@ También existen la app móvil, Claude en Chrome (un agente que navega por ti) y
 - **MCP** — muy técnico; básicamente es lo que conecta esas cosas con Claude (los Conectores son MCPs). No vas a tener que tocar nada de esto tú mismo.
 - **Plugins** — paquetes de Skills y Conectores para Cowork. Como una tienda de apps chica.
 
-## 9. Diez cosas para probar tu primera semana
+## 10. Diez cosas para probar tu primera semana
 
 1. Pega 3 posts de LinkedIn y pídele 3 nuevos con el mismo tono. Después pídele que busque temas nuevos en la web.
 2. Sube un PDF de 50 páginas y pide un resumen de una página con referencias.
@@ -120,7 +136,7 @@ También existen la app móvil, Claude en Chrome (un agente que navega por ti) y
 
 > ✓ Tip: lleva un archivo de notas llamado "prompts-que-funcionaron". Cada vez que un prompt te dé algo útil, guárdalo ahí. En dos semanas vas a tener una biblioteca personal que vale más que cualquier pack de prompts que podrías comprar. Con el tiempo, esos prompts se convierten en Skills.
 
-## 10. Tu prueba de manejo
+## 11. Tu prueba de manejo
 
 **Camino gratis (sin pagar nada):**
 1. Anda a claude.ai y regístrate.

@@ -2,11 +2,22 @@
 
 > En serio, es increíblemente simple.
 
-**Nivel:** Principiante | **Duración:** 5 minutos
+**Nivel:** Principiante | **Duración:** 8 minutos
 
 ---
 
 > la IA no es tan difícil. la IA es así de simple.
+
+## El marco de las 4D: cómo pensar, no solo qué apretar
+
+Antes de los niveles de abajo —que son el "cómo"— está el criterio. Anthropic lo resume en cuatro hábitos, las **4D**. No es teoría: son las cuatro decisiones que tomas en cada tarea con IA.
+
+1. **Delegación** — decidir *qué* le das a la IA y qué no. No todo vale la pena delegar: lo repetitivo y de bajo riesgo, sí; la decisión final y lo sensible, tú. Pregúntate: "¿esto lo hace mejor, más rápido o más barato la IA que yo?"
+2. **Descripción** — explicarle bien *qué quieres*. Es justo el truco de "pregúntame primero" (más abajo): en vez de pelear con el prompt perfecto, dejas que Claude te entreviste. Cuanto mejor describes objetivo, contexto y formato, mejor el resultado.
+3. **Discernimiento** — evaluar *si la respuesta sirve*. Claude siempre responde, pero no siempre acierta. No aceptes la primera: contrástala, pídele que defienda lo contrario, verifica los datos. Es todo un tema en sí — lo ves en **[Claude para principiantes](./01-claude-para-principiantes.md)**, sección "Capacidades y límites".
+4. **Diligencia** — hacerte *responsable* de lo que sale. Tú firmas el resultado, no la IA: revisa antes de enviar, cita tus fuentes y nunca metas datos sensibles donde no corresponde (mira **[No uses tu Claude personal en el trabajo](./18-no-uses-tu-claude-personal-en-el-trabajo.md)**).
+
+> ★ Para recordar: los 5 niveles de abajo son las herramientas. Las 4D son el criterio que aplicas en cada una. Sin criterio, más herramienta solo te hace equivocarte más rápido.
 
 ## Nivel 1: Empieza con Claude
 
@@ -104,4 +115,4 @@ Cuatro minutos después: un formulario de reservas funcionando, en vivo.
 
 ---
 
-*Contenido adaptado de la guía "Being good at AI is (stupidly) simple" de Ruben Hassid ([claude101.com](https://claude101.com)).*
+*Contenido adaptado de la guía "Being good at AI is (stupidly) simple" de Ruben Hassid ([claude101.com](https://claude101.com)). El marco de las 4D está basado en el curso oficial y gratuito "AI Fluency: Framework & Foundations" de Anthropic (Rick Dakan y Joseph Feller), disponible en [Anthropic Academy](https://academy.claude.com/courses/ai-fluency-framework-foundations) bajo licencia CC BY-NC-SA.*
