@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparativa Academy — Claude Academy ES</title>
+<meta name="description" content="Qué cursos de academy.claude.com ya están cubiertos en Claude Academy ES y cuáles son nuevos, con foco en personas que trabajan en una empresa.">
+<meta name="theme-color" content="#ffcf3f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23ff6b47'/%3E%3Cpath d='M50 14 L59 41 L86 50 L59 59 L50 86 L41 59 L14 50 L41 41 Z' fill='%23171310'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --ink: #171310;
+    --paper: #fbf1e1;
+    --panel: #ffffff;
+    --text-body: #4a4234;
+    --text-soft: #635a48;
+    --signup-muted: #c2baad;
+    --yellow: #ffcf3f;
+    --coral: #ff6b47;
+    --pink: #ff5fa2;
+    --blue: #57b8ff;
+    --green: #4fd88a;
+    --spark-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z' fill='%23171310'/%3E%3C/svg%3E");
+    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.045'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #f3efe6;
+      --paper: #16140f;
+      --panel: #211d16;
+      --text-body: #d8d0bf;
+      --text-soft: #b8af9b;
+      --signup-muted: #4d4b45;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #f3efe6; --paper: #16140f; --panel: #211d16; --text-body: #d8d0bf; --text-soft: #b8af9b; --signup-muted: #4d4b45;
+  }
+  :root[data-theme="light"] {
+    --ink: #171310; --paper: #fbf1e1; --panel: #ffffff; --text-body: #4a4234; --text-soft: #635a48; --signup-muted: #c2baad;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background-color: var(--paper);
+    background-image:
+      var(--grain),
+      radial-gradient(circle, color-mix(in srgb, var(--ink) 16%, transparent) 1.6px, transparent 1.6px);
+    background-size: 160px 160px, 24px 24px;
+    color: var(--text-body);
+    font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+  ::selection { background: var(--ink); color: var(--yellow); }
+  :focus-visible { outline: 2.5px dashed var(--coral); outline-offset: 3px; }
+
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  h1, h2, h3 {
+    font-family: inherit;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+  .mono { font-family: "Courier New", monospace; text-transform: uppercase; letter-spacing: 0.03em; }
+
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    border: 2px solid var(--ink); border-radius: 999px;
+    padding: 7px 16px; font-weight: 700; font-size: 13px;
+  }
+
+  a { color: var(--ink); }
+
+  /* ---------- TOP NAV ---------- */
+  nav.topbar { border-bottom: 3px solid var(--ink); padding: 16px 0; }
+  nav.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--ink); }
+  .brand .mark { display: inline-flex; color: var(--ink); flex: none; }
+  .brand .mark svg { display: block; }
+  .brand .wordmark { font-weight: 800; font-size: 17px; letter-spacing: -0.01em; }
+  .crumb { font-size: 12.5px; color: var(--text-soft); display: none; }
+  @media (min-width: 640px) { .crumb { display: block; } }
+  .nav-cta {
+    background: var(--yellow); color: #171310;
+    border-color: #171310; border-width: 2.5px;
+    box-shadow: 3px 3px 0 0 #171310; font-weight: 800; text-decoration: none;
+  }
+
+  /* ---------- HERO ---------- */
+  header.page-hero {
+    background-color: var(--yellow);
+    background-image: var(--grain);
+    background-size: 160px 160px;
+    border-bottom: 3px solid #171310;
+    padding: 54px 0 46px;
+    text-align: center;
+    color: #171310;
+  }
+  .badge { background: #fff; border-color: #171310; border-width: 1.5px; border-radius: 999px; margin-bottom: 22px; }
+  header.page-hero h1 {
+    font-size: clamp(26px, 4.6vw, 42px);
+    line-height: 1.1; margin: 0 0 16px; color: #171310;
+  }
+  header.page-hero h1 mark {
+    background: #171310; color: #ffcf3f; padding: 2px 10px; border-radius: 8px;
+    box-decoration-break: clone; -webkit-box-decoration-break: clone;
+  }
+  header.page-hero .subtitle {
+    font-size: clamp(15px, 2.1vw, 18px); color: #33291d;
+    max-width: 660px; margin: 0 auto 26px; font-weight: 500;
+  }
+  .cta-btn {
+    display: inline-block; background: var(--ink); color: var(--paper);
+    font-weight: 800; font-size: 15px; padding: 13px 28px; text-decoration: none;
+    border: 3px solid var(--ink); border-radius: 999px;
+    box-shadow: 6px 6px 0 0 rgba(23,19,16,0.55); cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .cta-btn:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 0 rgba(23,19,16,0.65); }
+  .cta-btn:active { transform: translate(3px, 3px); box-shadow: 0 0 0 0 rgba(23,19,16,0.65); }
+  header.page-hero .cta-btn { background: #171310; color: #fff8ec; border-color: #171310; }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 52px 0; border-bottom: 3px solid var(--ink); }
+  section h2 { font-size: clamp(22px, 3vw, 28px); margin: 0 0 10px; }
+  section .lead { color: var(--text-body); font-size: 15.5px; max-width: 760px; margin: 0 0 26px; }
+  .eyebrow { font-size: 12px; font-weight: 800; color: var(--coral); margin: 0 0 8px; }
+
+  /* ---------- RESUMEN (stat cards) ---------- */
+  .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin-top: 8px; }
+  .stat {
+    background: var(--panel);
+    border: 2px solid var(--ink); border-radius: 16px;
+    padding: 20px 18px; box-shadow: 4px 4px 0 0 var(--ink);
+  }
+  .stat .num { font-size: 30px; font-weight: 800; color: var(--ink); line-height: 1; font-family: "Courier New", monospace; }
+  .stat .lbl { font-size: 13px; color: var(--text-body); margin-top: 8px; font-weight: 600; }
+  .stat.s-new .num { color: var(--coral); }
+  .stat.s-cov .num { color: var(--green); }
+  .stat.s-part .num { color: var(--blue); }
+
+  /* ---------- LEGEND ---------- */
+  .legend { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 24px; }
+  .tag {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 12.5px; font-weight: 700; color: var(--ink);
+    border: 2px solid var(--ink); border-radius: 999px; padding: 5px 12px;
+    background: var(--panel);
+  }
+  .dot { width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid var(--ink); flex: none; }
+  .dot.cov { background: var(--green); }
+  .dot.part { background: var(--blue); }
+  .dot.new { background: var(--coral); }
+
+  /* ---------- TABLE ---------- */
+  .table-scroll { overflow-x: auto; border: 2.5px solid var(--ink); border-radius: 16px; box-shadow: 6px 6px 0 0 var(--ink); background: var(--panel); }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 14px; }
+  thead th {
+    background: var(--ink); color: var(--paper);
+    text-align: left; padding: 12px 14px; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.04em; font-family: "Courier New", monospace;
+    position: sticky; top: 0;
+  }
+  tbody td { padding: 12px 14px; border-top: 1.5px solid color-mix(in srgb, var(--ink) 18%, transparent); vertical-align: top; }
+  tbody tr:hover { background: color-mix(in srgb, var(--yellow) 16%, transparent); }
+  .track-row td {
+    background: color-mix(in srgb, var(--ink) 8%, transparent);
+    font-weight: 800; color: var(--ink); font-size: 12.5px;
+    text-transform: uppercase; letter-spacing: 0.03em;
+    font-family: "Courier New", monospace;
+  }
+  .course-name { font-weight: 700; color: var(--ink); }
+  .st { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; white-space: nowrap; }
+  .st .dot { width: 10px; height: 10px; }
+  .es-ref { color: var(--text-soft); font-size: 13px; }
+  .focus-badge {
+    display: inline-block; margin-left: 6px;
+    font-size: 10.5px; font-weight: 800; color: #171310;
+    background: var(--yellow); border: 1.5px solid #171310; border-radius: 6px;
+    padding: 1px 6px; vertical-align: middle;
+  }
+
+  /* ---------- GAP CARDS ---------- */
+  .gap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  .gap {
+    background: var(--panel); border: 2px solid var(--ink); border-radius: 18px;
+    padding: 22px 22px; box-shadow: 5px 5px 0 0 var(--coral);
+  }
+  .gap .rank {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px; border: 2px solid var(--ink); border-radius: 9px;
+    background: var(--yellow); color: #171310;
+    font-family: "Courier New", monospace; font-weight: 800; font-size: 14px; margin-bottom: 12px;
+  }
+  .gap h3 { margin: 0 0 6px; font-size: 17px; }
+  .gap p { margin: 0 0 8px; font-size: 14px; color: var(--text-body); }
+  .gap .es-note { font-size: 12.5px; color: var(--text-soft); font-style: italic; margin: 0; }
+  .gap.secondary { box-shadow: 5px 5px 0 0 var(--blue); }
+
+  /* ---------- STRENGTHS / PATH ---------- */
+  .chip-list { display: flex; flex-direction: column; gap: 12px; }
+  .chip-row {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: var(--panel); border: 1.5px solid color-mix(in srgb, var(--ink) 22%, transparent);
+    border-radius: 14px; padding: 14px 18px;
+  }
+  .chip-row .code {
+    flex: none; font-family: "Courier New", monospace; font-weight: 800; font-size: 13px;
+    background: var(--ink); color: var(--paper); border-radius: 8px; padding: 4px 9px; height: fit-content;
+  }
+  .chip-row .body h4 { margin: 0 0 3px; font-size: 15px; color: var(--ink); }
+  .chip-row .body p { margin: 0; font-size: 13.5px; color: var(--text-body); }
+
+  .path {
+    background: var(--panel); border: 2.5px solid var(--ink); border-radius: 20px;
+    box-shadow: 6px 6px 0 0 var(--green); padding: 26px 26px;
+  }
+  .path ol { list-style: none; counter-reset: step; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+  .path li { counter-increment: step; display: flex; gap: 16px; align-items: flex-start; }
+  .path li::before {
+    content: counter(step); flex: none; width: 34px; height: 34px;
+    border: 2px solid var(--ink); border-radius: 10px; background: var(--yellow); color: #171310;
+    font-family: "Courier New", monospace; font-weight: 800; font-size: 14px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .path li .txt { padding-top: 3px; }
+  .path li .txt strong { color: var(--ink); }
+  .path li .txt .st-mini { font-size: 11.5px; font-weight: 800; margin-left: 6px; padding: 1px 7px; border-radius: 6px; border: 1.5px solid var(--ink); }
+  .st-mini.mnew { background: var(--coral); color: #171310; }
+  .st-mini.mcov { background: var(--green); color: #171310; }
+  .st-mini.mpart { background: var(--blue); color: #171310; }
+
+  .note {
+    background: color-mix(in srgb, var(--blue) 16%, transparent);
+    border: 2px dashed var(--ink); border-radius: 14px; padding: 16px 20px; margin-top: 24px;
+    font-size: 13.5px; color: var(--text-body);
+  }
+  .note strong { color: var(--ink); }
+
+  footer { padding: 40px 0 60px; text-align: center; color: var(--text-soft); font-size: 13px; }
+  footer a { color: var(--ink); font-weight: 700; }
+
+  @media (max-width: 520px) {
+    header.page-hero { padding: 40px 0 32px; }
+    section { padding: 40px 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .cta-btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="wrap">
+    <a href="./index.html" class="brand">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z" fill="currentColor"/></svg>
+      </span>
+      <span class="wordmark">Claude Academy ES</span>
+    </a>
+    <span class="crumb">Inicio / Comparativa Academy</span>
+    <a href="./cursos.html" class="pill nav-cta">Ver cursos</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <span class="pill badge mono">📊 Análisis · foco empresa</span>
+    <h1>Academy oficial vs. nuestro catálogo: <mark>qué ya está y qué falta</mark></h1>
+    <p class="subtitle">Comparamos los ~22 cursos de <strong>academy.claude.com</strong> con las 18 guías de Claude Academy ES, filtrando por una sola pregunta: <em>cómo usar Claude en mi día a día dentro de una empresa</em>.</p>
+    <a href="./cursos.html" class="cta-btn">Ver el catálogo ES →</a>
+  </div>
+</header>
+
+<!-- ===================== RESUMEN ===================== -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">RESUMEN EJECUTIVO</p>
+    <h2>En una frase</h2>
+    <p class="lead">Nuestro catálogo ya cubre el núcleo para <strong>empezar</strong> (Claude 101, Cowork, Skills) y hasta aporta ángulos de empresa que Academy <em>no</em> tiene (adopción de equipos, gobernanza de datos). Para el persona "trabajo en una empresa" quedan <strong>4 vacíos oficiales que sí importan</strong>: AI Fluency (marco 4D), Capacidades y límites de la IA, Claude Platform 101 y AI Fluency para Pequeñas Empresas.</p>
+    <div class="stat-row">
+      <div class="stat s-cov"><div class="num">4</div><div class="lbl">Ya cubiertos por una guía ES equivalente</div></div>
+      <div class="stat s-part"><div class="num">3</div><div class="lbl">Cubiertos parcialmente (mismo tema, otro enfoque)</div></div>
+      <div class="stat s-new"><div class="num">4</div><div class="lbl">Nuevos y relevantes para el persona empresa</div></div>
+      <div class="stat"><div class="num">11</div><div class="lbl">Nuevos pero fuera de foco (dev / educación)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TABLA MAESTRA ===================== -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">TABLA MAESTRA</p>
+    <h2>Los ~22 cursos oficiales, uno por uno</h2>
+    <p class="lead">Cada curso de Academy, su estado frente a nuestro catálogo y su guía ES equivalente. La etiqueta <span class="focus-badge">EMPRESA</span> marca lo relevante para el día a día en la oficina.</p>
+
+    <div class="legend">
+      <span class="tag"><span class="dot cov"></span> Ya cubierto</span>
+      <span class="tag"><span class="dot part"></span> Parcial / otro enfoque</span>
+      <span class="tag"><span class="dot new"></span> Nuevo (sin equivalente)</span>
+    </div>
+
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Curso oficial (Academy)</th>
+            <th>Estado</th>
+            <th>Equivalente en Claude Academy ES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="track-row"><td colspan="3">🚀 Empezar / Foundational</td></tr>
+          <tr>
+            <td><span class="course-name">Claude 101</span><span class="focus-badge">EMPRESA</span></td>
+            <td><span class="st"><span class="dot cov"></span> Cubierto</span></td>
+            <td class="es-ref">Taller "Claude 101" + guías <strong>01</strong> Claude para principiantes y <strong>02</strong> Ser bueno en IA es simple</td>
+          </tr>
+          <tr>
+            <td><span class="course-name">Introduction to Claude Cowork</span><span class="focus-badge">EMPRESA</span></td>
+            <td><span class="st"><span class="dot cov"></span> Cubierto</span></td>
+            <td class="es-ref">Guía <strong>04</strong> Claude Cowork (+ <strong>07</strong> Cowork + Proyectos)</td>
+          </tr>
+          <tr>
+            <td><span class="course-name">Claude Code 101</span></td>
+            <td><span class="st"><span class="dot part"></span> Parcial</span></td>
+            <td class="es-ref">Guía <strong>17</strong> Claude Code — Vibecoding (ángulo no-programador, más corto)</td>
+          </tr>
+          <tr>
+            <td><span class="course-name">Claude Platform 101</span><span class="focus-badge">EMPRESA</span></td>
+            <td><span class="st"><span class="dot new"></span> Nuevo</span></td>
+            <td class="es-ref">Sin equivalente. Tocado de refilón en <strong>05</strong> (rollout) y <strong>18</strong> (datos), pero no como visión de plataforma/admin</td>
+          </tr>
+
+          <tr class="track-row"><td colspan="3">🧩 Product training</td></tr>
+          <tr>
+            <td><span class="course-name">Introduction to agent skills</span></td>
+            <td><span class="st"><span class="dot cov"></span> Cubierto</span></td>
+            <td class="es-ref">Guía <strong>09</strong> Claude Skills</td>
+          </tr>
+          <tr>
+            <td><span class="course-name">Introduction to Model Context Protocol (MCP)</span></td>
+            <td><span class="st"><span class="dot part"></span> Parcial</span></td>
+            <td class="es-ref">Guía <strong>16</strong> Conectores de Claude (enfoque no-dev, sin el protocolo)</td>
+          </tr>
+          <tr>
+            <td><span class="course-name">Claude Code in Action</span></td>
+            <td><span class="st"><span class="dot part"></span> Parcial</span></td>
+            <td class="es-ref">Guía <strong>17</strong> (parcial, orientado a dev en el original)</td>
+          </tr>
+          <tr>
+            <td><span class="course-name">Introduction to subagents</span></td>
+            <td><span class="st"><span class="dot new"></span> Nuevo</span></td>
+            <td class="es-ref">Sin equivalente — contenido para desarrolladores</td>
+          </tr>
+          <tr>
+            <td><span class="course-name">MCP: Advanced Topics</span></td>
+            <td><span class="st"><span class="dot new"></span> Nuevo</span></td>
+            <td class="es-ref">Sin equivalente — contenido para desarrolladores</td>
+          </tr>
+
+          <tr class="track-row"><td colspan="3">🧠 AI Fluency</td></tr>
+          <tr>
+            <td><span class="course-name">AI Fluency: Framework &amp; Foundations</span><span class="focus-badge">EMPRESA</span></td>
+            <td><span class="st"><span class="dot new"></span> Nuevo</span></td>
+            <td class="es-ref">Sin equivalente directo. La guía <strong>02</strong> es un primo lejano, pero sin el marco 4D nombrado</td>
+          </tr>
+          <tr>
+            <td><span class="course-name">AI Capabilities and Limitations</span><span class="focus-badge">EMPRESA</span></td>
+            <td><span class="st"><span class="dot new"></span> Nuevo</span></td>
+            <td class="es-ref">Sin equivalente — cuándo confiar y cuándo desconfiar de la IA</td>
+          </tr>
+          <tr>
+            <td><span class="course-name">Teaching AI Fluency</span></td>
+            <td><span class="st"><span class="dot new"></span> Nuevo</span></td>
+            <td class="es-ref">Fuera de foco — orientado a educadores</td>
+          </tr>
+
+          <tr class="track-row"><td colspan="3">🌍 AI Fluency for Your World</td></tr>
+          <tr>
+            <td><span class="course-name">For Small Businesses</span><span class="focus-badge">EMPRESA</span></td>
+            <td><span class="st"><span class="dot new"></span> Nuevo</span></td>
+            <td class="es-ref">Sin equivalente — directamente el persona PyME / empresa</td>
+          </tr>
+          <tr>
+            <td><span class="course-name">For Builders</span></td>
+            <td><span class="st"><span class="dot new"></span> Nuevo</span></td>
+            <td class="es-ref">Sin equivalente — automatización sin código (secundario para empresa)</td>
+          </tr>
+          <tr>
+            <td><span class="course-name">For Educators / pK–12 / Train the Trainer</span></td>
+            <td><span class="st"><span class="dot new"></span> Nuevo</span></td>
+            <td class="es-ref">Fuera de foco — educación</td>
+          </tr>
+          <tr>
+            <td><span class="course-name">For Nonprofits</span></td>
+            <td><span class="st"><span class="dot new"></span> Nuevo</span></td>
+            <td class="es-ref">Fuera de foco — organizaciones sin fines de lucro</td>
+          </tr>
+          <tr>
+            <td><span class="course-name">For Students</span></td>
+            <td><span class="st"><span class="dot new"></span> Nuevo</span></td>
+            <td class="es-ref">Fuera de foco — estudiantes</td>
+          </tr>
+
+          <tr class="track-row"><td colspan="3">⚙️ Build with the API · Cloud &amp; Enterprise</td></tr>
+          <tr>
+            <td><span class="course-name">Building with the Claude API</span></td>
+            <td><span class="st"><span class="dot new"></span> Nuevo</span></td>
+            <td class="es-ref">Fuera de foco — desarrolladores</td>
+          </tr>
+          <tr>
+            <td><span class="course-name">Claude with Amazon Bedrock</span></td>
+            <td><span class="st"><span class="dot new"></span> Nuevo</span></td>
+            <td class="es-ref">Fuera de foco — desarrolladores / cloud</td>
+          </tr>
+          <tr>
+            <td><span class="course-name">Claude with Google Cloud's Vertex AI</span></td>
+            <td><span class="st"><span class="dot new"></span> Nuevo</span></td>
+            <td class="es-ref">Fuera de foco — desarrolladores / cloud</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VACÍOS EMPRESA ===================== -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">LO QUE FALTA</p>
+    <h2>Nuevos y relevantes para el persona empresa</h2>
+    <p class="lead">Ordenados por valor para "usar Claude en mi día a día en la empresa". Estos son los vacíos que vale la pena cerrar como futuras guías ES.</p>
+    <div class="gap-grid">
+      <div class="gap">
+        <span class="rank">1</span>
+        <h3>Claude Platform 101</h3>
+        <p>Cuentas de organización, workspaces, roles de admin y opciones de seguridad. Es el "cómo vive Claude dentro de una empresa".</p>
+        <p class="es-note">ES lo toca solo de refilón en 05 (rollout) y 18 (datos), no como visión de plataforma.</p>
+      </div>
+      <div class="gap">
+        <span class="rank">2</span>
+        <h3>AI Fluency: Framework &amp; Foundations</h3>
+        <p>El marco oficial 4D de Anthropic: <strong>Delegation, Description, Discernment, Diligence</strong>. La columna vertebral para trabajar bien con IA.</p>
+        <p class="es-note">ES tiene 02 como primo lejano, pero sin nombrar el marco.</p>
+      </div>
+      <div class="gap">
+        <span class="rank">3</span>
+        <h3>AI Capabilities and Limitations</h3>
+        <p>Cuándo confiar y cuándo desconfiar de la IA: alucinaciones, sesgos, verificación. Clave para no meter la pata en el trabajo.</p>
+        <p class="es-note">Sin equivalente en ES.</p>
+      </div>
+      <div class="gap">
+        <span class="rank">4</span>
+        <h3>AI Fluency para Pequeñas Empresas</h3>
+        <p>El curso oficial apuntado directamente a PyMEs: casos de uso concretos de negocio, no de laboratorio.</p>
+        <p class="es-note">Sin equivalente en ES.</p>
+      </div>
+      <div class="gap secondary">
+        <span class="rank">+</span>
+        <h3>AI Fluency para Builders</h3>
+        <p><em>Secundario.</em> Automatización sin escribir código — útil para perfiles operativos que quieren armar sus propios flujos.</p>
+        <p class="es-note">Cercano a 09 Skills y 16 Conectores, pero con enfoque de "constructor".</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FORTALEZAS ES ===================== -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">NUESTRA VENTAJA</p>
+    <h2>Lo que ES aporta y Academy no cubre</h2>
+    <p class="lead">Para el persona empresa, nuestro catálogo tiene ángulos prácticos que el temario oficial no trae.</p>
+    <div class="chip-list">
+      <div class="chip-row">
+        <span class="code">05</span>
+        <div class="body"><h4>Claude para equipos</h4><p>Plan de adopción día por día en 7 días — cómo pasar de "lo probé" a "lo usa todo el equipo".</p></div>
+      </div>
+      <div class="chip-row">
+        <span class="code">18</span>
+        <div class="body"><h4>No uses tu Claude personal en el trabajo</h4><p>Gobernanza de datos, casos reales (Samsung), riesgo legal y cómo blindarte. Puro contexto de empresa.</p></div>
+      </div>
+      <div class="chip-row">
+        <span class="code">16</span>
+        <div class="body"><h4>Conectores de Claude</h4><p>Conectar Claude a tus apps de trabajo, explicado sin jerga de protocolo.</p></div>
+      </div>
+      <div class="chip-row">
+        <span class="code">07·08·15</span>
+        <div class="body"><h4>Casos de oficina concretos</h4><p>Proyectos en equipo, presentaciones y Excel con Cowork — entregables reales del día a día.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RUTA EMPRESA ===================== -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">RECOMENDACIÓN</p>
+    <h2>Una ruta "Uso en la empresa" (propuesta)</h2>
+    <p class="lead">Hilvanando lo que ya existe con los 4 vacíos, quedaría este recorrido para alguien que trabaja en una empresa. Los nuevos se escribirían en el estilo práctico actual de ES.</p>
+    <div class="path">
+      <ol>
+        <li><div class="txt"><strong>Empezar sin miedo</strong> — Claude para principiantes + Ser bueno en IA es simple <span class="st-mini mcov">YA</span></div></li>
+        <li><div class="txt"><strong>Marco para trabajar con IA</strong> — AI Fluency 4D (Delegation · Description · Discernment · Diligence) <span class="st-mini mnew">NUEVO</span></div></li>
+        <li><div class="txt"><strong>Confiar con criterio</strong> — Capacidades y límites de la IA <span class="st-mini mnew">NUEVO</span></div></li>
+        <li><div class="txt"><strong>Trabajar en Claude</strong> — Cowork + Proyectos en equipo <span class="st-mini mcov">YA</span></div></li>
+        <li><div class="txt"><strong>Claude dentro de la empresa</strong> — Claude Platform 101 (admin, workspaces, seguridad) <span class="st-mini mnew">NUEVO</span></div></li>
+        <li><div class="txt"><strong>Adoptar y proteger</strong> — Claude para equipos (05) + No uses tu Claude personal (18) <span class="st-mini mcov">YA</span></div></li>
+        <li><div class="txt"><strong>Escalar en tu negocio</strong> — AI Fluency para Pequeñas Empresas + Conectores (16) <span class="st-mini mpart">MIXTO</span></div></li>
+      </ol>
+    </div>
+    <div class="note">
+      <strong>Nota:</strong> esta página es el <em>análisis</em>. No crea las guías nuevas todavía — solo señala qué falta y en qué orden tendría sentido construirlo, en el estilo práctico ES.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Claude Academy ES — proyecto independiente en español para aprender Claude.<br>
+    No afiliado ni respaldado oficialmente por Anthropic. Fuentes: <a href="https://academy.claude.com/courses">academy.claude.com</a> (ago 2026) y el <a href="./cursos.html">catálogo ES</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
