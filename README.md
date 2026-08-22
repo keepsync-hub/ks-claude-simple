@@ -1,21 +1,21 @@
-# Claude Academy ES
+# Claude desde Cero
 
 > La plataforma en español para dominar Claude, el asistente de IA de Anthropic — de cero a experto, con guías gratuitas y un webinar en vivo.
 
-**🎁 ¿Nunca abriste Claude?** Empieza por el [taller gratuito "Claude 101"](./index.html) — cupos limitados.
+**🎁 ¿Nunca abriste Claude?** Empieza por el [webinar gratuito "Claude desde Cero"](./index.html) — cupos limitados.
 
 ---
 
 ## Qué es esto
 
-Claude Academy ES reúne, en español, el camino completo para aprender a usar Claude: desde tu primera conversación hasta construir tus propios flujos de trabajo con Cowork, Skills, Conectores y Claude Code.
+Claude desde Cero reúne, en español, el camino completo para aprender a usar Claude: desde tu primera conversación hasta construir tus propios flujos de trabajo con Cowork, Skills, Conectores y Claude Code.
 
-Todo el contenido es **gratuito**. La idea es simple: si te sirve, te quedas — con el newsletter, con la comunidad, con el próximo taller.
+Todo el contenido es **gratuito**. La idea es simple: si te sirve, te quedas — con el newsletter, con la comunidad, con el próximo webinar.
 
 ## Cómo está organizado
 
 ```
-├── index.html          → Landing page: inscripción al taller gratuito "Claude 101"
+├── index.html          → Landing page: inscripción al webinar gratuito "Claude desde Cero"
 ├── cursos.html          → Catálogo web con acordeón, agrupado por nivel
 └── cursos/              → Los 19 cursos, en español, en markdown (fuente de cursos.html)
     ├── 00-mapa-de-cursos.md
@@ -38,14 +38,14 @@ Ver el catálogo completo en [`cursos.html`](./cursos.html) (acordeón navegable
 ## Empieza aquí
 
 1. **Lee la guía 01** — [Claude para principiantes](./cursos/01-claude-para-principiantes.md) (5 min).
-2. **Anótate al taller en vivo** — [Claude 101 gratis](./index.html): el webinar "Claude desde Cero", jueves 3 de septiembre de 11:00 a 13:00 (hora de Chile), por Google Meet.
+2. **Anótate al webinar en vivo** — [Claude desde Cero gratis](./index.html): jueves 3 de septiembre de 11:00 a 13:00 (hora de Chile), por Google Meet.
 3. **Recorre el catálogo completo** en [`cursos.html`](./cursos.html) a tu ritmo — cada guía indica nivel y tiempo estimado.
 
 ## Por qué existe este proyecto
 
 Menos del 2% de las personas ha usado Claude una sola vez, y la brecha entre quienes lo dominan y quienes no crece cada semana. Esta academia existe para cerrar esa brecha para el público hispanohablante: contenido honesto, sin humo, con pasos que puedes ejecutar hoy mismo.
 
-Este es el punto de partida de una plataforma más grande: talleres en vivo, una comunidad de práctica y — más adelante — programas pagos para equipos y empresas que quieran certificar a su gente. Si el contenido gratuito te resuelve algo real, vas a querer quedarte para lo que sigue.
+Este es el punto de partida de una plataforma más grande: webinars en vivo, una comunidad de práctica y — más adelante — programas pagos para equipos y empresas que quieran certificar a su gente. Si el contenido gratuito te resuelve algo real, vas a querer quedarte para lo que sigue.
 
 ## Fuentes y créditos
 

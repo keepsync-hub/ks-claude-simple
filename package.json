@@ -1,5 +1,5 @@
 {
-  "name": "claude-academy-es",
+  "name": "claude-desde-cero",
   "private": true,
   "version": "1.0.0",
   "description": "Build script para generar cursos.html a partir de cursos/*.md",
