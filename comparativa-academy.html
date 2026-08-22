@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Comparativa Academy — Claude Academy ES</title>
 <meta name="description" content="Qué cursos de academy.claude.com ya están cubiertos en Claude Academy ES y cuáles son nuevos, con foco en personas que trabajan en una empresa.">
-<meta name="theme-color" content="#fcf7ec" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#14120d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fdf9f0">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23ff6b47'/%3E%3Cpath d='M50 14 L59 41 L86 50 L59 59 L50 86 L41 59 L14 50 L41 41 Z' fill='%23171310'/%3E%3C/svg%3E">
 <style>
   /* ------------------------------------------------------------------
@@ -37,13 +36,17 @@
      SISTEMA DE DISEÑO — v3, port del sistema de cristianignacio.me.
      Minimalista en estructura, neo-brutalista en color y forma: borde
      grueso, sombra dura sin blur, papel crema. Aquí el papel es todavía
-     más claro que en la referencia (#fdf9f0 frente a #faf4e6) y se
-     conserva lo que la referencia no tiene: modo oscuro, grano y el
-     ornamento de chispa.
+     más claro que en la referencia (#fdf9f0 frente a #faf4e6).
+     El tema es SIEMPRE claro: no hay variante oscura ni se sigue la
+     preferencia del sistema. color-scheme lo declara para que el
+     navegador pinte también en claro los controles de formulario, las
+     barras de scroll y el lienzo por defecto en equipos en modo oscuro.
      Duplicado a propósito en cada página: son self-contained (cero
      requests externos, un solo <style> por archivo).
      ------------------------------------------------------------------ */
   :root {
+    color-scheme: light;
+
     /* Base */
     --ink: #16130d;
     --paper: #fdf9f0;
@@ -52,8 +55,7 @@
     --text-soft: #6a6255;
     --signup-muted: #c2baad;
 
-    /* Acentos. --on-accent NO se invierte en oscuro: los rellenos de color
-       son los mismos en ambos temas, el texto encima también. */
+    /* Texto sobre rellenos de color (amarillo, coral, verde...). */
     --on-accent: #16130d;
 
     --yellow: #ffd23f;
@@ -70,7 +72,7 @@
     --green-text: #0f7a45;
     --blue-text: #1668b3;
 
-    /* Banda decorativa: no se invierte con el tema. */
+    /* Banda decorativa: marquee y pie. */
     --band: #16130d;
     --band-fg: #fdf9f0;
 
@@ -89,45 +91,12 @@
     --font-sans: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
     --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-    /* El resaltado del titular es un trazo de rotulador: en claro va
-       detrás del texto (tinta sobre amarillo, ~11:1); en oscuro baja a
-       subrayado grueso, porque crema sobre amarillo no se lee. */
+    /* Resaltado del titular: bloque amarillo con tinta encima (~11:1). */
     --mark-bg: var(--yellow);
     --mark-fg: var(--on-accent);
 
     --spark-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z' fill='%2316130d'/%3E%3C/svg%3E");
     --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.03'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #f3efe6;
-      --paper: #14120d;
-      --panel: #211d16;
-      --text-body: #ded7c8;
-      --text-soft: #b8af9b;
-      --signup-muted: #4d4b45;
-      --shadow-color: rgba(0, 0, 0, 0.6);
-      --coral-text: var(--coral);
-      --green-text: var(--green);
-      --blue-text: var(--blue);
-      --mark-bg: var(--yellow);
-      --mark-fg: var(--on-accent);
-      --spark-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z' fill='%23f3efe6'/%3E%3C/svg%3E");
-    }
-  }
-  :root[data-theme="dark"] {
-    --ink: #f3efe6; --paper: #14120d; --panel: #211d16; --text-body: #ded7c8; --text-soft: #b8af9b; --signup-muted: #4d4b45;
-    --shadow-color: rgba(0, 0, 0, 0.6);
-    --coral-text: var(--coral); --green-text: var(--green); --blue-text: var(--blue);
-    --mark-bg: var(--yellow); --mark-fg: var(--on-accent);
-    --spark-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z' fill='%23f3efe6'/%3E%3C/svg%3E");
-  }
-  :root[data-theme="light"] {
-    --ink: #16130d; --paper: #fdf9f0; --panel: #ffffff; --text-body: #2f2a22; --text-soft: #6a6255; --signup-muted: #c2baad;
-    --shadow-color: var(--ink);
-    --coral-text: #b3400f; --green-text: #0f7a45; --blue-text: #1668b3;
-    --mark-bg: var(--yellow); --mark-fg: var(--on-accent);
-    --spark-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z' fill='%2316130d'/%3E%3C/svg%3E");
   }
 
   *, *::before, *::after { box-sizing: border-box; }
