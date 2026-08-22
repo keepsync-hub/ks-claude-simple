@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Claude 101 — Taller gratuito en español</title>
-<meta name="description" content="Taller en vivo y gratuito para aprender a usar Claude desde cero. Cupos limitados.">
+<meta name="description" content="Webinar en vivo y gratuito para aprender a usar Claude desde cero: jueves 3 de septiembre, 11:00 a 13:00 (hora de Chile), por Google Meet. Cupos limitados.">
 <meta name="theme-color" content="#fdf9f0">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23ff6b47'/%3E%3Cpath d='M50 14 L59 41 L86 50 L59 59 L50 86 L41 59 L14 50 L41 41 Z' fill='%23171310'/%3E%3C/svg%3E">
 <style>
@@ -564,6 +564,20 @@
     border-radius: var(--radius);
     text-decoration: none;
     margin-right: 8px;
+    margin-bottom: 8px;
+  }
+
+  /* ---------- CUÁNDO Y CÓMO ENTRAR (bloque de confirmación) ---------- */
+  .confirm-when {
+    margin: 0 0 12px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .meet-link {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: inherit;
+    word-break: break-all;
   }
 
   /* ---------- PUENTE A LA COMUNIDAD ---------- */
@@ -638,17 +652,17 @@
   <div class="wrap">
     <span class="pill badge mono">🎁 100% gratis · en español</span>
     <h1>Claude 101: el taller en vivo para <mark>dejar de tenerle miedo</mark> a la IA</h1>
-    <p class="subtitle">Una hora en vivo, en español, para que salgas usando Claude de verdad — no solo mirando tutoriales. Sin conocimientos previos.</p>
+    <p class="subtitle">Dos horas en vivo, en español, para que salgas usando Claude de verdad — no solo mirando tutoriales. Sin conocimientos previos.</p>
 
     <!--
-      TODO (equipo): la fecha del taller se configura en el objeto WORKSHOP
-      del script al final de esta página. Mientras no haya fecha real, la
-      tira muestra "próxima fecha: por confirmar" y el botón de calendario
-      queda oculto (no se inventa una fecha).
+      La fecha del webinar y el link de Google Meet se configuran en el
+      objeto WORKSHOP del script al final de esta página. El texto de abajo
+      es el respaldo sin JavaScript: dice la fecha real en hora de Chile, y
+      el script le agrega la hora local de quien visita.
     -->
     <p class="when-strip">
       <span class="when-label">Cuándo</span>
-      <span id="when-text">Próxima fecha: por confirmar</span>
+      <span id="when-text">Jueves 3 de septiembre · 11:00–13:00 (hora de Chile)</span>
     </p>
 
     <!-- Registro directo en el hero: un solo campo, sin salto de scroll. -->
@@ -664,7 +678,7 @@
     <p class="form-status" id="hero-status" role="status" aria-live="polite"></p>
 
     <div class="meta-row">
-      <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> 60 min en vivo</span>
+      <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> 2 horas en vivo</span>
       <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20"/></svg> 100% online</span>
       <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 1 0-4h18a2 2 0 0 1 0 4 2 2 0 0 0 0 4 2 2 0 0 1 0 4H3a2 2 0 0 1 0-4 2 2 0 0 0 0-4Z"/><path d="M9 5v14" stroke-dasharray="2 2"/></svg> Cupos limitados</span>
     </div>
@@ -696,7 +710,7 @@
 
 <section>
   <div class="wrap">
-    <h2>Qué vas a aprender en la hora</h2>
+    <h2>Qué vas a aprender en el webinar</h2>
     <ol class="agenda">
       <li>
         <div>
@@ -736,7 +750,7 @@
   <div class="wrap">
     <div class="signup">
       <h2>Regístrate gratis</h2>
-      <p class="lead">Deja tu email y te enviamos el link de acceso + el material de la clase.</p>
+      <p class="lead">Deja tu email y te enviamos el link de Google Meet, la invitación para tu calendario y el material de la clase.</p>
 
       <form class="signup-form" id="signup-form" action="#" method="POST" novalidate>
         <label for="signup-email" class="sr-only">Tu email</label>
@@ -748,9 +762,14 @@
       </form>
       <p class="form-status" id="signup-status" role="status" aria-live="polite"></p>
       <div class="confirm-msg" id="confirm-msg">
-        <p class="confirm-headline">✓ Tu lugar está guardado. Revisa tu email para confirmar.</p>
+        <p class="confirm-headline">✓ Tu lugar está guardado. Revisa tu email: te llega la confirmación con el link y la invitación para tu calendario.</p>
+        <p class="confirm-when">
+          <strong>Jueves 3 de septiembre · 11:00–13:00 (hora de Chile)</strong><br>
+          Link para sumarte: <a class="meet-link" href="https://meet.google.com/wud-ofmv-prp" target="_blank" rel="noopener" data-ev="meet_link_click">meet.google.com/wud-ofmv-prp</a>
+        </p>
         <p class="confirm-actions">
-          <a href="#" class="ics-btn" id="ics-btn" download="claude-101.ics" hidden data-ev="calendar_add">📅 Agregar al calendario</a>
+          <a href="#" class="ics-btn" id="ics-btn" download="webinar-claude-desde-cero.ics" hidden data-ev="calendar_add">📅 Agregar al calendario (.ics)</a>
+          <a href="#" class="ics-btn" id="gcal-btn" target="_blank" rel="noopener" hidden data-ev="calendar_add_google">📆 Agregar a Google Calendar</a>
         </p>
         <p class="confirm-next">El taller te muestra el "cómo". Lo que hace que lo apliques de verdad es practicar acompañado:</p>
         <a href="./programa.html?ref=taller" class="btn-ghost" data-ev="program_teaser_click">Conocer la comunidad →</a>
@@ -777,6 +796,10 @@
     <details>
       <summary>¿Necesito saber programar o tener experiencia con IA?</summary>
       <p>No. El taller está pensado para empezar desde cero, en español simple.</p>
+    </details>
+    <details>
+      <summary>¿Cuándo es y cómo entro?</summary>
+      <p>El webinar <strong>Claude desde Cero</strong> es el <strong>jueves 3 de septiembre, de 11:00 a 13:00 (hora de Chile)</strong>, por Google Meet: <a class="meet-link" href="https://meet.google.com/wud-ofmv-prp" target="_blank" rel="noopener" data-ev="meet_link_click">meet.google.com/wud-ofmv-prp</a>. Al inscribirte te llega ese mismo link por email, junto con una invitación (.ics) para agendarlo en tu calendario.</p>
     </details>
     <details>
       <summary>¿Es realmente gratis?</summary>
@@ -814,54 +837,81 @@
     track(el.getAttribute('data-ev'), { href: el.getAttribute('href') || null });
   });
 
-  // ================== CONFIG DEL TALLER ==================
-  // TODO (equipo): poner la fecha real del próximo taller. Mientras
-  // `start` sea null, la página dice "por confirmar" y oculta el botón
-  // de calendario — a propósito, para no inventar una fecha.
+  // ================== CONFIG DEL WEBINAR ==================
+  // Fuente única de la verdad para fecha, duración y link de acceso.
+  // `start` va con el offset de Chile (-04:00 el 3 de septiembre: el
+  // horario de verano recién parte el fin de semana siguiente), así que
+  // el navegador lo traduce solo a la hora local de quien visita.
   var WORKSHOP = {
-    start: null,          // ej: '2026-09-10T19:00:00-03:00'
-    durationMinutes: 60,
-    title: 'Claude 101 — Taller gratuito en español',
-    details: 'Taller en vivo para aprender a usar Claude desde cero. Link de acceso por email.'
+    start: '2026-09-03T11:00:00-04:00',
+    durationMinutes: 120,
+    whenLabel: 'Jueves 3 de septiembre · 11:00–13:00 (hora de Chile)',
+    title: 'Webinar Claude desde Cero — Claude Academy ES',
+    details: 'Webinar en vivo, en español, para aprender a usar Claude desde cero. Se entra por Google Meet: https://meet.google.com/wud-ofmv-prp',
+    meetUrl: 'https://meet.google.com/wud-ofmv-prp'
   };
-  // =======================================================
+  // ========================================================
 
   (function () {
     var whenText = document.getElementById('when-text');
     var icsBtn = document.getElementById('ics-btn');
+    var gcalBtn = document.getElementById('gcal-btn');
     if (!WORKSHOP.start) return;           // sin fecha real: degrada con gracia
 
     var start = new Date(WORKSHOP.start);
     if (isNaN(start.getTime())) return;    // fecha mal escrita: no rompas la página
     var end = new Date(start.getTime() + WORKSHOP.durationMinutes * 60000);
 
-    if (whenText) {
-      // Se muestra en la zona horaria de quien visita (la audiencia es de
-      // varios países), con el nombre de la zona para que no sea ambiguo.
-      whenText.textContent = start.toLocaleDateString('es', {
+    // 240 = UTC-4, el huso de Chile ese día: a quien ya está en esa hora
+    // no le agregamos la traducción (diría exactamente lo mismo).
+    var mismaHoraQueChile = start.getTimezoneOffset() === 240;
+
+    if (whenText && !mismaHoraQueChile) {
+      // El HTML ya trae la fecha en hora de Chile (respaldo sin JS). Acá
+      // le sumamos la hora local, porque la audiencia es de varios países.
+      var local = start.toLocaleDateString('es', {
         weekday: 'long', day: 'numeric', month: 'long'
-      }) + ' · ' + start.toLocaleTimeString('es', {
+      }) + ', ' + start.toLocaleTimeString('es', {
+        hour: '2-digit', minute: '2-digit'
+      }) + '–' + end.toLocaleTimeString('es', {
         hour: '2-digit', minute: '2-digit', timeZoneName: 'short'
-      }) + ' (tu hora) · ' + WORKSHOP.durationMinutes + ' min';
+      });
+      whenText.textContent = WORKSHOP.whenLabel + ' · en tu hora: ' + local;
     }
+
+    var z = function (d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); };
 
     if (icsBtn) {
       // .ics generado en el navegador (data: URI). Cero requests externos.
-      var z = function (d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); };
       var esc = function (s) { return String(s).replace(/([,;\\])/g, '\\$1'); };
       var ics = [
-        'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Claude Academy ES//Taller//ES',
+        'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Claude Academy ES//Webinar//ES',
+        'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
         'BEGIN:VEVENT',
-        'UID:taller-' + z(start) + '@claude-academy-es',
+        'UID:webinar-' + z(start) + '@claude-academy-es',
         'DTSTAMP:' + z(new Date()),
         'DTSTART:' + z(start),
         'DTEND:' + z(end),
         'SUMMARY:' + esc(WORKSHOP.title),
         'DESCRIPTION:' + esc(WORKSHOP.details),
+        'LOCATION:' + esc(WORKSHOP.meetUrl),
+        'URL:' + WORKSHOP.meetUrl,
+        'BEGIN:VALARM', 'TRIGGER:-PT30M', 'ACTION:DISPLAY',
+        'DESCRIPTION:' + esc(WORKSHOP.title), 'END:VALARM',
         'END:VEVENT', 'END:VCALENDAR'
       ].join('\r\n');
       icsBtn.href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
       icsBtn.hidden = false;
+    }
+
+    if (gcalBtn) {
+      // Atajo para quien vive en Google Calendar: no reemplaza al .ics.
+      gcalBtn.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+        '&text=' + encodeURIComponent(WORKSHOP.title) +
+        '&dates=' + z(start) + '/' + z(end) +
+        '&details=' + encodeURIComponent(WORKSHOP.details) +
+        '&location=' + encodeURIComponent(WORKSHOP.meetUrl);
+      gcalBtn.hidden = false;
     }
   })();
 
