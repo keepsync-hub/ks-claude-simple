@@ -1,6 +1,6 @@
 # Claude Academy ES
 
-> La plataforma en español para dominar Claude, el asistente de IA de Anthropic — de cero a experto, con guías gratuitas y un taller en vivo.
+> La plataforma en español para dominar Claude, el asistente de IA de Anthropic — de cero a experto, con guías gratuitas y un webinar en vivo.
 
 **🎁 ¿Nunca abriste Claude?** Empieza por el [taller gratuito "Claude 101"](./index.html) — cupos limitados.
 
@@ -38,7 +38,7 @@ Ver el catálogo completo en [`cursos.html`](./cursos.html) (acordeón navegable
 ## Empieza aquí
 
 1. **Lee la guía 01** — [Claude para principiantes](./cursos/01-claude-para-principiantes.md) (5 min).
-2. **Anótate al taller en vivo** — [Claude 101 gratis](./index.html): una hora en vivo para dejar de tener miedo y empezar a producir.
+2. **Anótate al taller en vivo** — [Claude 101 gratis](./index.html): el webinar "Claude desde Cero", jueves 3 de septiembre de 11:00 a 13:00 (hora de Chile), por Google Meet.
 3. **Recorre el catálogo completo** en [`cursos.html`](./cursos.html) a tu ritmo — cada guía indica nivel y tiempo estimado.
 
 ## Por qué existe este proyecto
