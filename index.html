@@ -5,53 +5,122 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Claude 101 — Taller gratuito en español</title>
 <meta name="description" content="Taller en vivo y gratuito para aprender a usar Claude desde cero. Cupos limitados.">
-<meta name="theme-color" content="#ffcf3f">
+<meta name="theme-color" content="#fcf7ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120d" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23ff6b47'/%3E%3Cpath d='M50 14 L59 41 L86 50 L59 59 L50 86 L41 59 L14 50 L41 41 Z' fill='%23171310'/%3E%3C/svg%3E">
 <style>
+  /* ------------------------------------------------------------------
+     SISTEMA DE DISEÑO — v2 "papel claro"
+     Base tomada del sistema neo-brutalista de cristianignacio.me
+     (borde grueso + sombra dura sin blur, escala de color ampliada) y
+     adaptada a esta academia: fondo bastante más claro, y conservando
+     lo que aquí ya era mejor — modo oscuro, grano y ornamento propio.
+     Los tokens están duplicados en cada página a propósito: cada página
+     es self-contained (cero requests externos, un solo <style>).
+     ------------------------------------------------------------------ */
   :root {
-    --ink: #171310;
-    --paper: #fbf1e1;
+    /* Base */
+    --ink: #16130d;
+    --paper: #fcf7ec;        /* crema claro: +4% de luminosidad vs. la v1 */
     --panel: #ffffff;
-    --text-body: #4a4234;
-    --text-soft: #635a48;
+    --text-body: #494236;
+    --text-soft: #6a6255;
     --signup-muted: #c2baad;
-    --yellow: #ffcf3f;
+
+    /* Acentos. --on-accent NO se invierte en oscuro: los rellenos de color
+       son los mismos en ambos temas, el texto encima también. */
+    --on-accent: #16130d;
+
+    --yellow: #ffd23f;
     --coral: #ff6b47;
-    --pink: #ff5fa2;
+    --pink: #ff5c8a;
     --blue: #57b8ff;
     --green: #4fd88a;
-    --spark-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z' fill='%23171310'/%3E%3C/svg%3E");
-    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.045'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    --cyan: #36d6c3;
+    --violet: #8b6cff;
+    --lime: #b8f24a;
+
+    /* Los mismos acentos, pero legibles como texto sobre papel (AA). */
+    --coral-text: #c2410c;
+    --green-text: #0f7a45;
+    --blue-text: #1668b3;
+
+    /* Banda decorativa: no se invierte con el tema, así el coral de los
+       separadores mantiene su contraste en ambos modos. */
+    --band: #16130d;
+    --band-fg: #fcf7ec;
+
+    /* Forma: un grosor de borde, un radio, tres sombras duras.
+       Antes cada componente inventaba su propio 1.5px/2px/2.5px/3px. */
+    --border-w: 2.5px;
+    --rule-w: 3px;           /* separadores de sección a ancho completo */
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow-color: var(--ink);
+    --shadow-sm: 4px 4px 0 0 var(--shadow-color);
+    --shadow: 6px 6px 0 0 var(--shadow-color);
+    --shadow-lg: 9px 9px 0 0 var(--shadow-color);
+    --hairline: color-mix(in srgb, var(--ink) 20%, transparent);
+    --hero-wash: color-mix(in srgb, var(--yellow) 15%, var(--paper));
+    /* El resaltado del titular es un trazo de rotulador, no un bloque: en
+       claro va detrás del texto (tinta sobre amarillo, ~11:1); en oscuro
+       baja a un subrayado grueso, porque crema sobre amarillo no se lee. */
+    --mark-bg: linear-gradient(to top, var(--yellow) 46%, transparent 46%);
+    --mark-fg: var(--on-accent);
+
+    --font-sans: system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Courier New", monospace;
+
+    --spark-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z' fill='%2316130d'/%3E%3C/svg%3E");
+    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.035'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
+  /* La chispa del ornamento y el color de sombra tienen que invertirse en
+     oscuro: una sombra "ink" sobre fondo oscuro sería un halo claro. */
   @media (prefers-color-scheme: dark) {
     :root {
       --ink: #f3efe6;
-      --paper: #16140f;
+      --paper: #14120d;
       --panel: #211d16;
       --text-body: #d8d0bf;
       --text-soft: #b8af9b;
       --signup-muted: #4d4b45;
+      --shadow-color: rgba(0, 0, 0, 0.6);
+      --coral-text: var(--coral);
+      --green-text: var(--green);
+      --blue-text: var(--blue);
+      --hero-wash: color-mix(in srgb, var(--yellow) 7%, var(--paper));
+      --mark-bg: linear-gradient(to top, var(--yellow) 18%, transparent 18%);
+      --mark-fg: var(--ink);
+      --spark-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z' fill='%23f3efe6'/%3E%3C/svg%3E");
     }
   }
   :root[data-theme="dark"] {
-    --ink: #f3efe6; --paper: #16140f; --panel: #211d16; --text-body: #d8d0bf; --text-soft: #b8af9b; --signup-muted: #4d4b45;
+    --ink: #f3efe6; --paper: #14120d; --panel: #211d16; --text-body: #d8d0bf; --text-soft: #b8af9b; --signup-muted: #4d4b45;
+    --shadow-color: rgba(0, 0, 0, 0.6); --coral-text: var(--coral); --green-text: var(--green); --blue-text: var(--blue); --hero-wash: color-mix(in srgb, var(--yellow) 7%, var(--paper)); --mark-bg: linear-gradient(to top, var(--yellow) 18%, transparent 18%); --mark-fg: var(--ink);
+    --spark-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z' fill='%23f3efe6'/%3E%3C/svg%3E");
   }
   :root[data-theme="light"] {
-    --ink: #171310; --paper: #fbf1e1; --panel: #ffffff; --text-body: #4a4234; --text-soft: #635a48; --signup-muted: #c2baad;
+    --ink: #16130d; --paper: #fcf7ec; --panel: #ffffff; --text-body: #494236; --text-soft: #6a6255; --signup-muted: #c2baad;
+    --shadow-color: var(--ink); --coral-text: #c2410c; --green-text: #0f7a45; --blue-text: #1668b3; --hero-wash: color-mix(in srgb, var(--yellow) 15%, var(--paper)); --mark-bg: linear-gradient(to top, var(--yellow) 46%, transparent 46%); --mark-fg: var(--on-accent);
+    --spark-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z' fill='%2316130d'/%3E%3C/svg%3E");
   }
 
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
   html, body { margin: 0; padding: 0; }
   body {
     background-color: var(--paper);
     background-image:
       var(--grain),
-      radial-gradient(circle, color-mix(in srgb, var(--ink) 16%, transparent) 1.6px, transparent 1.6px);
-    background-size: 160px 160px, 24px 24px;
+      radial-gradient(circle, color-mix(in srgb, var(--ink) 13%, transparent) 1.4px, transparent 1.4px);
+    background-size: 160px 160px, 28px 28px;
+    background-position: 0 0, -2px -2px;
+    background-attachment: scroll, fixed;
     color: var(--text-body);
-    font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
-    line-height: 1.6;
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
   }
 
   ::selection { background: var(--ink); color: var(--yellow); }
@@ -72,7 +141,7 @@
   }
 
   .mono {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     text-transform: uppercase;
     letter-spacing: 0.03em;
   }
@@ -81,7 +150,7 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    border: 2px solid var(--ink);
+    border: var(--border-w) solid var(--ink);
     border-radius: 999px;
     padding: 7px 16px;
     font-weight: 700;
@@ -103,15 +172,21 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 14px 14px;
-    border: 2px solid var(--ink);
+    border: var(--border-w) solid var(--ink);
     border-radius: 50%;
     z-index: 2;
   }
 
   /* ---------- TOP NAV ---------- */
   nav.topbar {
-    border-bottom: 3px solid var(--ink);
-    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background-color: var(--paper);
+    background-image: var(--grain);
+    background-size: 160px 160px;
+    border-bottom: var(--rule-w) solid var(--ink);
+    padding: 14px 0;
   }
   nav.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--ink); }
@@ -122,74 +197,87 @@
   @media (min-width: 640px) { .crumb { display: block; } }
   .nav-cta {
     background: var(--yellow);
-    color: #171310;
-    border-color: #171310;
-    border-width: 2.5px;
-    box-shadow: 3px 3px 0 0 #171310;
+    color: var(--on-accent);
+    border-color: var(--ink);
+    border-width: var(--border-w);
+    box-shadow: var(--shadow-sm);
     font-weight: 800;
+  }
+
+  /* En pantallas estrechas la barra se partía en dos líneas: el CTA no
+     puede romperse y la marca cede tamaño antes que el enlace. */
+  @media (max-width: 560px) {
+    nav.topbar .wrap { gap: 10px; }
+    .brand .wordmark { font-size: 15px; }
+    .nav-cta { white-space: nowrap; font-size: 12.5px; padding: 6px 13px; }
   }
 
   /* ---------- HERO ---------- */
   header.hero {
-    background-color: var(--yellow);
-    background-image: var(--grain);
-    background-size: 160px 160px;
-    border-bottom: 3px solid #171310;
-    padding: 60px 0 52px;
+    background-color: var(--hero-wash);
+    background-image:
+      var(--grain),
+      radial-gradient(circle, color-mix(in srgb, var(--ink) 13%, transparent) 1.4px, transparent 1.4px);
+    background-size: 160px 160px, 28px 28px;
+    background-position: 0 0, -2px -2px;
+    border-bottom: var(--rule-w) solid var(--ink);
+    padding: 76px 0 64px;
     text-align: center;
-    color: #171310;
+    color: var(--text-body);
   }
   .badge {
-    background: #fff;
-    border-color: #171310;
-    border-width: 1.5px;
+    background: var(--panel);
+    border-color: var(--ink);
+    border-width: var(--border-w);
     border-radius: 999px;
     margin-bottom: 24px;
   }
   h1 {
-    font-size: clamp(28px, 5vw, 46px);
-    line-height: 1.1;
-    margin: 0 0 18px;
-    color: #171310;
+    font-size: clamp(32px, 5.6vw, 54px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin: 0 0 20px;
+    color: var(--ink);
   }
-  h1 mark {
-    background: #171310;
-    color: #ffcf3f;
-    padding: 2px 10px;
-    border-radius: 8px;
+  mark {
+    background: var(--mark-bg);
+    color: var(--mark-fg);
+    padding: 0 0.1em;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
   }
   .subtitle {
     font-size: clamp(16px, 2.2vw, 19px);
-    color: #33291d;
+    color: var(--text-body);
     max-width: 620px;
     margin: 0 auto 32px;
     font-weight: 500;
   }
   .cta-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     background: var(--ink);
     color: var(--paper);
     font-weight: 800;
     font-size: 16px;
-    padding: 15px 32px;
+    padding: 14px 28px;
     text-decoration: none;
-    border: 3px solid var(--ink);
-    border-radius: 999px;
-    box-shadow: 6px 6px 0 0 rgba(23,19,16,0.55);
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius);
+    box-shadow: 6px 6px 0 0 var(--coral);
     cursor: pointer;
-    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    transition: transform 0.08s ease, box-shadow 0.08s ease;
   }
-  .cta-btn:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 0 rgba(23,19,16,0.65); }
-  .cta-btn:active { transform: translate(3px, 3px); box-shadow: 0 0 0 0 rgba(23,19,16,0.65); }
-  header.hero .cta-btn { background: #171310; color: #fff8ec; border-color: #171310; }
+  .cta-btn:hover { transform: translate(-2px, -2px); box-shadow: 9px 9px 0 0 var(--coral); }
+  .cta-btn:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 0 var(--coral); }
 
   .meta-row {
     margin-top: 20px;
     font-size: 13px;
     font-weight: 700;
-    color: #171310;
+    color: var(--ink);
     display: flex;
     gap: 10px;
     justify-content: center;
@@ -199,47 +287,49 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: #fff8ec;
-    border: 2px solid #171310;
+    background: var(--panel);
+    border: var(--border-w) solid var(--ink);
     border-radius: 999px;
     padding: 6px 14px;
   }
 
   /* ---------- SECTIONS ---------- */
-  section { padding: 56px 0; border-bottom: 3px solid var(--ink); }
+  section { padding: 56px 0; border-bottom: var(--rule-w) solid var(--ink); }
   h2 {
-    font-size: clamp(23px, 3.2vw, 30px);
+    font-size: clamp(25px, 3.6vw, 34px);
     margin: 0 0 28px;
   }
 
   .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; }
   .card {
     background: var(--panel);
-    border: 1.5px solid color-mix(in srgb, var(--ink) 22%, transparent);
-    border-radius: 20px;
-    padding: 28px 26px;
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 26px 24px;
     transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
   }
   .card:nth-child(1) { transform: rotate(-0.6deg); }
   .card:nth-child(2) { transform: rotate(0.5deg); }
   .card:nth-child(3) { transform: rotate(-0.4deg); }
   .card:hover {
-    transform: translate(-2px, -2px) rotate(0deg);
-    border-color: var(--coral);
-    box-shadow: 5px 5px 0 0 var(--coral);
+    transform: translate(-3px, -3px) rotate(0deg);
+    box-shadow: var(--shadow-lg);
   }
   .card .icon-tag {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 46px; height: 46px;
-    border: 1.8px dashed color-mix(in srgb, var(--ink) 55%, transparent);
-    border-radius: 50%;
-    margin-bottom: 16px;
-    font-size: 20px;
-    background: var(--panel);
-    transform: rotate(-6deg);
+    width: 50px; height: 50px;
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 18px;
+    font-size: 22px;
+    background: var(--yellow);
   }
+  .card:nth-child(3n+2) .icon-tag { background: var(--cyan); }
+  .card:nth-child(3n+3) .icon-tag { background: var(--violet); }
   .card h3 { margin: 0 0 8px; font-size: 18px; }
   .card p { margin: 0; color: var(--text-body); font-size: 14.5px; }
 
@@ -250,19 +340,20 @@
     gap: 18px;
     align-items: flex-start;
     background: var(--panel);
-    border: 1.5px solid color-mix(in srgb, var(--ink) 22%, transparent);
-    border-radius: 16px;
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
     padding: 18px 22px;
   }
   ol.agenda li::before {
     content: counter(step, decimal-leading-zero);
     flex: 0 0 38px;
     height: 38px;
-    border: 2px solid var(--ink);
-    border-radius: 10px;
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius-sm);
     background: var(--yellow);
-    color: #171310;
-    font-family: "Courier New", monospace;
+    color: var(--on-accent);
+    font-family: var(--font-mono);
     font-weight: 800;
     font-size: 14px;
     display: flex;
@@ -278,7 +369,7 @@
     background-image: var(--grain);
     background-size: 160px 160px;
     color: var(--paper);
-    border: 3px solid var(--ink);
+    border: var(--border-w) solid var(--ink);
     border-radius: 24px;
     box-shadow: 6px 6px 0 0 var(--coral);
     padding: 46px 36px;
@@ -306,7 +397,7 @@
   }
   form.signup-form input::placeholder { color: var(--signup-muted); }
   form.signup-form input:focus { outline: none; box-shadow: 4px 4px 0 0 var(--yellow); }
-  .signup .cta-btn { background: var(--yellow); color: #171310; border-color: var(--paper); box-shadow: 6px 6px 0 0 var(--coral); }
+  .signup .cta-btn { background: var(--yellow); color: var(--on-accent); border-color: var(--paper); box-shadow: 6px 6px 0 0 var(--coral); }
   .signup .cta-btn:hover { box-shadow: 8px 8px 0 0 var(--coral); }
   .signup .cta-btn:active { box-shadow: 0 0 0 0 var(--coral); }
   .fine-print { margin-top: 16px; font-size: 12.5px; color: var(--signup-muted); }
@@ -318,9 +409,9 @@
     display: none;
     margin-top: 20px;
     background: var(--green);
-    color: #171310;
-    border: 3px solid #171310;
-    border-radius: 18px;
+    color: var(--on-accent);
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius);
     padding: 18px 22px;
     text-align: left;
   }
@@ -332,26 +423,27 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: #171310;
-    color: #fff8ec;
+    background: var(--ink);
+    color: var(--paper);
     font-weight: 800;
     font-size: 13.5px;
     padding: 10px 18px;
-    border-radius: 999px;
+    border-radius: var(--radius);
     text-decoration: none;
-    border: 2px solid #171310;
+    border: var(--border-w) solid var(--ink);
   }
 
   /* ---------- FAQ ---------- */
   .faq details {
     background: var(--panel);
-    border: 1.5px solid color-mix(in srgb, var(--ink) 22%, transparent);
-    border-radius: 16px;
+    border: 2px solid var(--hairline);
+    border-radius: var(--radius);
     padding: 16px 22px;
     margin-bottom: 12px;
-    transition: border-color 0.12s ease;
+    transition: border-color 0.12s ease, box-shadow 0.12s ease;
   }
-  .faq details[open] { border-color: var(--coral); }
+  .faq details:hover { border-color: color-mix(in srgb, var(--ink) 45%, transparent); }
+  .faq details[open] { border-color: var(--ink); box-shadow: var(--shadow-sm); }
   .faq summary {
     list-style: none;
     display: flex;
@@ -368,7 +460,7 @@
     content: '+';
     flex: none;
     width: 26px; height: 26px;
-    border: 2px solid var(--ink);
+    border: var(--border-w) solid var(--ink);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -413,23 +505,23 @@
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
-    background: #fff8ec;
-    border: 2.5px solid #171310;
-    border-radius: 14px;
-    box-shadow: 4px 4px 0 0 #171310;
+    background: var(--panel);
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
     padding: 10px 18px;
     margin: 0 0 22px;
     font-weight: 800;
     font-size: 14.5px;
-    color: #171310;
+    color: var(--ink);
   }
   .when-strip .when-label {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     text-transform: uppercase;
     letter-spacing: 0.04em;
     font-size: 11px;
-    background: #171310;
-    color: #fff8ec;
+    background: var(--ink);
+    color: var(--paper);
     border-radius: 999px;
     padding: 3px 9px;
   }
@@ -446,19 +538,19 @@
   .hero-form input[type="email"] {
     flex: 1 1 240px;
     padding: 14px 20px;
-    border: 3px solid #171310;
-    border-radius: 999px;
-    background: #fff8ec;
-    color: #171310;
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius);
+    background: var(--panel);
+    color: var(--ink);
     font-size: 15.5px;
     font-weight: 600;
   }
-  .hero-form input[type="email"]::placeholder { color: #7a6f5c; }
+  .hero-form input[type="email"]::placeholder { color: var(--text-soft); }
   .hero-form input:focus-visible { outline: none; box-shadow: 4px 4px 0 0 var(--coral); }
   .hero-form .cta-btn { flex: none; padding: 14px 26px; }
   /* :has() — el botón se enfatiza recién cuando el email es válido. */
-  .hero-form:has(input:valid) .cta-btn { box-shadow: 6px 6px 0 0 var(--coral); }
-  .hero-note { margin: 12px 0 0; font-size: 12.5px; color: #4a3f2d; font-weight: 600; }
+  .hero-form:has(input:valid) .cta-btn { box-shadow: 9px 9px 0 0 var(--coral); }
+  .hero-note { margin: 12px 0 0; font-size: 12.5px; color: var(--text-soft); font-weight: 600; }
 
   /* ---------- AGREGAR AL CALENDARIO ---------- */
   .ics-btn {
@@ -466,12 +558,12 @@
     align-items: center;
     gap: 7px;
     background: transparent;
-    color: #171310;
+    color: var(--ink);
     font-weight: 800;
     font-size: 13px;
     padding: 9px 16px;
-    border: 2px dashed #171310;
-    border-radius: 999px;
+    border: 2px dashed var(--ink);
+    border-radius: var(--radius);
     text-decoration: none;
     margin-right: 8px;
   }
@@ -479,7 +571,7 @@
   /* ---------- PUENTE A LA COMUNIDAD ---------- */
   .bridge {
     background: var(--panel);
-    border: 2.5px solid var(--ink);
+    border: var(--border-w) solid var(--ink);
     border-radius: 22px;
     box-shadow: 7px 7px 0 0 var(--coral);
     padding: 32px 30px;

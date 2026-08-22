@@ -5,53 +5,122 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Catálogo de cursos — Claude Academy ES</title>
 <meta name="description" content="Los 18 cursos gratuitos de Claude Academy ES, organizados por nivel. Abre cada uno para ver la guía completa.">
-<meta name="theme-color" content="#ffcf3f">
+<meta name="theme-color" content="#fcf7ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120d" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23ff6b47'/%3E%3Cpath d='M50 14 L59 41 L86 50 L59 59 L50 86 L41 59 L14 50 L41 41 Z' fill='%23171310'/%3E%3C/svg%3E">
 <style>
+  /* ------------------------------------------------------------------
+     SISTEMA DE DISEÑO — v2 "papel claro"
+     Base tomada del sistema neo-brutalista de cristianignacio.me
+     (borde grueso + sombra dura sin blur, escala de color ampliada) y
+     adaptada a esta academia: fondo bastante más claro, y conservando
+     lo que aquí ya era mejor — modo oscuro, grano y ornamento propio.
+     Los tokens están duplicados en cada página a propósito: cada página
+     es self-contained (cero requests externos, un solo <style>).
+     ------------------------------------------------------------------ */
   :root {
-    --ink: #171310;
-    --paper: #fbf1e1;
+    /* Base */
+    --ink: #16130d;
+    --paper: #fcf7ec;        /* crema claro: +4% de luminosidad vs. la v1 */
     --panel: #ffffff;
-    --text-body: #4a4234;
-    --text-soft: #635a48;
+    --text-body: #494236;
+    --text-soft: #6a6255;
     --signup-muted: #c2baad;
-    --yellow: #ffcf3f;
+
+    /* Acentos. --on-accent NO se invierte en oscuro: los rellenos de color
+       son los mismos en ambos temas, el texto encima también. */
+    --on-accent: #16130d;
+
+    --yellow: #ffd23f;
     --coral: #ff6b47;
-    --pink: #ff5fa2;
+    --pink: #ff5c8a;
     --blue: #57b8ff;
     --green: #4fd88a;
-    --spark-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z' fill='%23171310'/%3E%3C/svg%3E");
-    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.045'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    --cyan: #36d6c3;
+    --violet: #8b6cff;
+    --lime: #b8f24a;
+
+    /* Los mismos acentos, pero legibles como texto sobre papel (AA). */
+    --coral-text: #c2410c;
+    --green-text: #0f7a45;
+    --blue-text: #1668b3;
+
+    /* Banda decorativa: no se invierte con el tema, así el coral de los
+       separadores mantiene su contraste en ambos modos. */
+    --band: #16130d;
+    --band-fg: #fcf7ec;
+
+    /* Forma: un grosor de borde, un radio, tres sombras duras.
+       Antes cada componente inventaba su propio 1.5px/2px/2.5px/3px. */
+    --border-w: 2.5px;
+    --rule-w: 3px;           /* separadores de sección a ancho completo */
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow-color: var(--ink);
+    --shadow-sm: 4px 4px 0 0 var(--shadow-color);
+    --shadow: 6px 6px 0 0 var(--shadow-color);
+    --shadow-lg: 9px 9px 0 0 var(--shadow-color);
+    --hairline: color-mix(in srgb, var(--ink) 20%, transparent);
+    --hero-wash: color-mix(in srgb, var(--yellow) 15%, var(--paper));
+    /* El resaltado del titular es un trazo de rotulador, no un bloque: en
+       claro va detrás del texto (tinta sobre amarillo, ~11:1); en oscuro
+       baja a un subrayado grueso, porque crema sobre amarillo no se lee. */
+    --mark-bg: linear-gradient(to top, var(--yellow) 46%, transparent 46%);
+    --mark-fg: var(--on-accent);
+
+    --font-sans: system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Courier New", monospace;
+
+    --spark-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z' fill='%2316130d'/%3E%3C/svg%3E");
+    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' result='t'/%3E%3CfeColorMatrix in='t' type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.035'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
+  /* La chispa del ornamento y el color de sombra tienen que invertirse en
+     oscuro: una sombra "ink" sobre fondo oscuro sería un halo claro. */
   @media (prefers-color-scheme: dark) {
     :root {
       --ink: #f3efe6;
-      --paper: #16140f;
+      --paper: #14120d;
       --panel: #211d16;
       --text-body: #d8d0bf;
       --text-soft: #b8af9b;
       --signup-muted: #4d4b45;
+      --shadow-color: rgba(0, 0, 0, 0.6);
+      --coral-text: var(--coral);
+      --green-text: var(--green);
+      --blue-text: var(--blue);
+      --hero-wash: color-mix(in srgb, var(--yellow) 7%, var(--paper));
+      --mark-bg: linear-gradient(to top, var(--yellow) 18%, transparent 18%);
+      --mark-fg: var(--ink);
+      --spark-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z' fill='%23f3efe6'/%3E%3C/svg%3E");
     }
   }
   :root[data-theme="dark"] {
-    --ink: #f3efe6; --paper: #16140f; --panel: #211d16; --text-body: #d8d0bf; --text-soft: #b8af9b; --signup-muted: #4d4b45;
+    --ink: #f3efe6; --paper: #14120d; --panel: #211d16; --text-body: #d8d0bf; --text-soft: #b8af9b; --signup-muted: #4d4b45;
+    --shadow-color: rgba(0, 0, 0, 0.6); --coral-text: var(--coral); --green-text: var(--green); --blue-text: var(--blue); --hero-wash: color-mix(in srgb, var(--yellow) 7%, var(--paper)); --mark-bg: linear-gradient(to top, var(--yellow) 18%, transparent 18%); --mark-fg: var(--ink);
+    --spark-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z' fill='%23f3efe6'/%3E%3C/svg%3E");
   }
   :root[data-theme="light"] {
-    --ink: #171310; --paper: #fbf1e1; --panel: #ffffff; --text-body: #4a4234; --text-soft: #635a48; --signup-muted: #c2baad;
+    --ink: #16130d; --paper: #fcf7ec; --panel: #ffffff; --text-body: #494236; --text-soft: #6a6255; --signup-muted: #c2baad;
+    --shadow-color: var(--ink); --coral-text: #c2410c; --green-text: #0f7a45; --blue-text: #1668b3; --hero-wash: color-mix(in srgb, var(--yellow) 15%, var(--paper)); --mark-bg: linear-gradient(to top, var(--yellow) 46%, transparent 46%); --mark-fg: var(--on-accent);
+    --spark-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2 L14.4 9.6 L22 12 L14.4 14.4 L12 22 L9.6 14.4 L2 12 L9.6 9.6 Z' fill='%2316130d'/%3E%3C/svg%3E");
   }
 
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
   html, body { margin: 0; padding: 0; }
   body {
     background-color: var(--paper);
     background-image:
       var(--grain),
-      radial-gradient(circle, color-mix(in srgb, var(--ink) 16%, transparent) 1.6px, transparent 1.6px);
-    background-size: 160px 160px, 24px 24px;
+      radial-gradient(circle, color-mix(in srgb, var(--ink) 13%, transparent) 1.4px, transparent 1.4px);
+    background-size: 160px 160px, 28px 28px;
+    background-position: 0 0, -2px -2px;
+    background-attachment: scroll, fixed;
     color: var(--text-body);
-    font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
-    line-height: 1.6;
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
   }
 
   ::selection { background: var(--ink); color: var(--yellow); }
@@ -70,7 +139,7 @@
   a { color: var(--ink); }
 
   .mono {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     text-transform: uppercase;
     letter-spacing: 0.03em;
   }
@@ -79,7 +148,7 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    border: 2px solid var(--ink);
+    border: var(--border-w) solid var(--ink);
     border-radius: 999px;
     padding: 7px 16px;
     font-weight: 700;
@@ -101,7 +170,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 14px 14px;
-    border: 2px solid var(--ink);
+    border: var(--border-w) solid var(--ink);
     border-radius: 50%;
     z-index: 2;
   }
@@ -109,8 +178,14 @@
 
   /* ---------- TOP NAV ---------- */
   nav.topbar {
-    border-bottom: 3px solid var(--ink);
-    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background-color: var(--paper);
+    background-image: var(--grain);
+    background-size: 160px 160px;
+    border-bottom: var(--rule-w) solid var(--ink);
+    padding: 14px 0;
   }
   nav.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--ink); }
@@ -121,60 +196,75 @@
   @media (min-width: 640px) { .crumb { display: block; } }
   .nav-cta {
     background: var(--yellow);
-    color: #171310;
-    border-color: #171310;
-    border-width: 2.5px;
-    box-shadow: 3px 3px 0 0 #171310;
+    color: var(--on-accent);
+    border-color: var(--ink);
+    border-width: var(--border-w);
+    box-shadow: var(--shadow-sm);
     font-weight: 800;
+  }
+
+  /* En pantallas estrechas la barra se partía en dos líneas: el CTA no
+     puede romperse y la marca cede tamaño antes que el enlace. */
+  @media (max-width: 560px) {
+    nav.topbar .wrap { gap: 10px; }
+    .brand .wordmark { font-size: 15px; }
+    .nav-cta { white-space: nowrap; font-size: 12.5px; padding: 6px 13px; }
   }
 
   /* ---------- PAGE HERO (compact) ---------- */
   header.page-hero {
-    background-color: var(--yellow);
-    background-image: var(--grain);
-    background-size: 160px 160px;
-    border-bottom: 3px solid #171310;
-    padding: 44px 0 40px;
-    color: #171310;
+    background-color: var(--hero-wash);
+    background-image:
+      var(--grain),
+      radial-gradient(circle, color-mix(in srgb, var(--ink) 13%, transparent) 1.4px, transparent 1.4px);
+    background-size: 160px 160px, 28px 28px;
+    background-position: 0 0, -2px -2px;
+    border-bottom: var(--rule-w) solid var(--ink);
+    padding: 58px 0 50px;
+    color: var(--text-body);
   }
   header.page-hero .badge {
-    background: #fff;
-    border-color: #171310;
-    border-width: 1.5px;
+    background: var(--panel);
+    border-color: var(--ink);
+    border-width: var(--border-w);
     border-radius: 999px;
     margin-bottom: 18px;
   }
   header.page-hero h1 {
-    font-size: clamp(28px, 4.6vw, 42px);
+    font-size: clamp(30px, 5vw, 48px);
+    letter-spacing: -0.03em;
     line-height: 1.12;
     margin: 0 0 12px;
-    color: #171310;
+    color: var(--ink);
   }
   header.page-hero p.subtitle {
     font-size: clamp(15px, 2vw, 17px);
-    color: #33291d;
+    color: var(--text-body);
     max-width: 640px;
     margin: 0 0 22px;
     font-weight: 500;
   }
   header.page-hero .cta-btn {
-    display: inline-block;
-    background: #171310;
-    color: #fff8ec;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ink);
+    color: var(--paper);
     font-weight: 800;
-    font-size: 14.5px;
-    padding: 12px 26px;
+    font-size: 15px;
+    padding: 13px 26px;
     text-decoration: none;
-    border: 3px solid #171310;
-    border-radius: 999px;
-    box-shadow: 5px 5px 0 0 rgba(23,19,16,0.55);
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius);
+    box-shadow: 6px 6px 0 0 var(--coral);
     cursor: pointer;
-    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    transition: transform 0.08s ease, box-shadow 0.08s ease;
   }
-  header.page-hero .cta-btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 0 rgba(23,19,16,0.65); }
+  header.page-hero .cta-btn:hover { transform: translate(-2px, -2px); box-shadow: 9px 9px 0 0 var(--coral); }
+  header.page-hero .cta-btn:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 0 var(--coral); }
 
   /* ---------- LEVEL GROUPS ---------- */
-  .level-group { padding: 40px 0; border-bottom: 3px solid var(--ink); }
+  .level-group { padding: 40px 0; border-bottom: var(--rule-w) solid var(--ink); }
   .level-group:last-of-type { border-bottom: none; }
   .level-heading {
     display: inline-flex;
@@ -183,10 +273,10 @@
     font-size: clamp(20px, 3vw, 25px);
     margin: 0 0 22px;
     padding: 8px 20px 8px 16px;
-    border: 3px solid var(--ink);
+    border: var(--border-w) solid var(--ink);
     border-radius: 999px;
     background: var(--panel);
-    box-shadow: 5px 5px 0 0 var(--ink);
+    box-shadow: var(--shadow);
   }
   .level-emoji { display: inline-flex; align-items: flex-end; }
   .level-heading.lvl-green { background: var(--green); }
@@ -194,14 +284,15 @@
   .level-heading.lvl-coral { background: var(--coral); }
   .level-heading.lvl-pink { background: var(--pink); }
   /* Texto oscuro en todos: blanco sobre coral daba ~2.7:1 (falla AA). */
-  .level-heading.lvl-green, .level-heading.lvl-yellow, .level-heading.lvl-coral, .level-heading.lvl-pink { color: #171310; }
+  .level-heading.lvl-green, .level-heading.lvl-yellow, .level-heading.lvl-coral, .level-heading.lvl-pink { color: var(--on-accent); }
 
   .accordion { display: flex; flex-direction: column; gap: 16px; }
 
   .course-item {
     background: var(--panel);
-    border: 1.5px solid color-mix(in srgb, var(--ink) 20%, transparent);
-    border-radius: 18px;
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
     overflow: hidden;
     transition: box-shadow 0.12s ease, border-color 0.12s ease;
   }
@@ -220,8 +311,8 @@
     content: '+';
     flex: none;
     width: 30px; height: 30px;
-    border: 2.5px solid var(--ink);
-    border-radius: 8px;
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius-sm);
     display: flex; align-items: center; justify-content: center;
     font-size: 18px;
     font-weight: 800;
@@ -237,7 +328,7 @@
     color: var(--text-soft);
     white-space: nowrap;
   }
-  .course-item[open] { box-shadow: 4px 4px 0 0 var(--ink); border-color: var(--ink); }
+  .course-item[open] { box-shadow: var(--shadow-sm); border-color: var(--ink); }
   .course-item.lvl-green { border-left: 8px solid var(--green); }
   .course-item.lvl-yellow { border-left: 8px solid var(--yellow); }
   .course-item.lvl-coral { border-left: 8px solid var(--coral); }
@@ -245,7 +336,7 @@
 
   .course-body {
     padding: 4px 24px 26px;
-    border-top: 3px solid var(--ink);
+    border-top: var(--rule-w) solid var(--ink);
     margin-top: 2px;
   }
   .course-body h2 {
@@ -273,8 +364,8 @@
   .course-body pre {
     background: var(--ink);
     color: var(--paper);
-    border: 3px solid var(--ink);
-    border-radius: 12px;
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius-sm);
     padding: 14px 16px;
     overflow-x: auto;
     margin: 0 0 14px;
@@ -283,7 +374,7 @@
   }
   .course-body pre code { background: none; border: none; padding: 0; color: inherit; font-size: inherit; }
   .course-body code {
-    font-family: "Courier New", monospace;
+    font-family: var(--font-mono);
     background: color-mix(in srgb, var(--text-soft) 18%, transparent);
     border-radius: 4px;
     padding: 1px 5px;
@@ -294,8 +385,8 @@
     border-collapse: collapse;
     margin: 0 0 16px;
     font-size: 13.5px;
-    border: 2px solid var(--ink);
-    border-radius: 10px;
+    border: var(--border-w) solid var(--ink);
+    border-radius: var(--radius-sm);
     overflow: hidden;
   }
   .course-body th, .course-body td {
@@ -303,7 +394,7 @@
     padding: 8px 10px;
     text-align: left;
   }
-  .course-body th { background: var(--yellow); color: #171310; font-weight: 800; }
+  .course-body th { background: var(--yellow); color: var(--on-accent); font-weight: 800; }
   .course-body tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--ink) 4%, transparent); }
   .course-body hr { border: none; border-top: 2px dashed color-mix(in srgb, var(--ink) 25%, transparent); margin: 18px 0; }
   .course-body em { color: var(--text-soft); }
