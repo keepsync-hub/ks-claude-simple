@@ -297,6 +297,14 @@
     font-size: clamp(1.85rem, 4vw, 2.7rem);
     margin: 0 0 30px;
   }
+  /* Bajada bajo el h2. Sin :has() el aire queda algo mayor, nada se rompe. */
+  h2:has(+ .section-lead) { margin-bottom: 12px; }
+  .section-lead {
+    margin: 0 0 30px;
+    max-width: 62ch;
+    color: var(--text-soft);
+    font-size: 16.5px;
+  }
 
   .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; }
   .card {
@@ -661,21 +669,22 @@
 <section>
   <div class="wrap">
     <h2>Para quién es este webinar</h2>
+    <p class="section-lead">Para quien vive del área comercial: vendedores, KAMs, jefes de venta y equipos de preventa. No necesitas saber nada de IA — sí reconocer alguna de estas tres escenas.</p>
     <div class="grid-3">
       <div class="card">
-        <span class="icon-tag">🙋</span>
-        <h3>Nunca abriste Claude</h3>
-        <p>Solo escuchaste hablar de la IA. Este webinar es tu punto de partida, sin jerga técnica.</p>
+        <span class="icon-tag">🗂️</span>
+        <h3>Se te va la tarde llenando el CRM</h3>
+        <p>Cierras la reunión y siguen 20 minutos de copiar y pegar. Aquí sueltas tus notas tal cual salieron y recibes el registro ya ordenado: contacto, próximo paso, monto y fecha.</p>
       </div>
       <div class="card">
-        <span class="icon-tag">🔁</span>
-        <h3>Lo probaste una vez y no volviste</h3>
-        <p>Vas a entender por qué no te funcionó y salir con un método que sí funciona.</p>
+        <span class="icon-tag">📊</span>
+        <h3>Armas el reporte semanal a pulso</h3>
+        <p>Pegas el export del CRM y tu plantilla de Excel se arma sola: cifras del período, avance contra la meta y el comentario que te van a pedir en la reunión comercial.</p>
       </div>
       <div class="card">
-        <span class="icon-tag">💼</span>
-        <h3>Quieres usarlo de verdad en tu trabajo</h3>
-        <p>Sales con flujos concretos: resumir, escribir, organizar y producir entregables reales.</p>
+        <span class="icon-tag">✉️</span>
+        <h3>Escribes los mismos correos una y otra vez</h3>
+        <p>Seguimientos, propuestas, cotizaciones y respuestas a objeciones: sales con plantillas que se adaptan a cada cliente y a tu forma de escribir, sin sonar a copiar y pegar.</p>
       </div>
     </div>
   </div>
