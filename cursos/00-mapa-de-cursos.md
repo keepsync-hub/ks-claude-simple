@@ -1,8 +1,8 @@
-# Mapa de cursos — Claude Academy ES
+# Mapa de cursos — Claude desde Cero
 
 > Guías gratuitas para dominar Claude, ordenadas de principiante a experto. Elige tu nivel y arranca.
 
-¿Recién llegas? Empieza por [Claude para principiantes](./01-claude-para-principiantes.md) o regístrate al [taller en vivo gratuito](../index.html).
+¿Recién llegas? Empieza por [Claude para principiantes](./01-claude-para-principiantes.md) o regístrate al [webinar en vivo gratuito](../index.html).
 
 ---
 

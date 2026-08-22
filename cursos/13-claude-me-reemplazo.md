@@ -14,7 +14,7 @@ Claude te lleva de A a Z en cualquier tarea que necesites resolver con Claude. A
 
 Una "skill" de Claude es un prompt pre-armado que le enseña a Claude cómo hacer algo sin que tengas que repetirte cada vez.
 
-1. Busca el archivo de la skill (compartido en la comunidad de Claude Academy ES).
+1. Busca el archivo de la skill (compartido en la comunidad de Claude desde Cero).
 2. Descárgalo — no hace falta cuenta.
 3. Guárdalo en tu computadora.
 
