@@ -136,6 +136,11 @@
     color: var(--ink);
     text-wrap: balance;
   }
+  /* Un <mark> pinta una caja opaca que arranca por encima de la línea
+     anterior: con el interlineado apretado de los títulos se comía los
+     descendentes de esa línea ("q", "p", "j"). El aire extra va solo en
+     el título que lleva resaltado, así el resto queda igual de compacto. */
+  h1:has(mark), h2:has(mark), h3:has(mark), h4:has(mark) { line-height: 1.2; }
 
   p, li { text-wrap: pretty; }
 
