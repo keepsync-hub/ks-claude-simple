@@ -227,9 +227,13 @@
     margin-bottom: 22px;
   }
   h1 {
-    font-size: clamp(2.5rem, 6.2vw, 4.4rem);
-    line-height: 1.02;
-    letter-spacing: -0.035em;
+    font-size: clamp(2.4rem, 5.6vw, 4rem);
+    /* 1.02 cortaba los descendentes: la caja amarilla de <mark> de la
+       línea siguiente arrancaba ~2px por encima de la cola de la "q" y la
+       "p" de la anterior y se las comía. Con 1.2 quedan 1.5–3.4px de aire
+       en todo el rango de tamaños, y el titular sigue compacto. */
+    line-height: 1.2;
+    letter-spacing: -0.03em;
     margin: 0 0 24px;
     max-width: 15ch;
     color: var(--ink);
@@ -237,6 +241,8 @@
   mark {
     background: var(--mark-bg);
     color: var(--mark-fg);
+    /* Padding solo horizontal: el vertical engordaría la caja amarilla y
+       volvería a comerse los descendentes de la línea de arriba. */
     padding: 0 0.16em;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
