@@ -16,6 +16,8 @@ Todo el contenido es **gratuito**. La idea es simple: si te sirve, te quedas —
 
 ```
 ├── index.html          → Landing page: inscripción al webinar gratuito "Claude desde Cero"
+├── onboarding.html      → Página enfocada solo en el webinar (una sola oferta, un solo CTA)
+├── onboarding_form.html → Onboarding conversacional: 23 preguntas, perfil de partida y ruta de guías a medida
 ├── cursos.html          → Catálogo web con acordeón, agrupado por nivel
 └── cursos/              → Los 19 cursos, en español, en markdown (fuente de cursos.html)
     ├── 00-mapa-de-cursos.md
