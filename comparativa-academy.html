@@ -136,6 +136,11 @@
     color: var(--ink);
     text-wrap: balance;
   }
+  /* Un <mark> pinta una caja opaca que arranca por encima de la línea
+     anterior: con el interlineado apretado de los títulos se comía los
+     descendentes de esa línea ("q", "p", "j"). El aire extra va solo en
+     el título que lleva resaltado, así el resto queda igual de compacto. */
+  h1:has(mark), h2:has(mark), h3:has(mark), h4:has(mark) { line-height: 1.2; }
 
   p, li { text-wrap: pretty; }
 
@@ -229,8 +234,11 @@
   }
   header.page-hero h1 {
     font-size: clamp(2.3rem, 5.4vw, 3.9rem);
-    letter-spacing: -0.035em;
-    line-height: 1.03; margin: 0 0 20px; color: var(--ink);
+    letter-spacing: -0.03em;
+    /* Ver la nota del <mark> más arriba: 1.03 cortaba los descendentes.
+       Esta regla es más específica que h1:has(mark), así que el aire
+       tiene que estar declarado aquí también. */
+    line-height: 1.2; margin: 0 0 20px; color: var(--ink);
     max-width: 20ch;
   }
   mark {
