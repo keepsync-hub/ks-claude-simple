@@ -107,6 +107,12 @@
   }
   .mono { font-family: var(--font-mono); font-size: 0.82em; letter-spacing: 0.02em; text-transform: uppercase; }
   h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; text-wrap: balance; margin: 0; }
+  /* Un <mark> pinta una caja opaca que arranca por encima de la línea
+     anterior: con el interlineado apretado de los títulos se comía los
+     descendentes de esa línea ("q", "p", "j"). El aire extra va solo en
+     el título que lleva resaltado, así el resto queda igual de compacto. */
+  h1:has(mark), h2:has(mark), h3:has(mark), h4:has(mark) { line-height: 1.2; }
+
   p, li { text-wrap: pretty; }
   a { color: inherit; }
 
