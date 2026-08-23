@@ -2899,5 +2899,28 @@ vence a fin del próximo mes, y están molestos por las demoras de soporte.
   </div>
 </footer>
 
+<script>
+  // Enlace profundo a una guía: cursos.html#01-claude-para-principiantes.
+  // El navegador hace scroll hasta el <details>, pero no lo despliega, así
+  // que quien llega desde fuera se encuentra el acordeón cerrado. Lo
+  // abrimos nosotros: primero `open` y después el scroll, porque abrir
+  // cambia la altura y el salto quedaría corto. El desplazamiento lo
+  // resuelve scroll-padding-top, que ya está en el CSS por la barra fija.
+  (function () {
+    function abrirDelHash() {
+      var id = decodeURIComponent(location.hash.slice(1));
+      if (!id) return;
+      var guia = document.getElementById(id);
+      if (!guia || guia.tagName !== 'DETAILS') return;
+      guia.open = true;
+      guia.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    }
+    // En la carga el scroll del navegador ya ocurrió: rAF deja que el
+    // layout se asiente antes de abrir y recolocar.
+    requestAnimationFrame(abrirDelHash);
+    window.addEventListener('hashchange', abrirDelHash);
+  })();
+</script>
+
 </body>
 </html>

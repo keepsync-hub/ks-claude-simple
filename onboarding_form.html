@@ -439,6 +439,11 @@
   };
   var STORE_KEY = 'cdc-onboarding-v1';
 
+  // Base pública del sitio. Solo se usa para las URL que viajan en el
+  // payload: el correo necesita enlaces absolutos. Los links de la propia
+  // página siguen siendo relativos, como en el resto del sitio.
+  var SITIO = 'https://keepsync-hub.github.io/ks-claude-simple/';
+
   function track(event, props) {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push(Object.assign({ event: event }, props || {}));
@@ -447,23 +452,26 @@
   /* ==================================================================
      CATÁLOGO — los 19 cursos viven en cursos/*.md y se listan en
      cursos.html. Aquí solo están los que el cierre puede recomendar.
+     `f` es el slug del acordeón en cursos.html (el id que le pone
+     slugId() en scripts/build-cursos.js), no la ruta al markdown: la
+     guía se lee en la página con diseño, no en el archivo crudo.
      ================================================================== */
   var CURSOS = {
-    '01': { t: 'Claude para principiantes', d: 'Si nunca abriste Claude, empieza aquí: capacidades, límites y tu primera conversación.', n: 'Principiante', m: 8, f: 'cursos/01-claude-para-principiantes.md' },
-    '02': { t: 'Ser bueno con la IA es (increíblemente) simple', d: 'El marco de las 4D de Anthropic, sin jerga.', n: 'Principiante', m: 8, f: 'cursos/02-ser-bueno-en-ia-es-simple.md' },
-    '03': { t: 'Certifícate en Claude, gratis', d: 'Las certificaciones oficiales y gratuitas de Anthropic, paso a paso.', n: 'Principiante', m: 4, f: 'cursos/03-certificacion-claude.md' },
-    '04': { t: 'Claude Cowork', d: 'Cómo configurar Claude Cowork de la forma correcta.', n: 'Intermedio', m: 18, f: 'cursos/04-claude-cowork.md' },
-    '05': { t: 'Claude para equipos', d: 'Cómo implementar Claude en todo tu equipo en una semana.', n: 'Intermedio', m: 11, f: 'cursos/05-claude-para-equipos.md' },
-    '06': { t: 'Claude Design', d: 'Cómo usar el nuevo Claude para diseño.', n: 'Intermedio', m: 9, f: 'cursos/06-claude-design.md' },
-    '08': { t: 'Claude para presentaciones', d: 'La mejor forma de crear presentaciones con Claude.', n: 'Intermedio', m: 7, f: 'cursos/08-claude-para-presentaciones.md' },
-    '09': { t: 'Claude Skills', d: 'Cómo crear tus primeras Skills para que Claude repita tu forma de trabajar.', n: 'Intermedio', m: 6, f: 'cursos/09-claude-skills.md' },
-    '10': { t: 'Claude con tu propia voz', d: 'Entrena a Claude para que escriba como tú.', n: 'Avanzado', m: 12, f: 'cursos/10-claude-con-tu-voz.md' },
-    '11': { t: 'No más límites de uso en Claude', d: '23 trucos para usar Claude mejor y no gastar de más.', n: 'Avanzado', m: 12, f: 'cursos/11-no-agotes-limites-claude.md' },
-    '12': { t: 'Deja de promptear: Cowork + Obsidian', d: 'Ve más allá de la ingeniería de prompts para investigar y documentar.', n: 'Avanzado', m: 10, f: 'cursos/12-deja-de-promptear-obsidian.md' },
-    '14': { t: 'Deja de sonar como IA', d: 'Las expresiones que delatan un texto escrito con IA — y cómo evitarlas.', n: 'Avanzado', m: 20, f: 'cursos/14-deja-de-sonar-como-ia.md' },
-    '15': { t: 'Excel con Claude Cowork', d: 'Cómo hacer planillas de cálculo con IA.', n: 'Avanzado', m: 7, f: 'cursos/15-excel-con-claude-cowork.md' },
-    '16': { t: 'Conectores de Claude', d: 'Cómo conectar Claude a las aplicaciones que ya usas.', n: 'Experto', m: 8, f: 'cursos/16-conectores-claude.md' },
-    '17': { t: 'Claude Code — Vibecoding', d: 'Para personas que nunca, jamás, van a programar.', n: 'Experto', m: 14, f: 'cursos/17-claude-code-vibecoding.md' }
+    '01': { t: 'Claude para principiantes', d: 'Si nunca abriste Claude, empieza aquí: capacidades, límites y tu primera conversación.', n: 'Principiante', m: 8, f: '01-claude-para-principiantes' },
+    '02': { t: 'Ser bueno con la IA es (increíblemente) simple', d: 'El marco de las 4D de Anthropic, sin jerga.', n: 'Principiante', m: 8, f: '02-ser-bueno-en-ia-es-simple' },
+    '03': { t: 'Certifícate en Claude, gratis', d: 'Las certificaciones oficiales y gratuitas de Anthropic, paso a paso.', n: 'Principiante', m: 4, f: '03-certificacion-claude' },
+    '04': { t: 'Claude Cowork', d: 'Cómo configurar Claude Cowork de la forma correcta.', n: 'Intermedio', m: 18, f: '04-claude-cowork' },
+    '05': { t: 'Claude para equipos', d: 'Cómo implementar Claude en todo tu equipo en una semana.', n: 'Intermedio', m: 11, f: '05-claude-para-equipos' },
+    '06': { t: 'Claude Design', d: 'Cómo usar el nuevo Claude para diseño.', n: 'Intermedio', m: 9, f: '06-claude-design' },
+    '08': { t: 'Claude para presentaciones', d: 'La mejor forma de crear presentaciones con Claude.', n: 'Intermedio', m: 7, f: '08-claude-para-presentaciones' },
+    '09': { t: 'Claude Skills', d: 'Cómo crear tus primeras Skills para que Claude repita tu forma de trabajar.', n: 'Intermedio', m: 6, f: '09-claude-skills' },
+    '10': { t: 'Claude con tu propia voz', d: 'Entrena a Claude para que escriba como tú.', n: 'Avanzado', m: 12, f: '10-claude-con-tu-voz' },
+    '11': { t: 'No más límites de uso en Claude', d: '23 trucos para usar Claude mejor y no gastar de más.', n: 'Avanzado', m: 12, f: '11-no-agotes-limites-claude' },
+    '12': { t: 'Deja de promptear: Cowork + Obsidian', d: 'Ve más allá de la ingeniería de prompts para investigar y documentar.', n: 'Avanzado', m: 10, f: '12-deja-de-promptear-obsidian' },
+    '14': { t: 'Deja de sonar como IA', d: 'Las expresiones que delatan un texto escrito con IA — y cómo evitarlas.', n: 'Avanzado', m: 20, f: '14-deja-de-sonar-como-ia' },
+    '15': { t: 'Excel con Claude Cowork', d: 'Cómo hacer planillas de cálculo con IA.', n: 'Avanzado', m: 7, f: '15-excel-con-claude-cowork' },
+    '16': { t: 'Conectores de Claude', d: 'Cómo conectar Claude a las aplicaciones que ya usas.', n: 'Experto', m: 8, f: '16-conectores-claude' },
+    '17': { t: 'Claude Code — Vibecoding', d: 'Para personas que nunca, jamás, van a programar.', n: 'Experto', m: 14, f: '17-claude-code-vibecoding' }
   };
 
   /* Cada área de interés apunta a la guía que mejor la resuelve. */
@@ -497,6 +505,22 @@
   ];
 
   var SI_NO = [{ emoji: '✅', v: 'Sí' }, { emoji: '❌', v: 'No' }];
+
+  /* La guía se lee en el acordeón de cursos.html, que ya trae cada una
+     con diseño y con un id propio. `abs` la devuelve absoluta para el
+     correo; sin `abs` queda relativa, como el resto de los links. */
+  function urlCurso(id, abs) {
+    return (abs ? SITIO : '') + 'cursos.html#' + CURSOS[id].f;
+  }
+
+  /* La pregunta en texto plano, para el resumen que va por correo. Cada
+     tipo la guarda en un campo distinto: en las escalas la pregunta real
+     es la frase del `quote` (el título es el genérico "¿Estás de acuerdo
+     con esta frase?"), y en la portada es `question`, porque el `title`
+     ahí es el titular de la página. */
+  function etiqueta(s) {
+    return String(s.quote || s.question || s.title || '').replace(/<[^>]+>/g, '').trim();
+  }
 
   /* ==================================================================
      LAS PANTALLAS, EN ORDEN
@@ -976,7 +1000,7 @@
     var saludo = nombre ? '¡Listo, ' + nombre + '!' : '¡Listo!';
     var cursos = recomendar().map(function (id) {
       var c = CURSOS[id];
-      return '<a href="' + c.f + '" data-ev="curso_recomendado_click">' +
+      return '<a href="' + urlCurso(id) + '" data-ev="curso_recomendado_click">' +
         '<span class="lvl">' + c.n + ' · ' + c.m + ' min</span>' +
         '<h3>' + esc(c.t) + '</h3><p>' + esc(c.d) + '</p></a>';
     }).join('');
@@ -1000,8 +1024,32 @@
 
   /* ==================================================================
      ENVÍO A n8n
-     Mismo webhook que el resto del sitio; aquí viaja el perfil completo.
+     Mismo webhook que el resto del sitio. El flujo distingue por `origen`:
+     con "onboarding_form" manda además el correo de la ruta, y para eso
+     necesita `respuestas` y `ruta` ya resueltas.
+
+     La ruta se calcula ACÁ, no en n8n: el catálogo vive en esta página, así
+     que si mañana cambian las guías el correo cambia solo. n8n únicamente
+     pinta lo que recibe.
      ================================================================== */
+
+  /* El resumen tal como se va a leer en el correo: la pregunta en texto
+     plano y la respuesta ya traducida (las escalas 1-5 son un número). */
+  function respuestasLegibles() {
+    var out = [];
+    SCREENS.forEach(function (s) {
+      if (!s.key || A[s.key] === undefined || A[s.key] === '') return;
+      // El correo y el nombre no son "respuestas"; la pantalla del puntaje
+      // lleva `key` pero no es una pregunta, así que no tiene etiqueta.
+      if (s.key === 'email' || s.key === 'first_name') return;
+      if (!etiqueta(s)) return;
+      var v = A[s.key];
+      if (s.type === 'scale') v = ESCALA[v - 1] ? ESCALA[v - 1].label : v;
+      out.push({ pregunta: etiqueta(s), respuesta: Array.isArray(v) ? v.join(', ') : String(v) });
+    });
+    return out;
+  }
+
   function enviar() {
     if (enviando) return Promise.resolve(false);
     enviando = true;
@@ -1009,7 +1057,11 @@
     Object.keys(A).forEach(function (k) {
       perfil[k] = Array.isArray(A[k]) ? A[k].join(', ') : A[k];
     });
-    perfil.cursos_recomendados = recomendar().map(function (id) { return CURSOS[id].t; }).join(', ');
+    var ruta = recomendar().map(function (id) {
+      var c = CURSOS[id];
+      return { titulo: c.t, nivel: c.n, minutos: c.m, url: urlCurso(id, true) };
+    });
+    perfil.cursos_recomendados = ruta.map(function (c) { return c.titulo; }).join(', ');
     return fetch(WEBHOOK, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -1018,7 +1070,9 @@
         nombre: A.first_name || '',
         origen: 'onboarding_form',
         website: A.hp_check || '',
-        perfil: perfil
+        perfil: perfil,
+        respuestas: respuestasLegibles(),
+        ruta: ruta
       })
     })
       .then(function (res) {
